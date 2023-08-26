@@ -165,9 +165,11 @@ export default async function Page() {
           ))}
         </ul>
 
-        <p>
+        <p style={{ maxWidth: "100%" }}>
           <span>Want to work together? </span>
-          <Link href="mailto:contact@kngsthvs.com">Send us an email →</Link>
+          <Link href="mailto:contact@kngsthvs.com">
+            Send us an email {`->`}
+          </Link>
         </p>
       </Section>
 

@@ -10,7 +10,7 @@
     "ui": "workspace:*"
   },
   "devDependencies": {
-    "@kngsthvs/eslint-config": "^0.3.0",
+    "@kngsthvs/eslint-config": "^0.3.1",
     "@kngsthvs/tsconfig": "^0.3.0",
     "@types/node": "^18.15.3",
     "@types/react": "^18.0.17",
