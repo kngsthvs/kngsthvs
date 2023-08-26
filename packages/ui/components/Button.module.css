@@ -1,0 +1,12 @@
+.root {
+  display: flex;
+  padding: 0.25rem 1.25rem;
+  color: var(--colors-white);
+  background-color: var(--colors-primary);
+  border-radius: var(--radii-full);
+  transition: background-color 0.3s var(--ease);
+}
+
+.root:hover {
+  background-color: var(--colors-primary-dark);
+}

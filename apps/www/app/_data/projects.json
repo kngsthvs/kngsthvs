@@ -1,0 +1,7 @@
+[
+  {
+    "href": "https://schola.to",
+    "name": "Schola",
+    "using": ["next", "tina", "turbo"]
+  }
+]
