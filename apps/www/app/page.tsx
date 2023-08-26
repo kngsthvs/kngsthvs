@@ -84,7 +84,7 @@ const tools = [
   { file: "vercel", href: "https://vercel.com/", name: "Vercel" },
 ];
 
-export function Project({
+function Project({
   href,
   name,
   using,

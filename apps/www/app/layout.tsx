@@ -64,9 +64,8 @@ export default async function Layout({
 }: {
   children: React.ReactNode;
 }) {
-  const { author, justify, quote } =
-    quotes[Math.floor(Math.random() * quotes.length)];
-  const data = mapDataAttributes({ justify });
+  const quote = quotes[Math.floor(Math.random() * quotes.length)];
+  const data = mapDataAttributes({ justify: quote?.justify });
 
   return (
     <html lang="en">
@@ -108,9 +107,11 @@ export default async function Layout({
         <footer className={styles.footer}>
           <blockquote className="dark" {...data}>
             <Balancer as="div">
-              <ReactMarkdown children={quote} />
+              <ReactMarkdown children={quote?.quote ?? ""} />
 
-              <footer dangerouslySetInnerHTML={{ __html: author }} />
+              <footer
+                dangerouslySetInnerHTML={{ __html: quote?.author ?? "" }}
+              />
             </Balancer>
           </blockquote>
 
