@@ -83,6 +83,8 @@ export default async function Layout({
 
             <NextLink href="/">
               <img alt="Kings & Thieves icon" src="/&.svg" />
+
+              <VisuallyHidden>Kings & Thieves</VisuallyHidden>
             </NextLink>
 
             <span>
