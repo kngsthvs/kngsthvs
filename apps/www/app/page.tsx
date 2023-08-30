@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import { IoCheckmarkCircle, IoGlobeOutline } from "react-icons/io5";
 import { Button } from "ui/components";
 import { VisuallyHidden } from "ui/components/client";
@@ -188,13 +189,13 @@ export default async function Page() {
 
         <div className={styles.notes}>
           {notes.map((note, index) => (
-            <>
+            <Fragment key={note + index}>
               <sub>
                 {Array.from(new Array(index + 1)).map(() => "†")} {note}
               </sub>
 
               <br />
-            </>
+            </Fragment>
           ))}
         </div>
       </Section>
