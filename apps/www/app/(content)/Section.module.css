@@ -1,0 +1,36 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+  width: 100%;
+  margin-top: -2.5rem;
+  padding-top: 2.5rem;
+  overflow: hidden;
+  border-top: none;
+  border-bottom: 1px solid var(--colors-gray-5);
+}
+
+.root > * {
+  width: 100%;
+  padding: 0 2rem;
+  text-align: center;
+}
+
+.root > h2:first-of-type {
+  padding-top: 2.5rem;
+}
+
+.root > *:last-child {
+  padding-bottom: 2.5rem;
+}
+
+.root h2 {
+  font-weight: 600;
+}
+
+.root p {
+  max-width: 25rem;
+  line-height: 140%;
+  text-align: center;
+}

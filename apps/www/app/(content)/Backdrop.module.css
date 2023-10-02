@@ -1,0 +1,23 @@
+.root {
+  --extend: 12rem;
+  --crop: calc(100% - var(--extend));
+}
+
+.root::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: calc(-1 * var(--extend));
+  left: 0;
+  z-index: -1;
+  backdrop-filter: blur(12px);
+  content: "";
+  user-select: none;
+  pointer-events: none;
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    black 0,
+    black var(--crop),
+    transparent var(--crop)
+  );
+}

@@ -7,7 +7,7 @@
   --colors-primary-dark: #0069ff;
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
 
-  font-family: "Inter", sans-serif;
+  font-family: var(--fonts-sans);
   scroll-behavior: smooth;
 }
 

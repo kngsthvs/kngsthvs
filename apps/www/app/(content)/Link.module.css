@@ -1,0 +1,15 @@
+.root {
+  color: var(--colors-foreground);
+  opacity: 0.5;
+  transition: 0.3s opacity var(--ease);
+}
+
+.root:hover {
+  opacity: 0.75;
+}
+
+.root:active,
+.root:focus-visible,
+.root.active {
+  opacity: 1;
+}

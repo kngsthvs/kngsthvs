@@ -1,2 +1,3 @@
-// export * from "@kngsthvs/ui/components";
-export * from "./Button";
+"use client";
+
+export { Root as VisuallyHidden } from "@radix-ui/react-visually-hidden";

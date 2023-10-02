@@ -7,6 +7,18 @@
   transition: background-color 0.3s var(--ease);
 }
 
-.root:hover {
+.root[data-variant="primary"] {
+  background-color: var(--colors-primary);
+}
+
+.root[data-variant="primary"]:hover {
   background-color: var(--colors-primary-dark);
+}
+
+.root[data-variant="secondary"] {
+  background-color: var(--colors-gray-20);
+}
+
+.root[data-variant="secondary"]:hover {
+  background-color: var(--colors-gray-10);
 }
