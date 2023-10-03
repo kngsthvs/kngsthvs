@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "@kngsthvs/ui": "^0.11.0",
+    "@kngsthvs/ui": "^0.11.1",
     "@radix-ui/react-visually-hidden": "^1.0.3",
     "react-split-grid": "^1.0.4"
   },

@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "@kngsthvs/ui": "^0.11.0",
+    "@kngsthvs/ui": "^0.11.1",
     "@mux/mux-player-react": "^1.14.2",
     "@next/bundle-analyzer": "^13.4.19",
     "@vercel/analytics": "^1.0.2",
