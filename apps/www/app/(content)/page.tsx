@@ -157,7 +157,7 @@ export default async function Page() {
           <span>Have a project in mind? </span>
 
           <LinkPrimitive href="mailto:contact@kngsthvs.com">
-            Send us an email {`->`}
+            Apply to enter {`->`}
           </LinkPrimitive>
         </p>
       </Section>

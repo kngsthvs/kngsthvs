@@ -16,6 +16,7 @@
   },
   "main": "index.ts",
   "name": "ui",
+  "private": true,
   "scripts": {
     "lint": "eslint . --max-warnings 0"
   },

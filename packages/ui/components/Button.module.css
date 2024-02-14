@@ -6,6 +6,10 @@
   color: var(--colors-white);
 }
 
+a.root:hover {
+  text-decoration: underline;
+}
+
 .root[data-variant="primary"] {
   background-color: var(--colors-gray-100);
   color: var(--colors-background);
@@ -21,14 +25,15 @@
 }
 
 .root[data-variant="secondary"] {
-  background-color: var(--colors-gray-10);
+  background-color: var(--colors-gray-0);
+  font-weight: 300;
 }
 
 .root[data-variant="secondary"]:focus-visible,
 .root[data-variant="secondary"]:hover {
-  background-color: var(--colors-gray-25);
+  background-color: var(--colors-gray-10);
 }
 
 .root[data-variant="secondary"]:active {
-  background-color: var(--colors-gray-50);
+  background-color: var(--colors-gray-25);
 }

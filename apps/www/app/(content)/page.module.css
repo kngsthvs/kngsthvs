@@ -145,9 +145,7 @@
 }
 
 .apps {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  flex-wrap: wrap;
+  display: flex;
   justify-content: center;
   gap: 1px;
   box-sizing: border-box;
@@ -159,6 +157,7 @@
 }
 
 .app {
+  width: 100%;
   list-style: none;
 }
 

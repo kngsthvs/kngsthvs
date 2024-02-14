@@ -92,7 +92,7 @@ export default async function Layout({
                 Contact us
               </Button>
 
-              <Button href="/waitlist">Join waitlist</Button>
+              <Button href="/enter">Enter</Button>
             </span>
           </nav>
 
