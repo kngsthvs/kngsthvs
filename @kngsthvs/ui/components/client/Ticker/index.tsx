@@ -180,6 +180,9 @@ export function Ticker({
       {Children.map(children, (child, index) => (
         <li
           ref={(element) => element && itemRef.current.push(element)}
+          style={{
+            minWidth: "auto",
+          }}
           {...props}
         >
           {cloneElement(child as React.ReactElement)}

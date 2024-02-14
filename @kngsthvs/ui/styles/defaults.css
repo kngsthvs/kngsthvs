@@ -33,10 +33,10 @@ a:hover {
 }
 
 button {
-  background: none;
-  border: none;
-  cursor: pointer;
   appearance: none;
+  cursor: pointer;
+  border: none;
+  background: none;
 }
 
 button,
