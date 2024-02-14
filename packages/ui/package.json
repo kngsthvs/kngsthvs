@@ -1,22 +1,23 @@
 {
   "dependencies": {
-    "@kngsthvs/ui": "^0.11.1",
+    "@kngsthvs/ui": "workspace:*",
     "@radix-ui/react-visually-hidden": "^1.0.3",
+    "react": "^18",
+    "react-dom": "^18",
     "react-split-grid": "^1.0.4"
   },
   "devDependencies": {
-    "@kngsthvs/eslint-config": "0.5.1",
-    "@kngsthvs/tsconfig": "^0.3.0",
-    "@types/react": "^18.2.0",
-    "@types/react-dom": "^18.2.0",
-    "eslint": "^7.32.0",
-    "react": "^17.0.2",
-    "typescript": "^5.0.4"
+    "@kngsthvs/eslint-config": "workspace:*",
+    "@kngsthvs/tsconfig": "workspace:*",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8.56.0",
+    "typescript": "^5"
   },
   "main": "index.ts",
   "name": "ui",
   "scripts": {
-    "lint": "eslint \"**/*.ts*\""
+    "lint": "eslint . --max-warnings 0"
   },
   "types": "index.ts",
   "version": "0.0.0"

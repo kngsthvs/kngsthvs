@@ -1,0 +1,23 @@
+{
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.17.0",
+    "@typescript-eslint/parser": "^6.17.0",
+    "@vercel/style-guide": "^5.2.0",
+    "eslint-config-next": "13.4.19",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-config-turbo": "^1.11.3",
+    "eslint-plugin-only-warn": "^1.1.0",
+    "eslint-plugin-react": "7.33.2",
+    "typescript": "^5"
+  },
+  "files": [
+    "library.js",
+    "next.js",
+    "react-internal.js"
+  ],
+  "name": "@kngsthvs/eslint-config",
+  "peerDependencies": {
+    "@vercel/style-guide": "^5.2.0"
+  },
+  "version": "0.6.0"
+}

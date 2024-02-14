@@ -7,7 +7,6 @@ import styles from "./Button.module.css";
 export const Button = forwardRef<
   LinkType,
   LinkProps & { variant?: "priamry" | "secondary" }
-  // @ts-expect-error ts(2345)
 >(({ children, variant = "primary", ...props }, ref) => {
   const data = mapDataAttributes({ variant });
 

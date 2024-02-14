@@ -1,0 +1,8 @@
+{
+  "extends": "@kngsthvs/tsconfig/react-library.json",
+  "compilerOptions": {
+    "outDir": "dist"
+  },
+  "include": ["components"],
+  "exclude": ["node_modules", "dist"]
+}

@@ -1,0 +1,7 @@
+{
+  "name": "@kngsthvs/tsconfig",
+  "publishConfig": {
+    "access": "public"
+  },
+  "version": "0.5.0"
+}

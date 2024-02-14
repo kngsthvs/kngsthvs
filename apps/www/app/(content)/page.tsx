@@ -1,14 +1,33 @@
 import { Link as LinkPrimitive } from "@kngsthvs/ui/primitives/shared/Link";
 import { basehub } from "basehub";
+import { RichText } from "basehub/react";
+import Link from "next/link";
 import { Fragment } from "react";
 import { IoCheckmarkCircle } from "react-icons/io5";
 import features from "../_data/features.json";
 import notes from "../_data/notes.json";
 import prices from "../_data/prices.json";
-import projects from "../_data/projects.json";
-import { Heading } from "./Heading";
-import { Section } from "./Section";
-import styles from "./styles.module.css";
+import { Section } from "./_components/Section";
+import styles from "./page.module.css";
+
+function App({ path, name }: { path?: string; name?: string }) {
+  return (
+    <li className={styles.app}>
+      {name ? (
+        <Link href={`/${path}`}>
+          <img
+            alt={`${name} icon`}
+            height={48}
+            src={`/apps/${path}.svg`}
+            width={48}
+          />
+        </Link>
+      ) : (
+        <div />
+      )}
+    </li>
+  );
+}
 
 function Feature({ children }: { children: React.ReactNode }) {
   return (
@@ -16,6 +35,32 @@ function Feature({ children }: { children: React.ReactNode }) {
       <IoCheckmarkCircle style={{ color: "var(--colors-primary)" }} />
 
       {children}
+    </li>
+  );
+}
+
+function Partner({
+  href,
+  logo,
+  ...props
+}: {
+  href: string | null;
+  logo: { alt?: string | null; rawUrl: string } | null;
+}) {
+  return (
+    <li className={styles.partner} {...props}>
+      {href && logo?.rawUrl ? (
+        <LinkPrimitive {...{ href }}>
+          <img
+            alt={logo.alt ?? "logo"}
+            height={240}
+            src={logo.rawUrl}
+            width="100%"
+          />
+        </LinkPrimitive>
+      ) : (
+        <div />
+      )}
     </li>
   );
 }
@@ -38,23 +83,8 @@ function Price({
   );
 }
 
-function Project({ href, name }: { href: string; name: string }) {
-  return (
-    <div className={styles.project}>
-      <LinkPrimitive {...{ href }}>
-        <img
-          alt={name}
-          height={240}
-          src={`/projects/${name.toLowerCase()}.svg`}
-          width="100%"
-        />
-      </LinkPrimitive>
-    </div>
-  );
-}
-
 export default async function Page() {
-  const { home } = await basehub().query({
+  const { home } = await basehub({ next: { revalidate: 60 } }).query({
     __typename: true,
     home: {
       __typename: true,
@@ -64,6 +94,17 @@ export default async function Page() {
         _title: true,
         items: {
           _title: true,
+          body: {
+            json: {
+              content: true,
+              blocks: {
+                __typename: true,
+                _id: true,
+                href: true,
+                logo: { rawUrl: true },
+              },
+            },
+          },
           description: true,
           id: true,
         },
@@ -71,15 +112,45 @@ export default async function Page() {
     },
   });
 
+  const work = home.sections.items.find(({ id }) => id === "work");
+
   return (
     <>
-      <Heading>{home.heading}</Heading>
+      {/* <Heading>{home.heading}</Heading> */}
 
-      <Section {...home.sections.items.find(({ id }) => id === "work")}>
-        <div className={styles.projects}>
-          {projects.map((project, index) => (
-            <Project key={project.name + index} {...project} />
-          ))}
+      <Section {...work}>
+        <div>
+          <div className={styles.work}>
+            {/* @ts-expect-error ts(2786) */}
+            <RichText
+              blocks={work?.body?.json.blocks}
+              components={{
+                PartnerComponent: (props) => (
+                  <Partner
+                    data-fill={
+                      Number(work?.body?.json.blocks.length) % 2 === 1
+                        ? true
+                        : false
+                    }
+                    href={props.href}
+                    logo={props.logo}
+                  />
+                ),
+              }}
+            >
+              {work?.body?.json.content}
+            </RichText>
+          </div>
+
+          <ul className={styles.apps}>
+            <App path="crowsnest" name="Crow’s Nest" />
+            <App />
+            <App />
+            <App />
+            <App />
+            <App />
+            <App />
+          </ul>
         </div>
 
         <p style={{ maxWidth: "100%" }}>

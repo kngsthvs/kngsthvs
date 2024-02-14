@@ -1,19 +1,25 @@
 {
   "devDependencies": {
-    "@kngsthvs/eslint-config": "0.5.1",
-    "@kngsthvs/prettier-config": "^0.3.0",
-    "eslint": "^7.32.0",
-    "prettier": "^2.8.8",
+    "@changesets/cli": "^2.27.1",
+    "@kngsthvs/eslint-config": "workspace:*",
+    "@kngsthvs/prettier-config": "workspace:*",
+    "@kngsthvs/tsconfig": "workspace:*",
+    "eslint": "^8.56.0",
+    "prettier": "^3.2.5",
     "turbo": "latest"
   },
+  "engines": {
+    "node": ">=18"
+  },
   "name": "kngsthvs",
-  "packageManager": "pnpm@7.15.0",
+  "packageManager": "pnpm@8.3.1",
   "prettier": "@kngsthvs/prettier-config",
   "private": true,
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "publish-packages": "turbo run build lint && changeset version && changeset publish"
   }
 }

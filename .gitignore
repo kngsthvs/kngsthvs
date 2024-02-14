@@ -1,44 +1,51 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-# dependencies
+# Build outputs
+.next/
+out/
+build
+dist
+
+# Changesets
+.changeset
+
+# Debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Dependencies
 node_modules
 package-lock.json
 yarn.lock
 .pnp
 .pnp.js
 
-# testing
-coverage
+# Local env files
+.env
+.env*.local
 
-# next.js
-.next/
-out/
-build
-
-# resend
-.react-email
-
-# misc
+# Misc
 .DS_Store
 *.pem
 *.vscode
 
-# debug
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-.pnpm-debug.log*
+# Resend
+.react-email
 
-# local env files
-.env
-.env*.local
+# Storybook
+storybook-static/
 
-# turbo
+# Testing
+coverage
+
+# Turbo
 .turbo
 
-# vercel
-.vercel
-
-# typescript
+# Typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Vercel
+.vercel

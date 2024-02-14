@@ -7,17 +7,10 @@
   --colors-primary-dark: #0069ff;
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
 
-  font-family: var(--fonts-sans);
   scroll-behavior: smooth;
 }
 
 .dark {
   --colors-background: #000000;
   --colors-foreground: #ffffff;
-}
-
-@supports (font-variation-settings: normal) {
-  :root {
-    font-family: "Inter Variable", sans-serif;
-  }
 }

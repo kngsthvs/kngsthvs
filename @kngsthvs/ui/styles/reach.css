@@ -1,0 +1,14 @@
+[data-reach-skip-nav-link] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+[data-reach-skip-nav-link]:focus {
+  position: fixed;
+  width: auto;
+  height: auto;
+  clip: auto;
+}
