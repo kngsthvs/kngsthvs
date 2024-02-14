@@ -81,11 +81,11 @@ importers:
         specifier: ^2.26.1
         version: 2.27.1
       '@kngsthvs/eslint-config':
-        specifier: 0.5.1
-        version: 0.5.1(@vercel/style-guide@5.2.0)(eslint@8.56.0)(typescript@5.0.2)
+        specifier: ^0.6.0
+        version: link:../eslint-config
       '@kngsthvs/tsconfig':
-        specifier: ^0.4.1
-        version: 0.4.1
+        specifier: ^0.5.0
+        version: link:../tsconfig
       '@storybook/addon-essentials':
         specifier: ^7.0.20
         version: 7.6.7(@types/react-dom@18.0.0)(@types/react@18.0.0)(react-dom@18.2.0)(react@18.2.0)
@@ -240,11 +240,11 @@ importers:
         specifier: ^2.27.1
         version: 2.27.1
       '@kngsthvs/eslint-config':
-        specifier: 0.5.1
-        version: 0.5.1(@vercel/style-guide@5.2.0)(eslint@8.56.0)(typescript@5.0.2)
+        specifier: ^0.6.0
+        version: link:../eslint-config
       '@kngsthvs/tsconfig':
-        specifier: ^0.4.1
-        version: 0.4.1
+        specifier: ^0.5.0
+        version: link:../tsconfig
       '@storybook/addon-essentials':
         specifier: ^7.6.7
         version: 7.6.7(@types/react-dom@18.0.0)(@types/react@18.0.0)(react-dom@18.2.0)(react@18.2.0)
@@ -2879,30 +2879,6 @@ packages:
 
   /@juggle/resize-observer@3.4.0:
     resolution: {integrity: sha512-dfLbk+PwWvFzSxwk3n5ySL0hfBog779o8h68wK/7/APo/7cgyWp5jcXockbxdk5kFRkbeXWm4Fbi9FrdN381sA==}
-
-  /@kngsthvs/eslint-config@0.5.1(@vercel/style-guide@5.2.0)(eslint@8.56.0)(typescript@5.0.2):
-    resolution: {integrity: sha512-Jie21m+9M3MulumnyR2OMb5iZWi8G6QAw7oMmlw0jxKXOpOM/ZPgQRLSkYb8Bcl5dJxNzteCMbxWafezWrYrmw==}
-    peerDependencies:
-      '@vercel/style-guide': ^5.0.1
-      eslint: '>= 7'
-      typescript: '>= 4'
-    dependencies:
-      '@typescript-eslint/eslint-plugin': 6.17.0(@typescript-eslint/parser@6.17.0)(eslint@8.56.0)(typescript@5.0.2)
-      '@typescript-eslint/parser': 6.17.0(eslint@8.56.0)(typescript@5.0.2)
-      '@vercel/style-guide': 5.2.0(eslint@8.56.0)(prettier@3.2.5)(typescript@5.0.2)
-      eslint: 8.56.0
-      eslint-config-next: 13.4.19(eslint@8.56.0)(typescript@5.0.2)
-      eslint-config-prettier: 8.10.0(eslint@8.56.0)
-      eslint-plugin-react: 7.33.2(eslint@8.56.0)
-      typescript: 5.0.2
-    transitivePeerDependencies:
-      - eslint-import-resolver-webpack
-      - supports-color
-    dev: true
-
-  /@kngsthvs/tsconfig@0.4.1:
-    resolution: {integrity: sha512-FQfkZVbi0joq9ntOeqNqnGGZiMvxk+Ogf4q9VjFE4Da45CEgvOFNbfOLyCtqxaLVzHP+7axpPj1kjbu6ZQqH8Q==}
-    dev: true
 
   /@manypkg/find-root@1.1.0:
     resolution: {integrity: sha512-mki5uBvhHzO8kYYix/WRy2WX8S3B5wdVSc9D6KcU5lQNglP2yt58/VfLuAK49glRXChosY8ap2oJ1qgma3GUVA==}
@@ -10377,15 +10353,6 @@ packages:
     transitivePeerDependencies:
       - eslint-import-resolver-webpack
       - supports-color
-    dev: true
-
-  /eslint-config-prettier@8.10.0(eslint@8.56.0):
-    resolution: {integrity: sha512-SM8AMJdeQqRYT9O9zguiruQZaN7+z+E4eAP9oiLNGKMtomwaB1E9dcgUD6ZAn/eQAb52USbvezbiljfZUhbJcg==}
-    hasBin: true
-    peerDependencies:
-      eslint: '>=7.0.0'
-    dependencies:
-      eslint: 8.56.0
     dev: true
 
   /eslint-config-prettier@9.1.0(eslint@8.56.0):

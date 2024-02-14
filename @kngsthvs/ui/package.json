@@ -28,8 +28,8 @@
   },
   "devDependencies": {
     "@changesets/cli": "^2.27.1",
-    "@kngsthvs/eslint-config": "0.13.0",
-    "@kngsthvs/tsconfig": "^0.13.0",
+    "@kngsthvs/eslint-config": "^0.6.0",
+    "@kngsthvs/tsconfig": "^0.5.0",
     "@storybook/addon-essentials": "^7.6.7",
     "@storybook/addon-interactions": "^7.6.7",
     "@storybook/addon-links": "^7.6.7",
