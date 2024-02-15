@@ -1,5 +1,11 @@
 # @kngsthvs/ui
 
+## 0.13.0
+
+### Minor Changes
+
+- Fix field types
+
 ## 0.12.0
 
 ### Minor Changes

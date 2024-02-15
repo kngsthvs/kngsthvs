@@ -24,7 +24,7 @@ const Context = createContext<
     } & State &
       Pick<React.HTMLProps<HTMLInputElement>, "onChange"> &
       Pick<React.HTMLProps<HTMLInputElement>, "placeholder">,
-    React.Dispatch<React.SetStateAction<State>> | undefined
+    React.Dispatch<React.SetStateAction<State>> | undefined,
   ]
 >([
   {
@@ -58,7 +58,7 @@ export function Root({
     ...state,
     placeholder: Boolean(placeholder),
     value: Boolean(
-      state.value && typeof state.value === "string" && state.value?.length > 0
+      state.value && typeof state.value === "string" && state.value?.length > 0,
     ),
   });
 
@@ -84,8 +84,7 @@ function Input<T>(
   props?: (
     | React.HTMLProps<HTMLInputElement>
     | React.ComponentProps<typeof ReactInput>
-  ) &
-    T
+  ) & { format: any } & T,
 ) {
   const [{ data, name, onChange, placeholder, value }, setField] = useField();
 
@@ -93,7 +92,7 @@ function Input<T>(
     return (
       <ReactInput
         id={name}
-        onChange={(event) =>
+        onChange={(event: any) =>
           setField &&
           setField((value) => ({
             ...value,
