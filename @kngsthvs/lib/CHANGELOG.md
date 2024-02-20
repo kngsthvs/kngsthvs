@@ -1,5 +1,11 @@
 # @kngsthvs/lib
 
+## 0.3.1
+
+### Patch Changes
+
+- Fix url validation
+
 ## 0.3.0
 
 ### Minor Changes
