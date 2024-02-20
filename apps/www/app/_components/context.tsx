@@ -30,7 +30,7 @@ export function App({ children }: { children: React.ReactNode }) {
         setHeight,
       }}
     >
-      <div>{children}</div>
+      {children}
     </Context.Provider>
   );
 }

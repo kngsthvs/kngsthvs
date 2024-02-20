@@ -31,6 +31,9 @@ module.exports = {
     project,
   },
   plugins: ["only-warn"],
+  rules: {
+    "@typescript-eslint/explicit-function-return-type": "off",
+  },
   settings: {
     "import/resolver": {
       typescript: {

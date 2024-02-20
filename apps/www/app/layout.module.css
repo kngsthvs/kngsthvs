@@ -9,8 +9,8 @@
 .content > header,
 .content > main {
   position: relative;
-  max-width: 48rem;
   margin: 0 auto;
+  max-width: 48rem;
   overflow: visible;
 }
 
@@ -33,15 +33,15 @@
   position: absolute;
   top: 50%;
   left: 50%;
+  transform: translate(-50%, -50%);
   z-index: -1;
+  filter: brightness(2);
+  aspect-ratio: 16 / 9;
   width: 100%;
   height: 100%;
-  transform: translate(-50%, -50%);
-  filter: brightness(2);
-  user-select: none;
-  user-select: none;
   pointer-events: none;
-  aspect-ratio: 16 / 9;
+  user-select: none;
+  user-select: none;
 }
 
 .content {
@@ -57,8 +57,8 @@
 }
 
 .main section a:not([class]) {
-  color: var(--colors-primary);
   transition: 0.3s color var(--ease);
+  color: var(--colors-primary);
 }
 
 .main section a:not([class]):hover {
@@ -79,13 +79,13 @@
 }
 
 .footer nav a img {
-  width: 1.5rem;
-  height: 1.5rem;
-  color: var(--colors-black);
   opacity: 0.25;
   transition: 0.3s opacity var(--ease);
-  user-select: none;
+  width: 1.5rem;
+  height: 1.5rem;
   pointer-events: none;
+  color: var(--colors-black);
+  user-select: none;
 }
 
 .footer nav a:hover img {
@@ -95,17 +95,17 @@
 .features {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
-  align-items: center;
   justify-content: center;
-  max-width: 48rem;
+  align-items: center;
+  gap: 1rem;
   margin-top: 2rem;
+  max-width: 48rem;
 }
 
 .feature {
   display: flex;
-  gap: 0.5rem;
   align-items: center;
+  gap: 0.5rem;
 }
 
 .feature p {
@@ -120,17 +120,17 @@
 .prices {
   display: flex;
   flex-wrap: wrap;
-  gap: 2rem;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  gap: 2rem;
   margin-top: 4rem;
 }
 
 .price {
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
   align-items: center;
+  gap: 0.25rem;
 }
 
 .price h3 {
@@ -146,32 +146,34 @@
 
 .partners {
   display: grid;
-  flex-wrap: wrap;
   grid-template-columns: 1fr 1fr;
+  flex-wrap: wrap;
+  justify-content: center;
   /* grid-template-columns: 1fr 1fr 1fr; */
   gap: 1px;
-  justify-content: center;
   box-sizing: border-box;
-  width: calc(100% + 4rem) !important;
   margin: 4rem -2rem 2rem;
-  padding: 1px;
-  background-color: var(--colors-gray-5);
   border-top: 1px solid transparent;
   border-bottom: 1px solid transparent;
+  background-color: var(--colors-gray-5);
+  padding: 1px;
+  width: calc(100% + 4rem) !important;
 }
 
 .partner > a {
   display: flex;
   flex-direction: column;
-  padding: 2rem 0;
   background-color: var(--colors-background);
+  padding: 2rem 0;
 }
 
 .partner > a img {
-  height: 2.5rem;
   opacity: 0.5;
   filter: grayscale(1);
-  transition: 0.6s filter var(--ease), 0.6s opacity var(--ease);
+  transition:
+    0.6s filter var(--ease),
+    0.6s opacity var(--ease);
+  height: 2.5rem;
 }
 
 .partner:hover > a img {
@@ -180,8 +182,8 @@
 }
 
 .notes {
-  max-width: 36rem;
   margin-top: 4rem;
+  max-width: 36rem;
   color: var(--colors-gray-50);
   font-size: var(--fontSizes-base);
   line-height: 120%;
@@ -189,13 +191,13 @@
 }
 
 .footer {
-  position: relative;
   display: flex;
+  position: relative;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  width: 100%;
+  align-items: center;
   margin: 0 -2rem;
+  width: 100%;
 }
 
 .footer > * {
@@ -208,23 +210,23 @@
 
 .footer nav {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding: 1rem 2rem;
+  align-items: center;
   border-bottom: 1px solid var(--colors-gray-5);
+  padding: 1rem 2rem;
 }
 
 .footer nav ul {
   display: flex;
-  gap: 0.5rem;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .external img {
+  opacity: 0.75 !important;
   width: auto !important;
   height: 1.5rem;
-  opacity: 0.75 !important;
 }
 
 .external a:hover img {
@@ -232,12 +234,12 @@
 }
 
 .footer blockquote {
-  max-width: 48rem;
   margin: 0 auto;
+  background-color: var(--colors-background);
   padding: 2rem;
+  max-width: 48rem;
   color: var(--colors-foreground);
   text-align: center;
-  background-color: var(--colors-background);
 }
 
 .footer blockquote > *:first-child {
@@ -247,8 +249,8 @@
 .footer blockquote > div > *:first-child {
   font-weight: 400 !important;
   font-size: var(--fontSizes-2xl);
-  font-family: var(--fonts-serif);
   line-height: 140%;
+  font-family: var(--fonts-serif);
 }
 
 .footer blockquote[data-justify="true"] > div > *:first-child {
@@ -265,8 +267,8 @@
 }
 
 .footer > p {
-  align-items: center;
   justify-content: center;
+  align-items: center;
   padding: 1.25rem 2rem;
   color: var(--colors-gray-50);
   text-align: center;

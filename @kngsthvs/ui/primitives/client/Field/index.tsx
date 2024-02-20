@@ -21,8 +21,10 @@ const Context = createContext<
     {
       data?: { [key: string]: boolean };
       name?: string;
+      onChange?: React.ChangeEventHandler<
+        HTMLInputElement | HTMLTextAreaElement
+      >;
     } & State &
-      Pick<React.HTMLProps<HTMLInputElement>, "onChange"> &
       Pick<React.HTMLProps<HTMLInputElement>, "placeholder">,
     React.Dispatch<React.SetStateAction<State>> | undefined,
   ]
@@ -84,7 +86,7 @@ function Input<T>(
   props?: (
     | React.HTMLProps<HTMLInputElement>
     | React.ComponentProps<typeof ReactInput>
-  ) & { format: any } & T,
+  ) & { format?: any } & T,
 ) {
   const [{ data, name, onChange, placeholder, value }, setField] = useField();
 
@@ -124,13 +126,14 @@ function Input<T>(
 }
 
 function Textarea<T>(props?: React.HTMLProps<HTMLTextAreaElement> & T) {
-  const [{ data, name, placeholder }] = useField();
+  const [{ data, name, onChange, placeholder }] = useField();
 
   return (
     <textarea
       id={name}
       {...{
         name,
+        onChange,
         placeholder,
         ...data,
         ...props,

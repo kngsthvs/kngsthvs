@@ -1,0 +1,8 @@
+.root {
+  margin: 0 auto;
+  border-right: 1px solid var(--colors-gray-5);
+  border-left: 1px solid var(--colors-gray-5);
+  padding: 2rem;
+  max-width: 48rem;
+  min-height: 100vh;
+}

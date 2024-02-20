@@ -30,6 +30,9 @@ module.exports = {
   parserOptions: {
     project,
   },
+  rules: {
+    "@typescript-eslint/explicit-function-return-type": "off",
+  },
   settings: {
     "import/resolver": {
       typescript: {

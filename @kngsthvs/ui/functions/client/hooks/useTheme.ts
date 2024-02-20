@@ -2,7 +2,7 @@
 
 import { useContext } from "react";
 import { type GetThemeReturn } from "../../types";
-import { Theme } from "../context/Theme";
+import { Theme } from "../context/theme";
 
 export function useTheme(): GetThemeReturn {
   const context = useContext(Theme.Context);

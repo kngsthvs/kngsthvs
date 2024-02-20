@@ -1,9 +1,9 @@
 "use client";
 
-import { Link as LinkPrimitive } from "@kngsthvs/ui/primitives/shared/Link";
+import { Link as LinkPrimitive } from "@kngsthvs/ui/primitives/shared/link";
 import { usePathname } from "next/navigation";
-import { useApp } from "./Context";
-import styles from "./Link.module.css";
+import { useApp } from "./context";
+import styles from "./link.module.css";
 
 export function Link({
   children,

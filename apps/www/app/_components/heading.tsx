@@ -1,7 +1,14 @@
 import { Balancer } from "@kngsthvs/ui/packages/balancer";
-import styles from "./Heading.module.css";
+import Image from "next/image";
+import styles from "./heading.module.css";
 
-export function Heading({ children }: { children: React.ReactNode }) {
+export function Heading({
+  children,
+  description,
+}: {
+  children: React.ReactNode;
+  description?: React.ReactNode | string;
+}) {
   return (
     <section className={styles.root}>
       <div>
@@ -18,7 +25,15 @@ export function Heading({ children }: { children: React.ReactNode }) {
         <hr />
       </div>
 
-      <Balancer as="h1">{children}</Balancer>
+      <Image alt="Chi Rho" height={80} priority src="/chi-rho.svg" width={80} />
+
+      <div className="">
+        <h1>{children}</h1>
+
+        <div className="">
+          {Boolean(description) && <Balancer as="p">{description}</Balancer>}
+        </div>
+      </div>
 
       <div>
         <hr />

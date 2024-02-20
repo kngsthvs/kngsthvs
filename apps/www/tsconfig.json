@@ -1,6 +1,7 @@
 {
   "extends": "@kngsthvs/tsconfig/nextjs.json",
   "compilerOptions": {
+    "moduleResolution": "Bundler",
     "plugins": [
       {
         "name": "next"

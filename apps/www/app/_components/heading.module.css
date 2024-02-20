@@ -1,40 +1,65 @@
 .root {
-  position: relative;
   display: flex;
+  position: relative;
   flex-direction: column;
-  gap: 0.5rem;
+  justify-content: center;
   align-items: center;
-  width: 100%;
+  gap: 0.5rem;
   border-top: none;
+  padding: 0 0.5rem;
+  height: 100vh;
 }
 
-.root > * {
+.root a,
+.root button {
+  color: var(--colors-primary);
+}
+
+.root button:hover {
+  text-decoration: underline;
+}
+
+.root div:not(:first-child):not(:last-child) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  margin: 0 auto;
   width: 100%;
-  padding: 0 2rem;
+  line-height: 180%;
   text-align: center;
 }
 
 .root h1 {
+  transform: scaleX(0.8);
   margin: 0 auto;
-  padding: 8rem 0rem !important;
+  width: 100%;
   font-weight: 400;
-  font-size: var(--fontSizes-3xl);
-  font-family: var(--fonts-serif);
+  font-size: var(--fontSizes-7xl);
   line-height: 100%;
+  font-family: var(--fonts-heading);
   letter-spacing: -0.0125em;
-  text-align: center;
-  transform: scaleX(0.9);
 }
 
+.root img {
+  width: 3rem;
+  height: 3rem;
+}
+
+.root p {
+  color: var(--colors-gray-50);
+}
+
+.root > div:not([class]),
 .root > div:not([class]) {
+  display: flex;
   position: absolute;
   right: 0;
   left: 0;
-  display: flex;
   flex-direction: column;
   gap: 0.25rem;
-  width: 100%;
   padding: 0;
+  width: 100%;
 }
 
 .root > div:not([class]):first-child {
@@ -47,10 +72,10 @@
 }
 
 .root > div:not([class]) > hr {
-  width: 100%;
-  height: 1px;
   margin: 0 auto;
   border: none;
+  width: 100%;
+  height: 1px;
 }
 
 .root > div:not([class]):first-child > hr:nth-of-type(11),
@@ -109,15 +134,41 @@
 }
 
 @media screen and (min-width: 36rem) {
+  .root {
+    gap: 1rem;
+    padding: 0 1rem;
+  }
+
+  .root div:not(:first-child):not(:last-child) {
+    gap: 0.5rem;
+  }
+
   .root h1 {
-    padding: 8rem 1rem !important;
-    font-size: var(--fontSizes-4xl);
+    font-size: var(--fontSizes-8xl);
+  }
+
+  .root img {
+    width: 4rem;
+    height: 4rem;
   }
 }
 
 @media screen and (min-width: 48rem) {
+  .root {
+    gap: 2rem;
+    padding: 0 2rem;
+  }
+
+  .root div:not(:first-child):not(:last-child) {
+    gap: 1rem;
+  }
+
   .root h1 {
-    padding: 8rem 2rem !important;
-    font-size: var(--fontSizes-5xl);
+    font-size: var(--fontSizes-9xl);
+  }
+
+  .root img {
+    width: 5rem;
+    height: 5rem;
   }
 }

@@ -6,7 +6,7 @@ export const url: TinaField = {
   name: "url",
   type: "string",
   ui: {
-    validate: (value) => {
+    validate: (value: string) => {
       if (!value) return;
       if (urlSchema.safeParse(value).success === false)
         return "Please enter a valid URL";

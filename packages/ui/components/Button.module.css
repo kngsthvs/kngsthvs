@@ -1,13 +1,28 @@
 .root {
   display: flex;
+  justify-content: center;
   transition: background-color 0.3s var(--ease);
   background-color: var(--colors-primary);
-  padding: 0.5rem 1rem;
   color: var(--colors-white);
+  text-align: center;
 }
 
 a.root:hover {
   text-decoration: underline;
+}
+
+.root[data-size="small"] {
+  padding: 0.25rem 0.75rem;
+  font-size: var(--fontSizes-sm);
+}
+
+.root[data-size="medium"] {
+  padding: 0.5rem 1rem;
+}
+
+.root[data-size="large"] {
+  padding: 0.75rem 1.5rem;
+  font-size: var(--fontSizes-lg);
 }
 
 .root[data-variant="primary"] {

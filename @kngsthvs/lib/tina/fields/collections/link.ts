@@ -15,7 +15,7 @@ export const link = ({
     {
       collections,
       label: "Link",
-      name: "href",
+      name: "reference",
       type: "reference",
     },
     {

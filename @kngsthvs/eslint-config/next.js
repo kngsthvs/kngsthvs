@@ -31,6 +31,7 @@ module.exports = {
   },
   plugins: ["only-warn"],
   rules: {
+    "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/no-explicit-any": "off",
     "import/no-default-export": "off",
     "sort-keys": ["warn", "asc", { natural: true }],

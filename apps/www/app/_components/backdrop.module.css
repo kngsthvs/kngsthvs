@@ -11,13 +11,13 @@
   left: 0;
   z-index: -1;
   backdrop-filter: blur(12px);
-  content: "";
-  user-select: none;
-  pointer-events: none;
   -webkit-mask-image: linear-gradient(
     to bottom,
     black 0,
     black var(--crop),
     transparent var(--crop)
   );
+  pointer-events: none;
+  content: "";
+  user-select: none;
 }

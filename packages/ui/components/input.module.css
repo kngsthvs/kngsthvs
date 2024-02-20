@@ -1,0 +1,54 @@
+.group {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+@media screen and (min-width: 36rem) {
+  .group {
+    flex-direction: row;
+    gap: 2rem;
+  }
+}
+
+.input {
+  transition: border-color 0.3s var(--ease);
+  border: 1px solid var(--colors-gray-10);
+  padding: 1rem;
+  width: 100%;
+}
+
+.input:active {
+  border-color: var(--colors-gray-50);
+}
+
+.input:focus-visible {
+  outline: none;
+  border-color: var(--colors-gray-100) !important;
+}
+
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.root:hover .input {
+  border-color: var(--colors-gray-25);
+}
+
+.root label {
+  transform: translateY(0.25em);
+  opacity: 0;
+  transition:
+    opacity 0.3s var(--ease),
+    transform 0.3s var(--ease);
+  color: var(--colors-gray-50);
+  font-size: var(--fontSizes-sm);
+}
+
+.root[data-value="true"] label {
+  transform: translateY(0);
+  opacity: 1;
+}

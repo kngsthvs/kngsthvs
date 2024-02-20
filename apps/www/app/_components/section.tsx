@@ -1,4 +1,4 @@
-import styles from "./Section.module.css";
+import styles from "./section.module.css";
 
 export function Section({
   _title,
@@ -16,9 +16,9 @@ export function Section({
       id={_title?.toLowerCase().split(" ").join("-")}
       {...props}
     >
-      {_title && <h2>{_title}</h2>}
+      <h2>{_title}</h2>
 
-      {description && <p>{description}</p>}
+      <p>{description}</p>
 
       {children}
     </section>

@@ -1,8 +1,8 @@
 "use client";
 
-import { Ticker } from "@kngsthvs/ui/components/client/Ticker";
+import { Ticker } from "@kngsthvs/ui/components/client/ticker";
 import { useMeasure, useMedia } from "react-use";
-import styles from "./Aside.module.css";
+import styles from "./aside.module.css";
 
 export function Aside({
   children,
@@ -21,7 +21,7 @@ export function Aside({
             width: isWide ? height : "auto",
           }}
         >
-          <Ticker direction="left" gap={16} source={0.5}>
+          <Ticker direction="right" gap={16} source={0.5}>
             {children}
           </Ticker>
         </div>

@@ -1,6 +1,6 @@
 import Link from "next/link";
-import styles from "./Anchors.module.css";
-import backdropStyles from "./Backdrop.module.css";
+import styles from "./anchors.module.css";
+import backdropStyles from "./backdrop.module.css";
 
 function Root({ children, ...props }: { children: React.ReactNode }) {
   return (

@@ -14,12 +14,10 @@
     "eslint": "^8.56.0",
     "typescript": "^5"
   },
-  "main": "index.ts",
   "name": "ui",
   "private": true,
   "scripts": {
     "lint": "eslint . --max-warnings 0"
   },
-  "types": "index.ts",
   "version": "0.0.0"
 }

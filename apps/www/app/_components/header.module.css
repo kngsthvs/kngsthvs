@@ -12,9 +12,10 @@
   left: 0;
   justify-content: space-between;
   align-items: center;
+  gap: 1rem;
   z-index: 1;
   border-bottom: 1px solid var(--colors-gray-10);
-  padding: 0.75rem 0.75rem 0.75rem 1rem;
+  padding: 0.75rem;
   color: rgba(255, 255, 255, 0.75);
   --cutoff: calc(100% - var(--extended-by));
 }
@@ -28,7 +29,6 @@
 }
 
 .root nav > a img {
-  display: none;
   filter: invert(1);
   height: 2rem;
   pointer-events: none;
@@ -37,9 +37,9 @@
 
 .root nav span {
   display: flex;
-  align-items: center;
+  justify-content: flex-end;
   gap: 0.5rem;
-  list-style: none;
+  margin-left: auto;
 }
 
 .root nav ul {
@@ -79,18 +79,4 @@
 
 .root section:last-child > a:last-child img {
   height: 5rem;
-}
-
-@media screen and (min-width: 36rem) {
-  .root nav > a img {
-    display: flex;
-  }
-
-  .root nav > span {
-    flex: 1 1 0%;
-  }
-
-  .root nav > span:last-of-type {
-    justify-content: flex-end;
-  }
 }

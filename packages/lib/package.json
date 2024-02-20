@@ -13,8 +13,7 @@
     "eslint": "^8.56.0",
     "typescript": "^5"
   },
-  "main": "index.ts",
   "name": "lib",
-  "types": "index.ts",
+  "private": true,
   "version": "0.0.0"
 }

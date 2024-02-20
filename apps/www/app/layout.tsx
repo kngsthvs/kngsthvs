@@ -7,9 +7,9 @@ import "ui/styles/globals.css";
 import "./globals.css";
 
 const cormorant = Cormorant({
-  weight: ["400"],
   subsets: ["latin"],
-  variable: "--font-serif",
+  variable: "--fonts-heading",
+  weight: ["500"],
 });
 
 export const metadata: Metadata = {
@@ -18,21 +18,20 @@ export const metadata: Metadata = {
   title: "Kings & Thieves",
 };
 
-export default async function Layout({
-  children,
-}: {
+export default function RootLayout(props: {
   children: React.ReactNode;
+  drawer: React.ReactNode;
 }) {
   return (
     <html lang="en">
       <body className={`${GeistSans.className} ${cormorant.variable}`}>
         <link href="./favicon.svg" rel="icon" type="image/svg+xml" />
 
-        {children}
+        {props.drawer}
 
-        <>
-          <Analytics />
-        </>
+        {props.children}
+
+        <Analytics />
       </body>
     </html>
   );
