@@ -1,5 +1,11 @@
 # @kngsthvs/tsconfig
 
+## 0.6.0
+
+### Minor Changes
+
+- Update base and nextjs
+
 ## 0.5.0
 
 ### Minor Changes
