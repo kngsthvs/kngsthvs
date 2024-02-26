@@ -1,5 +1,11 @@
 # @kngsthvs/eslint-config
 
+## 0.6.1
+
+### Patch Changes
+
+- Add plugins as peer dependencies
+
 ## 0.6.0
 
 ### Minor Changes
