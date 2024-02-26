@@ -1,5 +1,9 @@
 lockfileVersion: '6.0'
 
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
 importers:
 
   .:
@@ -28,6 +32,9 @@ importers:
 
   '@kngsthvs/eslint-config':
     devDependencies:
+      '@next/eslint-plugin-next':
+        specifier: ^14.1.0
+        version: 14.1.0
       '@typescript-eslint/eslint-plugin':
         specifier: ^6.17.0
         version: 6.17.0(@typescript-eslint/parser@6.17.0)(eslint@8.56.0)(typescript@5.0.2)
@@ -36,7 +43,7 @@ importers:
         version: 6.17.0(eslint@8.56.0)(typescript@5.0.2)
       '@vercel/style-guide':
         specifier: ^5.2.0
-        version: 5.2.0(eslint@8.56.0)(prettier@3.2.5)(typescript@5.0.2)
+        version: 5.2.0(@next/eslint-plugin-next@14.1.0)(eslint@8.56.0)(prettier@3.2.5)(typescript@5.0.2)
       eslint-config-next:
         specifier: 13.4.19
         version: 13.4.19(eslint@8.56.0)(typescript@5.0.2)
@@ -85,7 +92,7 @@ importers:
         version: link:../eslint-config
       '@kngsthvs/tsconfig':
         specifier: ^0.5.0
-        version: link:../tsconfig
+        version: 0.5.0
       '@storybook/addon-essentials':
         specifier: ^7.0.20
         version: 7.6.7(@types/react-dom@18.0.0)(@types/react@18.0.0)(react-dom@18.2.0)(react@18.2.0)
@@ -244,7 +251,7 @@ importers:
         version: link:../eslint-config
       '@kngsthvs/tsconfig':
         specifier: ^0.5.0
-        version: link:../tsconfig
+        version: 0.5.0
       '@storybook/addon-essentials':
         specifier: ^7.6.7
         version: 7.6.7(@types/react-dom@18.0.0)(@types/react@18.0.0)(react-dom@18.2.0)(react@18.2.0)
@@ -2043,6 +2050,7 @@ packages:
 
   /@emotion/memoize@0.7.4:
     resolution: {integrity: sha512-Ja/Vfqe3HpuzRsG1oBtWTHk2PGZ7GR+2Vz5iYGelAw8dx32K0y7PjVuxK6z1nMpZOqAFsRUPCkK1YjJ56qJlgw==}
+    requiresBuild: true
     dev: false
     optional: true
 
@@ -2880,6 +2888,10 @@ packages:
   /@juggle/resize-observer@3.4.0:
     resolution: {integrity: sha512-dfLbk+PwWvFzSxwk3n5ySL0hfBog779o8h68wK/7/APo/7cgyWp5jcXockbxdk5kFRkbeXWm4Fbi9FrdN381sA==}
 
+  /@kngsthvs/tsconfig@0.5.0:
+    resolution: {integrity: sha512-NTbYgG7Cp4sufjwjdS3uyUpwmFl+xwaDm5y4r63adSzNlelNphZz2oiMihSftNE0+2DwZoOnaRVHE6v9zquKjw==}
+    dev: true
+
   /@manypkg/find-root@1.1.0:
     resolution: {integrity: sha512-mki5uBvhHzO8kYYix/WRy2WX8S3B5wdVSc9D6KcU5lQNglP2yt58/VfLuAK49glRXChosY8ap2oJ1qgma3GUVA==}
     dependencies:
@@ -3017,6 +3029,12 @@ packages:
     resolution: {integrity: sha512-N/O+zGb6wZQdwu6atMZHbR7T9Np5SUFUjZqCbj0sXm+MwQO35M8TazVB4otm87GkXYs2l6OPwARd3/PUWhZBVQ==}
     dependencies:
       glob: 7.1.7
+    dev: true
+
+  /@next/eslint-plugin-next@14.1.0:
+    resolution: {integrity: sha512-x4FavbNEeXx/baD/zC/SdrvkjSby8nBn8KcCREqk6UuwvwoAPZmaV8TFCAuo/cpovBRTIY67mHhe86MQQm/68Q==}
+    dependencies:
+      glob: 10.3.10
     dev: true
 
   /@next/font@13.5.6:
@@ -7755,7 +7773,7 @@ packages:
       server-only: 0.0.1
     dev: false
 
-  /@vercel/style-guide@5.2.0(eslint@8.56.0)(prettier@3.2.5)(typescript@5.0.2):
+  /@vercel/style-guide@5.2.0(@next/eslint-plugin-next@14.1.0)(eslint@8.56.0)(prettier@3.2.5)(typescript@5.0.2):
     resolution: {integrity: sha512-fNSKEaZvSkiBoF6XEefs8CcgAV9K9e+MbcsDZjUsktHycKdA0jvjAzQi1W/FzLS+Nr5zZ6oejCwq/97dHUKe0g==}
     engines: {node: '>=16'}
     peerDependencies:
@@ -7775,6 +7793,7 @@ packages:
     dependencies:
       '@babel/core': 7.23.9
       '@babel/eslint-parser': 7.23.10(@babel/core@7.23.9)(eslint@8.56.0)
+      '@next/eslint-plugin-next': 14.1.0
       '@rushstack/eslint-patch': 1.7.2
       '@typescript-eslint/eslint-plugin': 6.17.0(@typescript-eslint/parser@6.17.0)(eslint@8.56.0)(typescript@5.0.2)
       '@typescript-eslint/parser': 6.17.0(eslint@8.56.0)(typescript@5.0.2)
@@ -8522,6 +8541,7 @@ packages:
 
   /bare-events@2.2.0:
     resolution: {integrity: sha512-Yyyqff4PIFfSuthCZqLlPISTWHmnQxoPuAvkmgzsJEmG3CesdIv6Xweayl0JkCZJSB2yYIdJyEz97tpxNhgjbg==}
+    requiresBuild: true
     dev: true
     optional: true
 
@@ -8538,11 +8558,13 @@ packages:
 
   /bare-os@2.1.3:
     resolution: {integrity: sha512-YMKOQzoMouGCrYgJ0rassKvmbTz+TYDOKKmu4JkfNXS/qKn+If1ODCMEXnmknQXfnB1PS8bR+uHu6xBgwAQXew==}
+    requiresBuild: true
     dev: true
     optional: true
 
   /bare-path@2.1.0:
     resolution: {integrity: sha512-DIIg7ts8bdRKwJRJrUMy/PICEaQZaPGZ26lsSx9MJSwIhSrcdHn7/C8W+XmnG/rKi6BaRcz+JO00CjZteybDtw==}
+    requiresBuild: true
     dependencies:
       bare-os: 2.1.3
     dev: true
