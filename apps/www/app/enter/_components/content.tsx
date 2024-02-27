@@ -30,7 +30,6 @@ export async function Content({ children }: { children: React.ReactNode }) {
       </Link>
 
       <div>
-        {/* @ts-expect-error ts(2786) */}
         <RichText>{enter.opening?.json.content}</RichText>
       </div>
 

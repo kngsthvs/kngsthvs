@@ -1,5 +1,11 @@
 # @kngsthvs/ui
 
+## 0.13.1
+
+### Patch Changes
+
+- Add HCaptcha and OTP
+
 ## 0.13.0
 
 ### Minor Changes

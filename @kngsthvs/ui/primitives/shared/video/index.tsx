@@ -1,4 +1,4 @@
-export function Video({ playbackId, ...props }) {
+export function Video({ playbackId, ...props }: { playbackId: string }) {
   return (
     <video
       autoPlay

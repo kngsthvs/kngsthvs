@@ -1,7 +1,7 @@
 "use client";
 
 import * as LabelPrimitive from "@radix-ui/react-label";
-import ReactInput from "input-format/react";
+import InputFormat from "input-format/react";
 import { createContext, useContext, useState } from "react";
 import { mapDataAttributes } from "../../../functions/shared/attributes";
 
@@ -17,23 +17,29 @@ type State = {
 };
 
 const Context = createContext<
-  [
-    {
-      data?: { [key: string]: boolean };
-      name?: string;
-      onChange?: React.ChangeEventHandler<
-        HTMLInputElement | HTMLTextAreaElement
-      >;
-    } & State &
-      Pick<React.HTMLProps<HTMLInputElement>, "placeholder">,
-    React.Dispatch<React.SetStateAction<State>> | undefined,
-  ]
->([
-  {
-    name: undefined,
-  },
-  undefined,
-]);
+  | [
+      {
+        data?: { [key: string]: boolean };
+        name?: string;
+        onChange?: React.ChangeEventHandler<
+          HTMLInputElement | HTMLTextAreaElement
+        >;
+      } & State &
+        Pick<React.HTMLProps<HTMLInputElement>, "placeholder">,
+      React.Dispatch<React.SetStateAction<State>>,
+    ]
+  | undefined
+>(undefined);
+
+export function useField() {
+  const context = useContext(Context);
+
+  if (context === undefined) {
+    throw new Error("useField must be used within a Field");
+  }
+
+  return context;
+}
 
 export function Root({
   children,
@@ -82,23 +88,26 @@ export function Root({
   );
 }
 
-function Input<T>(
-  props?: (
-    | React.HTMLProps<HTMLInputElement>
-    | React.ComponentProps<typeof ReactInput>
-  ) & { format?: any } & T,
+function Input(
+  props?:
+    | React.DetailedHTMLProps<
+        React.InputHTMLAttributes<HTMLInputElement>,
+        HTMLInputElement
+      >
+    | React.ComponentProps<typeof InputFormat>,
 ) {
   const [{ data, name, onChange, placeholder, value }, setField] = useField();
 
-  if (props && props["format"])
+  if (props && "format" in props)
     return (
-      <ReactInput
+      <InputFormat
         id={name}
         onChange={(event: any) =>
           setField &&
           setField((value) => ({
             ...value,
-            value: props && props["format"] ? event : event.target.value,
+            value:
+              props && props.type === "format" ? event : event.target.value,
           }))
         }
         {...{
@@ -106,7 +115,7 @@ function Input<T>(
           placeholder,
           value,
           ...data,
-          ...(props as React.ComponentProps<typeof ReactInput>),
+          ...props,
         }}
       />
     );
@@ -160,13 +169,3 @@ export const Field = Object.assign(Root, {
   Label,
   Textarea,
 });
-
-export function useField() {
-  const context = useContext(Context);
-
-  if (context === undefined) {
-    throw new Error("useField must be used within a Field");
-  }
-
-  return context;
-}

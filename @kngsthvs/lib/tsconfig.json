@@ -7,6 +7,6 @@
     "isolatedModules": false,
     "noEmit": false
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules", "index.d.ts*"]
 }

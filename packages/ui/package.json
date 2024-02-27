@@ -16,8 +16,5 @@
   },
   "name": "ui",
   "private": true,
-  "scripts": {
-    "lint": "eslint . --max-warnings 0"
-  },
-  "version": "0.0.0"
+  "version": "0.0.1"
 }

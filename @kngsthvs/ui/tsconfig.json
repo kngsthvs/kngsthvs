@@ -1,12 +1,14 @@
 {
   "extends": "@kngsthvs/tsconfig/nextjs.json",
   "compilerOptions": {
-    "composite": false,
+    "baseUrl": ".",
     "declaration": true,
     "declarationMap": true,
+    "incremental": false,
     "isolatedModules": false,
+    "moduleResolution": "Bundler",
     "noEmit": false
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules", "index.d.ts*", "**/*story.ts*"]
+  "include": ["**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules", "**/*story.ts*"]
 }

@@ -9,9 +9,7 @@ type InputProps = {
   name: string;
 };
 
-function RootInput(
-  props: React.ComponentProps<typeof Field.Input<InputProps>> & any,
-) {
+function RootInput(props: React.ComponentProps<typeof Field.Input>) {
   return <Field.Input className={styles.input} {...props} />;
 }
 
@@ -41,9 +39,9 @@ function Root({
   placeholder,
   required,
   ...props
-}: React.ComponentProps<typeof Field.Input<InputProps>> & {
+}: React.ComponentProps<typeof Field.Input> & {
   label?: string;
-} & any) {
+}) {
   return (
     <Field
       className={styles.root}

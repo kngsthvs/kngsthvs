@@ -12,7 +12,7 @@
 
 .root h3 {
   border-bottom: 1px solid var(--colors-gray-5);
-  padding: 1.25rem 1rem;
+  padding: 1.25rem 0.75rem;
   width: 100%;
   font-weight: 600;
   font-size: var(--fontSizes-2xl);

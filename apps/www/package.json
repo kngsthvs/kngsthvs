@@ -32,9 +32,8 @@
   "scripts": {
     "build": "next build",
     "dev": "next dev",
-    "lint": "eslint . --max-warnings 0",
     "postinstall": "basehub",
     "start": "next start"
   },
-  "version": "0.0.0"
+  "version": "0.0.1"
 }

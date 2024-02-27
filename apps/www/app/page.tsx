@@ -24,7 +24,6 @@ import { Social } from "./_components/social";
 import features from "./_data/features.json";
 import notes from "./_data/notes.json";
 import prices from "./_data/prices.json";
-import layoutStyles from "./layout.module.css";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
@@ -84,7 +83,7 @@ export default async function Page() {
 
   return (
     <AppProvider>
-      <div className={`dark ${layoutStyles.dark} ${layoutStyles.content}`}>
+      <div className={`dark ${styles.dark} ${styles.content}`}>
         <Header>
           <Aside ticker>
             <p>Ardens sed virens.</p>
@@ -131,12 +130,12 @@ export default async function Page() {
         </Header>
       </div>
 
-      <div className={layoutStyles.content}>
-        <main className={layoutStyles.main}>
+      <div className={styles.content}>
+        <main className={styles.main}>
           <Aside>
             <p className="desktop">Made for the glory of Christ.</p>
 
-            <ul className={`${layoutStyles.links} ${asideStyles.links}`}>
+            <ul className={`${styles.links} ${asideStyles.links}`}>
               {/* <Link href="https://crowsnest.kngsthvs.com">
                 <svg
                   width="24"
@@ -164,7 +163,6 @@ export default async function Page() {
           <Section {...work}>
             <div>
               <div className={styles.work}>
-                {/* @ts-expect-error ts(2786) */}
                 <RichText
                   blocks={work?.body?.json.blocks}
                   components={{
@@ -227,7 +225,7 @@ export default async function Page() {
             </div>
           </Section>
 
-          <footer className={layoutStyles.footer}>
+          <footer className={styles.footer}>
             <blockquote {...data}>
               <Balancer as="div">
                 <ReactMarkdown>{quote?.content?.markdown}</ReactMarkdown>
@@ -261,11 +259,11 @@ export default async function Page() {
                 </Social>
               </ul>
 
-              {/* <ul className={layoutStyles.links}>
+              {/* <ul className={styles.links}>
                 <Link href="/ops">Ops</Link>
                 <Link href="/docs">Docs</Link>
 
-                <li className={layoutStyles.external}>
+                <li className={styles.external}>
                   <Link href="https://alongj.org">
                     <img alt="Along Journal logo" src="/logos/along.svg" />
 

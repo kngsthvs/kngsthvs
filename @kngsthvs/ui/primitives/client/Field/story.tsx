@@ -1,3 +1,5 @@
+// organize-imports-ignore
+import * as React from "react";
 import { type Meta, type StoryObj } from "@storybook/react";
 import { parseDigit, templateFormatter, templateParser } from "input-format";
 import { Field } from "./index";

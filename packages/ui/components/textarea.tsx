@@ -4,11 +4,6 @@ import { Field } from "@kngsthvs/ui/primitives/client/field";
 import { RootLabel } from "./input";
 import styles from "./input.module.css";
 
-type InputProps = {
-  label?: string;
-  name: string;
-};
-
 export function Textarea({
   disabled,
   label,
@@ -16,7 +11,7 @@ export function Textarea({
   placeholder,
   required,
   ...props
-}: React.ComponentProps<typeof Field.Input<InputProps>> & {
+}: React.ComponentProps<typeof Field.Input> & {
   label?: string;
 } & any) {
   return (

@@ -18,16 +18,11 @@ export const metadata: Metadata = {
   title: "Kings & Thieves",
 };
 
-export default function RootLayout(props: {
-  children: React.ReactNode;
-  drawer: React.ReactNode;
-}) {
+export default function RootLayout(props: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <body className={`${GeistSans.className} ${cormorant.variable}`}>
         <link href="./favicon.svg" rel="icon" type="image/svg+xml" />
-
-        {props.drawer}
 
         {props.children}
 
