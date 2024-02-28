@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { type GetThemeReturn, type PrefersColorScheme } from "../../types";
 
 const Context = createContext<GetThemeReturn>({
@@ -8,6 +8,16 @@ const Context = createContext<GetThemeReturn>({
   name: "theme",
   value: "dark",
 });
+
+export function useTheme() {
+  const context = useContext(Theme.Context);
+
+  if (context === undefined) {
+    throw new Error("useTheme must be used within an Theme.Provider");
+  }
+
+  return context;
+}
 
 function Provider({
   children,
