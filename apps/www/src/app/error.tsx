@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-import { Heading } from "./_components/heading";
+import { Heading } from "./(home)/_components/heading";
 
 export default function Error({ error }: { error: Error }) {
   useEffect(() => {

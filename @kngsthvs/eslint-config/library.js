@@ -33,6 +33,8 @@ module.exports = {
   plugins: ["only-warn"],
   rules: {
     "@typescript-eslint/explicit-function-return-type": "off",
+    "import/order": "off",
+    "no-nested-ternary": "off",
   },
   settings: {
     "import/resolver": {

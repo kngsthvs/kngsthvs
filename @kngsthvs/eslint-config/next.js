@@ -34,6 +34,8 @@ module.exports = {
     "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/no-explicit-any": "off",
     "import/no-default-export": "off",
+    "import/order": "off",
+    "no-nested-ternary": "off",
     "sort-keys": ["warn", "asc", { natural: true }],
   },
   settings: {

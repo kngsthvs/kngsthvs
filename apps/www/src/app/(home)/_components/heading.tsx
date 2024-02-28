@@ -25,7 +25,7 @@ export function Heading({
         <hr />
       </div>
 
-      <Image alt="Chi Rho" height={80} priority src="/chi-rho.svg" width={80} />
+      <Image alt="Chi Rho" height={80} priority src="/icon.svg" width={80} />
 
       <div className="">
         <h1>{children}</h1>

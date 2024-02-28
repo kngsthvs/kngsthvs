@@ -1,5 +1,5 @@
 import { Analytics } from "@vercel/analytics/react";
-import { GeistSans } from "geist/font";
+import { GeistSans } from "geist/font/sans";
 import { type Metadata } from "next";
 import { Cormorant } from "next/font/google";
 import "ui/styles";
@@ -22,7 +22,7 @@ export default function RootLayout(props: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <body className={`${GeistSans.className} ${cormorant.variable}`}>
-        <link href="./favicon.svg" rel="icon" type="image/svg+xml" />
+        <link href="/favicon.svg" rel="icon" type="image/svg+xml" />
 
         {props.children}
 

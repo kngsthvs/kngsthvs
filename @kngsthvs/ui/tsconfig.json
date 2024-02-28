@@ -6,6 +6,7 @@
     "declarationMap": true,
     "incremental": false,
     "isolatedModules": false,
+    "jsx": "react-jsx",
     "moduleResolution": "Bundler",
     "noEmit": false
   },

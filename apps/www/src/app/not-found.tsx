@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Heading } from "./_components/heading";
+import { Heading } from "./(home)/_components/heading";
 
 export default function NotFound() {
   return (

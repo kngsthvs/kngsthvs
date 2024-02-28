@@ -2,7 +2,7 @@
   "extends": "@kngsthvs/tsconfig/nextjs.json",
   "compilerOptions": {
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./src/*"]
     },
     "plugins": [
       {
@@ -12,8 +12,9 @@
     "strictNullChecks": true
   },
   "include": [
+    ".eslintrc.js",
     "next-env.d.ts",
-    "next.config.js",
+    "next.config.mjs",
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts"
