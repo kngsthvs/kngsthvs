@@ -18,7 +18,7 @@ import { Children, cloneElement, useEffect, useRef, useState } from "react";
 import { useRafLoop } from "react-use";
 import { useMeasureDirty } from "../../../functions/client/hooks/useMeasureDirty";
 import { mapDataAttributes } from "../../../functions/shared/attributes";
-import { generateKey } from "../../../functions/shared/generateKey";
+import { generateKey } from "../../../functions/shared/generate-key";
 
 export type Direction = "down" | "left" | "right" | "up";
 

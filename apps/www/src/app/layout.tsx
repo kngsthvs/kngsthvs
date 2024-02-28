@@ -1,4 +1,5 @@
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { GeistSans } from "geist/font/sans";
 import { type Metadata } from "next";
 import { Cormorant } from "next/font/google";
@@ -26,7 +27,9 @@ export default function RootLayout(props: { children: React.ReactNode }) {
 
         {props.children}
 
+        {/* Vercel */}
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
