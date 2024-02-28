@@ -16,14 +16,14 @@ export function Link({
   return (
     <li className={`${styles.root} ${href === pathname ? styles.active : ""}`}>
       <LinkPrimitive
-        onClick={() =>
-          scroll &&
-          typeof window !== "undefined" &&
-          window.scrollTo({
-            behavior: "smooth",
-            top: height,
-          })
-        }
+        onClick={() => {
+          if (scroll && typeof window !== "undefined") {
+            window.scrollTo({
+              behavior: "smooth",
+              top: height,
+            });
+          }
+        }}
         {...{ href }}
       >
         {children}

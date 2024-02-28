@@ -1,6 +1,7 @@
 {
   "extends": "@kngsthvs/tsconfig/nextjs.json",
   "compilerOptions": {
+    "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
     },
