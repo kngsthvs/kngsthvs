@@ -61,11 +61,11 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "tsup --dts-only --dts-resolve",
     "build-storybook": "storybook build",
-    "publish-package": "pnpm build && changeset version && pnpm publish",
+    "publish-package": "pnpm types && changeset version && pnpm publish",
     "start": "next start",
-    "storybook": "storybook dev -p 6006"
+    "storybook": "storybook dev -p 6006",
+    "types": "tsup --dts-only --dts-resolve"
   },
   "types": "dist/*",
   "version": "0.13.1"

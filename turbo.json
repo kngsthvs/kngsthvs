@@ -5,7 +5,7 @@
     "build": {
       "dependsOn": ["^build"],
       "env": ["ANALYZE"],
-      "outputs": [".next/**", "!.next/cache/**", "dist/**"]
+      "outputs": [".next/**", "!.next/cache/**"]
     },
     "dev": {
       "cache": false,
@@ -13,6 +13,10 @@
     },
     "lint": {
       "dependsOn": ["^lint"]
+    },
+    "types": {
+      "dependsOn": ["^types"],
+      "outputs": ["dist/**"]
     }
   }
 }
