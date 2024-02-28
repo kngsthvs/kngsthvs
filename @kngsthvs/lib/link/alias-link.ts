@@ -1,4 +1,4 @@
-import { refineLink } from "./refineLink";
+import { refineLink } from "./refine-link";
 
 export function aliasLink({
   destination,

@@ -1,2 +1,2 @@
-export * from "./aliasLink";
-export * from "./refineLink";
+export * from "./alias-link";
+export * from "./refine-link";
