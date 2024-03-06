@@ -1,3 +1,8 @@
+/**
+ * @see https://developer.1password.com/docs/web/compatible-website-design/
+ * @see https://www.radix-ui.com/primitives/docs/components/form
+ */
+
 "use client";
 
 import * as LabelPrimitive from "@radix-ui/react-label";

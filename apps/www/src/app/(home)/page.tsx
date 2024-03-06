@@ -1,9 +1,10 @@
 import { mapDataAttributes } from "@kngsthvs/ui/functions/shared/attributes";
 import { Balancer } from "@kngsthvs/ui/packages/balancer";
 import { Link as LinkPrimitive } from "@kngsthvs/ui/primitives/shared/link";
-import { basehub } from "basehub";
-import { RichText } from "basehub/react";
+import { Pump } from "basehub/react-pump";
+import { RichText } from "basehub/react-rich-text";
 import { type Metadata } from "next";
+import { draftMode } from "next/headers";
 import Image from "next/image";
 import { default as NextLink } from "next/link";
 import { Fragment } from "react";
@@ -32,251 +33,282 @@ export const metadata: Metadata = {
   title: "Kings & Thieves",
 };
 
-export default async function Page() {
-  const { home, settings } = await basehub({ next: { revalidate: 60 } }).query({
-    __typename: true,
-    home: {
-      __typename: true,
-      _title: true,
-      heading: true,
-      sections: {
-        _title: true,
-        items: {
-          _title: true,
-          body: {
-            json: {
-              blocks: {
-                __typename: true,
-                _id: true,
-                href: true,
-                logo: { rawUrl: true },
-              },
-              content: true,
-            },
-          },
-          description: true,
-          id: true,
-        },
-      },
-    },
-    settings: {
-      __typename: true,
-      _title: true,
-      quotes: {
-        _title: true,
-        items: {
-          _title: true,
-          content: { markdown: true },
-          justify: true,
-          source: true,
-        },
-      },
-    },
-  });
-
-  const quote =
-    settings.quotes.items[
-      Math.floor(Math.random() * settings.quotes.items.length)
-    ];
-  const data = mapDataAttributes({ justify: quote?.justify });
-  const work = home.sections.items.find(({ id }) => id === "work");
-
+export default function Page() {
   return (
     <AppProvider>
-      <div className={`dark ${styles.dark} ${styles.content}`}>
-        <Header>
-          <Aside ticker>
-            <p>Ardens sed virens.</p>
-          </Aside>
+      <Pump
+        draft={draftMode().isEnabled}
+        next={{ revalidate: 60 }}
+        queries={[
+          {
+            home: {
+              __typename: true,
+              _title: true,
+              heading: true,
+              sections: {
+                _title: true,
+                items: {
+                  _title: true,
+                  body: {
+                    json: {
+                      blocks: {
+                        __typename: true,
+                        _id: true,
+                        href: true,
+                        logo: { rawUrl: true },
+                      },
+                      content: true,
+                    },
+                  },
+                  description: true,
+                  id: true,
+                },
+              },
+            },
+          },
+          {
+            settings: {
+              __typename: true,
+              _title: true,
+              quotes: {
+                _title: true,
+                items: {
+                  _title: true,
+                  content: { markdown: true },
+                  justify: true,
+                  source: true,
+                },
+              },
+            },
+          },
+        ]}
+      >
+        {async ([{ home }, { settings }]) => {
+          "use server"; // needs to be a Server Action
 
-          <nav className={backdropStyles.root}>
-            <NextLink href="/">
-              <Image
-                alt="Kings & Thieves icon"
-                height={36}
-                src="/icon.svg"
-                width={36}
-              />
+          const quote =
+            settings.quotes.items[
+              Math.floor(Math.random() * settings.quotes.items.length)
+            ];
+          const data = mapDataAttributes({ justify: quote?.justify });
+          const work = home.sections.items.find(({ id }) => id === "work");
 
-              <VisuallyHidden>Kings & Thieves</VisuallyHidden>
-            </NextLink>
+          return (
+            <>
+              <div className={`dark ${styles.dark} ${styles.content}`}>
+                <Header>
+                  <Aside ticker>
+                    <p>Ardens sed virens.</p>
+                  </Aside>
 
-            <ul>
-              {/* <Link href="/vision">Vision</Link>
-              <Link href="/residency">Residency</Link> */}
-            </ul>
-
-            <span>
-              <Button href="mailto:contact@kngsthvs.com" variant="secondary">
-                Contact us
-              </Button>
-
-              <Button href="/enter">Enter</Button>
-            </span>
-          </nav>
-
-          <section>
-            <Image alt="Chi Rho" height={512} src="/chi-rho.svg" width={512} />
-
-            <Image
-              alt="Kings & Thieves logo"
-              height={80}
-              src="word.svg"
-              width={512}
-            />
-
-            <VisuallyHidden>Kings & Thieves</VisuallyHidden>
-          </section>
-        </Header>
-      </div>
-
-      <div className={styles.content}>
-        <main className={styles.main}>
-          <Aside>
-            <p className="desktop">Made for the glory of Christ.</p>
-
-            <ul className={`${styles.links} ${asideStyles.links}`}>
-              {/* <Link href="https://crowsnest.kngsthvs.com">
-                <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M9.40109 20.5L5.62331 3.5H12H18.3767L14.5989 20.5H12H9.40109Z"
-                    stroke="black"
-                  />
-                  <path
-                    d="M6.36038 20.5L0.693713 3.5H23.3063L17.6396 20.5H6.36038Z"
-                    stroke="black"
-                  />
-                  <path d="M12 4V20" stroke="black" />
-                </svg>
-              </Link> */}
-            </ul>
-          </Aside>
-
-          {/* <Heading>{home.heading}</Heading> */}
-
-          <Section {...work}>
-            <div>
-              <div className={styles.work}>
-                <RichText
-                  blocks={work?.body?.json.blocks}
-                  components={{
-                    PartnerComponent: (props) => (
-                      <Partner
-                        data-fill={Boolean(
-                          Number(work?.body?.json.blocks.length) % 2 === 1,
-                        )}
-                        href={props.href}
-                        logo={props.logo}
+                  <nav className={backdropStyles.root}>
+                    <NextLink href="/">
+                      <Image
+                        alt="Kings & Thieves icon"
+                        height={36}
+                        src="/icon.svg"
+                        width={36}
                       />
-                    ),
-                  }}
-                >
-                  {work?.body?.json.content}
-                </RichText>
+
+                      <VisuallyHidden>Kings & Thieves</VisuallyHidden>
+                    </NextLink>
+
+                    <ul>
+                      {/* <Link href="/vision">Vision</Link>
+                      <Link href="/residency">Residency</Link> */}
+                    </ul>
+
+                    <span>
+                      <Button
+                        href="mailto:contact@kngsthvs.com"
+                        variant="secondary"
+                      >
+                        Contact us
+                      </Button>
+
+                      <Button href="/enter">Enter</Button>
+                    </span>
+                  </nav>
+
+                  <section>
+                    <Image
+                      alt="Chi Rho"
+                      height={512}
+                      src="/chi-rho.svg"
+                      width={512}
+                    />
+
+                    <Image
+                      alt="Kings & Thieves logo"
+                      height={80}
+                      src="word.svg"
+                      width={512}
+                    />
+
+                    <VisuallyHidden>Kings & Thieves</VisuallyHidden>
+                  </section>
+                </Header>
               </div>
 
-              <ul className={styles.apps}>
-                <App name="Crow’s Nest" path="crowsnest" />
-                <App />
-                <App />
-                <App />
-                <App />
-                <App />
-                <App />
-              </ul>
-            </div>
+              <div className={styles.content}>
+                <main className={styles.main}>
+                  <Aside>
+                    <p className="desktop">Made for the glory of Christ.</p>
 
-            <p style={{ maxWidth: "100%" }}>
-              <span>Have a project in mind? </span>
+                    <ul className={`${styles.links} ${asideStyles.links}`}>
+                      {/* <Link href="https://crowsnest.kngsthvs.com">
+                        <svg
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M9.40109 20.5L5.62331 3.5H12H18.3767L14.5989 20.5H12H9.40109Z"
+                            stroke="black"
+                          />
+                          <path
+                            d="M6.36038 20.5L0.693713 3.5H23.3063L17.6396 20.5H6.36038Z"
+                            stroke="black"
+                          />
+                          <path d="M12 4V20" stroke="black" />
+                        </svg>
+                      </Link> */}
+                    </ul>
+                  </Aside>
 
-              <LinkPrimitive href="/enter">Apply to enter {"->"}</LinkPrimitive>
-            </p>
-          </Section>
+                  {/* <Heading>{home.heading}</Heading> */}
 
-          <Section {...home.sections.items.find(({ id }) => id === "pricing")}>
-            <ul className={styles.prices}>
-              {prices.map((price) => (
-                <Price key={price.title} {...price} />
-              ))}
-            </ul>
+                  <Section {...work}>
+                    <div>
+                      <div className={styles.work}>
+                        <RichText
+                          blocks={work?.body?.json.blocks}
+                          components={{
+                            PartnerComponent: (props) => (
+                              <Partner
+                                data-fill={Boolean(
+                                  Number(work?.body?.json.blocks.length) % 2 ===
+                                    1,
+                                )}
+                                href={props.href}
+                                logo={props.logo}
+                              />
+                            ),
+                          }}
+                        >
+                          {work?.body?.json.content}
+                        </RichText>
+                      </div>
 
-            <ul className={styles.features}>
-              {features.map((feature) => (
-                <Feature key={feature}>{feature}</Feature>
-              ))}
-            </ul>
+                      <ul className={styles.apps}>
+                        <App name="Crow’s Nest" path="crowsnest" />
+                        <App />
+                        <App />
+                        <App />
+                        <App />
+                        <App />
+                        <App />
+                      </ul>
+                    </div>
 
-            <div className={styles.notes}>
-              {notes.map((note, index) => (
-                <Fragment key={note}>
-                  <sub>
-                    {Array.from(new Array(index + 1)).map(() => "†")} {note}
-                  </sub>
+                    <p style={{ maxWidth: "100%" }}>
+                      <span>Have a project in mind? </span>
 
-                  <br />
-                </Fragment>
-              ))}
-            </div>
-          </Section>
+                      <LinkPrimitive href="/enter">
+                        Apply to enter {"->"}
+                      </LinkPrimitive>
+                    </p>
+                  </Section>
 
-          <footer className={styles.footer}>
-            <blockquote {...data}>
-              <Balancer as="div">
-                <ReactMarkdown>{quote?.content?.markdown}</ReactMarkdown>
+                  <Section
+                    {...home.sections.items.find(({ id }) => id === "pricing")}
+                  >
+                    <ul className={styles.prices}>
+                      {prices.map((price) => (
+                        <Price key={price.title} {...price} />
+                      ))}
+                    </ul>
 
-                <footer>{quote?._title}</footer>
-              </Balancer>
-            </blockquote>
+                    <ul className={styles.features}>
+                      {features.map((feature) => (
+                        <Feature key={feature}>{feature}</Feature>
+                      ))}
+                    </ul>
 
-            <nav>
-              <ul className="list">
-                <Social href="https://github.com/kngsthvs">
-                  <Image
-                    alt="GitHub logo"
-                    height={24}
-                    src="/logos/github.svg"
-                    width={24}
-                  />
+                    <div className={styles.notes}>
+                      {notes.map((note, index) => (
+                        <Fragment key={note}>
+                          <sub>
+                            {Array.from(new Array(index + 1)).map(() => "†")}{" "}
+                            {note}
+                          </sub>
 
-                  <VisuallyHidden>GitHub</VisuallyHidden>
-                </Social>
+                          <br />
+                        </Fragment>
+                      ))}
+                    </div>
+                  </Section>
 
-                <Social href="https://x.com/kngsthvs">
-                  <Image
-                    alt="X logo"
-                    height={24}
-                    src="/logos/x.svg"
-                    width={24}
-                  />
+                  <footer className={styles.footer}>
+                    <blockquote {...data}>
+                      <Balancer as="div">
+                        <ReactMarkdown>
+                          {quote?.content?.markdown}
+                        </ReactMarkdown>
 
-                  <VisuallyHidden>X</VisuallyHidden>
-                </Social>
-              </ul>
+                        <footer>{quote?._title}</footer>
+                      </Balancer>
+                    </blockquote>
 
-              {/* <ul className={styles.links}>
-                <Link href="/ops">Ops</Link>
-                <Link href="/docs">Docs</Link>
+                    <nav>
+                      <ul className="list">
+                        <Social href="https://github.com/kngsthvs">
+                          <Image
+                            alt="GitHub logo"
+                            height={24}
+                            src="/logos/github.svg"
+                            width={24}
+                          />
 
-                <li className={styles.external}>
-                  <Link href="https://alongj.org">
-                    <img alt="Along Journal logo" src="/logos/along.svg" />
+                          <VisuallyHidden>GitHub</VisuallyHidden>
+                        </Social>
 
-                    <VisuallyHidden>Along</VisuallyHidden>
-                  </Link>
-                </li>
-              </ul> */}
-            </nav>
+                        <Social href="https://x.com/kngsthvs">
+                          <Image
+                            alt="X logo"
+                            height={24}
+                            src="/logos/x.svg"
+                            width={24}
+                          />
 
-            <p className="mobile">Made for the glory of Christ.</p>
-          </footer>
-        </main>
-      </div>
+                          <VisuallyHidden>X</VisuallyHidden>
+                        </Social>
+                      </ul>
+
+                      {/* <ul className={styles.links}>
+                        <Link href="/ops">Ops</Link>
+                        <Link href="/docs">Docs</Link>
+
+                        <li className={styles.external}>
+                          <Link href="https://alongj.org">
+                            <img alt="Along Journal logo" src="/logos/along.svg" />
+
+                            <VisuallyHidden>Along</VisuallyHidden>
+                          </Link>
+                        </li>
+                      </ul> */}
+                    </nav>
+
+                    <p className="mobile">Made for the glory of Christ.</p>
+                  </footer>
+                </main>
+              </div>
+            </>
+          );
+        }}
+      </Pump>
     </AppProvider>
   );
 }

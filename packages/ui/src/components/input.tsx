@@ -4,11 +4,6 @@ import { mapDataAttributes } from "@kngsthvs/ui/functions/shared/attributes";
 import { Field, useField } from "@kngsthvs/ui/primitives/client/field";
 import styles from "./input.module.css";
 
-type InputProps = {
-  label?: string;
-  name: string;
-};
-
 function RootInput(props: React.ComponentProps<typeof Field.Input>) {
   return <Field.Input className={styles.input} {...props} />;
 }

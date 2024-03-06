@@ -1,3 +1,4 @@
+import MillionCompiler from "@million/lint";
 import bundleAnalyzer from "@next/bundle-analyzer";
 
 const withBundleAnalyzer = bundleAnalyzer({
@@ -10,4 +11,4 @@ const nextConfig = {
   transpilePackages: ["@kngsthvs/ui", "ui"],
 };
 
-export default withBundleAnalyzer(nextConfig);
+export default withBundleAnalyzer(MillionCompiler.next()(nextConfig));

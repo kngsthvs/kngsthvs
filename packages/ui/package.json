@@ -14,6 +14,14 @@
     "eslint": "^8.56.0",
     "typescript": "^5"
   },
+  "exports": {
+    "./components": "./src/components/index.ts",
+    "./components/button": "./src/components/button.tsx",
+    "./components/input": "./src/components/input.tsx",
+    "./components/textarea": "./src/components/textarea.tsx",
+    "./styles": "./src/styles/index.ts",
+    "./styles/globals.css": "./src/styles/globals.css"
+  },
   "name": "ui",
   "private": true,
   "version": "0.0.0"
