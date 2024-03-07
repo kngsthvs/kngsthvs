@@ -36,6 +36,12 @@ module.exports = {
     "import/no-default-export": "off",
     "import/order": "off",
     "no-nested-ternary": "off",
+    "react/no-unknown-property": [
+      "error",
+      {
+        ignore: ["as", "data-", "tw", "vaul-drawer-wrapper"],
+      },
+    ],
     "sort-keys": ["warn", "asc", { natural: true }],
   },
   settings: {

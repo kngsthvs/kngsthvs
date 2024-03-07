@@ -34,6 +34,13 @@ module.exports = {
     "@typescript-eslint/explicit-function-return-type": "off",
     "import/order": "off",
     "no-nested-ternary": "off",
+    "react/no-unknown-property": [
+      "error",
+      {
+        ignore: ["as", "data-", "tw", "vaul-drawer-wrapper"],
+      },
+    ],
+    "sort-keys": ["warn", "asc", { natural: true }],
   },
   settings: {
     "import/resolver": {
