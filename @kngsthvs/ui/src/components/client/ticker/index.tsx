@@ -16,7 +16,7 @@ import {
 import normalizeWheel from "normalize-wheel";
 import { Children, cloneElement, useEffect, useRef, useState } from "react";
 import { useRafLoop } from "react-use";
-import { useMeasureDirty } from "../../../functions/client/hooks/useMeasureDirty";
+import { useMeasureDirty } from "../../../functions/client/hooks/use-measure-dirty";
 import { mapDataAttributes } from "../../../functions/shared/attributes";
 import { generateKey } from "../../../functions/shared/generate-key";
 
