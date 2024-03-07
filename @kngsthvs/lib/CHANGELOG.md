@@ -1,5 +1,11 @@
 # @kngsthvs/lib
 
+## 0.4.0
+
+### Minor Changes
+
+- Move to src
+
 ## 0.3.1
 
 ### Patch Changes

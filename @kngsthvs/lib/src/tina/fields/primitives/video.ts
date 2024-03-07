@@ -5,7 +5,7 @@ export const video: TinaField = {
     {
       description: "A link to an external Vimeo or YouTube video",
       label: "External URL",
-      name: "href",
+      name: "url",
       type: "string",
     },
     // {
