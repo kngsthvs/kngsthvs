@@ -1,5 +1,11 @@
 # @kngsthvs/ui
 
+## 0.14.1
+
+### Patch Changes
+
+- Fix lenis export
+
 ## 0.14.0
 
 ### Minor Changes
