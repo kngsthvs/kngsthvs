@@ -1,5 +1,11 @@
 # @kngsthvs/ui
 
+## 0.14.4
+
+### Patch Changes
+
+- Export default from Lenis
+
 ## 0.14.3
 
 ### Patch Changes

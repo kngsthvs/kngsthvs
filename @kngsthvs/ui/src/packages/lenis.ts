@@ -5,5 +5,7 @@
 
 "use client";
 
-export * as Lenis from "@studio-freight/lenis";
+import LenisRoot from "@studio-freight/lenis";
+
+export const Lenis = LenisRoot;
 export { ReactLenis, useLenis } from "@studio-freight/react-lenis";
