@@ -5,5 +5,5 @@
 
 "use client";
 
-export * from "@studio-freight/lenis";
+export * as Lenis from "@studio-freight/lenis";
 export { ReactLenis, useLenis } from "@studio-freight/react-lenis";
