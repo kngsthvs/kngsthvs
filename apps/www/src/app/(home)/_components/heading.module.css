@@ -31,14 +31,13 @@
 }
 
 .root h1 {
-  transform: scaleX(0.8);
   margin: 0 auto;
   width: 100%;
   font-weight: 400;
   font-size: var(--fontSizes-7xl);
   line-height: 100%;
   font-family: var(--fonts-heading);
-  letter-spacing: -0.0125em;
+  letter-spacing: -0.025em;
 }
 
 .root img {

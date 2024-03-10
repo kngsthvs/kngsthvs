@@ -9,9 +9,9 @@ export function App({ path, name }: { path?: string; name?: string }) {
         <Link href={`/${path}`}>
           <Image
             alt={`${name} icon`}
-            height={48}
+            height={24}
             src={`/apps/${path}.svg`}
-            width={48}
+            width={24}
           />
         </Link>
       ) : (

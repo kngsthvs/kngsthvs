@@ -1,3 +1,4 @@
+import settings from "@/data/settings.json";
 import { mapDataAttributes } from "@kngsthvs/ui/functions/shared/attributes";
 import { Balancer } from "@kngsthvs/ui/packages/balancer";
 import { Link as LinkPrimitive } from "@kngsthvs/ui/primitives/shared/link";
@@ -6,31 +7,23 @@ import { RichText } from "basehub/react-rich-text";
 import { type Metadata } from "next";
 import { draftMode } from "next/headers";
 import Image from "next/image";
-import { default as NextLink } from "next/link";
-import { Fragment } from "react";
+import Link from "next/link";
 import ReactMarkdown from "react-markdown";
 import { VisuallyHidden } from "ui/components";
 import { Button } from "ui/components/button";
 import { App } from "./_components/app";
 import { Aside } from "./_components/aside";
-import asideStyles from "./_components/aside.module.css";
 import backdropStyles from "./_components/backdrop.module.css";
 import { App as AppProvider } from "./_components/context";
-import { Feature } from "./_components/feature";
 import { Header } from "./_components/header";
 import { Partner } from "./_components/partner";
-import { Price } from "./_components/price";
 import { Section } from "./_components/section";
 import { Social } from "./_components/social";
-import features from "./_data/features.json";
-import notes from "./_data/notes.json";
-import prices from "./_data/prices.json";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
-  description:
-    "“There is nothing on this earth more to be prized than true friendship.” — St. Thomas Aquinas",
-  title: "Kings & Thieves",
+  description: settings.description,
+  title: settings.title,
 };
 
 export default function Page() {
@@ -45,6 +38,15 @@ export default function Page() {
               __typename: true,
               _title: true,
               heading: true,
+              quotes: {
+                _title: true,
+                items: {
+                  _title: true,
+                  content: { markdown: true },
+                  justify: true,
+                  source: true,
+                },
+              },
               sections: {
                 _title: true,
                 items: {
@@ -66,29 +68,14 @@ export default function Page() {
               },
             },
           },
-          {
-            settings: {
-              __typename: true,
-              _title: true,
-              quotes: {
-                _title: true,
-                items: {
-                  _title: true,
-                  content: { markdown: true },
-                  justify: true,
-                  source: true,
-                },
-              },
-            },
-          },
         ]}
       >
-        {async ([{ home }, { settings }]) => {
+        {async ([{ home }]) => {
           "use server"; // needs to be a Server Action
 
           const quote =
-            settings.quotes.items[
-              Math.floor(Math.random() * settings.quotes.items.length)
+            home.quotes.items[
+              Math.floor(Math.random() * home.quotes.items.length)
             ];
           const data = mapDataAttributes({ justify: quote?.justify });
           const work = home.sections.items.find(({ id }) => id === "work");
@@ -102,7 +89,7 @@ export default function Page() {
                   </Aside>
 
                   <nav className={backdropStyles.root}>
-                    <NextLink href="/">
+                    <Link href="/">
                       <Image
                         alt="Kings & Thieves icon"
                         height={36}
@@ -111,7 +98,7 @@ export default function Page() {
                       />
 
                       <VisuallyHidden>Kings & Thieves</VisuallyHidden>
-                    </NextLink>
+                    </Link>
 
                     <ul>
                       {/* <Link href="/vision">Vision</Link>
@@ -155,26 +142,14 @@ export default function Page() {
                   <Aside>
                     <p className="desktop">Made for the glory of Christ.</p>
 
-                    <ul className={`${styles.links} ${asideStyles.links}`}>
-                      {/* <Link href="https://crowsnest.kngsthvs.com">
-                        <svg
-                          width="24"
-                          height="24"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M9.40109 20.5L5.62331 3.5H12H18.3767L14.5989 20.5H12H9.40109Z"
-                            stroke="black"
-                          />
-                          <path
-                            d="M6.36038 20.5L0.693713 3.5H23.3063L17.6396 20.5H6.36038Z"
-                            stroke="black"
-                          />
-                          <path d="M12 4V20" stroke="black" />
-                        </svg>
-                      </Link> */}
+                    <ul className={`${styles.links} ${styles.rotate}`}>
+                      <App name="Crow’s Nest" path="crowsnest" />
+                      <App />
+                      <App />
+                      <App />
+                      <App />
+                      <App />
+                      <App />
                     </ul>
                   </Aside>
 
@@ -201,16 +176,6 @@ export default function Page() {
                           {work?.body?.json.content}
                         </RichText>
                       </div>
-
-                      <ul className={styles.apps}>
-                        <App name="Crow’s Nest" path="crowsnest" />
-                        <App />
-                        <App />
-                        <App />
-                        <App />
-                        <App />
-                        <App />
-                      </ul>
                     </div>
 
                     <p style={{ maxWidth: "100%" }}>
@@ -222,7 +187,7 @@ export default function Page() {
                     </p>
                   </Section>
 
-                  <Section
+                  {/* <Section
                     {...home.sections.items.find(({ id }) => id === "pricing")}
                   >
                     <ul className={styles.prices}>
@@ -249,7 +214,7 @@ export default function Page() {
                         </Fragment>
                       ))}
                     </div>
-                  </Section>
+                  </Section> */}
 
                   <footer className={styles.footer}>
                     <blockquote {...data}>

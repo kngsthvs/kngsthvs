@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "@kngsthvs/ui": "workspace:*",
-    "@million/lint": "^0.0.60",
+    "@million/lint": "^0.0.68",
     "@mux/mux-player-react": "^1.14.2",
     "@next/bundle-analyzer": "^13.4.19",
     "@radix-ui/react-visually-hidden": "^1.0.3",

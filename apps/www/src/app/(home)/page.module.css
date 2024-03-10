@@ -76,6 +76,17 @@
   gap: 1rem;
 }
 
+.main .links.rotate {
+  flex-direction: row-reverse;
+  width: 100%;
+}
+
+.main .links.rotate li {
+  transform: rotate(90deg);
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
 .footer ul li {
   display: inline-flex;
 }
@@ -120,18 +131,6 @@
   .prices {
     flex-direction: row;
   }
-}
-
-.apps {
-  display: flex;
-  justify-content: center;
-  gap: 1px;
-  box-sizing: border-box;
-  margin: 0 -2rem 2rem;
-  border-top: 1px solid var(--colors-background);
-  border-bottom: 1px solid transparent;
-  background-color: var(--colors-gray-5);
-  width: calc(100% + 4rem) !important;
 }
 
 .work {
