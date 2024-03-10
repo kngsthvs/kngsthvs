@@ -76,15 +76,19 @@
   gap: 1rem;
 }
 
-.main .links.rotate {
-  flex-direction: row-reverse;
-  width: 100%;
-}
-
 .main .links.rotate li {
-  transform: rotate(90deg);
   width: 1.5rem;
   height: 1.5rem;
+}
+
+@media screen and (min-width: 48rem) {
+  .main .links.rotate {
+    flex-direction: row-reverse;
+  }
+
+  .main .links.rotate li {
+    transform: rotate(90deg);
+  }
 }
 
 .footer ul li {
