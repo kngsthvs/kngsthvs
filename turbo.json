@@ -14,6 +14,12 @@
     "lint": {
       "dependsOn": ["^lint"]
     },
+    "storybook": {
+      "outputs": ["dist/**", "storybook-static/**"]
+    },
+    "storybook-build": {
+      "outputs": ["dist/**", "storybook-static/**"]
+    },
     "types": {
       "dependsOn": ["^types"],
       "outputs": ["dist/**"]

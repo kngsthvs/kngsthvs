@@ -70,7 +70,9 @@
     "./functions/types": "./src/functions/types.ts",
     "./packages/balancer": "./src/packages/balancer.ts",
     "./packages/cmdk": "./src/packages/cmdk.ts",
-    "./packages/drop": "./src/packages/drop.ts",
+    "./packages/commerce/drop": "./src/packages/commerce/drop.ts",
+    "./packages/commerce/sdk-gen": "./src/packages/commerce/sdk-gen.ts",
+    "./packages/commerce/storefront-hooks": "./src/packages/commerce/storefront-hooks.ts",
     "./packages/framer-motion": "./src/packages/framer-motion.ts",
     "./packages/gsap": "./src/packages/gsap.ts",
     "./packages/hcaptcha": "./src/packages/hcaptcha.ts",
@@ -103,12 +105,12 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build-storybook": "storybook build",
     "publish-package": "pnpm types && changeset version && pnpm publish",
     "start": "next start",
     "storybook": "storybook dev -p 6006",
+    "storybook-build": "storybook build",
     "types": "tsup --dts-only --dts-resolve"
   },
   "types": "dist/*",
-  "version": "0.14.1"
+  "version": "0.14.2"
 }

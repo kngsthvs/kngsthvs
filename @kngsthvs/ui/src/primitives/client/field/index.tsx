@@ -107,11 +107,10 @@ function Input(
     return (
       <InputFormat
         id={name}
-        onChange={(event: any) => {
+        onChange={(event) => {
           setField((value) => ({
             ...value,
-            value:
-              props && props.type === "format" ? event : event.target.value,
+            value: event as string,
           }));
         }}
         {...{

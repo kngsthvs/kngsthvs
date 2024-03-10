@@ -1,14 +1,15 @@
-// import { type Meta, type StoryObj } from "@storybook/react";
+import { type Meta /* type StoryObj */ } from "@storybook/react";
 // import { getFileType } from "../getFileType";
 
 // const meta: Meta<typeof getFileType> = {
-//   parameters: {
-//     layout: "centered",
-//   },
-//   title: "Functions/Shared/getFileType",
-// };
+const meta: Meta = {
+  parameters: {
+    layout: "centered",
+  },
+  title: "Functions/Shared/getFileType",
+};
 
-// export default meta;
+export default meta;
 
 // type FileType = {
 //   name: string;

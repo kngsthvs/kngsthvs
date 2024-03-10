@@ -1,5 +1,11 @@
 # @kngsthvs/ui
 
+## 0.14.2
+
+### Patch Changes
+
+- Fix InputFormat field
+
 ## 0.14.1
 
 ### Patch Changes
