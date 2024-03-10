@@ -1,5 +1,11 @@
 # @kngsthvs/ui
 
+## 0.14.5
+
+### Patch Changes
+
+- Add void to minDelay promise type
+
 ## 0.14.4
 
 ### Patch Changes
