@@ -1,0 +1,33 @@
+.root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  background-color: var(--colors-background);
+  width: 100%;
+  height: 100dvh;
+  color: var(--colors-gray-10);
+  font-weight: 100;
+  font-size: 4rem;
+}
+
+.root img {
+  filter: invert(1);
+  pointer-events: none;
+  user-select: none;
+}
+
+.root img:last-child {
+  width: auto;
+  height: 4rem;
+}
+
+.root p {
+  position: fixed;
+  bottom: 1rem;
+  color: var(--colors-gray-50);
+  font-weight: 400;
+  font-size: var(--fontSizes-base);
+  font-family: var(--fonts-body);
+  text-align: center;
+}

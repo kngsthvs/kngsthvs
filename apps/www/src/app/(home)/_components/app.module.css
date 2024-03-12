@@ -13,7 +13,7 @@
   aspect-ratio: 1 / 1;
 }
 
-.root > a img {
+.root > a svg {
   opacity: 0.25;
   transition: 0.6s opacity var(--ease);
   width: 100%;
@@ -37,6 +37,6 @@
   content: "";
 }
 
-.root:hover > a img {
+.root:hover > a svg {
   opacity: 1;
 }
