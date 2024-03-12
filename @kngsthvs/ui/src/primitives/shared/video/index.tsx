@@ -1,20 +1,31 @@
-export function Video({ playbackId, ...props }: { playbackId: string }) {
+export function Video({
+  poster,
+  playbackId,
+  src,
+  ...props
+}: {
+  poster?: string;
+  playbackId?: string;
+  src?: string;
+} & React.HTMLAttributes<HTMLVideoElement>) {
   return (
     <video
       autoPlay
       loop
       muted
       playsInline
-      poster={`https://image.mux.com/${playbackId}/thumbnail.webp?time=0`}
+      poster={
+        poster ?? `https://image.mux.com/${playbackId}/thumbnail.webp?time=0`
+      }
       preload="none"
       {...props}
     >
       <source
-        src={`https://stream.mux.com/${playbackId}/high.mp4`}
+        src={src ?? `https://stream.mux.com/${playbackId}/high.mp4`}
         type="video/mp4"
       />
       <source
-        src={`https://stream.mux.com/${playbackId}/high.webm`}
+        src={src ?? `https://stream.mux.com/${playbackId}/high.webm`}
         type="video/webm"
       />
     </video>

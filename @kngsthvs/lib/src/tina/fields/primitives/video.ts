@@ -8,6 +8,12 @@ export const video: TinaField = {
       name: "url",
       type: "string",
     },
+    {
+      description: "The poster image for the video",
+      label: "Poster",
+      name: "poster",
+      type: "image",
+    },
     // {
     //   label: "Source",
     //   name: "src",

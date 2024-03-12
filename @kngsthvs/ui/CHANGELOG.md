@@ -1,5 +1,11 @@
 # @kngsthvs/ui
 
+## 0.14.6
+
+### Patch Changes
+
+- Update Video prop types
+
 ## 0.14.5
 
 ### Patch Changes
