@@ -25,6 +25,7 @@
     "eslint": "^8.56.0",
     "eslint-plugin-storybook": "^0.6.12",
     "storybook": "^7.0.20",
+    "tsup": "^8.0.2",
     "typescript": "^5.3.3"
   },
   "exports": {
@@ -48,8 +49,8 @@
     "build-storybook": "storybook build",
     "publish-package": "pnpm types && changeset version && pnpm publish",
     "storybook": "storybook dev -p 6006",
-    "types": "tsc --outFile index.d.ts --emitDeclarationOnly --declaration"
+    "types": "tsup --dts-only --dts-resolve"
   },
-  "types": "index.d.ts",
-  "version": "0.4.0"
+  "types": "dist/*",
+  "version": "0.4.1"
 }

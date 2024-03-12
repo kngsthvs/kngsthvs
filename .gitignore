@@ -2,6 +2,7 @@
 
 # Build outputs
 .next/
+analyze/
 out/
 build
 dist

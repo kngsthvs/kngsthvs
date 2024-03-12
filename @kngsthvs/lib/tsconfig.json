@@ -1,9 +1,10 @@
 {
   "extends": "@kngsthvs/tsconfig/nextjs.json",
   "compilerOptions": {
-    "composite": false,
+    "baseUrl": ".",
     "declaration": true,
     "declarationMap": true,
+    "incremental": false,
     "isolatedModules": false,
     "noEmit": false
   },
