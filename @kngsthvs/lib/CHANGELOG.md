@@ -1,5 +1,11 @@
 # @kngsthvs/lib
 
+## 0.4.2
+
+### Patch Changes
+
+- Fix cloudinary loader export
+
 ## 0.4.1
 
 ### Patch Changes

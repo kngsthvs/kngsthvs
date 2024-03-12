@@ -31,7 +31,7 @@
   "exports": {
     "./calendar/add-to-calendar": "./src/calendar/add-to-calendar.ts",
     "./link": "./src/link/index.ts",
-    "./loaders/cloudinary": "./src/loaders/cloundinary.ts",
+    "./loaders/cloudinary": "./src/loaders/cloudinary.ts",
     "./schemas": "./src/schemas/index.ts",
     "./tina/fields": "./src/tina/fields/index.ts",
     "./types/union-autocomplete": "./src/types/union-autocomplete.ts",
@@ -52,5 +52,5 @@
     "types": "tsup --dts-only --dts-resolve"
   },
   "types": "dist/*",
-  "version": "0.4.1"
+  "version": "0.4.2"
 }
