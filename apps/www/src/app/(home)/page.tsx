@@ -82,6 +82,8 @@ export default function Page() {
                         <Image
                           alt="Kings & Thieves icon"
                           height={36}
+                          loading="eager"
+                          priority
                           src="/icon.svg"
                           width={36}
                         />
@@ -119,6 +121,7 @@ export default function Page() {
                     <Image
                       alt="Chi Rho"
                       height={512}
+                      loading="eager"
                       src="/chi-rho.svg"
                       width={512}
                     />
@@ -126,6 +129,7 @@ export default function Page() {
                     <Image
                       alt="Kings & Thieves logo"
                       height={80}
+                      loading="eager"
                       src="word.svg"
                       width={512}
                     />
