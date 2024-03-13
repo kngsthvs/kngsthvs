@@ -1,0 +1,49 @@
+.root {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 2rem;
+  height: 100vh;
+}
+
+.root a,
+.root button {
+  color: var(--colors-primary);
+}
+
+.root button:hover {
+  text-decoration: underline;
+}
+
+.root div,
+.root span {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  line-height: 100%;
+}
+
+.root * {
+  font-size: var(--fontSizes-base);
+  line-height: 100%;
+}
+
+.root h1 {
+  font-size: var(--fontSizes-3xl);
+}
+
+.root img {
+  width: 3rem;
+  height: 3rem;
+}
+
+.root p {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.5rem;
+  width: 100%;
+  color: var(--colors-gray-50);
+}

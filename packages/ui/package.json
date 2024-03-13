@@ -2,9 +2,11 @@
   "dependencies": {
     "@kngsthvs/ui": "workspace:*",
     "@radix-ui/react-visually-hidden": "^1.0.3",
+    "next": "^14.1.3",
     "react": "^18",
     "react-dom": "^18",
-    "react-split-grid": "^1.0.4"
+    "react-split-grid": "^1.0.4",
+    "react-use": "^17.5.0"
   },
   "devDependencies": {
     "@kngsthvs/eslint-config": "workspace:*",
@@ -18,6 +20,7 @@
     "./components": "./src/components/index.ts",
     "./components/button": "./src/components/button.tsx",
     "./components/input": "./src/components/input.tsx",
+    "./components/link": "./src/components/link.tsx",
     "./components/textarea": "./src/components/textarea.tsx",
     "./styles": "./src/styles/index.ts",
     "./styles/globals.css": "./src/styles/globals.css"

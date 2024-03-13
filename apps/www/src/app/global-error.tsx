@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-import { Heading } from "./(home)/_components/heading";
+import { Error } from "./_components/error";
 
 export default function GlobalError({ error }: { error: Error }) {
   useEffect(() => {
@@ -11,24 +11,18 @@ export default function GlobalError({ error }: { error: Error }) {
   return (
     <html lang="en">
       <body>
-        <Heading
-          description={
-            <span>
-              Something went wrong while you were working.
-              <br />
-              <button
-                onClick={() => {
-                  window.location.reload();
-                }}
-                type="button"
-              >
-                ↺ Reload page
-              </button>
-            </span>
-          }
-        >
-          Global Error
-        </Heading>
+        <Error title="Global Error">
+          <span>Something went wrong while you were working.</span>
+
+          <button
+            onClick={() => {
+              window.location.reload();
+            }}
+            type="button"
+          >
+            Reload page
+          </button>
+        </Error>
       </body>
     </html>
   );

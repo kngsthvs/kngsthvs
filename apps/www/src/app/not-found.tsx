@@ -1,18 +1,12 @@
 import Link from "next/link";
-import { Heading } from "./(home)/_components/heading";
+import { Error } from "./_components/error";
 
 export default function NotFound() {
   return (
-    <Heading
-      description={
-        <span>
-          The page you were looking for could not be found.
-          <br />
-          <Link href="/">Return home {"->"}</Link>
-        </span>
-      }
-    >
-      Not Found
-    </Heading>
+    <Error title="Not Found">
+      <span>The page you were looking for could not be found.</span>
+
+      <Link href="/">Return home</Link>
+    </Error>
   );
 }

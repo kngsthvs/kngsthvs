@@ -1,27 +1,35 @@
 .root {
   display: flex;
   justify-content: center;
-  transition: background-color 0.3s var(--ease);
+  align-items: center;
+  gap: 0.25rem;
+  transition:
+    background-color 0.3s var(--ease),
+    border-color 0.3s var(--ease),
+    color 0.3s var(--ease);
+  border: 1px solid transparent;
   background-color: var(--colors-primary);
-  color: var(--colors-white);
-  text-align: center;
+  color: var(--colors-gray-50);
 }
 
-a.root:hover {
+a.root:active span,
+a.root:focus-visible span,
+a.root:hover span,
+a.root[data-pressed="true"] span {
   text-decoration: underline;
 }
 
 .root[data-size="small"] {
-  padding: 0.25rem 0.75rem;
+  padding: 0.25rem 0.5rem;
   font-size: var(--fontSizes-sm);
 }
 
 .root[data-size="medium"] {
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 0.75rem;
 }
 
 .root[data-size="large"] {
-  padding: 0.75rem 1.5rem;
+  padding: 0.75rem 1.25rem;
   font-size: var(--fontSizes-lg);
 }
 
@@ -31,7 +39,8 @@ a.root:hover {
 }
 
 .root[data-variant="primary"]:focus-visible,
-.root[data-variant="primary"]:hover {
+.root[data-variant="primary"]:hover,
+.root[data-variant="primary"][data-pressed="true"] {
   background-color: var(--colors-gray-75);
 }
 
@@ -40,15 +49,35 @@ a.root:hover {
 }
 
 .root[data-variant="secondary"] {
+  border-color: var(--colors-gray-5);
   background-color: var(--colors-gray-0);
-  font-weight: 300;
+  color: var(--colors-gray-50);
 }
 
 .root[data-variant="secondary"]:focus-visible,
-.root[data-variant="secondary"]:hover {
-  background-color: var(--colors-gray-10);
+.root[data-variant="secondary"]:hover,
+.root[data-variant="secondary"][data-pressed="true"] {
+  border-color: var(--colors-gray-10);
+  background-color: var(--colors-gray-5);
+  color: var(--colors-gray-75);
 }
 
 .root[data-variant="secondary"]:active {
-  background-color: var(--colors-gray-25);
+  border-color: var(--colors-gray-25);
+  background-color: var(--colors-gray-10);
+  color: var(--colors-foreground);
+}
+
+:global(.dark) .root[data-variant="secondary"] {
+  border-color: var(--colors-gray-10);
+}
+
+:global(.dark) .root[data-variant="secondary"]:focus-visible,
+:global(.dark) .root[data-variant="secondary"]:hover,
+:global(.dark) .root[data-variant="secondary"][data-pressed="true"] {
+  border-color: var(--colors-gray-25);
+}
+
+:global(.dark) .root[data-variant="secondary"]:active {
+  border-color: var(--colors-gray-50);
 }

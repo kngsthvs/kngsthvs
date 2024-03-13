@@ -10,6 +10,11 @@
   scroll-behavior: smooth;
 }
 
+kbd {
+  font-size: var(--fontSizes-sm);
+  font-family: var(--font-geist-mono);
+}
+
 .dark {
   --colors-background: #000000;
   --colors-foreground: #ffffff;

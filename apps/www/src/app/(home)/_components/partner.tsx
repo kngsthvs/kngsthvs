@@ -8,8 +8,8 @@ export function Partner({
   logo,
   ...props
 }: {
-  href: string | null;
-  logo: { alt?: string | null; rawUrl: string } | null;
+  href?: string | null;
+  logo?: { alt?: string | null; rawUrl: string } | null;
 }) {
   return (
     <li className={`${styles.root} ${appStyles.partner}`} {...props}>

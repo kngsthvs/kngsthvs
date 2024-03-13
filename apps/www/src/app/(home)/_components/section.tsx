@@ -1,24 +1,22 @@
+import Link from "next/link";
 import styles from "./section.module.css";
 
 export function Section({
-  _title,
   children,
-  description,
+  href,
   ...props
 }: {
-  _title?: string;
   children: React.ReactNode;
-  description?: string | null;
+  href: string;
+  title: string;
 }) {
   return (
-    <section
-      className={styles.root}
-      id={_title?.toLowerCase().split(" ").join("-")}
-      {...props}
-    >
-      <h2>{_title}</h2>
+    <section className={styles.root} {...props}>
+      <div>
+        <h2>{props.title}</h2>
 
-      <p>{description}</p>
+        <Link {...{ href }}>View all</Link>
+      </div>
 
       {children}
     </section>

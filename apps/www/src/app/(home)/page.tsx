@@ -1,21 +1,21 @@
 import settings from "@/data/settings.json";
 import { mapDataAttributes } from "@kngsthvs/ui/functions/shared/attributes";
 import { Balancer } from "@kngsthvs/ui/packages/balancer";
-import { Link as LinkPrimitive } from "@kngsthvs/ui/primitives/shared/link";
 import { Pump } from "basehub/react-pump";
-import { RichText } from "basehub/react-rich-text";
 import { type Metadata } from "next";
 import { draftMode } from "next/headers";
 import Image from "next/image";
-import Link from "next/link";
+import NextLink from "next/link";
 import ReactMarkdown from "react-markdown";
 import { VisuallyHidden } from "ui/components";
 import { Button } from "ui/components/button";
+import { Link } from "ui/components/link";
 import { App } from "./_components/app";
 import { Aside } from "./_components/aside";
 import backdropStyles from "./_components/backdrop.module.css";
 import { App as AppProvider } from "./_components/context";
 import { Header } from "./_components/header";
+import headerStyles from "./_components/header.module.css";
 import { Partner } from "./_components/partner";
 import { Section } from "./_components/section";
 import { Social } from "./_components/social";
@@ -38,6 +38,14 @@ export default function Page() {
               __typename: true,
               _title: true,
               heading: true,
+              partners: {
+                _title: true,
+                items: {
+                  _title: true,
+                  href: true,
+                  logo: { rawUrl: true },
+                },
+              },
               quotes: {
                 _title: true,
                 items: {
@@ -45,25 +53,6 @@ export default function Page() {
                   content: { markdown: true },
                   justify: true,
                   source: true,
-                },
-              },
-              sections: {
-                _title: true,
-                items: {
-                  _title: true,
-                  body: {
-                    json: {
-                      blocks: {
-                        __typename: true,
-                        _id: true,
-                        href: true,
-                        logo: { rawUrl: true },
-                      },
-                      content: true,
-                    },
-                  },
-                  description: true,
-                  id: true,
                 },
               },
             },
@@ -78,7 +67,6 @@ export default function Page() {
               Math.floor(Math.random() * home.quotes.items.length)
             ];
           const data = mapDataAttributes({ justify: quote?.justify });
-          const work = home.sections.items.find(({ id }) => id === "work");
 
           return (
             <>
@@ -89,31 +77,41 @@ export default function Page() {
                   </Aside>
 
                   <nav className={backdropStyles.root}>
-                    <Link href="/">
-                      <Image
-                        alt="Kings & Thieves icon"
-                        height={36}
-                        src="/icon.svg"
-                        width={36}
-                      />
+                    <div>
+                      <NextLink className={headerStyles.icon} href="/">
+                        <Image
+                          alt="Kings & Thieves icon"
+                          height={36}
+                          src="/icon.svg"
+                          width={36}
+                        />
 
-                      <VisuallyHidden>Kings & Thieves</VisuallyHidden>
-                    </Link>
+                        <VisuallyHidden>Kings & Thieves</VisuallyHidden>
+                      </NextLink>
 
-                    <ul>
-                      {/* <Link href="/vision">Vision</Link>
-                      <Link href="/residency">Residency</Link> */}
-                    </ul>
+                      <ul>
+                        <Link href="/vision" keyName="v">
+                          Vision
+                        </Link>
+
+                        {/* <Link href="/residency" keyName="r">
+                        Residency
+                      </Link> */}
+                      </ul>
+                    </div>
 
                     <span>
                       <Button
                         href="mailto:contact@kngsthvs.com"
+                        keyName="c"
                         variant="secondary"
                       >
                         Contact us
                       </Button>
 
-                      <Button href="/enter">Enter</Button>
+                      <Button href="/partner" keyName="p">
+                        Partner
+                      </Button>
                     </span>
                   </nav>
 
@@ -144,77 +142,29 @@ export default function Page() {
 
                     <ul className={`${styles.links} ${styles.rotate}`}>
                       <App name="Crow’s Nest" path="crowsnest" />
+                      {/* <App />
                       <App />
                       <App />
                       <App />
                       <App />
-                      <App />
-                      <App />
+                      <App /> */}
                     </ul>
                   </Aside>
 
-                  {/* <Heading>{home.heading}</Heading> */}
-
-                  <Section {...work}>
-                    <div>
-                      <div className={styles.work}>
-                        <RichText
-                          blocks={work?.body?.json.blocks}
-                          components={{
-                            PartnerComponent: (props) => (
-                              <Partner
-                                data-fill={Boolean(
-                                  Number(work?.body?.json.blocks.length) % 2 ===
-                                    1,
-                                )}
-                                href={props.href}
-                                logo={props.logo}
-                              />
-                            ),
-                          }}
-                        >
-                          {work?.body?.json.content}
-                        </RichText>
-                      </div>
+                  <Section href="/partners" title="Partners">
+                    <div className={styles.work}>
+                      {home.partners.items.map((partner) => (
+                        <Partner
+                          data-fill={Boolean(
+                            Number(home.partners.items.length) % 2 === 1,
+                          )}
+                          href={partner.href}
+                          key={partner.href}
+                          logo={partner.logo}
+                        />
+                      ))}
                     </div>
-
-                    <p style={{ maxWidth: "100%" }}>
-                      <span>Have a project in mind? </span>
-
-                      <LinkPrimitive href="/enter">
-                        Apply to enter {"->"}
-                      </LinkPrimitive>
-                    </p>
                   </Section>
-
-                  {/* <Section
-                    {...home.sections.items.find(({ id }) => id === "pricing")}
-                  >
-                    <ul className={styles.prices}>
-                      {prices.map((price) => (
-                        <Price key={price.title} {...price} />
-                      ))}
-                    </ul>
-
-                    <ul className={styles.features}>
-                      {features.map((feature) => (
-                        <Feature key={feature}>{feature}</Feature>
-                      ))}
-                    </ul>
-
-                    <div className={styles.notes}>
-                      {notes.map((note, index) => (
-                        <Fragment key={note}>
-                          <sub>
-                            {Array.from(new Array(index + 1)).map(() => "†")}{" "}
-                            {note}
-                          </sub>
-
-                          <br />
-                        </Fragment>
-                      ))}
-                    </div>
-                  </Section> */}
 
                   <footer className={styles.footer}>
                     <blockquote {...data}>
@@ -253,15 +203,15 @@ export default function Page() {
                       </ul>
 
                       {/* <ul className={styles.links}>
-                        <Link href="/ops">Ops</Link>
-                        <Link href="/docs">Docs</Link>
+                        <NextLink href="/ops">Ops</Link>
+                        <NextLink href="/docs">Docs</Link>
 
                         <li className={styles.external}>
-                          <Link href="https://alongj.org">
+                          <NextLink href="https://alongj.org">
                             <img alt="Along Journal logo" src="/logos/along.svg" />
 
                             <VisuallyHidden>Along</VisuallyHidden>
-                          </Link>
+                          </NextLink>
                         </li>
                       </ul> */}
                     </nav>
@@ -269,6 +219,14 @@ export default function Page() {
                     <p className="mobile">Made for the glory of Christ.</p>
                   </footer>
                 </main>
+
+                <nav>
+                  <ul>
+                    <li></li>
+                  </ul>
+
+                  <p>&copy; {new Date().getFullYear()} Kings & Thieves</p>
+                </nav>
               </div>
             </>
           );

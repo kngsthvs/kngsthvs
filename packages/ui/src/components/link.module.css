@@ -1,0 +1,25 @@
+.root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.25rem;
+  transition: color 0.3s var(--ease);
+  color: var(--colors-gray-50);
+}
+
+a.root:active span,
+a.root:focus-visible span,
+a.root:hover span,
+a.root[data-pressed="true"] span {
+  text-decoration: underline;
+}
+
+.root:focus-visible,
+.root:hover,
+.root[data-pressed="true"] {
+  color: var(--colors-gray-75);
+}
+
+.root:active {
+  color: var(--colors-foreground);
+}

@@ -9,7 +9,7 @@ export const video: TinaField = {
       type: "string",
     },
     {
-      description: "The poster image for the video",
+      description: "The image that shows while the video is loading",
       label: "Poster",
       name: "poster",
       type: "image",
