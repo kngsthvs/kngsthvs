@@ -92,13 +92,17 @@ export default function Page() {
                       </NextLink>
 
                       <ul>
-                        <Link href="/vision" keyName="v">
-                          Vision
-                        </Link>
+                        <li>
+                          <Link href="/vision" keyName="v">
+                            Vision
+                          </Link>
+                        </li>
 
-                        {/* <Link href="/residency" keyName="r">
-                        Residency
-                      </Link> */}
+                        {/* <li>
+                          <Link href="/residency" keyName="r">
+                            Residency
+                          </Link>
+                        </li> */}
                       </ul>
                     </div>
 
@@ -156,7 +160,7 @@ export default function Page() {
                   </Aside>
 
                   <Section href="/partners" title="Partners">
-                    <div className={styles.work}>
+                    <ul className={styles.work}>
                       {home.partners.items.map((partner) => (
                         <Partner
                           data-fill={Boolean(
@@ -167,7 +171,7 @@ export default function Page() {
                           logo={partner.logo}
                         />
                       ))}
-                    </div>
+                    </ul>
                   </Section>
 
                   <footer className={styles.footer}>

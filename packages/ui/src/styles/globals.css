@@ -3,8 +3,7 @@
 :root {
   --colors-background: #ffffff;
   --colors-foreground: #000000;
-  --colors-primary: #408fff;
-  --colors-primary-dark: #0069ff;
+  --colors-primary: #006aff;
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
 
   scroll-behavior: smooth;

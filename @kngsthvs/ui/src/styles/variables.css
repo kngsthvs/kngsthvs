@@ -15,7 +15,8 @@
   --colors-gray-75: rgba(0, 0, 0, 0.75);
   --colors-gray-70: rgba(0, 0, 0, 0.7);
   --colors-gray-60: rgba(0, 0, 0, 0.6);
-  --colors-gray-50: rgba(0, 0, 0, 0.5);
+  /* Set to more than 0.5 for accessibility */
+  --colors-gray-50: rgba(0, 0, 0, 0.54);
   --colors-gray-40: rgba(0, 0, 0, 0.4);
   --colors-gray-30: rgba(0, 0, 0, 0.3);
   --colors-gray-25: rgba(0, 0, 0, 0.25);

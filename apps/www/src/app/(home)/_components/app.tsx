@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { VisuallyHidden } from "ui/components";
 import styles from "./app.module.css";
 
 function Icon({ path }: { path?: string }) {
@@ -67,6 +68,8 @@ export function App({ path, name }: { path?: string; name?: string }) {
       {name ? (
         <Link href={`/${path}`}>
           <Icon {...{ path }} />
+
+          <VisuallyHidden>{name}</VisuallyHidden>
         </Link>
       ) : (
         <div />

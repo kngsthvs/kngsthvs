@@ -89,7 +89,6 @@
 .main section a:not([class]):active,
 .main section a:not([class]):focus-visible,
 .main section a:not([class]):hover {
-  color: var(--colors-primary-dark);
   text-decoration: underline;
 }
 
