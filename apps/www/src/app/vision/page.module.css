@@ -35,9 +35,8 @@
 .content p {
   color: var(--colors-gray-60);
   font-size: var(--fontSizes-lg);
-  line-height: 180%;
+  line-height: 160%;
   font-family: var(--fonts-heading);
-  text-align: justify;
 }
 
 .content p:not(:first-child) {
