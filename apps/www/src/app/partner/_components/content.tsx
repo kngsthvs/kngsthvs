@@ -12,7 +12,7 @@ export function Content({ children }: { children: React.ReactNode }) {
       next={{ revalidate: 60 }}
       queries={[
         {
-          enter: {
+          partner: {
             __typename: true,
             _title: true,
             opening: {
@@ -24,7 +24,7 @@ export function Content({ children }: { children: React.ReactNode }) {
         },
       ]}
     >
-      {async ([{ enter }]) => {
+      {async ([{ partner }]) => {
         "use server"; // needs to be a Server Action
 
         return (
@@ -39,7 +39,7 @@ export function Content({ children }: { children: React.ReactNode }) {
             </Link>
 
             <div>
-              <RichText>{enter.opening?.json.content}</RichText>
+              <RichText>{partner.opening?.json.content}</RichText>
             </div>
 
             {children}

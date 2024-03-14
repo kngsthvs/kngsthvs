@@ -1,13 +1,13 @@
-export function Video({
-  poster,
-  playbackId,
-  src,
-  ...props
-}: {
-  poster?: string;
-  playbackId?: string;
-  src?: string;
-} & React.HTMLAttributes<HTMLVideoElement>) {
+import { forwardRef } from "react";
+
+export const Video = forwardRef<
+  HTMLVideoElement,
+  {
+    poster?: string;
+    playbackId?: string;
+    src?: string;
+  } & React.HTMLAttributes<HTMLVideoElement>
+>(({ poster, playbackId, src, ...props }, ref) => {
   return (
     <video
       autoPlay
@@ -18,7 +18,7 @@ export function Video({
         poster ?? `https://image.mux.com/${playbackId}/thumbnail.webp?time=0`
       }
       preload="none"
-      {...props}
+      {...{ ref, ...props }}
     >
       <source
         src={src ?? `https://stream.mux.com/${playbackId}/high.mp4`}
@@ -30,4 +30,6 @@ export function Video({
       />
     </video>
   );
-}
+});
+
+Video.displayName = "Video";
