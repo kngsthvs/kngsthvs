@@ -93,13 +93,13 @@ export default function Page() {
 
                       <ul>
                         <li>
-                          <Link href="/vision" keyName="v">
+                          <Link href="/vision" keys="v">
                             Vision
                           </Link>
                         </li>
 
                         {/* <li>
-                          <Link href="/residency" keyName="r">
+                          <Link href="/residency" keys="r">
                             Residency
                           </Link>
                         </li> */}
@@ -109,13 +109,13 @@ export default function Page() {
                     <span>
                       <Button
                         href="mailto:contact@kngsthvs.com"
-                        keyName="c"
+                        keys="c"
                         variant="secondary"
                       >
                         Contact us
                       </Button>
 
-                      <Button href="/partner" keyName="p">
+                      <Button href="/partner" keys="p">
                         Partner
                       </Button>
                     </span>
@@ -148,18 +148,22 @@ export default function Page() {
                   <Aside>
                     <p className="desktop">Made for the glory of Christ.</p>
 
-                    <ul className={`${styles.links} ${styles.rotate}`}>
-                      <App name="Crow’s Nest" path="crowsnest" />
-                      {/* <App />
+                    <div>
+                      <ul className={`${styles.links} ${styles.rotate}`}>
+                        <App name="Crow’s Nest" path="crowsnest" />
+                        {/* <App />
                       <App />
                       <App />
                       <App />
                       <App />
                       <App /> */}
-                    </ul>
+                      </ul>
+
+                      <kbd>[a]</kbd>
+                    </div>
                   </Aside>
 
-                  <Section href="/partners" title="Partners">
+                  <Section href="/partners" keys="p" title="Partners">
                     <ul className={styles.work}>
                       {home.partners.items.map((partner) => (
                         <Partner
@@ -187,7 +191,7 @@ export default function Page() {
 
                     <nav>
                       <ul className="list">
-                        <Social href="https://github.com/kngsthvs">
+                        <Social href="https://github.com/kngsthvs" keys="g">
                           <Image
                             alt="GitHub logo"
                             height={24}
@@ -198,7 +202,7 @@ export default function Page() {
                           <VisuallyHidden>GitHub</VisuallyHidden>
                         </Social>
 
-                        <Social href="https://x.com/kngsthvs">
+                        <Social href="https://x.com/kngsthvs" keys="x">
                           <Image
                             alt="X logo"
                             height={24}
@@ -208,6 +212,10 @@ export default function Page() {
 
                           <VisuallyHidden>X</VisuallyHidden>
                         </Social>
+
+                        <li>
+                          <kbd>[s]</kbd>
+                        </li>
                       </ul>
 
                       {/* <ul className={styles.links}>

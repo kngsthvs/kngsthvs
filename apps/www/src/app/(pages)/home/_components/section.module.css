@@ -22,11 +22,33 @@
   border-bottom: 1px solid var(--colors-gray-5);
   padding: 1rem;
   font-size: var(--fontSizes-sm);
-  font-family: var(--font-geist-mono);
 }
 
 .root > div:first-child h2 {
   font-weight: normal;
   font-size: var(--fontSizes-sm);
   font-family: var(--font-geist-mono);
+}
+
+.root > div:first-child a,
+.root > div:first-child a > span {
+  display: flex;
+  gap: 0.25rem;
+  color: var(--colors-primary);
+}
+
+.root > div:first-child a:active,
+.root > div:first-child a:focus-visible,
+.root > div:first-child a:hover {
+  text-decoration: none;
+}
+
+.root > div:first-child a:active span:not(:only-child),
+.root > div:first-child a:focus-visible span:not(:only-child),
+.root > div:first-child a:hover span:not(:only-child) {
+  text-decoration: underline;
+}
+
+.root > div:first-child kbd {
+  text-transform: uppercase;
 }

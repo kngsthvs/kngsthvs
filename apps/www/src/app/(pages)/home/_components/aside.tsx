@@ -12,7 +12,7 @@ export function Aside({
   const isWide = useMedia("(min-width: 48rem)", false);
 
   return (
-    <aside className={styles.root} {...{ ref }}>
+    <aside className={styles.root} data-ticker={ticker} {...{ ref }}>
       {ticker ? (
         <div
           className={styles.ticker}

@@ -16,8 +16,8 @@
   padding: 2rem 0;
 }
 
-.root > div {
-  height: 100%;
+.root > a {
+  outline-offset: -2rem;
 }
 
 .root > a img {
@@ -27,6 +27,10 @@
     0.6s filter var(--ease),
     0.6s opacity var(--ease);
   height: 2.5rem;
+}
+
+.root > div {
+  height: 100%;
 }
 
 .root:hover > a img {

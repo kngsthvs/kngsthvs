@@ -1,5 +1,5 @@
-import Link from "next/link";
 import { VisuallyHidden } from "ui/components";
+import { Link } from "ui/primitives/link";
 import styles from "./app.module.css";
 
 function Icon({ path }: { path?: string }) {
@@ -66,7 +66,7 @@ export function App({ path, name }: { path?: string; name?: string }) {
   return (
     <li className={styles.root}>
       {name ? (
-        <Link href={`/${path}`}>
+        <Link href={`/${path}`} keys="a+c" side="left" sideOffset={32}>
           <Icon {...{ path }} />
 
           <VisuallyHidden>{name}</VisuallyHidden>

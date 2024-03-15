@@ -5,7 +5,7 @@
 }
 
 .root > a,
-.root > div {
+.root > div:only-child {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -14,7 +14,7 @@
 }
 
 .root > a svg {
-  opacity: 0.25;
+  opacity: 0.5;
   transition: 0.6s opacity var(--ease);
   width: 100%;
   max-width: 100%;
@@ -22,12 +22,12 @@
   max-height: 100%;
 }
 
-.root > div {
+.root > div:only-child {
   padding: 0.5rem;
 }
 
-.root > div::before,
-.partner > div::before {
+.root > div:only-child::before,
+.partner > div:only-child::before {
   transition: 0.6s opacity var(--ease);
   border-radius: var(--radii-full);
   background-color: var(--colors-gray-10);
@@ -37,6 +37,11 @@
   content: "";
 }
 
+.root:focus-visible > a svg,
 .root:hover > a svg {
+  opacity: 0.75;
+}
+
+.root:active > a svg {
   opacity: 1;
 }

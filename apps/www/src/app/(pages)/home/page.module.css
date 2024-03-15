@@ -98,10 +98,17 @@
 
 .main .links {
   display: flex;
+  align-items: center;
   gap: 1rem;
 }
 
-.main .links.rotate li {
+.main .links li:last-of-type {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main .links.rotate li:not(:last-of-type) {
   width: 1.5rem;
   height: 1.5rem;
 }
@@ -116,8 +123,8 @@
   }
 }
 
-.footer ul li {
-  display: inline-flex;
+.footer ul li a {
+  display: flex;
 }
 
 .footer nav a img {
@@ -185,6 +192,10 @@
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
+}
+
+.footer nav ul li kbd {
+  color: var(--colors-gray-50);
 }
 
 .external img {

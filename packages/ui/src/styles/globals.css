@@ -10,7 +10,9 @@
 }
 
 kbd {
+  display: inline-flex;
   font-size: var(--fontSizes-sm);
+  line-height: 100%;
   font-family: var(--font-geist-mono);
 }
 

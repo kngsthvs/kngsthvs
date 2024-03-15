@@ -17,7 +17,7 @@ export function Partner({
         <Link {...{ href }}>
           <Image
             alt={logo.alt ?? "logo"}
-            height={240}
+            height={40}
             src={logo.rawUrl}
             width={240}
           />

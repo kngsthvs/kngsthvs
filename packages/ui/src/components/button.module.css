@@ -44,6 +44,10 @@ a.root[data-pressed="true"] span {
   background-color: var(--colors-gray-75);
 }
 
+.root[data-variant="primary"]:focus-visible {
+  outline-color: var(--colors-foreground);
+}
+
 .root[data-variant="primary"]:active {
   background-color: var(--colors-gray-50);
 }

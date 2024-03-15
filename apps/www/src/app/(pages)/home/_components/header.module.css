@@ -33,7 +33,7 @@
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-.root nav > a {
+.root nav a {
   display: flex;
 }
 

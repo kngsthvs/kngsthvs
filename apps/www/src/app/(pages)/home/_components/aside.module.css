@@ -2,6 +2,9 @@
   display: block;
   border-bottom: 1px solid var(--colors-gray-5);
   width: 100%;
+}
+
+.root[data-ticker="true"] {
   overflow: hidden;
 }
 
@@ -21,6 +24,19 @@
   padding: 1.25rem 2rem;
   color: var(--colors-gray-50);
   white-space: nowrap;
+}
+
+.item > div {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+@media screen and (min-width: 48rem) {
+  .item > div > kbd {
+    transform: rotate(90deg);
+  }
 }
 
 .root .links li {
@@ -52,7 +68,6 @@
     border-bottom: none;
     border-left: 1px solid var(--colors-gray-5);
     width: 4rem;
-    overflow: hidden;
   }
 
   .ticker {
@@ -61,6 +76,7 @@
     transform: rotate(270deg) translate(-43.5%, -340%);
     width: 100%;
     height: 100%;
+    overflow: hidden;
   }
 
   .item {
