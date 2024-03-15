@@ -17,10 +17,8 @@ export function Section({
       <div>
         <h2>{props.title}</h2>
 
-        <Link className="link" keys={`shift+${keys}`} {...{ href }}>
+        <Link className="link" keys={`Shift+${keys}`} {...{ href }}>
           <span>View all</span>
-
-          {keys ? <kbd>[{keys}]</kbd> : null}
         </Link>
       </div>
 

@@ -1,8 +1,9 @@
 "use client";
 
+import { tinykeys } from "@kngsthvs/ui/packages/tinykeys";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { useHotkeys } from "react-hotkeys-hook";
+import { useEffect } from "react";
 import styles from "./error.module.css";
 
 export function Error({
@@ -14,9 +15,23 @@ export function Error({
 }) {
   const router = useRouter();
 
-  useHotkeys("h", () => {
-    router.push("/");
-  });
+  useEffect(() => {
+    const unsubscribe = tinykeys(window, {
+      b: () => {
+        router.back();
+      },
+      f: () => {
+        router.forward();
+      },
+      h: () => {
+        router.push("/");
+      },
+    });
+
+    return () => {
+      unsubscribe();
+    };
+  }, [router]);
 
   return (
     <section className={styles.root}>

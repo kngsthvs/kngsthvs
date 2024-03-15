@@ -1,26 +1,29 @@
 "use client";
 
+import { tinykeys } from "@kngsthvs/ui/packages/tinykeys";
 import { useRouter } from "next/navigation";
-import { HotkeysProvider, useHotkeys } from "react-hotkeys-hook";
+import { useEffect } from "react";
 
 export function Context({ children }: { children: React.ReactNode }) {
   const router = useRouter();
 
-  useHotkeys("b", () => {
-    router.back();
-  });
+  useEffect(() => {
+    const unsubscribe = tinykeys(window, {
+      b: () => {
+        router.back();
+      },
+      f: () => {
+        router.forward();
+      },
+      h: () => {
+        router.push("/");
+      },
+    });
 
-  useHotkeys("f", () => {
-    router.forward();
-  });
+    return () => {
+      unsubscribe();
+    };
+  }, [router]);
 
-  useHotkeys("h", () => {
-    router.push("/");
-  });
-
-  return (
-    <HotkeysProvider initiallyActiveScopes={["pages"]}>
-      {children}
-    </HotkeysProvider>
-  );
+  return children;
 }

@@ -384,9 +384,6 @@ importers:
       react-dom:
         specifier: ^18
         version: 18.2.0(react@18.2.0)
-      react-hotkeys-hook:
-        specifier: ^4.5.0
-        version: 4.5.0(react-dom@18.2.0)(react@18.2.0)
       react-icons:
         specifier: ^4.10.1
         version: 4.12.0(react@18.2.0)
@@ -476,9 +473,6 @@ importers:
       react-dom:
         specifier: ^18
         version: 18.2.0(react@18.2.0)
-      react-hotkeys-hook:
-        specifier: ^4.5.0
-        version: 4.5.0(react-dom@18.2.0)(react@18.2.0)
       react-split-grid:
         specifier: ^1.0.4
         version: 1.0.4(react@18.2.0)

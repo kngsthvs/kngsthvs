@@ -82,6 +82,7 @@
     "./packages/skip-nav": "./src/packages/skip-nav.ts",
     "./packages/scrollytelling": "./src/packages/scrollytelling.ts",
     "./packages/sonner": "./src/packages/sonner.ts",
+    "./packages/tinykeys": "./src/packages/tinykeys.ts",
     "./packages/title": "./src/packages/title.ts",
     "./packages/vaul": "./src/packages/vaul.ts",
     "./primitives/client/field": "./src/primitives/client/field/index.tsx",

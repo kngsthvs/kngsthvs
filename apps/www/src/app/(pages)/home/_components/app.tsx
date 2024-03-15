@@ -66,7 +66,7 @@ export function App({ path, name }: { path?: string; name?: string }) {
   return (
     <li className={styles.root}>
       {name ? (
-        <Link href={`/${path}`} keys="a+c" side="left" sideOffset={32}>
+        <Link href={`/${path}`} keys="a c" side="left" sideOffset={32}>
           <Icon {...{ path }} />
 
           <VisuallyHidden>{name}</VisuallyHidden>

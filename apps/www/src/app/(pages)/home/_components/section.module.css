@@ -48,7 +48,3 @@
 .root > div:first-child a:hover span:not(:only-child) {
   text-decoration: underline;
 }
-
-.root > div:first-child kbd {
-  text-transform: uppercase;
-}

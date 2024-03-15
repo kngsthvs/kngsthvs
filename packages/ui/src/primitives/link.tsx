@@ -51,6 +51,25 @@ function MultipleKeys({
     keys: props.keys ?? "",
   });
 
+  // Show uppercase key if Shift is included in keys
+  if (props.keys.includes("Shift")) {
+    return (
+      <LinkPrimitive data-pressed={pressed} {...props}>
+        <span>{props.children}</span>
+
+        {props.keys ? (
+          <kbd>
+            [
+            {String(
+              props.keys.slice(props.keys.indexOf("+") + 1),
+            ).toLocaleUpperCase()}
+            ]
+          </kbd>
+        ) : null}
+      </LinkPrimitive>
+    );
+  }
+
   return (
     <Tooltip.Provider>
       <Tooltip.Root>
@@ -75,7 +94,11 @@ function MultipleKeys({
                 opacity: pressed ? "1" : "0",
               }}
             >
-              [{props.keys.slice(props.keys.indexOf("+") + 1)}]
+              [
+              {props.keys.includes(" ")
+                ? props.keys.slice(props.keys.indexOf(" ") + 1)
+                : props.keys.slice(props.keys.indexOf("+") + 1)}
+              ]
             </kbd>
           )}
         </Tooltip.Content>
@@ -94,7 +117,7 @@ export function Link({
       keys?: string | string[];
     } & TooltipProps
   >) {
-  if (keys?.includes("+") || Array.isArray(keys)) {
+  if (keys?.includes(" ") || keys?.includes("+") || Array.isArray(keys)) {
     return <MultipleKeys {...{ keys, ...props }}>{children}</MultipleKeys>;
   }
 

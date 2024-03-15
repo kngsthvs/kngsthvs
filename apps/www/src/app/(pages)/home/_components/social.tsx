@@ -11,7 +11,7 @@ export function Social({
 }) {
   return (
     <li>
-      <Link keys={`s+${keys}`} side="bottom" sideOffset={32} {...props}>
+      <Link keys={`s ${keys}`} side="bottom" sideOffset={32} {...props}>
         {children}
       </Link>
     </li>
