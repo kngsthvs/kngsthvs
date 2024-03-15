@@ -16,7 +16,8 @@ kbd {
   font-family: var(--font-geist-mono);
 }
 
-@media screen and (min-width: 48rem) {
+/* FIX: Checks if the user has an accurate pointer, but we need a way to check for keyboards */
+@media (pointer: fine) {
   kbd {
     display: inline-flex;
   }
