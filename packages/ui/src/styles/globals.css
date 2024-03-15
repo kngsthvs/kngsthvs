@@ -10,10 +10,16 @@
 }
 
 kbd {
-  display: inline-flex;
+  display: none;
   font-size: var(--fontSizes-sm);
   line-height: 100%;
   font-family: var(--font-geist-mono);
+}
+
+@media screen and (min-width: 48rem) {
+  kbd {
+    display: inline-flex;
+  }
 }
 
 .dark {
