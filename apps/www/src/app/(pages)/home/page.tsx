@@ -39,7 +39,6 @@ export default function Page() {
             home: {
               __typename: true,
               _title: true,
-              heading: true,
               partners: {
                 _title: true,
                 items: {
