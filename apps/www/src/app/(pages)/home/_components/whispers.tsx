@@ -18,7 +18,7 @@ export function Whispers(props: { whispers: (string | null)[] }) {
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((value) => (value + 1) % props.whispers.length);
-    }, 3 * 1000);
+    }, 10 * 1000);
 
     return () => {
       clearInterval(interval);
