@@ -30,13 +30,13 @@
   },
   "exports": {
     "./calendar/add-to-calendar": "./src/calendar/add-to-calendar.ts",
+    "./entropy/shuffle": "./src/entropy/shuffle.ts",
     "./link": "./src/link/index.ts",
     "./loaders/cloudinary": "./src/loaders/cloudinary.ts",
     "./schemas": "./src/schemas/index.ts",
     "./tina/fields": "./src/tina/fields/index.ts",
     "./types/union-autocomplete": "./src/types/union-autocomplete.ts",
-    "./url": "./src/url/index.ts",
-    "./shuffle": "./src/shuffle.ts"
+    "./url": "./src/url/index.ts"
   },
   "name": "@kngsthvs/lib",
   "peerDependencies": {

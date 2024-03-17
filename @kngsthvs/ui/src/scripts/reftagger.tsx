@@ -27,7 +27,7 @@ export function Reftagger({
 }) {
   return (
     <Script id="reftagger" {...{ strategy }}>
-      {`var refTagger = ${JSON.stringify(settings)};
+      {`var refTagger = ${JSON.stringify({ bibleVersion: "KJV", ...settings })};
 
         (function(d, t) {
           var n=d.querySelector("[nonce]");

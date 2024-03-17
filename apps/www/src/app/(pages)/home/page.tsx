@@ -1,4 +1,5 @@
 import settings from "@/data/settings.json";
+import { shuffle } from "@kngsthvs/lib/entropy/shuffle";
 import { mapDataAttributes } from "@kngsthvs/ui/functions/shared/attributes";
 import { Balancer } from "@kngsthvs/ui/packages/balancer";
 import { Pump } from "basehub/react-pump";
@@ -19,6 +20,7 @@ import headerStyles from "./_components/header.module.css";
 import { Partner } from "./_components/partner";
 import { Section } from "./_components/section";
 import { Social } from "./_components/social";
+import { Whispers } from "./_components/whispers";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
@@ -55,6 +57,13 @@ export default function Page() {
                   source: true,
                 },
               },
+              whispers: {
+                _title: true,
+                items: {
+                  _title: true,
+                  whisper: true,
+                },
+              },
             },
           },
         ]}
@@ -67,6 +76,9 @@ export default function Page() {
               Math.floor(Math.random() * home.quotes.items.length)
             ];
           const data = mapDataAttributes({ justify: quote?.justify });
+          const whispers = shuffle<string>(
+            home.whispers.items.map(({ whisper }) => whisper),
+          );
 
           return (
             <>
@@ -122,23 +134,27 @@ export default function Page() {
                   </nav>
 
                   <section>
-                    <Image
-                      alt="Chi Rho"
-                      height={512}
-                      loading="eager"
-                      src="/chi-rho.svg"
-                      width={512}
-                    />
+                    <div>
+                      <Image
+                        alt="Chi Rho"
+                        height={512}
+                        loading="eager"
+                        src="/chi-rho.svg"
+                        width={512}
+                      />
 
-                    <Image
-                      alt="Kings & Thieves logo"
-                      height={80}
-                      loading="eager"
-                      src="word.svg"
-                      width={512}
-                    />
+                      <Image
+                        alt="Kings & Thieves logo"
+                        height={80}
+                        loading="eager"
+                        src="word.svg"
+                        width={512}
+                      />
 
-                    <VisuallyHidden>Kings & Thieves</VisuallyHidden>
+                      <VisuallyHidden>Kings & Thieves</VisuallyHidden>
+                    </div>
+
+                    {whispers ? <Whispers {...{ whispers }} /> : null}
                   </section>
                 </Header>
               </div>
@@ -152,11 +168,11 @@ export default function Page() {
                       <ul className={`${styles.links} ${styles.rotate}`}>
                         <App name="Crow’s Nest" path="crowsnest" />
                         {/* <App />
-                      <App />
-                      <App />
-                      <App />
-                      <App />
-                      <App /> */}
+                        <App />
+                        <App />
+                        <App />
+                        <App />
+                        <App /> */}
                       </ul>
 
                       <kbd>[a]</kbd>

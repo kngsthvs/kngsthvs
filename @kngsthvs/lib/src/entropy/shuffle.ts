@@ -1,4 +1,4 @@
-export function shuffle(array?: any[] | null) {
+export function shuffle<T>(array?: T[] | any[] | null) {
   if (!array || array.length === 0) return;
 
   let currentIndex = array?.length,

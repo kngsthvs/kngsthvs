@@ -8,7 +8,7 @@ const withBundleAnalyzer = bundleAnalyzer({
 /** @type {import("next").NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  transpilePackages: ["@kngsthvs/ui", "ui"],
+  transpilePackages: ["@kngsthvs/lib", "@kngsthvs/ui", "ui"],
 };
 
 // export default withBundleAnalyzer(MillionCompiler.next()(nextConfig));
