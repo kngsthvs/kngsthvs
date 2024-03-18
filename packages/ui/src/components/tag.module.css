@@ -1,0 +1,35 @@
+.root {
+  transition:
+    border-color 0.3s var(--ease),
+    color 0.3s var(--ease);
+  border: 1px solid var(--colors-gray-5);
+  padding: 0.125rem 0.25rem;
+  font-weight: bold;
+  font-size: var(--fontSizes-xs);
+  line-height: 1;
+  font-family: var(--font-geist-mono);
+}
+
+a.root:focus-visible,
+a.root:hover {
+  border-color: var(--colors-gray-10);
+  color: var(--colors-gray-75);
+}
+
+a.root:active {
+  border-color: var(--colors-gray-25);
+  color: var(--colors-foreground);
+}
+
+:global .dark :local a.root {
+  border-color: var(--colors-gray-10);
+}
+
+:global .dark :local a.root:focus-visible,
+:global .dark :local a.root:hover {
+  border-color: var(--colors-gray-25);
+}
+
+:global .dark :local a.root:active {
+  border-color: var(--colors-gray-50);
+}

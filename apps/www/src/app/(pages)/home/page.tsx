@@ -6,20 +6,21 @@ import { Pump } from "basehub/react-pump";
 import { type Metadata } from "next";
 import { draftMode } from "next/headers";
 import Image from "next/image";
-import NextLink from "next/link";
 import ReactMarkdown from "react-markdown";
 import { VisuallyHidden } from "ui/components";
 import { Button } from "ui/components/button";
 import { Link } from "ui/components/link";
+import { Link as LinkPrimitive } from "ui/primitives/link";
 import { App } from "./_components/app";
 import { Aside } from "./_components/aside";
 import backdropStyles from "./_components/backdrop.module.css";
 import { App as AppProvider } from "./_components/context";
+import { Controls } from "./_components/controls";
+import { Footer } from "./_components/footer";
 import { Header } from "./_components/header";
 import headerStyles from "./_components/header.module.css";
 import { Partner } from "./_components/partner";
 import { Section } from "./_components/section";
-import { Social } from "./_components/social";
 import { Whispers } from "./_components/whispers";
 import styles from "./page.module.css";
 
@@ -89,18 +90,21 @@ export default function Page() {
 
                   <nav className={backdropStyles.root}>
                     <div>
-                      <NextLink className={headerStyles.icon} href="/">
+                      <LinkPrimitive
+                        className={headerStyles.icon}
+                        href="/"
+                        keys="h"
+                      >
                         <Image
                           alt="Kings & Thieves icon"
-                          height={36}
+                          height={32}
                           loading="eager"
-                          priority
                           src="/icon.svg"
-                          width={36}
+                          width={32}
                         />
 
                         <VisuallyHidden>Kings & Thieves</VisuallyHidden>
-                      </NextLink>
+                      </LinkPrimitive>
 
                       <ul>
                         <li>
@@ -138,6 +142,7 @@ export default function Page() {
                         alt="Chi Rho"
                         height={512}
                         loading="eager"
+                        priority
                         src="/chi-rho.svg"
                         width={512}
                       />
@@ -193,7 +198,7 @@ export default function Page() {
                     </ul>
                   </Section>
 
-                  <footer className={styles.footer}>
+                  <Footer>
                     <blockquote {...data}>
                       <Balancer as="div">
                         <ReactMarkdown>
@@ -203,60 +208,21 @@ export default function Page() {
                         <footer>{quote?._title}</footer>
                       </Balancer>
                     </blockquote>
-
-                    <nav>
-                      <ul className="list">
-                        <Social href="https://github.com/kngsthvs" keys="g">
-                          <Image
-                            alt="GitHub logo"
-                            height={24}
-                            src="/logos/github.svg"
-                            width={24}
-                          />
-
-                          <VisuallyHidden>GitHub</VisuallyHidden>
-                        </Social>
-
-                        <Social href="https://x.com/kngsthvs" keys="x">
-                          <Image
-                            alt="X logo"
-                            height={24}
-                            src="/logos/x.svg"
-                            width={24}
-                          />
-
-                          <VisuallyHidden>X</VisuallyHidden>
-                        </Social>
-
-                        <li>
-                          <kbd>[s]</kbd>
-                        </li>
-                      </ul>
-
-                      {/* <ul className={styles.links}>
-                        <NextLink href="/ops">Ops</Link>
-                        <NextLink href="/docs">Docs</Link>
-
-                        <li className={styles.external}>
-                          <NextLink href="https://alongj.org">
-                            <img alt="Along Journal logo" src="/logos/along.svg" />
-
-                            <VisuallyHidden>Along</VisuallyHidden>
-                          </NextLink>
-                        </li>
-                      </ul> */}
-                    </nav>
-
-                    <p className="mobile">Made for the glory of Christ.</p>
-                  </footer>
+                  </Footer>
                 </main>
 
                 <nav>
-                  <ul>
-                    <li></li>
+                  <ul className={styles.links}>
+                    <li className={styles.external}>
+                      {/* <NextLink href="https://alongj.org">
+                          <img alt="Along Journal logo" src="/logos/along.svg" />
+
+                          <VisuallyHidden>Along</VisuallyHidden>
+                        </NextLink> */}
+                    </li>
                   </ul>
 
-                  <p>&copy; {new Date().getFullYear()} Kings & Thieves</p>
+                  <Controls />
                 </nav>
               </div>
             </>

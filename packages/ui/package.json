@@ -22,7 +22,11 @@
     "./components/button": "./src/components/button.tsx",
     "./components/input": "./src/components/input.tsx",
     "./components/link": "./src/components/link.tsx",
+    "./components/link.module.css": "./src/components/link.module.css",
+    "./components/tag": "./src/components/tag.tsx",
     "./components/textarea": "./src/components/textarea.tsx",
+    "./components/toast": "./src/components/toast.tsx",
+    "./hooks/use-key": "./src/hooks/use-key.ts",
     "./primitives/link": "./src/primitives/link.tsx",
     "./styles": "./src/styles/index.ts",
     "./styles/globals.css": "./src/styles/globals.css"

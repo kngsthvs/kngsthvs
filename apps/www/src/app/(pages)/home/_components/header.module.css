@@ -1,8 +1,29 @@
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2rem;
+  height: 2rem;
+}
+
 .icon img {
   filter: invert(1);
-  height: 2rem;
+  object-fit: contain;
   pointer-events: none;
   user-select: none;
+}
+
+/* Only  visible to screen readers */
+.icon kbd {
+  position: absolute;
+  margin: -1px;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border-width: 0;
+  white-space: nowrap;
 }
 
 .root {

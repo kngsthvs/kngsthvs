@@ -1,0 +1,10 @@
+.root {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  line-height: 1;
+}
+
+.root > p {
+  font-size: var(--fontSizes-sm);
+}

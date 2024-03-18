@@ -13,6 +13,10 @@
   aspect-ratio: 1 / 1;
 }
 
+.root a > span {
+  display: flex;
+}
+
 .root > a svg {
   opacity: 0.5;
   transition: 0.6s opacity var(--ease);

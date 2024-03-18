@@ -7,6 +7,10 @@ const withBundleAnalyzer = bundleAnalyzer({
 
 /** @type {import("next").NextConfig} */
 const nextConfig = {
+  experimental: {
+    useDeploymentId: true,
+    useDeploymentIdServerActions: true,
+  },
   reactStrictMode: true,
   transpilePackages: ["@kngsthvs/lib", "@kngsthvs/ui", "ui"],
 };

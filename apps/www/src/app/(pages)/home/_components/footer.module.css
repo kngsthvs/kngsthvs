@@ -1,0 +1,133 @@
+.root,
+.root > * {
+  width: 100%;
+  color: var(--colors-gray-50);
+}
+
+.root > *:not(:last-child) {
+  border-bottom: 1px solid var(--colors-gray-5);
+}
+
+.root blockquote {
+  margin: 0 auto;
+  background-color: var(--colors-background);
+  padding: 2rem;
+  max-width: 48rem;
+  color: var(--colors-foreground);
+  text-align: center;
+}
+
+.root blockquote > *:first-child {
+  margin: 0 auto;
+}
+
+.root blockquote > div > *:first-child {
+  font-weight: 400 !important;
+  font-size: var(--fontSizes-2xl);
+  line-height: 140%;
+  font-family: var(--fonts-serif);
+}
+
+.root blockquote[data-justify="true"] > div > *:first-child {
+  text-align: justify;
+}
+
+.root blockquote[data-justify="true"] footer {
+  text-align: right;
+}
+
+.root blockquote footer {
+  margin-top: 1rem;
+  color: var(--colors-gray-50);
+}
+
+.root > p:last-child {
+  border-bottom: 1px solid var(--colors-gray-5);
+  padding: 1rem;
+  color: var(--colors-gray-50);
+}
+
+.root nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+.root nav a img {
+  opacity: 0.25;
+  transition: 0.3s opacity var(--ease);
+  width: 1.5rem;
+  height: 1.5rem;
+  pointer-events: none;
+  color: var(--colors-black);
+  user-select: none;
+}
+
+.root nav a:hover img {
+  opacity: 1;
+}
+
+.root nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.root nav ul li {
+  position: relative;
+
+  .content {
+    display: flex;
+    position: absolute;
+    top: -1rem;
+    right: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    transform: translateY(-100%);
+    border: 1px solid var(--colors-gray-10);
+    background-color: var(--colors-background);
+    width: max-content;
+  }
+}
+
+.content a {
+  display: flex;
+  transition:
+    0.3s background-color var(--ease),
+    0.3s color var(--ease);
+  padding: 0.75rem;
+  width: 100%;
+  text-align: left;
+}
+
+.content a:focus-visible,
+.content a:hover {
+  background-color: var(--colors-gray-5);
+}
+
+.content a:active {
+  background-color: var(--colors-gray-10);
+}
+
+.content a:not(:last-of-type) {
+  border-bottom: 1px solid var(--colors-gray-10);
+}
+
+.root ul li a,
+.root ul li a *,
+.root ul li button {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  line-height: 1;
+}
+
+.trigger + div {
+  display: none !important;
+}
+
+.trigger[data-pressed="true"] + div {
+  display: flex !important;
+}

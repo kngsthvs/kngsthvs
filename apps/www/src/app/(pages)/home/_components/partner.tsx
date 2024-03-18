@@ -22,9 +22,7 @@ export function Partner({
             width={240}
           />
         </Link>
-      ) : (
-        <div />
-      )}
+      ) : null}
     </li>
   );
 }

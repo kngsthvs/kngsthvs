@@ -1,6 +1,5 @@
 .root {
   display: flex;
-  justify-content: center;
   align-items: center;
   gap: 0.25rem;
   transition: color 0.3s var(--ease);
