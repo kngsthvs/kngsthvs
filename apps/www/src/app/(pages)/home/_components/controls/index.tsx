@@ -29,14 +29,22 @@ export function Controls() {
       <Color />
 
       {/* Environment */}
-      <Tag data-node={env.NODE_ENV} data-vercel={env.VERCEL_ENV}>
-        {env.NODE_ENV === "development" || env.VERCEL_ENV === "development" ? (
-          <p>DEV</p>
-        ) : env.NODE_ENV === "production" || env.VERCEL_ENV === "production" ? (
-          <p>PROD</p>
-        ) : (
-          <p>PREV</p>
-        )}
+      <Tag
+        variant={
+          env.NODE_ENV === "production" || env.VERCEL_ENV === "production"
+            ? "primary"
+            : env.VERCEL_ENV === "preview"
+              ? "secondary"
+              : "tertiary"
+        }
+      >
+        {env.NODE_ENV === "production" || env.VERCEL_ENV === "production"
+          ? "PROD"
+          : env.VERCEL_ENV === "preview"
+            ? "PREV"
+            : env.NODE_ENV === "test"
+              ? "TEST"
+              : "DEV"}
       </Tag>
 
       {/* Git commit */}
