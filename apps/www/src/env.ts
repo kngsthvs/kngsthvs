@@ -15,6 +15,7 @@ export const env = createEnv({
   },
   server: {
     NODE_ENV: environment,
+    VERCEL_DEPLOYMENT_ID: z.string().min(1).optional(),
     VERCEL_ENV: z
       .enum(["development", "preview", "production"])
       .default("development"),

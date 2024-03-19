@@ -1,24 +1,20 @@
 import { env } from "@/env";
+import { headers } from "next/headers";
 import { Tag } from "ui/components/tag";
 import { Color } from "./color";
 import styles from "./styles.module.css";
 
 function Commit() {
-  const hash = String(
-    env.VERCEL_GIT_COMMIT_SHA ??
-      env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_SHA ??
-      "LOCAL",
-  ).slice(0, 7);
+  const hash =
+    env.VERCEL_GIT_COMMIT_SHA ?? env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_SHA;
 
   return (
     <Tag
       href={
-        hash === "LOCAL"
-          ? undefined
-          : `https://github.com/kngsthvs/kngsthvs/commit/${hash}`
+        hash ? `https://github.com/kngsthvs/kngsthvs/commit/${hash}` : undefined
       }
     >
-      {hash}
+      {hash ? hash.slice(0, 7) : "LOCAL"}
     </Tag>
   );
 }
@@ -49,6 +45,8 @@ export function Controls() {
 
       {/* Git commit */}
       <Commit />
+
+      <Tag>{env.VERCEL_DEPLOYMENT_ID ?? headers().get("x-forwarded-port")}</Tag>
 
       <p>&copy; {new Date().getFullYear()} Kings & Thieves</p>
     </div>
