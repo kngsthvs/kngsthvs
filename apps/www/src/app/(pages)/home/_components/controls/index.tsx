@@ -19,6 +19,22 @@ function Commit() {
   );
 }
 
+function Deployment() {
+  const id = env.VERCEL_DEPLOYMENT_ID?.slice(
+    env.VERCEL_DEPLOYMENT_ID.indexOf("_") + 1,
+  );
+
+  return (
+    <Tag
+      href={
+        id ? `https://vercel.com/kngsthvs/kngsthvs/${id}/source` : undefined
+      }
+    >
+      {id ? id.slice(0, 9) : headers().get("x-forwarded-port")}
+    </Tag>
+  );
+}
+
 export function Controls() {
   return (
     <div className={styles.root}>
@@ -46,7 +62,8 @@ export function Controls() {
       {/* Git commit */}
       <Commit />
 
-      <Tag>{env.VERCEL_DEPLOYMENT_ID ?? headers().get("x-forwarded-port")}</Tag>
+      {/* Vercel deployment */}
+      <Deployment />
 
       <p>&copy; {new Date().getFullYear()} Kings & Thieves</p>
     </div>
