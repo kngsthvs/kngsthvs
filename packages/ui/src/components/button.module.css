@@ -10,6 +10,12 @@
   border: 1px solid transparent;
   background-color: var(--colors-primary);
   color: var(--colors-gray-50);
+  line-height: 1;
+}
+
+.root:disabled {
+  pointer-events: none;
+  user-select: none;
 }
 
 a.root:active span,
@@ -21,11 +27,20 @@ a.root[data-pressed="true"] span {
 
 .root[data-size="small"] {
   padding: 0.25rem 0.5rem;
-  font-size: var(--fontSizes-sm);
+  font-size: var(--fontSizes-xs);
+}
+
+.root[data-size="small"][data-icon="true"] {
+  padding: 0.25rem;
 }
 
 .root[data-size="medium"] {
   padding: 0.5rem 0.75rem;
+  font-size: var(--fontSizes-sm);
+}
+
+.root[data-size="medium"][data-icon="true"] {
+  padding: 0.5rem;
 }
 
 .root[data-size="large"] {
@@ -33,8 +48,22 @@ a.root[data-pressed="true"] span {
   font-size: var(--fontSizes-lg);
 }
 
+.root[data-size="large"][data-icon="true"] {
+  padding: 0.75rem;
+}
+
 .root[data-variant="primary"] {
   background-color: var(--colors-gray-100);
+  color: var(--colors-background);
+}
+
+.root[data-variant="primary"]:disabled {
+  background-color: var(--colors-gray-50);
+}
+
+:global .contrast :local .root[data-variant="primary"],
+:global .contrast :local .root[data-variant="primary"] span,
+:global .contrast :local .root[data-variant="primary"] kbd {
   color: var(--colors-background);
 }
 
@@ -52,36 +81,64 @@ a.root[data-pressed="true"] span {
   background-color: var(--colors-gray-50);
 }
 
-.root[data-variant="secondary"] {
-  border-color: var(--colors-gray-5);
+.root[data-variant="secondary"],
+.root[data-variant="tertiary"] {
   background-color: var(--colors-gray-0);
   color: var(--colors-gray-50);
+}
+
+.root[data-variant="secondary"] {
+  border-color: var(--colors-border);
+}
+
+:global .contrast :local .root[data-variant="primary"],
+:global .contrast.dark :local .root[data-variant="primary"],
+:global .contrast :local .root[data-variant="secondary"]:focus-visible,
+:global .contrast.dark :local .root[data-variant="secondary"]:focus-visible,
+:global .contrast :local .root[data-variant="secondary"]:hover,
+:global .contrast.dark :local .root[data-variant="secondary"]:hover,
+:global .contrast :local .root[data-variant="secondary"]:active,
+:global .contrast.dark :local .root[data-variant="secondary"]:active,
+:global .contrast :local .root[data-variant="secondary"][data-pressed="true"],
+:global
+  .contrast.dark
+  :local
+  .root[data-variant="secondary"][data-pressed="true"] {
+  border-color: var(--colors-border);
+}
+
+.root[data-variant="secondary"]:focus-visible,
+.root[data-variant="tertiary"]:focus-visible,
+.root[data-variant="secondary"]:hover,
+.root[data-variant="tertiary"]:hover,
+.root[data-variant="secondary"][data-pressed="true"],
+.root[data-variant="tertiary"][data-pressed="true"] {
+  background-color: var(--colors-gray-5);
+  color: var(--colors-gray-75);
 }
 
 .root[data-variant="secondary"]:focus-visible,
 .root[data-variant="secondary"]:hover,
 .root[data-variant="secondary"][data-pressed="true"] {
   border-color: var(--colors-gray-10);
-  background-color: var(--colors-gray-5);
-  color: var(--colors-gray-75);
 }
 
-.root[data-variant="secondary"]:active {
-  border-color: var(--colors-gray-25);
+.root[data-variant="secondary"]:active,
+.root[data-variant="tertiary"]:active {
   background-color: var(--colors-gray-10);
   color: var(--colors-foreground);
 }
 
-:global(.dark) .root[data-variant="secondary"] {
-  border-color: var(--colors-gray-10);
-}
-
-:global(.dark) .root[data-variant="secondary"]:focus-visible,
-:global(.dark) .root[data-variant="secondary"]:hover,
-:global(.dark) .root[data-variant="secondary"][data-pressed="true"] {
+.root[data-variant="secondary"]:active {
   border-color: var(--colors-gray-25);
 }
 
-:global(.dark) .root[data-variant="secondary"]:active {
+:global .dark :local .root[data-variant="secondary"]:focus-visible,
+:global .dark :local .root[data-variant="secondary"]:hover,
+:global .dark :local .root[data-variant="secondary"][data-pressed="true"] {
+  border-color: var(--colors-gray-25);
+}
+
+:global .dark :local .root[data-variant="secondary"]:active {
   border-color: var(--colors-gray-50);
 }

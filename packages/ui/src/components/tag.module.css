@@ -27,7 +27,7 @@ a.root[data-variant="primary"]:active {
 }
 
 .root[data-variant="secondary"] {
-  background-color: var(--colors-gray-5);
+  background-color: var(--colors-border);
   color: var(--colors-foreground);
 }
 
@@ -41,7 +41,7 @@ a.root[data-variant="secondary"]:active {
 }
 
 .root[data-variant="tertiary"] {
-  border-color: var(--colors-gray-5);
+  border-color: var(--colors-border);
 }
 
 a.root[data-variant="tertiary"]:focus-visible,
@@ -55,10 +55,6 @@ a.root[data-variant="tertiary"]:active {
   color: var(--colors-foreground);
 }
 
-:global .dark :local a.root[data-variant="secondary"] {
-  background-color: var(--colors-gray-10);
-}
-
 :global .dark :local a.root[data-variant="secondary"]:focus-visible,
 :global .dark :local a.root[data-variant="secondary"]:hover {
   background-color: var(--colors-gray-25);
@@ -66,10 +62,6 @@ a.root[data-variant="tertiary"]:active {
 
 :global .dark :local a.root[data-variant="secondary"]:active {
   background-color: var(--colors-gray-50);
-}
-
-:global .dark :local a.root[data-variant="tertiary"] {
-  border-color: var(--colors-gray-10);
 }
 
 :global .dark :local a.root[data-variant="tertiary"]:focus-visible,

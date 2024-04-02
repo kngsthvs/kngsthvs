@@ -5,16 +5,23 @@
 }
 
 .root > *:not(:last-child) {
-  border-bottom: 1px solid var(--colors-gray-5);
+  border-bottom: 1px solid var(--colors-border);
 }
 
 .root blockquote {
   margin: 0 auto;
+  border-top: 1px solid var(--colors-border);
   background-color: var(--colors-background);
-  padding: 2rem;
+  padding: 2rem 1rem;
   max-width: 48rem;
   color: var(--colors-foreground);
   text-align: center;
+}
+
+@media screen and (min-width: 48rem) {
+  .root blockquote {
+    padding: 2rem;
+  }
 }
 
 .root blockquote > *:first-child {
@@ -41,8 +48,12 @@
   color: var(--colors-gray-50);
 }
 
+:global .contrast :local .root blockquote footer {
+  color: var(--colors-foreground);
+}
+
 .root > p:last-child {
-  border-bottom: 1px solid var(--colors-gray-5);
+  border-bottom: 1px solid var(--colors-border);
   padding: 1rem;
   color: var(--colors-gray-50);
 }
@@ -64,6 +75,10 @@
   user-select: none;
 }
 
+:global .dark :local .root nav a img {
+  filter: invert(1);
+}
+
 .root nav a:hover img {
   opacity: 1;
 }
@@ -73,6 +88,7 @@
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
+  list-style: none;
 }
 
 .root nav ul li {
@@ -90,6 +106,24 @@
     background-color: var(--colors-background);
     width: max-content;
   }
+}
+
+:global .contrast :local .root nav ul li .content,
+:global .contrast.dark :local .root nav ul li .content {
+  border-color: var(--colors-foreground);
+}
+
+:global .dark :local .root nav ul li .content {
+  border-color: var(--colors-gray-25);
+}
+
+.root ul li a,
+.root ul li a *,
+.root ul li button {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  line-height: 1;
 }
 
 .content a {
@@ -115,13 +149,13 @@
   border-bottom: 1px solid var(--colors-gray-10);
 }
 
-.root ul li a,
-.root ul li a *,
-.root ul li button {
-  display: flex;
-  align-items: center;
-  gap: 0.25rem;
-  line-height: 1;
+:global .contrast :local .content a:not(:last-of-type),
+:global .contrast.dark :local .content a:not(:last-of-type) {
+  border-color: var(--colors-foreground);
+}
+
+:global .dark :local .content a:not(:last-of-type) {
+  border-color: var(--colors-gray-25);
 }
 
 .trigger + div {

@@ -4,10 +4,6 @@ import { mapDataAttributes } from "@kngsthvs/ui/functions/shared/attributes";
 import { Field, useField } from "@kngsthvs/ui/primitives/client/field";
 import styles from "./input.module.css";
 
-function RootInput(props: React.ComponentProps<typeof Field.Input>) {
-  return <Field.Input className={styles.input} {...props} />;
-}
-
 export function RootLabel({
   children,
   label,
@@ -30,12 +26,15 @@ export function RootLabel({
 function Root({
   disabled,
   label,
+  message,
   name,
   placeholder,
   required,
   ...props
 }: React.ComponentProps<typeof Field.Input> & {
   label?: string;
+  message?: string;
+  name: string;
 }) {
   return (
     <Field
@@ -45,7 +44,7 @@ function Root({
     >
       <RootLabel {...{ label }}>{label}</RootLabel>
 
-      <RootInput
+      <Field.Input
         autoComplete={
           name === "email"
             ? "email"
@@ -69,8 +68,10 @@ function Root({
         }
         className={styles.input}
         type={name === "email" ? name : name === "phone" ? "tel" : "text"}
-        {...{ disabled, name, placeholder, required, ...props }}
+        {...{ disabled, placeholder, required, ...props }}
       />
+
+      {message ? <Field.Message>{message}</Field.Message> : null}
     </Field>
   );
 }

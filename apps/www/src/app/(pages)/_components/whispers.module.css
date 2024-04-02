@@ -1,8 +1,8 @@
 .root {
   position: relative;
   margin-top: auto;
-  border-top: 1px solid var(--colors-gray-10);
-  padding: 1rem;
+  border-top: 1px solid var(--colors-border);
+  padding: 0.875rem 1rem;
   font-size: var(--fontSizes-sm);
   line-height: 2;
   font-family: var(--font-geist-mono);

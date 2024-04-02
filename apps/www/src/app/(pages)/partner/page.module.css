@@ -1,18 +1,6 @@
 .root {
-  margin: 0 auto;
-  border-right: 1px solid var(--colors-gray-5);
-  border-left: 1px solid var(--colors-gray-5);
   padding: 1rem;
-  max-width: 48rem;
-  min-height: 100dvh;
-}
-
-.content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-  padding: 2rem 0;
+  padding-top: 8rem;
 }
 
 .content p {
@@ -20,16 +8,16 @@
   font-size: var(--fontSizes-lg);
   line-height: 140%;
   font-family: var(--fonts-heading);
-  text-align: justify;
 }
 
 .content p:not(:first-child) {
-  margin-top: 1em;
+  margin-top: 0.5em;
 }
 
 @media screen and (min-width: 24rem) {
   .root {
     padding: 1.5rem;
+    padding-top: 8rem;
   }
 
   .content h2 {
@@ -44,6 +32,7 @@
 @media screen and (min-width: 48rem) {
   .root {
     padding: 2rem;
+    padding-top: 8rem;
   }
 
   .content h2 {

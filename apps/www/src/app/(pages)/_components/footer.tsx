@@ -48,7 +48,7 @@ function Social({
   return (
     <li>
       <LinkPrimitive
-        keys={`s ${keys}`}
+        keys={`e ${keys}`}
         side="bottom"
         sideOffset={32}
         {...props}
@@ -68,7 +68,7 @@ function Trigger({
   keys: string;
 }) {
   const { pressed } = useKey({
-    keys: keys ?? "",
+    keys,
   });
 
   return (
@@ -109,7 +109,7 @@ export function Footer({ children }: { children: React.ReactNode }) {
           </Social>
 
           <li>
-            <kbd>[s]</kbd>
+            <kbd>[e]</kbd>
           </li>
         </NavigationMenu.List>
 
@@ -130,7 +130,7 @@ export function Footer({ children }: { children: React.ReactNode }) {
             </NavigationMenu.Link>
           </NavigationMenu.Item> */}
 
-          {/* <NavigationMenu.Item>
+          <NavigationMenu.Item>
             <Trigger keys="l">Legal</Trigger>
 
             <NavigationMenu.Content className={styles.content} forceMount>
@@ -142,19 +142,17 @@ export function Footer({ children }: { children: React.ReactNode }) {
                 Privacy Policy
               </Item>
 
-              <Item href="/legal/sub-processors" keys="l s">
+              {/* <Item href="/legal/sub-processors" keys="l s">
                 Sub-processors
-              </Item>
+              </Item> */}
 
               <Item href="/legal/terms" keys="l t">
                 Terms of Service
               </Item>
             </NavigationMenu.Content>
-          </NavigationMenu.Item> */}
+          </NavigationMenu.Item>
         </NavigationMenu.List>
       </NavigationMenu.Root>
-
-      <p className="mobile">Made for the glory of Christ.</p>
     </footer>
   );
 }

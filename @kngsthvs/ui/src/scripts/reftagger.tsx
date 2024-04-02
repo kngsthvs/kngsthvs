@@ -1,5 +1,4 @@
 import Script from "next/script";
-import { type PrefersColorScheme } from "../functions/types";
 
 export function Reftagger({
   settings,
@@ -21,7 +20,7 @@ export function Reftagger({
       };
     };
     roundedCorners?: boolean;
-    tooltipStyle?: PrefersColorScheme;
+    tooltipStyle?: "dark" | "light";
   };
   strategy: "afterInteractive" | "lazyOnload" | "beforeInteractive" | "worker";
 }) {

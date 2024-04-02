@@ -1,11 +1,10 @@
 "use client";
 
-import { tinykeys } from "@kngsthvs/ui/packages/tinykeys";
+import { useKeys } from "@kngsthvs/ui/functions/client/context/keys";
 import { useRouter } from "next/navigation";
-import { useEffect } from "react";
 import { useKeyPress } from "react-use";
 
-export function useKey(props: { href?: string; keys: string | string[] }) {
+export function useKey(props: { href?: string; keys: string }) {
   const router = useRouter();
   const [pressed] = useKeyPress(
     props.keys.includes("+")
@@ -17,26 +16,15 @@ export function useKey(props: { href?: string; keys: string | string[] }) {
       : props.keys[0],
   );
 
-  useEffect(() => {
-    const unsubscribe = tinykeys(window, {
-      [`${props.keys}`]: (event) => {
-        // Check if single key mappings are the only key being pressed
-        if (props.keys.length > 1 || props.keys === event.key) {
-          if ("href" in props) {
-            if (props.href?.includes("://")) {
-              window.open(props.href, "_blank", "noreferrer");
-            } else {
-              router.push(String(props.href));
-            }
-          }
-        }
-      },
-    });
-
-    return () => {
-      unsubscribe();
-    };
-  }, []);
+  useKeys(props.keys, () => {
+    if ("href" in props) {
+      if (props.href?.includes("://")) {
+        window.open(props.href, "_blank", "noreferrer");
+      } else {
+        router.push(String(props.href));
+      }
+    }
+  });
 
   return { pressed };
 }

@@ -1,5 +1,64 @@
-import { Context } from "./_components/context";
+import { shuffle } from "@kngsthvs/lib/entropy/shuffle";
+import { mapDataAttributes } from "@kngsthvs/ui/functions/shared/attributes";
+import { Balancer } from "@kngsthvs/ui/packages/balancer";
+import { basehub } from "basehub";
+import ReactMarkdown from "react-markdown";
+import { Controls } from "./_components/controls";
+import { Footer } from "./_components/footer";
+import { Provider } from "./_components/pages";
+import styles from "./layout.module.css";
 
-export default function Layout({ children }: { children: React.ReactNode }) {
-  return <Context>{children}</Context>;
+export default async function Layout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  const { settings } = await basehub({ next: { revalidate: 30 } }).query({
+    settings: {
+      __typename: true,
+      quotes: {
+        _title: true,
+        items: {
+          _title: true,
+          content: { markdown: true },
+          justify: true,
+          source: true,
+        },
+      },
+      whispers: {
+        _title: true,
+        items: {
+          _title: true,
+          whisper: true,
+        },
+      },
+    },
+  });
+
+  const quote =
+    settings.quotes.items[
+      Math.floor(Math.random() * settings.quotes.items.length)
+    ];
+  const data = mapDataAttributes({ justify: quote?.justify });
+  const whispers = shuffle<string>(
+    settings.whispers.items.map(({ whisper }) => whisper),
+  );
+
+  return (
+    <Provider controls={<Controls />} {...{ whispers }}>
+      <div className={styles.root}>
+        {children}
+
+        <Footer>
+          <blockquote {...data}>
+            <Balancer as="div">
+              <ReactMarkdown>{quote?.content?.markdown}</ReactMarkdown>
+
+              <footer>{quote?._title}</footer>
+            </Balancer>
+          </blockquote>
+        </Footer>
+      </div>
+    </Provider>
+  );
 }

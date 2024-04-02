@@ -2,7 +2,9 @@ import { env } from "@/env";
 import { headers } from "next/headers";
 import { Tag } from "ui/components/tag";
 import { Color } from "./color";
+import { Contrast } from "./contrast";
 import styles from "./styles.module.css";
+import { Theme } from "./theme";
 
 function Commit() {
   const hash =
@@ -38,6 +40,10 @@ function Deployment() {
 export function Controls() {
   return (
     <div className={styles.root}>
+      <Contrast />
+
+      <Theme />
+
       <Color />
 
       {/* Environment */}

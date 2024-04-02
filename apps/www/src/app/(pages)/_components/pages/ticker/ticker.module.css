@@ -1,0 +1,74 @@
+.root {
+  display: block;
+  flex-shrink: 0;
+  margin-left: -1px;
+  border-left: 1px solid var(--colors-border);
+  padding: 0 calc(1rem - 1px) 0 1rem;
+  width: 3.5rem;
+  overflow: hidden;
+  color: var(--colors-gray-50);
+}
+
+.root > div {
+  transform: rotate(270deg)
+    translate(-42.5%, calc(var(--height) / 2 * -1 + 0.75rem));
+  backface-visibility: hidden;
+  color: var(--colors-gray-50);
+  white-space: nowrap;
+}
+
+@media screen and (min-width: 24rem) {
+  .root > div {
+    transform: rotate(270deg)
+      translate(-43.5%, calc(var(--height) / 2 * -1 + 0.75rem));
+  }
+}
+
+@media screen and (min-width: 28rem) {
+  .root > div {
+    transform: rotate(270deg)
+      translate(-45%, calc(var(--height) / 2 * -1 + 0.75rem));
+  }
+}
+
+@media screen and (min-width: 36rem) {
+  .root > div {
+    transform: rotate(270deg)
+      translate(-46.25%, calc(var(--height) / 2 * -1 + 0.75rem));
+  }
+}
+
+@media screen and (min-width: 42rem) {
+  .root > div {
+    transform: rotate(270deg)
+      translate(-46.5%, calc(var(--height) / 2 * -1 + 0.75rem));
+  }
+}
+
+@media screen and (min-width: 48rem) {
+  .root > div {
+    transform: rotate(270deg)
+      translate(-47.25%, calc(var(--height) / 2 * -1 + 0.75rem));
+  }
+}
+
+@media screen and (min-width: 60rem) {
+  .root {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    transform: translateX(calc(-100% + 1px));
+    border-bottom: none;
+  }
+
+  .root > div {
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1.25rem;
+    height: 100%;
+    overflow: hidden;
+  }
+}

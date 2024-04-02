@@ -7,14 +7,21 @@
 export function cloudinaryLoader({
   quality,
   src,
+  type = "webp",
   width,
 }: {
   quality?: number;
   src: string;
+  type?: "jpg" | "png" | "webp";
   width: number;
 }) {
   const array = src.split("/image/upload/");
-  const params = ["c_fill", "f_webp", `w_${width}`, `q_${quality || "auto"}`];
+  const params = [
+    "c_fill",
+    `f_${type}`,
+    `w_${width}`,
+    `q_${quality || "auto"}`,
+  ];
 
   return `${array[0]}/image/upload/${params.join(",")}/${array[1]}`;
 }

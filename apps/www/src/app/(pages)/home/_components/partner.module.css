@@ -28,7 +28,15 @@
   height: 2.5rem;
 }
 
+:global .dark :local .root > a img {
+  filter: contrast(2) grayscale(1) invert(1);
+}
+
 .root:hover > a img {
   opacity: 1;
   filter: grayscale(0);
+}
+
+:global .dark :local .root:hover > a img {
+  filter: contrast(2) grayscale(1) invert(1);
 }

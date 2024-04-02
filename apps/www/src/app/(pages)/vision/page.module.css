@@ -1,21 +1,9 @@
-.root {
-  background-color: var(--colors-background);
-}
-
-.root > div {
-  margin: 0 auto;
-  border-right: 1px solid var(--colors-gray-10);
-  border-left: 1px solid var(--colors-gray-10);
-  padding: 1rem;
-  max-width: 48rem;
-  min-height: 100dvh;
-}
-
 .content {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1rem;
+  padding-top: 7rem;
   padding: 2rem 0;
 }
 
@@ -26,10 +14,6 @@
   line-height: 100%;
   font-family: var(--fonts-heading);
   text-align: center;
-}
-
-.content img {
-  filter: invert(1);
 }
 
 .content p {
@@ -46,6 +30,7 @@
 @media screen and (min-width: 24rem) {
   .root > div {
     padding: 1.5rem;
+    padding-top: 7rem;
   }
 
   .content h2 {
@@ -60,6 +45,7 @@
 @media screen and (min-width: 48rem) {
   .root > div {
     padding: 2rem;
+    padding-top: 7rem;
   }
 
   .content h2 {

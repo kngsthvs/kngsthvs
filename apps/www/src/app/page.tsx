@@ -1,3 +1,10 @@
-import Page from "./(pages)/home/page";
+import Home from "./(pages)/home/page";
+import Layout from "./(pages)/layout";
 
-export default Page;
+export default function Page() {
+  return (
+    <Layout>
+      <Home />
+    </Layout>
+  );
+}

@@ -175,22 +175,6 @@ export function Ticker({
   //   spring.set(source + offset.current);
   // }, true);
 
-  const Child = (props) => (
-    <>
-      {Children.map(children, (child, index) => (
-        <li
-          ref={(element) => element && itemRef.current.push(element)}
-          style={{
-            minWidth: "auto",
-          }}
-          {...props}
-        >
-          {cloneElement(child as React.ReactElement)}
-        </li>
-      ))}
-    </>
-  );
-
   const position =
     axis === "y"
       ? {
@@ -263,13 +247,22 @@ export function Ticker({
           ...size,
         }}
       >
-        {[...Array(items)].map((item, index) => (
-          <Child
-            aria-hidden={index > 0 ? "true" : undefined}
-            key={generateKey(index)}
-            // style={index > 0 ? { display: "contents" } : undefined}
-          />
-        ))}
+        {[...Array(items)].map((item, index) =>
+          Children.map(children, (child, index) => (
+            <li
+              aria-hidden={index > 0 ? true : undefined}
+              key={generateKey(index)}
+              ref={(element) => element && itemRef.current.push(element)}
+              style={{
+                minWidth: "auto",
+              }}
+              {...props}
+              // style={index > 0 ? { display: "contents" } : undefined}
+            >
+              {cloneElement(child as React.ReactElement)}
+            </li>
+          )),
+        )}
       </motion.ul>
     </motion.section>
   );

@@ -4,13 +4,8 @@ import styles from "../page.module.css";
 export default function Page() {
   return (
     <main className={`dark ${styles.root}`}>
-      <Image
-        alt="Kings & Thieves icon"
-        height={60}
-        src="/icon.svg"
-        width={60}
-      />
-      /
+      <p>Private beta</p>
+
       <Image
         alt="Quarters logo"
         height={30}

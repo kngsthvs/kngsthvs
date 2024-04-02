@@ -1,6 +1,6 @@
 import { Link } from "@kngsthvs/ui/primitives/shared/link";
 import Image from "next/image";
-import appStyles from "./app.module.css";
+import appStyles from "../../_components/app.module.css";
 import styles from "./partner.module.css";
 
 export function Partner({

@@ -39,6 +39,10 @@
   height: 3rem;
 }
 
+:global .dark :local .root img {
+  filter: invert(1);
+}
+
 .root p {
   display: flex;
   flex-wrap: wrap;

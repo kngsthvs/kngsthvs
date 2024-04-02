@@ -1,0 +1,149 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.root table {
+  margin: 0.5rem -1rem;
+  border-top: 1px solid var(--colors-border);
+  border-collapse: collapse;
+}
+
+.root table tr:first-child {
+  display: none;
+}
+
+.root table tr td {
+  border-bottom: 1px solid var(--colors-border);
+  padding: 0 1rem 0.5rem;
+}
+
+@media screen and (min-width: 48rem) {
+  .root {
+    padding: 2rem;
+  }
+
+  .root table {
+    margin: 1rem -2rem;
+  }
+
+  .root table tr td {
+    padding: 0 2rem 0.5rem;
+  }
+}
+
+.root a {
+  color: var(--colors-primary);
+}
+
+.root h1 {
+  padding-bottom: 0.5em;
+  font-size: var(--fontSizes-3xl);
+  line-height: 100%;
+  font-family: var(--fonts-heading);
+}
+
+@media screen and (min-width: 24rem) {
+  .root h1 {
+    font-size: var(--fontSizes-4xl);
+  }
+}
+
+@media screen and (min-width: 48rem) {
+  .root h1 {
+    font-size: var(--fontSizes-5xl);
+    text-align: center;
+  }
+}
+
+.root h2 {
+  margin-top: 1.25em;
+  line-height: 120%;
+}
+
+.root h3 {
+  color: var(--colors-gray-80);
+  font-weight: normal;
+}
+
+:global .dark :local .root h3 {
+  color: var(--colors-foreground);
+}
+
+.root h4,
+.root h5,
+.root h6 {
+  font-family: var(--font-geist-mono);
+}
+
+.root h3,
+.root h4 {
+  margin-top: 1.5em;
+  line-height: 140%;
+}
+
+.root h4 {
+  letter-spacing: 0.0625em;
+}
+
+.root h5,
+.root h6 {
+  margin-top: 2em;
+  line-height: 180%;
+  letter-spacing: 0.125em;
+  text-transform: uppercase;
+}
+
+.root h2 + h3,
+.root h2 + h4,
+.root h3 + h3,
+.root h3 + h4,
+.root h4 + h3,
+.root h4 + h5 {
+  margin-top: 0.5em;
+}
+
+.root p {
+  margin-top: 0.5em;
+  color: var(--colors-gray-80);
+  line-height: 180%;
+}
+
+:global .dark :local .root p {
+  color: var(--colors-foreground);
+}
+
+.root b,
+.root strong {
+  color: var(--colors-foreground);
+}
+
+.root ul {
+  display: flex;
+  flex-direction: column;
+  margin: 0.8em 0;
+  padding-left: 2em;
+  list-style: square;
+}
+
+.root ul p {
+  margin-top: 0;
+}
+
+.root article > p:last-of-type {
+  margin-top: 2em;
+  color: var(--colors-gray-50);
+  font-size: var(--fontSizes-sm);
+  line-height: 1;
+  font-family: var(--font-geist-mono);
+  letter-spacing: 0.125em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+:global .contrast :local .root article > p:last-of-type {
+  color: var(--colors-foreground);
+}

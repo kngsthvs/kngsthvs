@@ -1,4 +1,4 @@
-import { Link } from "ui/primitives/link";
+// import { Link } from "ui/primitives/link";
 import styles from "./section.module.css";
 
 export function Section({
@@ -17,9 +17,9 @@ export function Section({
       <div>
         <h2>{props.title}</h2>
 
-        <Link className="link" keys={`Shift+${keys}`} {...{ href }}>
+        {/* <Link className="link" keys={`Shift+${keys}`} {...{ href }}>
           <span>View all</span>
-        </Link>
+        </Link> */}
       </div>
 
       {children}

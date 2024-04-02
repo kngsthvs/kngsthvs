@@ -6,32 +6,60 @@ import {
   type LinkProps,
   type LinkType,
 } from "@kngsthvs/ui/primitives/shared/link";
-import { forwardRef } from "react";
+import { forwardRef, useState } from "react";
+import { useInterval } from "react-use";
 import { useKey } from "../hooks/use-key";
 import styles from "./button.module.css";
+
+function Loading() {
+  const [count, setCount] = useState(1);
+
+  useInterval(() => {
+    if (count >= 3) {
+      setCount(1);
+    } else {
+      setCount((value) => value + 1);
+    }
+  }, 150);
+
+  return Array.from(Array(count))
+    .map(() => ".")
+    .join("");
+}
 
 export const Button = forwardRef<
   LinkType,
   LinkProps &
     React.PropsWithChildren<{
+      icon?: boolean;
+      loading?: boolean;
       keys?: string;
       size?: "small" | "medium" | "large";
-      variant?: "priamry" | "secondary";
+      variant?: "priamry" | "secondary" | "tertiary";
     }>
->(({ children, keys, size = "medium", variant = "primary", ...props }, ref) => {
-  const { pressed } = useKey({
-    href: "href" in props ? String(props.href) : undefined,
-    keys: keys ?? "",
-  });
-  const data = mapDataAttributes({ pressed, size, variant });
+>(
+  (
+    { children, icon, keys, size = "medium", variant = "primary", ...props },
+    ref,
+  ) => {
+    const { pressed } = useKey({
+      href: "href" in props ? String(props.href) : undefined,
+      keys: keys ?? "",
+    });
+    const data = mapDataAttributes({ icon, pressed, size, variant });
 
-  return (
-    <Link className={styles.root} {...{ ref, ...data, ...props }}>
-      <span>{children}</span>
+    return (
+      <Link className={styles.root} {...{ ref, ...data, ...props }}>
+        <span>
+          {children}
 
-      {keys ? <kbd>[{keys}]</kbd> : ""}
-    </Link>
-  );
-});
+          {props.loading ? <Loading /> : null}
+        </span>
+
+        {keys ? <kbd>[{keys}]</kbd> : ""}
+      </Link>
+    );
+  },
+);
 
 Button.displayName = "Button";

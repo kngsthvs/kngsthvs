@@ -16,7 +16,7 @@
 }
 
 .content > div {
-  border-right: 1px solid var(--colors-gray-5);
+  border-right: 1px solid var(--colors-border);
   padding: 2rem;
   max-width: 48rem;
   height: 100%;

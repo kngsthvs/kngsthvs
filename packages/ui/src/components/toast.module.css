@@ -1,0 +1,10 @@
+.root {
+  z-index: 100;
+  border: 1px solid var(--colors-foreground);
+  background-color: var(--colors-background);
+  padding: 1rem;
+  width: 100%;
+  font-size: var(--fontSizes-sm);
+  line-height: 1;
+  font-family: var(--font-geist-mono);
+}

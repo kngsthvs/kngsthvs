@@ -1,9 +1,9 @@
 "use client";
 
-import { tinykeys } from "@kngsthvs/ui/packages/tinykeys";
+import { useKeys } from "@kngsthvs/ui/functions/client/context/keys";
 import Image from "next/image";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useEffect } from "react";
 import styles from "./error.module.css";
 
 export function Error({
@@ -15,27 +15,21 @@ export function Error({
 }) {
   const router = useRouter();
 
-  useEffect(() => {
-    const unsubscribe = tinykeys(window, {
-      b: () => {
-        router.back();
-      },
-      f: () => {
-        router.forward();
-      },
-      h: () => {
-        router.push("/");
-      },
-    });
-
-    return () => {
-      unsubscribe();
-    };
-  }, [router]);
+  useKeys("b", () => {
+    router.back();
+  });
+  useKeys("f", () => {
+    router.forward();
+  });
+  useKeys("h", () => {
+    router.push("/");
+  });
 
   return (
     <section className={styles.root}>
-      <Image alt="Chi Rho" height={80} priority src="/icon.svg" width={80} />
+      <Link href="/">
+        <Image alt="Chi Rho" height={80} priority src="/icon.svg" width={80} />
+      </Link>
 
       <div className="">
         <h1>{title}</h1>

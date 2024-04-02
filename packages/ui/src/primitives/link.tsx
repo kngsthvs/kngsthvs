@@ -43,7 +43,7 @@ function MultipleKeys({
 }: LinkProps &
   React.PropsWithChildren<
     {
-      keys: string | string[];
+      keys: string;
     } & TooltipProps
   >) {
   const { pressed } = useKey({
@@ -80,27 +80,17 @@ function MultipleKeys({
         </Tooltip.Trigger>
 
         <Tooltip.Content forceMount {...{ side, sideOffset }}>
-          {props.keys && Array.isArray(props.keys) ? (
-            <kbd
-              style={{
-                opacity: pressed ? "1" : "0",
-              }}
-            >
-              [{props.keys.slice(1).join("+")}]
-            </kbd>
-          ) : (
-            <kbd
-              style={{
-                opacity: pressed ? "1" : "0",
-              }}
-            >
-              [
-              {props.keys.includes(" ")
-                ? props.keys.slice(props.keys.indexOf(" ") + 1)
-                : props.keys.slice(props.keys.indexOf("+") + 1)}
-              ]
-            </kbd>
-          )}
+          <kbd
+            style={{
+              opacity: pressed ? "1" : "0",
+            }}
+          >
+            [
+            {props.keys.includes(" ")
+              ? props.keys.slice(props.keys.indexOf(" ") + 1)
+              : props.keys.slice(props.keys.indexOf("+") + 1)}
+            ]
+          </kbd>
         </Tooltip.Content>
       </Tooltip.Root>
     </Tooltip.Provider>
@@ -114,7 +104,7 @@ export function Link({
 }: LinkProps &
   React.PropsWithChildren<
     {
-      keys?: string | string[];
+      keys?: string;
     } & TooltipProps
   >) {
   if (keys?.includes(" ") || keys?.includes("+") || Array.isArray(keys)) {

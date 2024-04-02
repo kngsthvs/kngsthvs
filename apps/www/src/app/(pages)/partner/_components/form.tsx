@@ -1,30 +1,89 @@
 "use client";
 
+import { minDelay } from "@kngsthvs/ui/functions/shared/min-delay";
+import { toast } from "@kngsthvs/ui/packages/sonner";
+import { Form as FormPrimitive } from "@kngsthvs/ui/primitives/client/form";
+import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 import { Button } from "ui/components/button";
 import { Input } from "ui/components/input";
 import { Textarea } from "ui/components/textarea";
+import { Toast } from "ui/components/toast";
+import { usePages } from "../../_components/pages";
+import { action } from "../_lib/action";
 import styles from "./form.module.css";
 
 export function Form() {
-  return (
-    <form className={styles.root}>
-      <Input.Group>
-        <Input label="Name" name="name" placeholder="Name" />
+  const { setFocus, setTitle } = usePages();
+  const router = useRouter();
+  const [errors, _setErrors] = useState({
+    body: "",
+    company: "",
+    email: "",
+    name: "",
+  });
+  const [pending, setPending] = useState(false);
 
-        <Input label="Email" name="email" placeholder="Email" />
+  useEffect(() => {
+    setFocus(true);
+    setTitle("Partner");
+  }, []);
+
+  return (
+    <FormPrimitive
+      action={async (formData) => {
+        const res = await minDelay(action(formData), 3000);
+
+        toast.custom(() => <Toast>{res?.message}</Toast>);
+
+        if (res && res.ok) {
+          router.push("/");
+        }
+
+        setPending(false);
+      }}
+      className={styles.root}
+      onSubmit={() => {
+        setPending(true);
+      }}
+    >
+      <Input.Group>
+        <Input
+          label="Name"
+          message={errors.name}
+          name="name"
+          placeholder="Name"
+          required
+        />
+
+        <Input
+          label="Email"
+          message={errors.email}
+          name="email"
+          placeholder="Email"
+          required
+        />
       </Input.Group>
 
-      <Input label="Company" name="company" placeholder="Company" />
+      <Input
+        label="Company"
+        message={errors.company}
+        name="company"
+        placeholder="Company"
+        required
+      />
 
       <Textarea
         label="Body"
-        name="description"
+        message={errors.body}
+        name="body"
         placeholder="Describe your project"
+        required
       />
 
-      <Button size="large" type="submit">
+      <Button disabled={pending} loading={pending} size="large" type="submit">
         Apply
       </Button>
-    </form>
+    </FormPrimitive>
   );
 }

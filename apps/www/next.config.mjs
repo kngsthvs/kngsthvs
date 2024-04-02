@@ -1,5 +1,6 @@
-// import MillionCompiler from "@million/lint";
+import MillionCompiler from "@million/lint";
 import bundleAnalyzer from "@next/bundle-analyzer";
+import withVercelToolbar from "@vercel/toolbar/plugins/next";
 
 const withBundleAnalyzer = bundleAnalyzer({
   enabled: process.env.ANALYZE === true,
@@ -7,13 +8,10 @@ const withBundleAnalyzer = bundleAnalyzer({
 
 /** @type {import("next").NextConfig} */
 const nextConfig = {
-  experimental: {
-    useDeploymentId: true,
-    useDeploymentIdServerActions: true,
-  },
   reactStrictMode: true,
   transpilePackages: ["@kngsthvs/lib", "@kngsthvs/ui", "ui"],
 };
 
-// export default withBundleAnalyzer(MillionCompiler.next()(nextConfig));
-export default withBundleAnalyzer(nextConfig);
+export default withBundleAnalyzer(
+  withVercelToolbar()(MillionCompiler.next()(nextConfig)),
+);

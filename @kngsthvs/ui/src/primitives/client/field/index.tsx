@@ -5,7 +5,12 @@
 
 "use client";
 
-import * as LabelPrimitive from "@radix-ui/react-label";
+import {
+  Control,
+  Field as RadixField,
+  Label as RadixLabel,
+  Message as RadixMessage,
+} from "@radix-ui/react-form";
 import InputFormat from "input-format/react";
 import { createContext, useContext, useState } from "react";
 import { mapDataAttributes } from "../../../functions/shared/attributes";
@@ -25,7 +30,7 @@ const Context = createContext<
   | [
       {
         data?: { [key: string]: boolean };
-        name?: string;
+        name: string;
         onChange?: React.ChangeEventHandler<
           HTMLInputElement | HTMLTextAreaElement
         >;
@@ -51,13 +56,15 @@ export function Root({
   name,
   placeholder,
   ...props
-}: React.PropsWithChildren<
-  React.HTMLProps<
-    HTMLDivElement &
-      Pick<React.HTMLProps<HTMLInputElement>, "name"> &
-      Pick<React.HTMLProps<HTMLInputElement>, "placeholder">
-  >
->) {
+}: React.ComponentProps<typeof RadixField> &
+  React.PropsWithChildren<
+    Omit<
+      React.HTMLProps<
+        HTMLDivElement & Pick<React.HTMLProps<HTMLInputElement>, "placeholder">
+      >,
+      "name"
+    >
+  >) {
   if (name === undefined) {
     throw new Error("Field requires a name");
   }
@@ -86,67 +93,45 @@ export function Root({
     <Context.Provider
       value={[{ data, name, onChange, placeholder, ...state }, setState]}
     >
-      <div {...data} {...props}>
-        {children}
-      </div>
+      <RadixField {...{ name, ...data, ...props }}>{children}</RadixField>
     </Context.Provider>
   );
 }
 
 function Input(
   props?:
-    | React.DetailedHTMLProps<
-        React.InputHTMLAttributes<HTMLInputElement>,
-        HTMLInputElement
-      >
+    | (React.ComponentProps<typeof Control> &
+        React.DetailedHTMLProps<
+          React.InputHTMLAttributes<HTMLInputElement>,
+          HTMLInputElement
+        >)
     | React.ComponentProps<typeof InputFormat>,
 ) {
-  const [{ data, name, onChange, placeholder, value }, setField] = useField();
+  const [{ data, onChange, value }, setField] = useField();
 
   if (props && "format" in props)
     return (
-      <InputFormat
-        id={name}
-        onChange={(event) => {
-          setField((value) => ({
-            ...value,
-            value: event as string,
-          }));
-        }}
-        {...{
-          name,
-          placeholder,
-          value,
-          ...data,
-          ...props,
-        }}
-      />
+      <Control asChild>
+        <InputFormat
+          onChange={(event) => {
+            setField((value) => ({
+              ...value,
+              value: event as string,
+            }));
+          }}
+          {...{
+            value,
+            ...data,
+            ...props,
+          }}
+        />
+      </Control>
     );
 
   return (
-    <input
-      id={name}
+    <Control
       {...{
-        name,
         onChange,
-        placeholder,
-        ...data,
-        ...props,
-      }}
-    />
-  );
-}
-
-function Textarea<T>(props?: React.HTMLProps<HTMLTextAreaElement> & T) {
-  const [{ data, name, onChange, placeholder }] = useField();
-
-  return (
-    <textarea
-      id={name}
-      {...{
-        name,
-        onChange,
-        placeholder,
         ...data,
         ...props,
       }}
@@ -157,18 +142,45 @@ function Textarea<T>(props?: React.HTMLProps<HTMLTextAreaElement> & T) {
 function Label({
   children,
   ...props
-}: React.PropsWithChildren<{ className?: string }>) {
-  const [{ data, name, placeholder }] = useField();
+}: React.ComponentProps<typeof RadixLabel>) {
+  const [{ data }] = useField();
 
   return (
-    <LabelPrimitive.Root htmlFor={name} {...data} {...props}>
-      {children ?? placeholder}
-    </LabelPrimitive.Root>
+    <RadixLabel {...data} {...props}>
+      {children}
+    </RadixLabel>
+  );
+}
+
+function Message({
+  children,
+  ...props
+}: React.ComponentProps<typeof RadixMessage>) {
+  return <RadixMessage {...props}>{children}</RadixMessage>;
+}
+
+function Textarea(
+  props?: React.ComponentProps<typeof Control> &
+    React.HTMLProps<HTMLTextAreaElement>,
+) {
+  const [{ data, onChange }] = useField();
+
+  return (
+    <Control asChild>
+      <textarea
+        {...{
+          onChange,
+          ...data,
+          ...props,
+        }}
+      />
+    </Control>
   );
 }
 
 export const Field = Object.assign(Root, {
   Input,
   Label,
+  Message,
   Textarea,
 });

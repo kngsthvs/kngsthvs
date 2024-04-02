@@ -1,122 +1,78 @@
-"use server";
-
 import "server-only";
 
 import { cookies } from "next/headers";
 import {
-  IoDesktopOutline,
-  IoLogoAndroid,
-  IoLogoApple,
-  IoLogoMicrosoft,
-  IoLogoTux,
-  IoMoon,
-  IoPhonePortraitOutline,
-  IoSunny,
-} from "react-icons/io5";
-import {
+  type ColorScheme,
+  type Contrast,
   type GetThemeReturn,
-  type PrefersColorScheme,
-  type Set,
-  type Theme,
-  type Themes,
-  type UserAgent,
-} from "../types";
+  type ReducedMotion,
+  type ReducedTransparency,
+} from "../types/theme";
 
-export async function getTheme(): Promise<GetThemeReturn> {
+export async function getTheme<T = undefined>(): Promise<GetThemeReturn<T>> {
   const cookieStore = cookies();
 
-  const prefersColorScheme = cookieStore.get("prefersColorScheme");
-  const theme = cookieStore.get("theme");
+  const colorScheme = cookieStore.get("colorScheme")?.value as
+    | ColorScheme
+    | undefined;
+  const contrast = cookieStore.get("contrast")?.value as Contrast | undefined;
+  const prefers = {
+    colorScheme: cookieStore.get("prefersColorScheme")?.value as
+      | ColorScheme
+      | undefined,
+    contrast: cookieStore.get("prefersContrast")?.value as Contrast | undefined,
+    reducedMotion: cookieStore.get("prefersReducedMotion")?.value as
+      | ReducedMotion
+      | undefined,
+    reducedTransparency: cookieStore.get("prefersReducedTransparency")
+      ?.value as ReducedTransparency | undefined,
+  };
+  const reducedMotion = cookieStore.get("reducedMotion")?.value as
+    | ReducedMotion
+    | undefined;
+  const reducedTransparency = cookieStore.get("reducedTransparency")?.value as
+    | ReducedTransparency
+    | undefined;
+  const theme = cookieStore.get("theme")?.value as T;
 
   return {
-    className: (prefersColorScheme && theme?.value === "system"
-      ? prefersColorScheme.value
-      : theme?.value ?? "system") as PrefersColorScheme,
-    name: "theme",
-    value: (theme?.value ?? "system") as Theme,
+    colorScheme,
+    contrast,
+    prefers,
+    reducedMotion,
+    reducedTransparency,
+    theme,
   };
 }
 
-export async function getThemes() {
-  const userAgent = cookies().get("userAgent") as {
-    name: "userAgent";
-    value: UserAgent | undefined;
-  };
-
-  const themes = [
-    {
-      icon:
-        userAgent && typeof userAgent.value === "string" ? (
-          userAgent.value.includes("Android") ? (
-            <IoLogoAndroid />
-          ) : userAgent.value.includes("Apple") ? (
-            <IoLogoApple />
-          ) : userAgent.value.includes("Windows") ? (
-            <IoLogoMicrosoft />
-          ) : userAgent.value.includes("Linux") ? (
-            <IoLogoTux />
-          ) : userAgent.value.includes("Mobile") ? (
-            <IoPhonePortraitOutline />
-          ) : (
-            <IoDesktopOutline />
-          )
-        ) : (
-          <IoDesktopOutline />
-        ),
-      name: "System",
-      value: "system",
-    },
-    {
-      icon: <IoMoon />,
-      name: "Dark",
-      value: "dark",
-    },
-    {
-      icon: <IoSunny />,
-      name: "Light",
-      value: "light",
-    },
-  ] as Themes[];
-
-  return themes;
-}
-
-export async function setTheme({ prefersColorScheme, theme, userAgent }: Set) {
+export async function setTheme<T = undefined>({
+  colorScheme,
+  contrast,
+  reducedMotion,
+  reducedTransparency,
+  theme,
+}: GetThemeReturn<T>) {
   "use server";
 
   const cookieStore = cookies();
 
-  if (prefersColorScheme) {
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
-    cookieStore.set("prefersColorScheme", prefersColorScheme);
+  if (colorScheme) {
+    cookieStore.set("colorScheme", colorScheme);
+  }
+
+  if (contrast) {
+    cookieStore.set("contrast", contrast);
+  }
+
+  if (reducedMotion) {
+    cookieStore.set("reducedMotion", reducedMotion);
+  }
+
+  if (reducedTransparency) {
+    cookieStore.set("reducedTransparency", reducedTransparency);
   }
 
   if (theme) {
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
-    cookieStore.set("theme", theme);
-  } else {
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
-    cookieStore.set("theme", "system");
+    cookieStore.set("theme", theme as string);
   }
-
-  if (userAgent)
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
-    cookieStore.set(
-      "userAgent",
-      userAgent?.includes("Android")
-        ? "Android"
-        : userAgent?.includes("Apple")
-        ? "Apple"
-        : userAgent?.includes("Windows")
-        ? "Windows"
-        : userAgent?.includes("Linux")
-        ? "Linux"
-        : userAgent?.includes("Mobile")
-        ? "Mobile"
-        : userAgent
-    );
 }

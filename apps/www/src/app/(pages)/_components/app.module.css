@@ -26,6 +26,17 @@
   max-height: 100%;
 }
 
+:global .contrast :local .root > a svg,
+:global .contrast :local .root:focus-visible > a svg,
+:global .contrast :local .root:hover > a svg,
+:global .contrast :local .root:active > a svg {
+  opacity: 1;
+}
+
+:global .dark :local .root > a svg {
+  filter: invert(1);
+}
+
 .root > div:only-child {
   padding: 0.5rem;
 }
