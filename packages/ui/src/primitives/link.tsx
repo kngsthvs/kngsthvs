@@ -70,6 +70,10 @@ function MultipleKeys({
     );
   }
 
+  const keys = props.keys.includes(" ")
+    ? props.keys.slice(props.keys.indexOf(" ") + 1)
+    : props.keys.slice(props.keys.indexOf("+") + 1);
+
   return (
     <Tooltip.Provider>
       <Tooltip.Root>
@@ -79,17 +83,13 @@ function MultipleKeys({
           </LinkPrimitive>
         </Tooltip.Trigger>
 
-        <Tooltip.Content forceMount {...{ side, sideOffset }}>
+        <Tooltip.Content aria-label={keys} forceMount {...{ side, sideOffset }}>
           <kbd
             style={{
               opacity: pressed ? "1" : "0",
             }}
           >
-            [
-            {props.keys.includes(" ")
-              ? props.keys.slice(props.keys.indexOf(" ") + 1)
-              : props.keys.slice(props.keys.indexOf("+") + 1)}
-            ]
+            [{keys}]
           </kbd>
         </Tooltip.Content>
       </Tooltip.Root>
