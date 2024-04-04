@@ -16,7 +16,7 @@
   border: 2px solid transparent;
   width: fit-content;
   height: 1rem;
-  color: var(--colors-gray-25);
+  color: var(--colors-gray-50);
   font-size: var(--fontSizes-xs);
   line-height: 1;
 }
@@ -34,11 +34,11 @@
 
 .root > button:focus-visible,
 .root > button:hover {
-  color: var(--colors-gray-50);
+  color: var(--colors-gray-75);
 }
 
 .root > button:active {
-  color: var(--colors-gray-75);
+  color: var(--colors-foreground);
 }
 
 .root > button[data-active="true"],
