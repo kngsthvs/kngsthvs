@@ -210,7 +210,7 @@ function Provider({
       <div className={styles.root} data-focus={focus}>
         <div>
           <Aside>
-            <p>Made for the glory of Christ.</p>
+            <p>For the glory of Christ.</p>
 
             {!focus ? (
               <animated.ul>
@@ -235,15 +235,7 @@ function Provider({
         </div>
 
         <nav className={styles.nav}>
-          <ul>
-            <li className={styles.external}>
-              {/* <NextLink href="https://alongj.org">
-                <img alt="Along Journal logo" src="/logos/along.svg" />
-
-                <VisuallyHidden>Along</VisuallyHidden>
-              </NextLink> */}
-            </li>
-          </ul>
+          <p>American built, owned, and operated.</p>
 
           {controls}
         </nav>
