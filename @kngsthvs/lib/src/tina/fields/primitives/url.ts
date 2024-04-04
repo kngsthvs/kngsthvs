@@ -8,7 +8,7 @@ export const url: TinaField = {
   ui: {
     validate: (value: string) => {
       if (!value) return;
-      if (value.charAt(0) === "#" || value.charAt(0) === "/") return;
+      if (value.startsWith("#") || value.startsWith("/")) return;
       if (urlSchema.safeParse(value).success === false)
         return "Please enter a valid URL";
     },

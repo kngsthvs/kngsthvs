@@ -7,11 +7,21 @@ import { Toaster } from "@kngsthvs/ui/packages/sonner";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { VercelToolbar } from "@vercel/toolbar/next";
+import { GeistMono } from "geist/font/mono";
+import { GeistSans } from "geist/font/sans";
 import { type Metadata } from "next";
 import "ui/styles";
 import "ui/styles/globals.css";
-import { Body } from "./_components/body";
+import { Theme } from "./_components/theme";
 import "./globals.css";
+// eslint-disable-next-line camelcase -- Allow non-camelCase font name
+import { EB_Garamond } from "next/font/google";
+
+const EBGaramond = EB_Garamond({
+  subsets: ["latin"],
+  variable: "--fonts-heading",
+  weight: ["400"],
+});
 
 export const metadata: Metadata = {
   description:
@@ -20,13 +30,22 @@ export const metadata: Metadata = {
 };
 
 export default async function RootLayout(props: { children: React.ReactNode }) {
-  const { colorScheme, contrast, theme, ...rest } = await getTheme<Themes>();
+  const theme = await getTheme<Themes>();
+  const className = [
+    theme.colorScheme === "light" ? "light" : "dark",
+    theme.contrast === "more" ? "contrast" : "",
+    theme.theme === "default" ? "" : theme.theme,
+  ].filter((value) => value);
 
   return (
     <html lang="en">
       <KeysProvider>
-        <ThemeProvider<Themes> {...{ colorScheme, contrast, theme, ...rest }}>
-          <Body {...{ colorScheme, contrast, theme }}>
+        <ThemeProvider<Themes> {...theme}>
+          <body
+            className={`${GeistSans.className} ${GeistMono.variable} ${EBGaramond.variable} ${className.join(" ")}`}
+          >
+            <Theme />
+
             <link href="/favicon.svg" rel="icon" type="image/svg+xml" />
 
             {props.children}
@@ -49,7 +68,7 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
             <Analytics />
             <SpeedInsights />
             {env.NODE_ENV === "development" && <VercelToolbar />}
-          </Body>
+          </body>
         </ThemeProvider>
       </KeysProvider>
     </html>
