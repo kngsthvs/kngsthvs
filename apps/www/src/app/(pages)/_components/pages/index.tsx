@@ -235,7 +235,11 @@ function Provider({
         </div>
 
         <nav className={styles.nav}>
-          <p>American built, owned, and operated.</p>
+          <div>
+            <div className={styles.flag} />
+
+            <p>American built, owned, and operated.</p>
+          </div>
 
           {controls}
         </nav>
