@@ -1,5 +1,5 @@
-import { PGlite } from "@electric-sql/pglite";
-import { drizzle } from "drizzle-orm/pglite";
+// import { PGlite } from "@electric-sql/pglite";
+// import { drizzle } from "drizzle-orm/pglite";
 
-const client = new PGlite();
-const db = drizzle(client);
+// const client = new PGlite();
+// const db = drizzle(client);
