@@ -11,7 +11,7 @@
     "@kngsthvs/tsconfig": "workspace:*",
     "@types/node": "^20.6.0",
     "eslint": "^8.56.0",
-    "typescript": "^5"
+    "typescript": "^5.4.4"
   },
   "exports": {
     "./network/ip": "./src/network/ip.ts",

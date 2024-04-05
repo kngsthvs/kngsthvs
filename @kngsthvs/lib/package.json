@@ -26,7 +26,7 @@
     "eslint-plugin-storybook": "^0.6.12",
     "storybook": "^7.0.20",
     "tsup": "^8.0.2",
-    "typescript": "^5.3.3"
+    "typescript": "^5.4.4"
   },
   "exports": {
     "./calendar/add-to-calendar": "./src/calendar/add-to-calendar.ts",

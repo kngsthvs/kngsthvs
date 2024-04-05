@@ -9,7 +9,7 @@
     "eslint-config-turbo": "^1.11.3",
     "eslint-plugin-only-warn": "^1.1.0",
     "eslint-plugin-react": "7.33.2",
-    "typescript": "^5"
+    "typescript": "^5.4.4"
   },
   "files": [
     "library.js",

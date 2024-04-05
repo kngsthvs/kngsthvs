@@ -14,6 +14,9 @@ export const env = createEnv({
       process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_SHA,
   },
   server: {
+    BASEHUB_TOKEN: z.string().min(1),
+    EDGE_CONFIG_FEATURE_FLAGS: z.string().min(1),
+    FLAGS_SECRET: z.string().min(1),
     KV_REST_API_READ_ONLY_TOKEN: z.string().min(1),
     KV_REST_API_TOKEN: z.string().min(1),
     KV_REST_API_URL: z.string().min(1),

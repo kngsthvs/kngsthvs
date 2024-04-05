@@ -2,7 +2,9 @@ import { shuffle } from "@kngsthvs/lib/entropy/shuffle";
 import { mapDataAttributes } from "@kngsthvs/ui/functions/shared/attributes";
 import { Balancer } from "@kngsthvs/ui/packages/balancer";
 import { basehub } from "basehub";
+import { Suspense } from "react";
 import ReactMarkdown from "react-markdown";
+import { FeatureFlags } from "../_components/feature-flags";
 import { Controls } from "./_components/controls";
 import { Footer } from "./_components/footer";
 import { Provider } from "./_components/pages";
@@ -59,6 +61,11 @@ export default async function Layout({
           </blockquote>
         </Footer>
       </div>
+
+      {/* Vercel */}
+      <Suspense fallback={null}>
+        <FeatureFlags />
+      </Suspense>
     </Provider>
   );
 }
