@@ -1,5 +1,4 @@
 import { env } from "@/env";
-import { headers } from "next/headers";
 import { Tag } from "ui/components/tag";
 import { Color } from "./color";
 import { Contrast } from "./contrast";
@@ -31,8 +30,21 @@ function Deployment() {
       href={
         id ? `https://vercel.com/kngsthvs/kngsthvs/${id}/source` : undefined
       }
+      variant={
+        env.NODE_ENV === "production" || env.VERCEL_ENV === "production"
+          ? "primary"
+          : env.VERCEL_ENV === "preview"
+            ? "secondary"
+            : "tertiary"
+      }
     >
-      {id ? id.slice(0, 9) : headers().get("x-forwarded-port")}
+      {env.NODE_ENV === "production" || env.VERCEL_ENV === "production"
+        ? "PROD"
+        : env.VERCEL_ENV === "preview"
+          ? "PREV"
+          : env.NODE_ENV === "test"
+            ? "TEST"
+            : "DEV"}
     </Tag>
   );
 }
@@ -45,25 +57,6 @@ export function Controls() {
       <Theme />
 
       <Color />
-
-      {/* Environment */}
-      <Tag
-        variant={
-          env.NODE_ENV === "production" || env.VERCEL_ENV === "production"
-            ? "primary"
-            : env.VERCEL_ENV === "preview"
-              ? "secondary"
-              : "tertiary"
-        }
-      >
-        {env.NODE_ENV === "production" || env.VERCEL_ENV === "production"
-          ? "PROD"
-          : env.VERCEL_ENV === "preview"
-            ? "PREV"
-            : env.NODE_ENV === "test"
-              ? "TEST"
-              : "DEV"}
-      </Tag>
 
       {/* Git commit */}
       <Commit />
