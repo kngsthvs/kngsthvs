@@ -12,7 +12,7 @@
   color: var(--colors-gray-90);
   font-size: var(--fontSizes-2xl);
   line-height: 100%;
-  font-family: var(--fonts-heading);
+  font-family: var(--font-heading);
   text-align: center;
 }
 
@@ -20,7 +20,7 @@
   color: var(--colors-gray-60);
   font-size: var(--fontSizes-lg);
   line-height: 160%;
-  font-family: var(--fonts-heading);
+  font-family: var(--font-heading);
 }
 
 .content p:not(:first-child) {

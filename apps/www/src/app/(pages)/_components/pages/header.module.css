@@ -116,7 +116,7 @@
   color: var(--colors-foreground);
   font-weight: normal;
   line-height: 1.5;
-  font-family: var(--fonts-heading);
+  font-family: var(--font-heading);
   letter-spacing: 0.125em;
   text-transform: uppercase;
 }

@@ -19,7 +19,7 @@ import { EB_Garamond } from "next/font/google";
 
 const EBGaramond = EB_Garamond({
   subsets: ["latin"],
-  variable: "--fonts-heading",
+  variable: "--font-heading",
   weight: ["400"],
 });
 

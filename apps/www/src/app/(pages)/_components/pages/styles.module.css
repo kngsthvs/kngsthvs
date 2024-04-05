@@ -61,7 +61,7 @@
   display: block;
   display: flex;
   position: absolute;
-  top: -1px;
+  top: -0.5px;
   left: -1px;
   justify-content: center;
   align-items: center;
@@ -72,7 +72,7 @@
   color: var(--colors-background);
   font-size: 0.438rem;
   line-height: 1;
-  font-family: cursive;
+  font-family: var(--font-heading);
 }
 
 .nav {

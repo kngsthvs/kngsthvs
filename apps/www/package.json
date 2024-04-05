@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@electric-sql/pglite": "^0.1.1",
     "@kngsthvs/lib": "workspace:*",
     "@kngsthvs/ui": "workspace:*",
     "@million/lint": "^0.0.73",
@@ -18,8 +19,11 @@
     "@vercel/speed-insights": "^1.0.10",
     "@vercel/toolbar": "^0.1.13",
     "@workos-inc/node": "^6.7.0",
-    "basehub": "^3.0.2",
+    "basehub": "^3.2.0",
+    "drizzle-kit": "^0.20.14",
+    "drizzle-orm": "^0.30.7",
     "effect": "^2.4.15",
+    "electric-sql": "^0.9.6",
     "framer-motion": "^11.0.12",
     "geist": "^1.2.2",
     "lib": "workspace:*",

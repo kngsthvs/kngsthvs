@@ -43,7 +43,7 @@
   padding-bottom: 0.5em;
   font-size: var(--fontSizes-3xl);
   line-height: 100%;
-  font-family: var(--fonts-heading);
+  font-family: var(--font-heading);
 }
 
 @media screen and (min-width: 24rem) {

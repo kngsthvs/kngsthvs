@@ -7,7 +7,7 @@
   color: var(--colors-gray-90);
   font-size: var(--fontSizes-lg);
   line-height: 140%;
-  font-family: var(--fonts-heading);
+  font-family: var(--font-heading);
 }
 
 .content p:not(:first-child) {
