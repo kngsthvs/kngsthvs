@@ -73,7 +73,7 @@ function Provider({
   const [ref, { height }] = useMeasure<HTMLElement>();
   const pathname = usePathname();
   const router = useRouter();
-  const home = pathname === "/" || pathname === "/home";
+  const home = pathname ? pathname === "/" || pathname === "/home" : props.home;
   // const style = useSpring({
   //   borderWidth: home ? 1 : 0,
   //   height: pathname ? (home ? height : 0) : 432,
@@ -172,7 +172,7 @@ function Provider({
         <div
           className={headingStyles.root}
           style={{
-            height: height === 0 ? (props.home ? 432 : 0) : height,
+            height: height === 0 ? (home ? 432 : 0) : height,
           }}
         >
           <article {...{ ref }}>
