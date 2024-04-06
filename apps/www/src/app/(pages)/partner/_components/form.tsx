@@ -3,7 +3,7 @@
 import { minDelay } from "@kngsthvs/ui/functions/shared/min-delay";
 import { toast } from "@kngsthvs/ui/packages/sonner";
 import { Form as FormPrimitive } from "@kngsthvs/ui/primitives/client/form";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Button } from "ui/components/button";
 import { Input } from "ui/components/input";
@@ -15,6 +15,7 @@ import styles from "./form.module.css";
 
 export function Form() {
   const { setFocus, setTitle } = usePages();
+  const pathname = usePathname();
   const router = useRouter();
   const [errors, _setErrors] = useState({
     body: "",
@@ -27,7 +28,7 @@ export function Form() {
   useEffect(() => {
     setFocus(true);
     setTitle("Partner");
-  }, []);
+  }, [pathname]);
 
   return (
     <FormPrimitive
@@ -81,7 +82,12 @@ export function Form() {
         required
       />
 
-      <Button disabled={pending} loading={pending} size="large" type="submit">
+      <Button
+        disabled={pending}
+        loading={pending ? "true" : "false"}
+        size="large"
+        type="submit"
+      >
         Apply
       </Button>
     </FormPrimitive>

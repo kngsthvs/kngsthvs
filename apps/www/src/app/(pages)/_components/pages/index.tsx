@@ -4,7 +4,7 @@ import { useKeys } from "@kngsthvs/ui/functions/client/context/keys";
 import { animated } from "@react-spring/web";
 import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { useMeasure, useWindowScroll } from "react-use";
 import { VisuallyHidden } from "ui/components";
 import { Button } from "ui/components/button";
@@ -83,15 +83,16 @@ function Provider({
   const { y } = useWindowScroll();
   const percentage = 1 / (96 / y);
 
-  useKeys("b", () => {
-    router.back();
-  });
-  useKeys("f", () => {
-    router.forward();
-  });
   useKeys("h", () => {
     router.push("/");
   });
+
+  useEffect(() => {
+    return () => {
+      setFocus(false);
+      setTitle(undefined);
+    };
+  }, [pathname]);
 
   return (
     <Context.Provider value={{ focus, setFocus, setTitle }}>

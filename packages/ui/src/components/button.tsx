@@ -32,7 +32,7 @@ export const Button = forwardRef<
   LinkProps &
     React.PropsWithChildren<{
       icon?: boolean;
-      loading?: boolean;
+      loading?: "true" | "false";
       keys?: string;
       size?: "small" | "medium" | "large";
       variant?: "priamry" | "secondary" | "tertiary";
@@ -53,7 +53,7 @@ export const Button = forwardRef<
         <span>
           {children}
 
-          {props.loading ? <Loading /> : null}
+          {Boolean(props.loading) ? <Loading /> : null}
         </span>
 
         {keys ? <kbd>[{keys}]</kbd> : ""}

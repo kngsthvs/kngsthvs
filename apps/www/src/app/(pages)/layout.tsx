@@ -18,7 +18,6 @@ export default async function Layout({
 }) {
   const headersList = headers();
   const host = headersList.get("host") ?? headersList.get("x-forwarded-host");
-  const nextUrl = headersList.get("next-url");
   const referer = headersList.get("referer");
   const pathname = host
     ? referer?.slice(referer.indexOf(host) + host.length, referer.length)
@@ -57,7 +56,9 @@ export default async function Layout({
   return (
     <Provider
       controls={<Controls />}
-      home={["/", "/home"].includes(nextUrl ?? pathname ?? "/")}
+      home={["/", "/home"].includes(
+        headersList.get("next-url") ?? pathname ?? "/",
+      )}
       {...{ whispers }}
     >
       <div className={styles.root}>
