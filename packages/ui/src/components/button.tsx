@@ -53,7 +53,7 @@ export const Button = forwardRef<
         <span>
           {children}
 
-          {Boolean(props.loading) ? <Loading /> : null}
+          {props.loading === "true" ? <Loading /> : null}
         </span>
 
         {keys ? <kbd>[{keys}]</kbd> : ""}
