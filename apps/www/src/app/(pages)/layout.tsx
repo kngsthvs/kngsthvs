@@ -2,6 +2,7 @@ import { shuffle } from "@kngsthvs/lib/entropy/shuffle";
 import { mapDataAttributes } from "@kngsthvs/ui/functions/shared/attributes";
 import { Balancer } from "@kngsthvs/ui/packages/balancer";
 import { basehub } from "basehub";
+import { headers } from "next/headers";
 import { Suspense } from "react";
 import ReactMarkdown from "react-markdown";
 import { FeatureFlags } from "../_components/feature-flags";
@@ -15,6 +16,13 @@ export default async function Layout({
 }: {
   children: React.ReactNode;
 }) {
+  const headersList = headers();
+  const host = headersList.get("host") ?? headersList.get("x-forwarded-host");
+  const nextUrl = headersList.get("next-url");
+  const referer = headersList.get("referer");
+  const pathname = host
+    ? referer?.slice(referer.indexOf(host) + host.length, referer.length)
+    : undefined;
   const { settings } = await basehub({ next: { revalidate: 30 } }).query({
     settings: {
       __typename: true,
@@ -47,7 +55,11 @@ export default async function Layout({
   );
 
   return (
-    <Provider controls={<Controls />} {...{ whispers }}>
+    <Provider
+      controls={<Controls />}
+      home={["/", "/home"].includes(nextUrl ?? pathname ?? "/")}
+      {...{ whispers }}
+    >
       <div className={styles.root}>
         {children}
 

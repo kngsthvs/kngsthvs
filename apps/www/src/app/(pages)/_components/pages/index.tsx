@@ -63,9 +63,11 @@ function Provider({
   children,
   controls,
   whispers,
+  ...props
 }: {
   children: React.ReactNode;
   controls: React.ReactNode;
+  home?: boolean;
   whispers?: string[];
 }) {
   const [ref, { height }] = useMeasure<HTMLElement>();
@@ -79,7 +81,6 @@ function Provider({
   const [focus, setFocus] = useState(false);
   const [title, setTitle] = useState<string | undefined>();
   const { y } = useWindowScroll();
-
   const percentage = 1 / (96 / y);
 
   useKeys("b", () => {
@@ -171,7 +172,7 @@ function Provider({
         <div
           className={headingStyles.root}
           style={{
-            height,
+            height: height === 0 ? (props.home ? 432 : 0) : height,
           }}
         >
           <article {...{ ref }}>
