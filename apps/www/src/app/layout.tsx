@@ -18,6 +18,7 @@ import "./globals.css";
 import { EB_Garamond } from "next/font/google";
 
 const EBGaramond = EB_Garamond({
+  fallback: ["Garamond", "var(--fonts-serif)"],
   subsets: ["latin"],
   variable: "--font-heading",
   weight: ["400"],

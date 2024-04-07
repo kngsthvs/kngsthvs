@@ -39,6 +39,10 @@
   text-transform: uppercase;
 }
 
+:global .contrast :local .root p {
+  color: var(--colors-foreground);
+}
+
 @media screen and (min-width: 36rem) {
   .root {
     align-items: center;

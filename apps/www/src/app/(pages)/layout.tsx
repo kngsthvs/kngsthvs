@@ -3,7 +3,6 @@ import { mapDataAttributes } from "@kngsthvs/ui/functions/shared/attributes";
 import { Balancer } from "@kngsthvs/ui/packages/balancer";
 import { basehub } from "basehub";
 import { headers } from "next/headers";
-import { Suspense } from "react";
 import ReactMarkdown from "react-markdown";
 import { FeatureFlags } from "../_components/feature-flags";
 import { Controls } from "./_components/controls";
@@ -76,9 +75,7 @@ export default async function Layout({
       </div>
 
       {/* Vercel */}
-      <Suspense fallback={null}>
-        <FeatureFlags />
-      </Suspense>
+      <FeatureFlags />
     </Provider>
   );
 }
