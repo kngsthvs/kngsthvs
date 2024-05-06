@@ -33,12 +33,6 @@ function Item({
   }
 }
 
-export async function generateStaticParams() {
-  const paths = ["partners"];
-
-  return paths.map((path) => [{ path }]);
-}
-
 export default async function Page({ params }: { params: { path: string[] } }) {
   const path = `${params.path[0]}`;
   const { home } = await basehub({ next: { revalidate: 60 } }).query({
