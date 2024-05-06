@@ -460,4 +460,4 @@
 
 ### Minor Changes
 
-- My goodness, and my fortress; my high tower, and my deliverer; my shield, and he in whom I trust; who subdueth my people under me.
+- "My goodness, and my fortress; my high tower, and my deliverer; my shield, and he in whom I trust; who subdueth my people under me." - Psalms 144:2
