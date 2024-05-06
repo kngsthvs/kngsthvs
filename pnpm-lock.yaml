@@ -142,8 +142,8 @@ importers:
         specifier: ^2.27.1
         version: 2.27.1
       '@kngsthvs/config':
-        specifier: workspace:*
-        version: link:../config
+        specifier: ^0.1.0
+        version: 0.1.0(@next/eslint-plugin-next@14.2.1)(@vercel/style-guide@5.2.0(@next/eslint-plugin-next@14.2.1)(eslint@8.57.0)(prettier@3.2.5)(typescript@5.4.5))(eslint-config-next@13.4.19(eslint@8.57.0)(typescript@5.4.5))(eslint-config-prettier@9.1.0(eslint@8.57.0))(eslint-config-turbo@1.13.2(eslint@8.57.0))(eslint-plugin-only-warn@1.1.0)(eslint-plugin-react@7.33.2(eslint@8.57.0))(eslint-plugin-tsdoc@0.2.17)
       '@storybook/addon-essentials':
         specifier: ^8.0.8
         version: 8.0.8(@types/react@18.2.79)(encoding@0.1.13)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
@@ -305,8 +305,8 @@ importers:
         specifier: ^1.0.3
         version: 1.0.3
       '@kngsthvs/config':
-        specifier: workspace:*
-        version: link:../config
+        specifier: ^0.1.0
+        version: 0.1.0(@next/eslint-plugin-next@14.2.1)(@vercel/style-guide@5.2.0(@next/eslint-plugin-next@14.2.1)(eslint@8.57.0)(prettier@3.2.5)(typescript@5.4.5))(eslint-config-next@13.4.19(eslint@8.57.0)(typescript@5.4.5))(eslint-config-prettier@9.1.0(eslint@8.57.0))(eslint-config-turbo@1.13.2(eslint@8.57.0))(eslint-plugin-only-warn@1.1.0)(eslint-plugin-react@7.33.2(eslint@8.57.0))(eslint-plugin-tsdoc@0.2.17)
       '@microsoft/api-extractor':
         specifier: ^7.43.0
         version: 7.43.1(@types/node@20.12.7)
@@ -2498,6 +2498,18 @@ packages:
 
   '@juggle/resize-observer@3.4.0':
     resolution: {integrity: sha512-dfLbk+PwWvFzSxwk3n5ySL0hfBog779o8h68wK/7/APo/7cgyWp5jcXockbxdk5kFRkbeXWm4Fbi9FrdN381sA==}
+
+  '@kngsthvs/config@0.1.0':
+    resolution: {integrity: sha512-ywoVpIU79LSgp+waSqswSaw9s76u91/Ke4vC1SWHwmE8kl6FJ+qm4CQT6V2Dn8sct74uPncuqxtM1yg+CYjluA==}
+    peerDependencies:
+      '@next/eslint-plugin-next': ^14.1.0
+      '@vercel/style-guide': ^5.2.0
+      eslint-config-next: 13.4.19
+      eslint-config-prettier: ^9.1.0
+      eslint-config-turbo: ^1.11.3
+      eslint-plugin-only-warn: ^1.1.0
+      eslint-plugin-react: 7.33.2
+      eslint-plugin-tsdoc: ^0.2.17
 
   '@kngsthvs/eslint-config@0.6.1':
     resolution: {integrity: sha512-4YXKd56Lon7i/qGeTA/WSN6TwSGgrUjCaMl4PB19q52rR7pcSrldtoNvCccTXm/XNfK5fgR2rKAXxbEWSEBIdQ==}
@@ -14680,6 +14692,17 @@ snapshots:
       '@jridgewell/sourcemap-codec': 1.4.15
 
   '@juggle/resize-observer@3.4.0': {}
+
+  '@kngsthvs/config@0.1.0(@next/eslint-plugin-next@14.2.1)(@vercel/style-guide@5.2.0(@next/eslint-plugin-next@14.2.1)(eslint@8.57.0)(prettier@3.2.5)(typescript@5.4.5))(eslint-config-next@13.4.19(eslint@8.57.0)(typescript@5.4.5))(eslint-config-prettier@9.1.0(eslint@8.57.0))(eslint-config-turbo@1.13.2(eslint@8.57.0))(eslint-plugin-only-warn@1.1.0)(eslint-plugin-react@7.33.2(eslint@8.57.0))(eslint-plugin-tsdoc@0.2.17)':
+    dependencies:
+      '@next/eslint-plugin-next': 14.2.1
+      '@vercel/style-guide': 5.2.0(@next/eslint-plugin-next@14.2.1)(eslint@8.57.0)(prettier@3.2.5)(typescript@5.4.5)
+      eslint-config-next: 13.4.19(eslint@8.57.0)(typescript@5.4.5)
+      eslint-config-prettier: 9.1.0(eslint@8.57.0)
+      eslint-config-turbo: 1.13.2(eslint@8.57.0)
+      eslint-plugin-only-warn: 1.1.0
+      eslint-plugin-react: 7.33.2(eslint@8.57.0)
+      eslint-plugin-tsdoc: 0.2.17
 
   '@kngsthvs/eslint-config@0.6.1(@next/eslint-plugin-next@14.2.1)(@vercel/style-guide@5.2.0(@next/eslint-plugin-next@14.2.1)(eslint@8.57.0)(prettier@3.2.5)(typescript@5.4.5))(eslint-config-next@13.4.19(eslint@8.57.0)(typescript@5.4.5))(eslint-config-prettier@9.1.0(eslint@8.57.0))(eslint-config-turbo@1.13.2(eslint@8.57.0))(eslint-plugin-only-warn@1.1.0)(eslint-plugin-react@7.33.2(eslint@8.57.0))':
     dependencies:
