@@ -19,6 +19,13 @@
   .root article {
     border-right: 1px solid var(--colors-border);
   }
+
+  .root article > aside {
+    margin-left: -1px;
+    border-left: 1px solid var(--colors-border);
+    width: 3rem;
+    overflow: hidden;
+  }
 }
 
 .root article {
@@ -26,6 +33,10 @@
   right: 0;
   bottom: 0;
   left: 0;
+}
+
+.root article > aside {
+  border-top: 1px solid var(--colors-border);
 }
 
 .root article > section {

@@ -1,5 +1,6 @@
 "use client";
-import styles from "./aside.module.css";
+
+import styles from "./styles.module.css";
 
 export function Aside({ children }: { children: React.ReactNode }) {
   return (

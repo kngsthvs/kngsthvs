@@ -1,0 +1,10 @@
+.root {
+  vertical-align: middle;
+  margin-left: auto;
+  font-size: var(--fontSizes-sm);
+  line-height: 100%;
+}
+
+.root::first-letter {
+  font-size: var(--fontSizes-base);
+}

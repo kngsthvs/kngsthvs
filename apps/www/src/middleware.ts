@@ -1,4 +1,4 @@
-import { get } from "@/lib/feature-flags";
+import { get } from "@kngsthvs/lib/vercel/feature-flags";
 import { Effect } from "effect";
 import { NextResponse, type NextRequest } from "next/server";
 

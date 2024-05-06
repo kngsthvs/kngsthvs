@@ -3,17 +3,16 @@
   justify-content: center;
   align-items: center;
   gap: 0.25rem;
-  transition:
-    background-color 0.3s var(--ease),
-    border-color 0.3s var(--ease),
-    color 0.3s var(--ease);
   border: 1px solid transparent;
   background-color: var(--colors-primary);
   color: var(--colors-gray-50);
   line-height: 1;
 }
 
-.root:disabled {
+.root:disabled,
+.root[disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
   pointer-events: none;
   user-select: none;
 }
@@ -45,7 +44,7 @@ a.root[data-pressed="true"] span {
 
 .root[data-size="large"] {
   padding: 0.75rem 1.25rem;
-  font-size: var(--fontSizes-lg);
+  font-size: var(--fontSizes-base);
 }
 
 .root[data-size="large"][data-icon="true"] {
@@ -57,7 +56,22 @@ a.root[data-pressed="true"] span {
   color: var(--colors-background);
 }
 
+:global .blue :local .root[data-variant="primary"],
+:global .green :local .root[data-variant="primary"],
+:global .red :local .root[data-variant="primary"] {
+  border-color: var(--colors-gray-5);
+  background-color: var(--colors-gray-5);
+  color: var(--colors-gray-50);
+}
+
 .root[data-variant="primary"]:disabled {
+  background-color: var(--colors-gray-50);
+}
+
+:global .blue :local .root[data-variant="primary"]:disabled,
+:global .green :local .root[data-variant="primary"]:disabled,
+:global .red :local .root[data-variant="primary"]:disabled {
+  border-color: var(--colors-gray-50);
   background-color: var(--colors-gray-50);
 }
 
@@ -67,10 +81,35 @@ a.root[data-pressed="true"] span {
   color: var(--colors-background);
 }
 
+:global .blue.contrast :local .root[data-variant="primary"],
+:global .blue.contrast :local .root[data-variant="primary"] span,
+:global .blue.contrast :local .root[data-variant="primary"] kbd,
+:global .green.contrast :local .root[data-variant="primary"],
+:global .green.contrast :local .root[data-variant="primary"] span,
+:global .green.contrast :local .root[data-variant="primary"] kbd,
+:global .red.contrast :local .root[data-variant="primary"],
+:global .red.contrast :local .root[data-variant="primary"] span,
+:global .red.contrast :local .root[data-variant="primary"] kbd {
+  color: var(--colors-foreground);
+}
+
 .root[data-variant="primary"]:focus-visible,
 .root[data-variant="primary"]:hover,
 .root[data-variant="primary"][data-pressed="true"] {
   background-color: var(--colors-gray-75);
+}
+
+:global .blue :local .root[data-variant="primary"]:focus-visible,
+:global .blue :local .root[data-variant="primary"]:hover,
+:global .blue :local .root[data-variant="primary"][data-pressed="true"],
+:global .green :local .root[data-variant="primary"]:focus-visible,
+:global .green :local .root[data-variant="primary"]:hover,
+:global .green :local .root[data-variant="primary"][data-pressed="true"],
+:global .red :local .root[data-variant="primary"]:focus-visible,
+:global .red :local .root[data-variant="primary"]:hover,
+:global .red :local .root[data-variant="primary"][data-pressed="true"] {
+  background-color: var(--colors-gray-10);
+  color: var(--colors-gray-75);
 }
 
 .root[data-variant="primary"]:focus-visible {
@@ -79,6 +118,13 @@ a.root[data-pressed="true"] span {
 
 .root[data-variant="primary"]:active {
   background-color: var(--colors-gray-50);
+}
+
+:global .blue :local .root[data-variant="primary"]:active,
+:global .green :local .root[data-variant="primary"]:active,
+:global .red :local .root[data-variant="primary"]:active {
+  background-color: var(--colors-gray-25);
+  color: var(--colors-foreground);
 }
 
 .root[data-variant="secondary"],

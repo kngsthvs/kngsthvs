@@ -2,7 +2,7 @@ import { basehub } from "basehub";
 import { type MetadataRoute } from "next";
 
 const lastModified = new Date();
-const pages = ["crowsnest", "partner", "vision"];
+const pages = ["crowsnest", "partner", "partners", "hold", "tackle", "vision"];
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const { legal } = await basehub({ next: { revalidate: 60 } }).query({

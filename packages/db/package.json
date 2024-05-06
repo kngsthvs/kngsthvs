@@ -1,0 +1,31 @@
+{
+  "dependencies": {
+    "@electric-sql/pglite": "^0.1.5",
+    "@t3-oss/env-nextjs": "^0.10.0",
+    "@vercel/postgres": "^0.8.0",
+    "drizzle-orm": "^0.30.10",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@kngsthvs/eslint-config": "^0.6.1",
+    "@kngsthvs/tsconfig": "^0.6.0",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "drizzle-kit": "^0.20.17",
+    "eslint": "^8.56.0",
+    "typescript": "^5"
+  },
+  "exports": {
+    ".": "./src/index.ts",
+    "./schema/account": "./src/schema/account.ts"
+  },
+  "name": "db",
+  "private": true,
+  "scripts": {
+    "push": "drizzle-kit push:pg",
+    "studio": "drizzle-kit studio",
+    "type-check": "tsc --noEmit"
+  },
+  "type": "module",
+  "version": "0.0.0"
+}

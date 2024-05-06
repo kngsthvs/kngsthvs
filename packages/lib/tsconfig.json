@@ -1,5 +1,12 @@
 {
-  "extends": "@kngsthvs/tsconfig/base.json",
+  "extends": "@kngsthvs/config/tsconfig/base.json",
   "include": ["src"],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules"],
+  "compilerOptions": {
+    "emitDeclarationOnly": true,
+    "incremental": true,
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json"
+  }
 }

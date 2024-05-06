@@ -18,12 +18,16 @@
 }
 
 .input {
-  transition: border-color 0.3s var(--ease);
   border: 1px solid var(--colors-gray-10);
   background-color: transparent;
   padding: 0.5rem;
   width: 100%;
+  color: var(--colors-foreground);
   font-size: var(--fontSizes-sm);
+}
+
+.input::placeholder {
+  color: var(--colors-gray-50);
 }
 
 :global .contrast :local .root .input::placeholder {

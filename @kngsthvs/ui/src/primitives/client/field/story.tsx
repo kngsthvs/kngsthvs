@@ -4,6 +4,7 @@ import * as React from "react";
 import { type Meta, type StoryObj } from "@storybook/react";
 import { parseDigit, templateFormatter, templateParser } from "input-format";
 import { Field } from "./index";
+import { Form } from "../form";
 
 const meta: Meta<typeof Field> = {
   component: Field,
@@ -24,11 +25,13 @@ export const Default: Story = {
     placeholder: "Input",
   },
   render: (args) => (
-    <Field {...args}>
-      {args.label && <Field.Label>{args.label}</Field.Label>}
+    <Form>
+      <Field {...args}>
+        {args.label && <Field.Label>{args.label}</Field.Label>}
 
-      <Field.Input />
-    </Field>
+        <Field.Input />
+      </Field>
+    </Form>
   ),
 };
 
@@ -39,11 +42,13 @@ export const Textarea: Story = {
     placeholder: "Textarea",
   },
   render: (args) => (
-    <Field {...args}>
-      {args.label && <Field.Label>{args.label}</Field.Label>}
+    <Form>
+      <Field {...args}>
+        {args.label && <Field.Label>{args.label}</Field.Label>}
 
-      <Field.Textarea />
-    </Field>
+        <Field.Textarea />
+      </Field>
+    </Form>
   ),
 };
 
@@ -57,17 +62,19 @@ export const Format: Story = {
     const template = `(xxx) xxx-xxxx`;
 
     return (
-      <Field {...args}>
-        {args.label && <Field.Label>{args.label}</Field.Label>}
+      <Form>
+        <Field {...args}>
+          {args.label && <Field.Label>{args.label}</Field.Label>}
 
-        <Field.Input
-          format={templateFormatter(template)}
-          max={10}
-          min={10}
-          parse={templateParser(template, parseDigit)}
-          type="tel"
-        />
-      </Field>
+          <Field.Input
+            format={templateFormatter(template)}
+            max={10}
+            min={10}
+            parse={templateParser(template, parseDigit)}
+            type="tel"
+          />
+        </Field>
+      </Form>
     );
   },
 };

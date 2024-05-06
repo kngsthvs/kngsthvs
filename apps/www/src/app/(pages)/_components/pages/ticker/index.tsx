@@ -2,7 +2,7 @@
 
 import { Ticker as TickerRoot } from "@kngsthvs/ui/components/client/ticker";
 import { useMeasure } from "react-use";
-import styles from "./ticker.module.css";
+import styles from "./styles.module.css";
 
 export function Ticker({
   children,

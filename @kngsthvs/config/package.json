@@ -1,0 +1,51 @@
+{
+  "devDependencies": {
+    "@commitlint/config-conventional": "^19.1.0",
+    "@commitlint/types": "^19.0.3",
+    "@microsoft/tsdoc-config": "^0.16.2",
+    "@next/eslint-plugin-next": "^14.1.0",
+    "@typescript-eslint/eslint-plugin": "^6.17.0",
+    "@typescript-eslint/parser": "^6.17.0",
+    "@vercel/style-guide": "^5.2.0",
+    "eslint-config-next": "13.4.19",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-config-turbo": "^1.11.3",
+    "eslint-plugin-only-warn": "^1.1.0",
+    "eslint-plugin-react": "7.33.2",
+    "eslint-plugin-tsdoc": "^0.2.17",
+    "prettier": "^3.2.5",
+    "prettier-plugin-css-order": "^2.0.1",
+    "prettier-plugin-jsdoc": "^1.3.0",
+    "prettier-plugin-organize-imports": "^3.2.4",
+    "prettier-plugin-packagejson": "^2.4.10",
+    "prettier-plugin-svelte": "^3.1.2",
+    "prettier-plugin-tailwindcss": "^0.5.11",
+    "typescript": "^5.4.4"
+  },
+  "exports": {
+    "./prettier": "./prettier/index.js",
+    "./tsconfig/base.json": "./tsconfig/base.json",
+    "./tsconfig/nextjs.json": "./tsconfig/nextjs.json",
+    "./tsconfig/react-library.json": "./tsconfig/react-library.json"
+  },
+  "files": [
+    "eslint/library.js",
+    "eslint/next.js",
+    "eslint/react-internal.js"
+  ],
+  "name": "@kngsthvs/config",
+  "peerDependencies": {
+    "@next/eslint-plugin-next": "^14.1.0",
+    "@vercel/style-guide": "^5.2.0",
+    "eslint-config-next": "13.4.19",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-config-turbo": "^1.11.3",
+    "eslint-plugin-only-warn": "^1.1.0",
+    "eslint-plugin-react": "7.33.2",
+    "eslint-plugin-tsdoc": "^0.2.17"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "version": "0.1.0"
+}

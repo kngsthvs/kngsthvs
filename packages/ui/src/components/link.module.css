@@ -2,8 +2,9 @@
   display: flex;
   align-items: center;
   gap: 0.25rem;
-  transition: color 0.3s var(--ease);
   color: var(--colors-gray-50);
+  font-size: var(--fontSizes-sm);
+  line-height: 1;
 }
 
 a.root:active span,

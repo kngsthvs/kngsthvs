@@ -42,11 +42,11 @@ export const Button = forwardRef<
     { children, icon, keys, size = "medium", variant = "primary", ...props },
     ref,
   ) => {
-    const { pressed } = useKey({
+    const { states } = useKey({
       href: "href" in props ? String(props.href) : undefined,
       keys: keys ?? "",
     });
-    const data = mapDataAttributes({ icon, pressed, size, variant });
+    const data = mapDataAttributes({ icon, pressed: states[0], size, variant });
 
     return (
       <Link className={styles.root} {...{ ref, ...data, ...props }}>

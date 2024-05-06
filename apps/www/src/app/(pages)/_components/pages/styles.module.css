@@ -38,54 +38,82 @@
   width: 100%;
 }
 
-.flag {
+.global {
   display: flex;
-  position: relative;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  border-top: 1px solid var(--colors-foreground);
-  border-right: 1px solid var(--colors-foreground);
-  border-left: 1px solid var(--colors-foreground);
-  background: repeating-linear-gradient(
-    0deg,
-    var(--colors-foreground),
-    var(--colors-foreground) 1px,
-    var(--colors-background) 1px,
-    var(--colors-background) 2px
-  );
-  aspect-ratio: 5 / 3;
-  height: calc(0.875rem - 1px);
+  margin: 0 auto;
+  padding: 0.5rem;
+  width: 100%;
 }
 
-.flag::before {
-  display: block;
-  display: flex;
-  position: absolute;
-  top: -0.5px;
-  left: -1px;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--colors-foreground);
-  width: 50%;
-  height: 50%;
-  content: "\2627";
-  color: var(--colors-background);
-  font-size: 0.438rem;
-  line-height: 1;
-  font-family: var(--font-heading);
+.global[data-focus="true"] {
+  display: none;
 }
+
+@media screen and (min-width: 60rem) {
+  .global[data-focus="true"] {
+    display: flex;
+    visibility: hidden;
+  }
+}
+
+.global ul {
+  display: flex;
+  gap: 0.25rem;
+  list-style: none;
+}
+
+.global a {
+  display: flex;
+  opacity: 0.25;
+  transition: 0.3s opacity var(--ease);
+  cursor: not-allowed;
+  height: 1rem;
+}
+
+:global .dark :local .global a {
+  opacity: 0.5;
+  filter: invert(1);
+}
+
+.global a[data-active="true"],
+:global .dark :local .global a[data-active="true"] {
+  opacity: 1;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* .global a:focus-visible,
+.global a:hover {
+  opacity: 0.5;
+}
+
+:global .dark :local .global a:focus-visible,
+:global .dark :local .global a:hover {
+  opacity: 0.75;
+}
+
+.global a:active,
+:global .dark :local .global a:active {
+  opacity: 1;
+} */
 
 .nav {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  gap: 0.5rem;
+  gap: 1rem;
   margin: 0 auto;
   padding: 1rem;
   width: 100%;
   max-width: 48rem;
   color: var(--colors-gray-50);
+}
+
+.nav[data-focus="true"] {
+  visibility: hidden;
 }
 
 @media screen and (min-width: 60rem) {
@@ -99,10 +127,6 @@
   flex-wrap: wrap;
   align-items: center;
   gap: 0.5rem;
-}
-
-.nav > div:first-child > p {
-  margin-bottom: -0.5px;
 }
 
 .nav li:last-of-type {

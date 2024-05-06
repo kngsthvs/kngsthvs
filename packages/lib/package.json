@@ -1,21 +1,29 @@
 {
   "dependencies": {
-    "@kngsthvs/lib": "^0.3.0",
-    "next": "^14.1.4",
+    "@lucia-auth/adapter-drizzle": "^1.0.7",
+    "@kngsthvs/lib": "workspace:*",
+    "@t3-oss/env-nextjs": "^0.10.0",
+    "arctic": "^1.5.0",
+    "db": "workspace:*",
+    "lucia": "^3.1.1",
+    "oslo": "^1.2.0",
+    "next": "^14.2.0",
+    "react": "^18.2.0",
     "resend": "^1.0.0",
     "server-only": "^0.0.1",
     "zod": "^3.20.0"
   },
   "devDependencies": {
-    "@kngsthvs/eslint-config": "workspace:*",
-    "@kngsthvs/tsconfig": "workspace:*",
+    "@kngsthvs/config": "workspace:*",
     "@types/node": "^20.6.0",
+    "@types/react": "^18.2.60",
     "eslint": "^8.56.0",
     "typescript": "^5.4.4"
   },
   "exports": {
     "./network/ip": "./src/network/ip.ts",
-    "./resend": "./src/resend.ts"
+    "./resend": "./src/resend.ts",
+    "./types/themes": "./src/types/themes.ts"
   },
   "name": "lib",
   "private": true,

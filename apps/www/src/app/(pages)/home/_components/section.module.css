@@ -6,8 +6,12 @@
   overflow: hidden;
 }
 
+.root + .root {
+  border-top: 1px solid var(--colors-border);
+}
+
 .root > * {
-  padding: 0 1rem;
+  padding: 0 2rem;
   width: 100%;
   text-align: center;
 }
@@ -16,9 +20,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-top: 1px solid transparent;
   border-bottom: 1px solid var(--colors-border);
-  padding: 1.25rem 1rem;
+  padding: 0.875rem 0.75rem;
   font-size: var(--fontSizes-sm);
+  line-height: 1;
 }
 
 .root > div:first-child h2 {
@@ -49,6 +55,7 @@
 
 .root > div:first-child a:active span:not(:only-child),
 .root > div:first-child a:focus-visible span:not(:only-child),
-.root > div:first-child a:hover span:not(:only-child) {
+.root > div:first-child a:hover span:not(:only-child),
+.root > div:first-child a[data-pressed="true"] span:not(:only-child) {
   text-decoration: underline;
 }

@@ -2,10 +2,15 @@
 .root > * {
   width: 100%;
   color: var(--colors-gray-50);
+  font-size: var(--fontSizes-sm);
 }
 
 .root > *:not(:last-child) {
   border-bottom: 1px solid var(--colors-border);
+}
+
+.root > *:only-child {
+  border-top: 1px solid var(--colors-border);
 }
 
 .root blockquote {
@@ -21,6 +26,10 @@
 @media screen and (min-width: 48rem) {
   .root blockquote {
     padding: 2rem;
+  }
+
+  .root blockquote[data-justify="true"] {
+    padding: 2rem 4rem;
   }
 }
 
@@ -46,6 +55,7 @@
 .root blockquote footer {
   margin-top: 1rem;
   color: var(--colors-gray-50);
+  font-size: var(--fontSizes-base);
 }
 
 :global .contrast :local .root blockquote footer {
@@ -62,14 +72,18 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
+  padding: 0.75rem;
+}
+
+.root nav a {
+  background-color: var(--colors-background);
 }
 
 .root nav a img {
   opacity: 0.25;
-  transition: 0.3s opacity var(--ease);
-  width: 1.5rem;
-  height: 1.5rem;
+  transition: 0.15s opacity var(--ease);
+  width: 1.25rem;
+  height: 1.25rem;
   pointer-events: none;
   color: var(--colors-black);
   user-select: none;
@@ -79,7 +93,12 @@
   filter: invert(1);
 }
 
-.root nav a:hover img {
+.root nav a[data-first="true"] img {
+  opacity: 0.5;
+}
+
+.root nav a:hover img,
+.root nav a[data-pressed="true"] img {
   opacity: 1;
 }
 
@@ -87,8 +106,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 0.5rem;
   list-style: none;
+}
+
+.root nav > div:first-of-type ul {
+  gap: 0.25rem;
+}
+
+.root nav > div:last-of-type ul {
+  gap: 0.5rem;
 }
 
 .root nav ul li {
@@ -97,7 +123,7 @@
   .content {
     display: flex;
     position: absolute;
-    top: -1rem;
+    top: -0.5rem;
     right: 0;
     flex-direction: column;
     align-items: flex-start;
@@ -128,9 +154,6 @@
 
 .content a {
   display: flex;
-  transition:
-    0.3s background-color var(--ease),
-    0.3s color var(--ease);
   padding: 0.75rem;
   width: 100%;
   text-align: left;
@@ -141,21 +164,30 @@
   background-color: var(--colors-gray-5);
 }
 
+.content a:focus-visible {
+  z-index: 1;
+}
+
 .content a:active {
   background-color: var(--colors-gray-10);
 }
 
-.content a:not(:last-of-type) {
-  border-bottom: 1px solid var(--colors-gray-10);
+:global .dark :local .content a:focus-visible,
+:global .dark :local .content a:hover {
+  border-color: var(--colors-gray-10);
 }
 
-:global .contrast :local .content a:not(:last-of-type),
-:global .contrast.dark :local .content a:not(:last-of-type) {
-  border-color: var(--colors-foreground);
-}
-
-:global .dark :local .content a:not(:last-of-type) {
+:global .dark :local .content a:active {
   border-color: var(--colors-gray-25);
+}
+
+.content p {
+  padding: 0.75rem 0.75rem 0.125rem;
+  color: var(--colors-foreground);
+  font-size: var(--fontSizes-xs);
+  font-family: var(--font-geist-mono);
+  letter-spacing: 0.0625em;
+  text-transform: uppercase;
 }
 
 .trigger + div {

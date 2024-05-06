@@ -18,8 +18,9 @@ export function Partner({
           <Image
             alt={logo.alt ?? "logo"}
             height={40}
+            quality={100}
             src={logo.rawUrl}
-            width={240}
+            width={200}
           />
         </Link>
       ) : null}

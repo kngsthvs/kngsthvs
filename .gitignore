@@ -29,6 +29,9 @@ yarn.lock
 *.pem
 *.vscode
 
+# Cloudflare
+.wrangler
+
 # Resend
 .react-email
 

@@ -16,13 +16,13 @@ const SingleKey = forwardRef<
       keys?: string;
     }>
 >((props, ref) => {
-  const { pressed } = useKey({
+  const { states } = useKey({
     href: "href" in props ? String(props.href) : undefined,
     keys: props.keys ?? "",
   });
 
   return (
-    <LinkPrimitive data-pressed={pressed} {...{ ref, ...props }}>
+    <LinkPrimitive data-pressed={states[0]} {...{ ref, ...props }}>
       <span>{props.children}</span>
 
       {props.keys ? <kbd>[{props.keys}]</kbd> : null}
@@ -46,15 +46,15 @@ function MultipleKeys({
       keys: string;
     } & TooltipProps
   >) {
-  const { pressed } = useKey({
+  const { every, states } = useKey({
     href: "href" in props ? String(props.href) : undefined,
     keys: props.keys ?? "",
   });
 
   // Show uppercase key if Shift is included in keys
-  if (props.keys.includes("Shift")) {
+  if (props.keys.includes("Shift") && !props.keys.includes("+")) {
     return (
-      <LinkPrimitive data-pressed={pressed} {...props}>
+      <LinkPrimitive data-first={states[0]} data-pressed={every} {...props}>
         <span>{props.children}</span>
 
         {props.keys ? (
@@ -70,15 +70,16 @@ function MultipleKeys({
     );
   }
 
-  const keys = props.keys.includes(" ")
-    ? props.keys.slice(props.keys.indexOf(" ") + 1)
-    : props.keys.slice(props.keys.indexOf("+") + 1);
+  const keys =
+    props.keys.includes(" ") || props.keys.includes("+")
+      ? props.keys.slice(props.keys.indexOf(" ") + 1)
+      : props.keys.slice(props.keys.indexOf("+") + 1);
 
   return (
     <Tooltip.Provider>
       <Tooltip.Root>
         <Tooltip.Trigger asChild>
-          <LinkPrimitive data-pressed={pressed} {...props}>
+          <LinkPrimitive data-first={states[0]} data-pressed={every} {...props}>
             <span>{props.children}</span>
           </LinkPrimitive>
         </Tooltip.Trigger>
@@ -86,10 +87,10 @@ function MultipleKeys({
         <Tooltip.Content aria-label={keys} forceMount {...{ side, sideOffset }}>
           <kbd
             style={{
-              opacity: pressed ? "1" : "0",
+              opacity: states[0] ? "1" : "0",
             }}
           >
-            [{keys}]
+            [{keys.at(-1)}]
           </kbd>
         </Tooltip.Content>
       </Tooltip.Root>
@@ -104,10 +105,10 @@ export function Link({
 }: LinkProps &
   React.PropsWithChildren<
     {
-      keys?: string;
+      keys: string;
     } & TooltipProps
   >) {
-  if (keys?.includes(" ") || keys?.includes("+") || Array.isArray(keys)) {
+  if (keys.length > 1) {
     return <MultipleKeys {...{ keys, ...props }}>{children}</MultipleKeys>;
   }
 

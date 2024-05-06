@@ -6,15 +6,9 @@ import { useKeyPress } from "react-use";
 
 export function useKey(props: { href?: string; keys: string }) {
   const router = useRouter();
-  const [pressed] = useKeyPress(
-    props.keys.includes("+")
-      ? Array.isArray(props.keys)
-        ? props.keys.includes("+")
-          ? props.keys[0]?.split("+")[0]
-          : props.keys[0]
-        : props.keys.split("+")[0]
-      : props.keys[0],
-  );
+
+  const states = props.keys.split(/\+|\s/gi).map((key) => useKeyPress(key)[0]);
+  const every = states.every((state) => state);
 
   useKeys(props.keys, () => {
     if ("href" in props) {
@@ -26,5 +20,5 @@ export function useKey(props: { href?: string; keys: string }) {
     }
   });
 
-  return { pressed };
+  return { every, states };
 }

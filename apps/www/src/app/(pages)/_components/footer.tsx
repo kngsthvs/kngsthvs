@@ -1,11 +1,12 @@
 "use client";
 
+import { Link as LinkSharedPrimitive } from "@kngsthvs/ui/primitives/shared/link";
 import * as NavigationMenu from "@radix-ui/react-navigation-menu";
 import * as VisuallyHidden from "@radix-ui/react-visually-hidden";
 import Image from "next/image";
-import NextLink from "next/link";
 import React from "react";
 import { useKeyPress } from "react-use";
+import { Link } from "ui/components/link";
 import linkStyles from "ui/components/link.module.css";
 import { useKey } from "ui/hooks/use-key";
 import { Link as LinkPrimitive } from "ui/primitives/link";
@@ -18,7 +19,7 @@ function Item({
 }: {
   children: React.ReactNode;
   keys?: string;
-} & React.ComponentProps<typeof NextLink>) {
+} & React.ComponentProps<typeof LinkSharedPrimitive>) {
   useKey({
     href: "href" in props ? String(props.href) : undefined,
     keys: keys ?? "",
@@ -27,11 +28,15 @@ function Item({
 
   return (
     <NavigationMenu.Link asChild>
-      <NextLink className={linkStyles.root} data-pressed={pressed} {...props}>
+      <LinkSharedPrimitive
+        className={linkStyles.root}
+        data-pressed={pressed}
+        {...props}
+      >
         <kbd>[{keys?.at(-1)}]</kbd>
 
         <span>{children}</span>
-      </NextLink>
+      </LinkSharedPrimitive>
     </NavigationMenu.Link>
   );
 }
@@ -43,16 +48,11 @@ function Social({
 }: {
   children: React.ReactNode;
   href: string;
-  keys?: string;
+  keys: string;
 }) {
   return (
     <li>
-      <LinkPrimitive
-        keys={`e ${keys}`}
-        side="bottom"
-        sideOffset={32}
-        {...props}
-      >
+      <LinkPrimitive keys={`s ${keys}`} side="top" sideOffset={24} {...props}>
         {children}
       </LinkPrimitive>
     </li>
@@ -67,14 +67,14 @@ function Trigger({
   children: React.ReactNode;
   keys: string;
 }) {
-  const { pressed } = useKey({
+  const { states } = useKey({
     keys,
   });
 
   return (
     <NavigationMenu.Trigger
       className={`${linkStyles.root} ${styles.trigger}`}
-      data-pressed={pressed}
+      data-pressed={states[0]}
       {...props}
     >
       <span>{children}</span>
@@ -109,15 +109,31 @@ export function Footer({ children }: { children: React.ReactNode }) {
           </Social>
 
           <li>
-            <kbd>[e]</kbd>
+            <kbd>[s]</kbd>
           </li>
         </NavigationMenu.List>
 
         <NavigationMenu.List>
           {/* <NavigationMenu.Item>
             <NavigationMenu.Link asChild>
+              <Link href="/strats" keys="s">
+                Strategies
+              </Link>
+            </NavigationMenu.Link>
+          </NavigationMenu.Item>
+          
+          <NavigationMenu.Item>
+            <NavigationMenu.Link asChild>
               <Link href="/ops" keys="o">
-                Ops
+                Operations
+              </Link>
+            </NavigationMenu.Link>
+          </NavigationMenu.Item>
+
+          <NavigationMenu.Item>
+            <NavigationMenu.Link asChild>
+              <Link href="/mans" keys="m">
+                Manuals
               </Link>
             </NavigationMenu.Link>
           </NavigationMenu.Item>
@@ -125,28 +141,45 @@ export function Footer({ children }: { children: React.ReactNode }) {
           <NavigationMenu.Item>
             <NavigationMenu.Link asChild>
               <Link href="/docs" keys="d">
-                Docs
+                Documentation
               </Link>
             </NavigationMenu.Link>
           </NavigationMenu.Item> */}
 
           <NavigationMenu.Item>
-            <Trigger keys="l">Legal</Trigger>
+            <NavigationMenu.Link asChild>
+              <Link href="/directory" keys="d">
+                Directory
+              </Link>
+            </NavigationMenu.Link>
+          </NavigationMenu.Item>
+
+          <NavigationMenu.Item>
+            <Trigger keys="c">Company</Trigger>
 
             <NavigationMenu.Content className={styles.content} forceMount>
-              <Item href="/legal/cookies" keys="l c">
-                Cookie Policy
+              <p>About</p>
+              {/* <Item href="/metrics" keys="c m">
+                Metrics
+              </Item>
+              <Item href="/investors" keys="c i">
+                Investors
+              </Item>
+              <Item href="security" keys="c s">
+                Security
+              </Item> */}
+              <Item href="mailto:contact@kngsthvs.com" keys="c u">
+                Contact us
               </Item>
 
-              <Item href="/legal/privacy" keys="l p">
+              <p>Legal</p>
+              <Item href="/legal/dpa" keys="c d">
+                DPA
+              </Item>
+              <Item href="/legal/privacy" keys="c p">
                 Privacy Policy
               </Item>
-
-              {/* <Item href="/legal/sub-processors" keys="l s">
-                Sub-processors
-              </Item> */}
-
-              <Item href="/legal/terms" keys="l t">
+              <Item href="/legal/terms" keys="c t">
                 Terms of Service
               </Item>
             </NavigationMenu.Content>

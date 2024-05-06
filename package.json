@@ -1,10 +1,10 @@
 {
   "devDependencies": {
     "@changesets/cli": "^2.27.1",
-    "@kngsthvs/eslint-config": "workspace:*",
-    "@kngsthvs/prettier-config": "workspace:*",
-    "@kngsthvs/tsconfig": "workspace:*",
+    "@commitlint/cli": "^19.2.1",
+    "@kngsthvs/config": "workspace:*",
     "eslint": "^8.56.0",
+    "husky": "^9.0.11",
     "prettier": "^3.2.5",
     "turbo": "latest"
   },
@@ -12,8 +12,8 @@
     "node": ">=20"
   },
   "name": "kngsthvs",
-  "packageManager": "pnpm@8.3.1",
-  "prettier": "@kngsthvs/prettier-config",
+  "packageManager": "pnpm@9.0.5",
+  "prettier": "@kngsthvs/config/prettier",
   "private": true,
   "scripts": {
     "build": "turbo run build",

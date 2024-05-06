@@ -1,0 +1,71 @@
+.root {
+  position: relative;
+  transition: color 0.3s var(--ease);
+  border: 2px solid currentColor;
+  border-radius: var(--radii-full);
+  background-color: var(--colors-background);
+  aspect-ratio: 1 / 1;
+  width: 1.125rem;
+  height: 1.125rem;
+}
+
+.root,
+:global .dark.blue :local .root,
+:global .dark.green :local .root,
+:global .dark.red :local .root {
+  color: var(--colors-gray-25);
+}
+
+:global .blue :local .root,
+:global .green :local .root,
+:global .red :local .root {
+  color: var(--colors-gray-10);
+}
+
+.root::after {
+  position: absolute;
+  inset: 0;
+  left: 50%;
+  border-radius: 0 var(--radii-full) var(--radii-full) 0;
+  background-color: currentColor;
+  width: calc(50% + 1px);
+  height: 100%;
+  content: "";
+}
+
+.root:focus-visible,
+.root:hover,
+:global .dark.blue :local .root:focus-visible,
+:global .dark.blue :local .root:hover,
+:global .dark.green :local .root:focus-visible,
+:global .dark.green :local .root:hover,
+:global .dark.red :local .root:focus-visible,
+:global .dark.red :local .root:hover {
+  color: var(--colors-gray-50);
+}
+
+:global .blue :local .root:focus-visible,
+:global .blue :local .root:hover,
+:global .green :local .root:focus-visible,
+:global .green :local .root:hover,
+:global .red :local .root:focus-visible,
+:global .red :local .root:hover {
+  color: var(--colors-gray-25);
+}
+
+.root:active,
+:global .dark.blue :local .root:active,
+:global .dark.green :local .root:active,
+:global .dark.red :local .root:active {
+  color: var(--colors-gray-75) !important;
+}
+
+:global .blue :local .root:active,
+:global .green :local .root:active,
+:global .red :local .root:active {
+  color: var(--colors-gray-50) !important;
+}
+
+.root[data-active="true"] {
+  color: var(--colors-foreground) !important;
+}

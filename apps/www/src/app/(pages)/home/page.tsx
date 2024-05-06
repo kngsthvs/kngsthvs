@@ -1,4 +1,4 @@
-import pages from "@/data/pages.json";
+import pages from "@/content/pages.json";
 import { Pump } from "basehub/react-pump";
 import { type Metadata } from "next";
 import { draftMode } from "next/headers";
@@ -36,20 +36,42 @@ export default function Page() {
         "use server"; // Needs to be a Server Action
 
         return (
-          <Section href="/partners" keys="p" title="Partners">
-            <ul className={styles.partners}>
-              {home.partners.items.map((partner) => (
-                <Partner
-                  data-fill={Boolean(
-                    Number(home.partners.items.length) % 2 === 1,
-                  )}
-                  href={partner.href}
-                  key={partner.href}
-                  logo={partner.logo}
-                />
-              ))}
-            </ul>
-          </Section>
+          <>
+            {/* <Section href="/companies" keys="c" title="Companies">
+              {null}
+            </Section> */}
+
+            <Section href="/partners" keys="p" title="Partners">
+              <ul className={styles.partners}>
+                {home.partners.items.map((partner) => (
+                  <Partner
+                    data-fill={Boolean(
+                      Number(home.partners.items.length) % 2 === 1,
+                    )}
+                    href={partner.href}
+                    key={partner.href}
+                    logo={partner.logo}
+                  />
+                ))}
+              </ul>
+            </Section>
+
+            {/* <Section href="/books" keys="b" title="Books">
+              {null}
+            </Section>
+
+            <Section href="/films" keys="f" title="Films">
+              {null}
+            </Section>
+
+            <Section href="/music" keys="m" title="Music">
+              {null}
+            </Section>
+
+            <Section href="/videogames" keys="v" title="Video games">
+              {null}
+            </Section> */}
+          </>
         );
       }}
     </Pump>

@@ -1,0 +1,20 @@
+.root {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.5rem;
+  margin-left: auto;
+  color: var(--colors-gray-50);
+  line-height: 1;
+}
+
+.root > p {
+  display: none;
+}
+
+@media screen and (min-width: 48rem) {
+  .root > p {
+    display: initial;
+  }
+}

@@ -1,6 +1,6 @@
 import Link from "next/link";
+import { FeatureFlags } from "../../../../../@kngsthvs/ui/src/functions/server/feature-flags";
 import { Error } from "../_components/error";
-import { FeatureFlags } from "../_components/feature-flags";
 
 export default function Page() {
   return (

@@ -1,0 +1,71 @@
+.root {
+  position: fixed;
+  z-index: 0;
+  inset: 0;
+}
+
+.node {
+  color: var(--colors-gray-50);
+  font-size: var(--fontSizes-sm);
+  line-height: 1;
+  font-family: var(--font-geist-mono);
+  text-transform: uppercase;
+}
+
+.label,
+.link {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.25rem;
+  padding: 0.5rem 0.75rem;
+  font-size: var(--fontSizes-sm);
+  line-height: 1;
+}
+
+.label kbd,
+.link kbd {
+  display: inline-flex;
+  font-size: var(--fontSizes-xs);
+  line-height: 1;
+  font-family: var(--font-geist-mono);
+}
+
+.label {
+  border: 1px solid var(--colors-foreground);
+  background-color: var(--colors-foreground);
+  color: var(--colors-background);
+}
+
+.link {
+  border: 1px solid var(--colors-gray-25);
+  background-color: var(--colors-background);
+  color: var(--colors-gray-50);
+}
+
+.link[aria-disabled="true"] {
+  cursor: not-allowed;
+  border-color: var(--colors-gray-5);
+  background-color: var(--colors-gray-5);
+  color: var(--colors-gray-25);
+  user-select: none;
+}
+
+a.link:focus-visible,
+a.link:hover,
+a.link[data-first="true"] {
+  border-color: var(--colors-gray-50);
+  color: var(--colors-gray-75);
+}
+
+a.link:active,
+a.link[data-pressed="true"] {
+  border-color: var(--colors-75);
+  color: var(--colors-foreground);
+}
+
+a.link:focus-visible span,
+a.link:hover span,
+a.link:active span,
+a.root[data-pressed="true"] span {
+  text-decoration: underline;
+}

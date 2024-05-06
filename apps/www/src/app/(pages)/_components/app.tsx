@@ -1,4 +1,7 @@
-import { VisuallyHidden } from "ui/components";
+"use client";
+
+import * as VisuallyHidden from "@radix-ui/react-visually-hidden";
+import { usePathname } from "next/navigation";
 import { Link } from "ui/primitives/link";
 import styles from "./app.module.css";
 
@@ -13,13 +16,20 @@ function Icon({ path }: { path?: string }) {
           width="24"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <path
-            d="M0 7.5H4.5M24 7.5H19.5M12 7.5V0M12 7.5V15M12 7.5H19.5M12 7.5H4.5M12 24V15M12 15L19.5 7.5M12 15L4.5 7.5"
-            stroke="black"
-          />
+          <g clipPath="url(#app_clip)">
+            <path
+              d="M0 7.5H4.5M24 7.5H19.5M12 0V15M12 24V15M12 15L19.5 7.5M12 15L4.5 7.5M19.5 7.5H4.5"
+              stroke="black"
+            />
+          </g>
+          <defs>
+            <clipPath id="app_clip">
+              <rect fill="white" height="24" width="24" />
+            </clipPath>
+          </defs>
         </svg>
       );
-    case "quarters":
+    case "hold":
       return (
         <svg
           fill="none"
@@ -28,21 +38,24 @@ function Icon({ path }: { path?: string }) {
           width="24"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <g clipPath="url(#clip0_1182_42)">
+          <path
+            d="M8.5 23.5V19.5M15.5 23.5V19.5M15.5 0.5V4.5M8.5 0.5V4.5M15.5 9.5V14.5M15.5 9.5H8.5M15.5 9.5V4.5M8.5 9.5V14.5M8.5 9.5V4.5M8.5 14.5H15.5M8.5 14.5V19.5M15.5 14.5V19.5M8.5 4.5H15.5M15.5 19.5H8.5"
+            stroke="black"
+          />
+        </svg>
+      );
+    case "tackle":
+      return (
+        <svg
+          fill="none"
+          height="24"
+          viewBox="0 0 24 24"
+          width="24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g clipPath="url(#app_clip)">
             <path
-              d="M8.70711 4L12 0.707107L15.2929 4L12 7.29289L8.70711 4Z"
-              stroke="black"
-            />
-            <path
-              d="M16.7071 12L20 8.70711L23.2929 12L20 15.2929L16.7071 12Z"
-              stroke="black"
-            />
-            <path
-              d="M8.70711 20L12 16.7071L15.2929 20L12 23.2929L8.70711 20Z"
-              stroke="black"
-            />
-            <path
-              d="M0.707107 12L4 8.70711L7.29289 12L4 15.2929L0.707107 12Z"
+              d="M15.2929 4L12 7.29289L8.70711 4L12 0.707107L15.2929 4ZM8.70711 20L12 16.7071L15.2929 20L12 23.2929L8.70711 20ZM16.7071 12L20 8.70711L23.2929 12L20 15.2929L16.7071 12ZM0.707107 12L4 8.70711L7.29289 12L4 15.2929L0.707107 12Z"
               stroke="black"
             />
             <path
@@ -51,7 +64,7 @@ function Icon({ path }: { path?: string }) {
             />
           </g>
           <defs>
-            <clipPath id="clip0_1182_42">
+            <clipPath id="app_clip">
               <rect fill="white" height="24" width="24" />
             </clipPath>
           </defs>
@@ -62,14 +75,29 @@ function Icon({ path }: { path?: string }) {
   }
 }
 
-export function App({ path, name }: { path?: string; name?: string }) {
-  return (
-    <li className={styles.root}>
-      {name ? (
-        <Link href={`/${path}`} keys="a c" side="left" sideOffset={32}>
-          <Icon {...{ path }} />
+export function App({
+  keys,
+  path,
+  name,
+}: {
+  keys?: string;
+  path?: string;
+  name?: string;
+}) {
+  const pathname = usePathname();
 
-          <VisuallyHidden>{name}</VisuallyHidden>
+  return (
+    <li
+      className={styles.root}
+      data-active={
+        pathname.slice(1)?.split("/").at(-1) === path?.split("/").at(-1)
+      }
+    >
+      {name ? (
+        <Link href={path} keys={`Shift+${keys}`} side="left" sideOffset={24}>
+          <Icon path={path?.split("/").at(-1)} />
+
+          <VisuallyHidden.Root>{name}</VisuallyHidden.Root>
         </Link>
       ) : (
         <div />

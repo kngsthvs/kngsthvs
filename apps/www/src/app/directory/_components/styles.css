@@ -1,0 +1,16 @@
+.react-flow,
+.react-flow.dark {
+  --xy-background-color-default: var(--colors-background);
+  --xy-background-pattern-color-props: var(--colors-gray-25);
+  --xy-edge-stroke-default: var(--colors-gray-10);
+}
+
+.react-flow__handle {
+  visibility: hidden;
+  pointer-events: none;
+  user-select: none;
+}
+
+.react-flow__node {
+  display: flex;
+}

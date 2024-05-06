@@ -1,5 +1,5 @@
 {
-  "extends": "@kngsthvs/tsconfig/react-library.json",
+  "extends": "@kngsthvs/config/tsconfig/react-library.json",
   "compilerOptions": {
     "outDir": "dist"
   },

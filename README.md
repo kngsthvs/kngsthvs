@@ -1,43 +1,15 @@
 <p align="center">
-As the Father hath loved me,
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://www.kngsthvs.com/logo/dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://www.kngsthvs.com/logo/light.svg">
+    <img  src="https://www.kngsthvs.com/logo/light.svg">
+  </picture>
+</p>
+
 <br>
-so have I loved you: continue ye in my love.
-<br>
-<br>
-If ye keep my commandments, ye shall abide in my love;
-<br>
-even as I have kept my Father's commandments, and abide in his love.
-<br>
-<br>
-These things have I spoken unto you, that my joy might remain in you, and that your joy might be full.
-<br>
-<br>
-This is my commandment,
-<br>
-That ye love one another, as I have loved you.
-<br>
-<br>
-Greater love hath no man than this, that a man lay down his life for his friends.
-<br>
-<br>
-Ye are my friends,
-<br>
-if ye do whatsoever I command you.
-<br>
-<br>
-Henceforth I call you not servants; for the servant knoweth not what his lord doeth: but I have called you friends;
-<br>
-for all things that I have heard of my Father I have made known unto you.
-<br>
-<br>
-Ye have not chosen me, but I have chosen you, and ordained you,
-<br>
-that ye should go and bring forth fruit, and that your fruit should remain:
-<br>
-that whatsoever ye shall ask of the Father in my name, he may give it you.
-<br>
-<br>
-These things I command you, that ye love one another.
+
+<p align="justify">
+As the Father hath loved me, so have I loved you: continue ye in my love. If ye keep my commandments, ye shall abide in my love; even as I have kept my Father's commandments, and abide in his love. These things have I spoken unto you, that my joy might remain in you, and that your joy might be full. This is my commandment, That ye love one another, as I have loved you. Greater love hath no man than this, that a man lay down his life for his friends. Ye are my friends, if ye do whatsoever I command you. Henceforth I call you not servants; for the servant knoweth not what his lord doeth: but I have called you friends; for all things that I have heard of my Father I have made known unto you. Ye have not chosen me, but I have chosen you, and ordained you, that ye should go and bring forth fruit, and that your fruit should remain: that whatsoever ye shall ask of the Father in my name, he may give it you. These things I command you, that ye love one another.
 <br>
 <strong>John 15:9-17</strong>
 </p>
@@ -54,7 +26,8 @@ The official Kings & Thieves turborepo. This turborepo uses [pnpm](https://pnpm.
 
 ### Apps and Packages
 
-- [`www`](https://www.kngsthvs.com): The main Kings & Thieves website
+- `ship`
+- [`www`](https://www.kngsthvs.com): the main Kings & Thieves website
 - `ui`: a stub React component library
 
 ## Setup
@@ -87,11 +60,14 @@ pnpm run dev --filter=APP_NAME
 
 ## Resources
 
-- [ESLint](https://eslint.org)
-- [Next.js](https://nextjs.org)
-- [Prettier](https://prettier.io)
-- [Turborepo](https://turborepo.org)
-- [TypeScript](https://www.typescriptlang.org)
+- [Changesets](https://github.com/changesets/changesets)
+- [commitlint](https://commitlint.js.org/)
+- [ESLint](https://eslint.org/docs/latest/)
+- [Husky](https://typicode.github.io/husky/)
+- [Next.js](https://nextjs.org/docs)
+- [Prettier](https://prettier.io/docs/en/)
+- [Turbo](https://turbo.build/)
+- [TypeScript](https://www.typescriptlang.org/docs/)
 
 <p align="center">
 <strong>Proverbs 17:17</strong>

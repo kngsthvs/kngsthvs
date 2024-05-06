@@ -4,7 +4,7 @@
 }
 
 .content p {
-  color: var(--colors-gray-90);
+  color: var(--colors-gray-75);
   font-size: var(--fontSizes-lg);
   line-height: 140%;
   font-family: var(--font-heading);

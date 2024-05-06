@@ -1,13 +1,13 @@
 "use client";
 
-import { useKeys } from "@kngsthvs/ui/functions/client/context/keys";
 import { animated } from "@react-spring/web";
 import Image from "next/image";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { createContext, useContext, useEffect, useState } from "react";
 import { useMeasure, useWindowScroll } from "react-use";
 import { VisuallyHidden } from "ui/components";
 import { Button } from "ui/components/button";
+import { Footer } from "ui/components/footer";
 import { Link } from "ui/components/link";
 import { Link as LinkPrimitive } from "ui/primitives/link";
 import { App } from "../app";
@@ -18,10 +18,20 @@ import headingStyles from "./heading.module.css";
 import styles from "./styles.module.css";
 import { Ticker } from "./ticker";
 
-function interpolate(start: number, end: number, value: number) {
+function interpolate(
+  start: number,
+  end: number,
+  value: number,
+  options?: {
+    min?: number;
+    max?: number;
+    x?: number;
+    y?: number;
+  },
+) {
   const result = start + (value / 0.9) * (end - start);
 
-  if (value <= 0) {
+  if (value <= 0 || (options?.y && options?.min && options.y < options.min)) {
     return start;
   }
 
@@ -72,7 +82,6 @@ function Provider({
 }) {
   const [ref, { height }] = useMeasure<HTMLElement>();
   const pathname = usePathname();
-  const router = useRouter();
   const home = pathname ? pathname === "/" || pathname === "/home" : props.home;
   // const style = useSpring({
   //   borderWidth: home ? 1 : 0,
@@ -81,11 +90,8 @@ function Provider({
   const [focus, setFocus] = useState(false);
   const [title, setTitle] = useState<string | undefined>();
   const { y } = useWindowScroll();
-  const percentage = 1 / (96 / y);
-
-  useKeys("h", () => {
-    router.push("/");
-  });
+  const min = 32;
+  const percentage = 1 / (96 / (y - min));
 
   useEffect(() => {
     return () => {
@@ -96,7 +102,48 @@ function Provider({
 
   return (
     <Context.Provider value={{ focus, setFocus, setTitle }}>
-      <header className={headerStyles.root}>
+      <nav className={styles.global} data-focus={focus}>
+        <ul>
+          <li>
+            <a
+              data-active={true}
+              // href="https://www.kngsthvs.com"
+              // rel="noreferrer"
+              // target="_blank"
+            >
+              <Image alt="Chi Rho" height={16} src="/icon.svg" width={16} />
+
+              <VisuallyHidden>Kings & Thieves</VisuallyHidden>
+            </a>
+          </li>
+
+          <li>
+            <a
+            // href="https://log.kngsthvs.com"
+            // rel="noreferrer"
+            // target="_blank"
+            >
+              <Image alt="Anchor" height={16} src="/logos/log.svg" width={16} />
+
+              <VisuallyHidden>Log</VisuallyHidden>
+            </a>
+          </li>
+
+          <li>
+            <a
+            // href="https://ship.kngsthvs.com"
+            // rel="noreferrer"
+            // target="_blank"
+            >
+              <Image alt="Wheel" height={16} src="/logos/ship.svg" width={16} />
+
+              <VisuallyHidden>Ship</VisuallyHidden>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <header className={headerStyles.root} data-focus={focus}>
         <div>
           <LinkPrimitive className={headerStyles.icon} href="/" keys="h">
             <Image
@@ -131,6 +178,12 @@ function Provider({
                       Residency
                     </Link>
                   </li> */}
+
+                  {/* <li>
+                    <Link href="/archive" keys="a">
+                      Archive
+                    </Link>
+                  </li> */}
                 </ul>
               </animated.div>
             ) : null}
@@ -139,7 +192,7 @@ function Provider({
               <animated.h1
                 style={{
                   opacity: pathname ? 1 : 0,
-                  transform: `scale(${interpolate(2, 1, percentage)}) translateY(${3 - interpolate(0, 3, percentage)}rem)`,
+                  transform: `scale(${interpolate(2, 1, percentage, { min, y })}) translateY(${3 - interpolate(0, 3, percentage, { min, y })}rem)`,
                 }}
               >
                 {title}
@@ -152,11 +205,11 @@ function Provider({
               <animated.div>
                 <span>
                   <Button
-                    href="mailto:contact@kngsthvs.com"
-                    keys="c"
+                    href="https://x.com/kngsthvs/jobs"
+                    keys="j"
                     variant="secondary"
                   >
-                    Contact us
+                    Jobs
                   </Button>
 
                   <Button href="/partner" keys="p">
@@ -178,7 +231,7 @@ function Provider({
         >
           <article {...{ ref }}>
             <Ticker ticker>
-              <p>Ardens sed virens.</p>
+              <p>An Appeal to Heaven.</p>
             </Ticker>
 
             <section>
@@ -215,19 +268,38 @@ function Provider({
             <p>For the glory of Christ.</p>
 
             {!focus ? (
-              <animated.ul>
-                <App name="Crow’s Nest" path="crowsnest" />
-                {/* <App />
-                    <App />
-                    <App />
-                    <App />
-                    <App />
-                    <App /> */}
+              <ul>
+                {/* <li>
+                  <Image
+                    alt="Log icon"
+                    height={24}
+                    quality={100}
+                    src="/logos/log.svg"
+                    width={24}
+                  />
+                </li> */}
+
+                {/* <li>
+                  <Image
+                    alt="Ship icon"
+                    height={24}
+                    quality={100}
+                    src="/logos/ship.svg"
+                    width={24}
+                  />
+                </li> */}
+                <App keys="C" name="Crow’s Nest" path="/ship/crowsnest" />
+                <App keys="H" name="Hold" path="/ship/hold" />
+                <App keys="R" />
+                <App keys="I" />
+                <App keys="S" />
+                <App keys="T" name="Tackle" path="/ship/tackle" />
+                <App keys="O" />
 
                 <li>
-                  <kbd>[a]</kbd>
+                  <kbd>[&#8679;]</kbd>
                 </li>
-              </animated.ul>
+              </ul>
             ) : null}
           </Aside>
 
@@ -236,12 +308,8 @@ function Provider({
           </article>
         </div>
 
-        <nav className={styles.nav}>
-          <div>
-            <div className={styles.flag} />
-
-            <p>American built, owned, and operated.</p>
-          </div>
+        <nav className={styles.nav} data-focus={focus}>
+          <Footer />
 
           {controls}
         </nav>
