@@ -14,6 +14,7 @@ const overridableDefaults = {
 
 module.exports = {
   ...overridableDefaults,
+  cssDeclarationSorterOrder: "alphabetical",
   order: "alphabetical",
   pluginSearchDirs: false,
   plugins: [

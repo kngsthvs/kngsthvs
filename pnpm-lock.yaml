@@ -78,7 +78,7 @@ importers:
         specifier: ^3.2.5
         version: 3.2.5
       prettier-plugin-css-order:
-        specifier: ^2.0.1
+        specifier: ^2.1.2
         version: 2.1.2(postcss@8.4.38)(prettier@3.2.5)
       prettier-plugin-jsdoc:
         specifier: ^1.3.0

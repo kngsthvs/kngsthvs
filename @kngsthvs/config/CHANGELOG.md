@@ -1,5 +1,11 @@
 # @kngsthvs/config
 
+## 0.1.3
+
+### Patch Changes
+
+- Remove esbuild and fix exports and files
+
 ## 0.1.2
 
 ### Patch Changes
