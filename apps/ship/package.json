@@ -41,7 +41,8 @@
     "react-use": "^17.5.0",
     "server-only": "^0.0.1",
     "ui": "workspace:*",
-    "unstorage": "^1.10.2"
+    "unstorage": "^1.10.2",
+    "zod": "^3.22.4"
   },
   "devDependencies": {
     "@kngsthvs/config": "workspace:*",

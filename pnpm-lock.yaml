@@ -499,6 +499,9 @@ importers:
       unstorage:
         specifier: ^1.10.2
         version: 1.10.2(@upstash/redis@1.29.0)(@vercel/kv@1.0.1)
+      zod:
+        specifier: ^3.22.4
+        version: 3.22.4
     devDependencies:
       '@kngsthvs/config':
         specifier: workspace:*
