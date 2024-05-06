@@ -1,5 +1,11 @@
 # @kngsthvs/lib
 
+## 0.5.0
+
+### Minor Changes
+
+- Move to @kngsthvs/config
+
 ## 0.4.2
 
 ### Patch Changes
