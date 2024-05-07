@@ -1,5 +1,5 @@
 {
-  "extends": "@kngsthvs/config/tsconfig/react-library.json",
+  "extends": "@kngsthvs/config/tsconfig/react-library",
   "include": ["src"],
   "exclude": ["node_modules"]
 }

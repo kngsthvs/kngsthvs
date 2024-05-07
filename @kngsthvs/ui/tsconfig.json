@@ -1,5 +1,5 @@
 {
-  "extends": "@kngsthvs/config/tsconfig/nextjs.json",
+  "extends": "@kngsthvs/config/tsconfig/nextjs",
   "compilerOptions": {
     "baseUrl": ".",
     "declaration": true,

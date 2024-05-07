@@ -1,5 +1,5 @@
 {
-  "extends": "@kngsthvs/tsconfig/base.json",
+  "extends": "@kngsthvs/config/tsconfig/base",
   "compilerOptions": {
     "incremental": true,
     "module": "ESNext",
