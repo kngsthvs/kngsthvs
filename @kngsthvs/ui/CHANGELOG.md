@@ -1,6 +1,12 @@
 # @kngsthvs/ui
 
-## 0.5.2
+## 0.15.3
+
+### Patch Changes
+
+- Fix types
+
+## 0.15.2
 
 ### Patch Changes
 

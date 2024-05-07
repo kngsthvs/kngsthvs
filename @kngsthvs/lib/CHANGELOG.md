@@ -1,5 +1,11 @@
 # @kngsthvs/lib
 
+## 0.5.3
+
+### Patch Changes
+
+- Fix types
+
 ## 0.5.2
 
 ### Patch Changes
