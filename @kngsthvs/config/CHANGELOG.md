@@ -1,5 +1,11 @@
 # @kngsthvs/config
 
+## 0.1.5
+
+### Patch Changes
+
+- Fix tsconfig files and add prettier peer dependencies
+
 ## 0.1.4
 
 ### Patch Changes
