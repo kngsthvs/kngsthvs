@@ -75,7 +75,7 @@ export default async function Layout({
       </div>
 
       {/* Vercel */}
-      <FeatureFlags />
+      <FeatureFlags key="www" />
     </Provider>
   );
 }

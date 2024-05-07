@@ -11,7 +11,7 @@ export default function Page() {
         <Link href="/account">Manage account</Link>
       </Error>
 
-      <FeatureFlags />
+      <FeatureFlags key="www" />
     </section>
   );
 }

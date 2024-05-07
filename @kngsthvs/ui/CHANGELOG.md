@@ -1,5 +1,11 @@
 # @kngsthvs/ui
 
+## 0.5.2
+
+### Patch Changes
+
+- Fix exports
+
 ## 0.15.1
 
 ### Patch Changes

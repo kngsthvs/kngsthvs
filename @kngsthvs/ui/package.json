@@ -68,6 +68,7 @@
     "./functions/client/disable-animation": "./src/functions/client/disable-animation.ts",
     "./functions/client/hooks/use-measure-dirty": "./src/functions/client/hooks/use-measure-dirty.ts",
     "./functions/client/hooks/use-scroll-direction": "./src/functions/client/hooks/use-scroll-direction.ts",
+    "./functions/server/feature-flags": "./src/functions/server/feature-flags.tsx",
     "./functions/server/theme": "./src/functions/server/theme.tsx",
     "./functions/shared/attributes": "./src/functions/shared/attributes/index.ts",
     "./functions/shared/chaos-string-test": "./src/functions/shared/chaos-string-test.ts",
@@ -121,5 +122,5 @@
     "types": "tsup --dts-only --dts-resolve"
   },
   "types": "dist/*",
-  "version": "0.15.1"
+  "version": "0.15.2"
 }

@@ -1,4 +1,4 @@
-import { FeatureFlags } from "../../../../@kngsthvs/ui/src/functions/server/feature-flags";
+import { FeatureFlags } from "@kngsthvs/ui/functions/server/feature-flags";
 import Home from "./(pages)/home/page";
 import Layout from "./(pages)/layout";
 
@@ -8,7 +8,7 @@ export default function Page() {
       <Home />
 
       {/* Vercel */}
-      <FeatureFlags />
+      <FeatureFlags key="www" />
     </Layout>
   );
 }
