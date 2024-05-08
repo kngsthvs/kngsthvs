@@ -8,6 +8,8 @@ module.exports = {
     browser: true,
   },
   extends: [
+    "eslint:recommended",
+    "prettier",
     require.resolve("@vercel/style-guide/eslint/browser"),
     require.resolve("@vercel/style-guide/eslint/typescript"),
     require.resolve("@vercel/style-guide/eslint/react"),

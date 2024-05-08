@@ -1,6 +1,6 @@
 /** @type {import("eslint").Linter.Config} */
 module.exports = {
-  extends: ["@kngsthvs/config/eslint/library.js"],
+  extends: [require.resolve("@kngsthvs/config/eslint/library")],
   ignorePatterns: ["@kngsthvs/**", "apps/**", "packages/**"],
   parser: "@typescript-eslint/parser",
   parserOptions: {

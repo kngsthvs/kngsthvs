@@ -1,4 +1,7 @@
 /** @type {import("eslint").Linter.Config} */
 module.exports = {
-  extends: ["@kngsthvs/config/eslint", "plugin:storybook/recommended"],
+  extends: [
+    require.resolve("@kngsthvs/config/eslint/react-internal"),
+    "plugin:storybook/recommended",
+  ],
 };

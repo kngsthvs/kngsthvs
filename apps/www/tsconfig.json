@@ -15,11 +15,13 @@
   },
   "include": [
     ".eslintrc.js",
+    "postinstall.js",
     "next-env.d.ts",
     "next.config.mjs",
     "**/*.ts",
     "**/*.tsx",
-    ".next/types/**/*.ts"
+    ".next/types/**/*.ts",
+    "postinstall.js"
   ],
   "exclude": ["node_modules"]
 }

@@ -68,6 +68,8 @@
     "client:watch": "npx electric-sql generate --watch",
     "dev": "next dev",
     "electric:start": "npx electric-sql start",
+    "lint": "eslint . --max-warnings 0",
+    "postinstall": "",
     "start": "next start",
     "tauri": "tauri"
   },

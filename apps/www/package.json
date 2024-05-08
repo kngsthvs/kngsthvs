@@ -50,7 +50,8 @@
   "scripts": {
     "build": "next build",
     "dev": "next dev",
-    "postinstall": "basehub",
+    "lint": "eslint . --max-warnings 0",
+    "postinstall": "node ./postinstall.js || basehub",
     "start": "next start"
   },
   "version": "0.0.0"
