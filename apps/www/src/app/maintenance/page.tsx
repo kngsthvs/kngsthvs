@@ -1,5 +1,5 @@
+import { FeatureFlags } from "@kngsthvs/ui/functions/server/feature-flags";
 import Link from "next/link";
-import { FeatureFlags } from "../../../../../@kngsthvs/ui/src/functions/server/feature-flags";
 import { Error } from "../_components/error";
 
 export default function Page() {
@@ -11,7 +11,7 @@ export default function Page() {
         <Link href="/account">Manage account</Link>
       </Error>
 
-      <FeatureFlags key="www" />
+      <FeatureFlags id="www" />
     </section>
   );
 }

@@ -8,7 +8,7 @@ export default function Page() {
       <Home />
 
       {/* Vercel */}
-      <FeatureFlags key="www" />
+      <FeatureFlags id="www" />
     </Layout>
   );
 }

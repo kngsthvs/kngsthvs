@@ -1,5 +1,11 @@
 # @kngsthvs/lib
 
+## 0.5.4
+
+### Patch Changes
+
+- Fix eslint
+
 ## 0.5.3
 
 ### Patch Changes

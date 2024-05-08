@@ -1,5 +1,11 @@
 # @kngsthvs/ui
 
+## 0.15.4
+
+### Patch Changes
+
+- Fix eslint
+
 ## 0.15.3
 
 ### Patch Changes
