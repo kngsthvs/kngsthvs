@@ -1,5 +1,11 @@
 # @kngsthvs/ui
 
+## 0.15.5
+
+### Patch Changes
+
+- Fix Cookies type
+
 ## 0.15.4
 
 ### Patch Changes

@@ -4,8 +4,7 @@
 
 "use client";
 
-// @ts-expect-error ts(6133)
-import Cookies from "js-cookie";
+import type Cookies from "js-cookie";
 import { usePathname } from "next/navigation";
 import { createContext, useContext, useEffect } from "react";
 import { useCookie, useLocalStorage } from "react-use";
@@ -38,7 +37,7 @@ interface State {
 }
 type SetCookie<T> = (
   newValue: T,
-  options?: Cookies.CookieAttributes | undefined,
+  options?: typeof Cookies.attributes | undefined,
 ) => void;
 interface UpdateState {
   cookies: {

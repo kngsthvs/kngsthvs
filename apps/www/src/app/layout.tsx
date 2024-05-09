@@ -27,6 +27,7 @@ const EBGaramond = EB_Garamond({
 export const metadata: Metadata = {
   description:
     "“There is nothing on this earth more to be prized than true friendship.” — St. Thomas Aquinas",
+  metadataBase: new URL("https://www.kngsthvs.com"),
   title: "Kings & Thieves",
 };
 

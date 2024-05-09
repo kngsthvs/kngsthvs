@@ -122,5 +122,5 @@
     "types": "tsup --dts-only --dts-resolve"
   },
   "types": "dist/*",
-  "version": "0.15.4"
+  "version": "0.15.5"
 }
