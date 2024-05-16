@@ -11,11 +11,11 @@
 
 .root > div {
   display: flex;
-  position: relative;
   flex-grow: 1;
   margin: 0 auto;
-  width: 100%;
   max-width: 48rem;
+  position: relative;
+  width: 100%;
 }
 
 .root[data-focus="true"] footer {
@@ -39,23 +39,16 @@
 }
 
 .global {
+  align-items: center;
   display: flex;
   justify-content: space-between;
-  align-items: center;
   margin: 0 auto;
   padding: 0.5rem;
   width: 100%;
 }
 
 .global[data-focus="true"] {
-  display: none;
-}
-
-@media screen and (min-width: 60rem) {
-  .global[data-focus="true"] {
-    display: flex;
-    visibility: hidden;
-  }
+  visibility: hidden;
 }
 
 .global ul {
@@ -65,16 +58,16 @@
 }
 
 .global a {
+  cursor: not-allowed;
   display: flex;
+  height: 1rem;
   opacity: 0.25;
   transition: 0.3s opacity var(--ease);
-  cursor: not-allowed;
-  height: 1rem;
 }
 
 :global .dark :local .global a {
-  opacity: 0.5;
   filter: invert(1);
+  opacity: 0.5;
 }
 
 .global a[data-active="true"],
@@ -100,16 +93,16 @@
 } */
 
 .nav {
+  align-items: center;
+  color: var(--colors-gray-50);
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
   gap: 1rem;
+  justify-content: space-between;
   margin: 0 auto;
+  max-width: 48rem;
   padding: 1rem;
   width: 100%;
-  max-width: 48rem;
-  color: var(--colors-gray-50);
 }
 
 .nav[data-focus="true"] {
@@ -123,16 +116,16 @@
 }
 
 .nav > div:first-child {
+  align-items: center;
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
   gap: 0.5rem;
 }
 
 .nav li:last-of-type {
+  align-items: center;
   display: inline-flex;
   justify-content: center;
-  align-items: center;
 }
 
 .nav p {

@@ -465,8 +465,8 @@ importers:
         specifier: ^3.0.0
         version: 3.1.2
       electric-sql:
-        specifier: ^0.10.1
-        version: 0.10.1(@tauri-apps/plugin-sql@2.0.0-alpha.5)(bufferutil@4.0.8)(encoding@0.1.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(utf-8-validate@6.0.3)
+        specifier: ^0.11.3
+        version: 0.11.3(@electric-sql/pglite@0.1.5)(@tauri-apps/plugin-sql@2.0.0-alpha.5)(bufferutil@4.0.8)(encoding@0.1.13)(prisma@4.8.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(utf-8-validate@6.0.3)(zod@3.23.6)
       geist:
         specifier: ^1.2.2
         version: 1.3.0(next@14.2.0(@babel/core@7.24.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
@@ -1721,8 +1721,8 @@ packages:
   '@electric-sql/pglite@0.1.5':
     resolution: {integrity: sha512-eymv4ONNvoPZQTvOQIi5dbpR+J5HzEv0qQH9o/y3gvNheJV/P/NFcrbsfJZYTsDKoq7DKrTiFNexsRkJKy8x9Q==}
 
-  '@electric-sql/prisma-generator@1.1.4':
-    resolution: {integrity: sha512-zZQ88uBEKIhf6lKmnzWjOs65V5uVj/i2/N9aU4jpbJIf63n9LUgUh6abv7weFkvJsGddY/6I0bgE4a400FAkxA==}
+  '@electric-sql/prisma-generator@1.1.5':
+    resolution: {integrity: sha512-O7+DCq1QDmFY7Y5BfeD9e7ftUWpKLAQ+lz2qRuExtMtkfsvZPwAOmu6HhTBaLdo+/rZz1wnAEdnzksFv4LlgAw==}
     hasBin: true
 
   '@emnapi/core@0.45.0':
@@ -7055,28 +7055,45 @@ packages:
     engines: {node: '>=0.10.0'}
     hasBin: true
 
-  electric-sql@0.10.1:
-    resolution: {integrity: sha512-k/Ctsw7fXV75nao5E5e77Kg0RkLbYN5YgMSNQRGPYdWp5VWX6RnhwQrMm12qhteMFTDNjeVXJD3L/ArHFyWBVw==}
+  electric-sql@0.11.3:
+    resolution: {integrity: sha512-5D9+n69ht4kgErTdTC9EUE+BhdjaaxeW12tYbzCehvSELRW7MdXrDU7Gqm0SLWYVJ+CAJWS+qfoaGt+wqXDOHA==}
     hasBin: true
     peerDependencies:
       '@capacitor-community/sqlite': '>= 5.6.2'
+      '@electric-sql/pglite': '>= 0.1.5'
       '@op-engineering/op-sqlite': '>= 2.0.16'
       '@tauri-apps/plugin-sql': 2.0.0-alpha.5
+      embedded-postgres: 16.1.1-beta.9
       expo-sqlite: '>= 13.0.0'
+      pg: ^8.11.3
+      prisma: 4.8.1
       react: '>= 16.8.0'
       react-dom: '>= 16.8.0'
       react-native: '>= 0.68.0'
       typeorm: '>=0.3.0'
       vue: '>=3.0.0'
       wa-sqlite: rhashimoto/wa-sqlite#semver:^0.9.8
+      zod: 3.21.1
     peerDependenciesMeta:
       '@capacitor-community/sqlite':
         optional: true
+      '@electric-sql/pglite':
+        optional: true
       '@op-engineering/op-sqlite':
+        optional: true
+      '@tauri-apps/plugin-sql':
+        optional: true
+      embedded-postgres:
         optional: true
       expo-sqlite:
         optional: true
+      pg:
+        optional: true
+      prisma:
+        optional: true
       react:
+        optional: true
+      react-dom:
         optional: true
       react-native:
         optional: true
@@ -14191,7 +14208,7 @@ snapshots:
 
   '@electric-sql/pglite@0.1.5': {}
 
-  '@electric-sql/prisma-generator@1.1.4':
+  '@electric-sql/prisma-generator@1.1.5':
     dependencies:
       '@prisma/generator-helper': 4.16.2
       code-block-writer: 11.0.3
@@ -15455,7 +15472,8 @@ snapshots:
 
   '@prisma/engines-version@4.8.0-61.d6e67a83f971b175a593ccc12e15c4a757f93ffe': {}
 
-  '@prisma/engines@4.8.1': {}
+  '@prisma/engines@4.8.1':
+    optional: true
 
   '@prisma/generator-helper@4.16.2':
     dependencies:
@@ -17086,7 +17104,8 @@ snapshots:
 
   '@tanstack/virtual-core@3.5.0': {}
 
-  '@tauri-apps/api@2.0.0-alpha.13': {}
+  '@tauri-apps/api@2.0.0-alpha.13':
+    optional: true
 
   '@tauri-apps/api@2.0.0-beta.11': {}
 
@@ -17140,6 +17159,7 @@ snapshots:
   '@tauri-apps/plugin-sql@2.0.0-alpha.5':
     dependencies:
       '@tauri-apps/api': 2.0.0-alpha.13
+    optional: true
 
   '@testing-library/dom@9.3.4':
     dependencies:
@@ -20924,11 +20944,10 @@ snapshots:
     dependencies:
       jake: 10.9.1
 
-  electric-sql@0.10.1(@tauri-apps/plugin-sql@2.0.0-alpha.5)(bufferutil@4.0.8)(encoding@0.1.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(utf-8-validate@6.0.3):
+  electric-sql@0.11.3(@electric-sql/pglite@0.1.5)(@tauri-apps/plugin-sql@2.0.0-alpha.5)(bufferutil@4.0.8)(encoding@0.1.13)(prisma@4.8.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(utf-8-validate@6.0.3)(zod@3.23.6):
     dependencies:
-      '@electric-sql/prisma-generator': 1.1.4
+      '@electric-sql/prisma-generator': 1.1.5
       '@prisma/client': 4.8.1(prisma@4.8.1)
-      '@tauri-apps/plugin-sql': 2.0.0-alpha.5
       async-mutex: 0.4.1
       base-64: 1.0.0
       better-sqlite3: 8.7.0
@@ -20954,18 +20973,20 @@ snapshots:
       long: 5.2.3
       object.hasown: 1.1.4
       ohash: 1.1.3
-      prisma: 4.8.1
       prompts: 2.4.2
       protobufjs: 7.2.6
-      react-dom: 18.3.1(react@18.3.1)
       squel: 5.13.0
       tcp-port-used: 1.0.2
       text-encoder-lite: 2.0.0
       ts-dedent: 2.2.0
       ws: 8.17.0(bufferutil@4.0.8)(utf-8-validate@6.0.3)
-      zod: 3.21.1
+      zod: 3.23.6
     optionalDependencies:
+      '@electric-sql/pglite': 0.1.5
+      '@tauri-apps/plugin-sql': 2.0.0-alpha.5
+      prisma: 4.8.1
       react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
     transitivePeerDependencies:
       - bufferutil
       - encoding
@@ -25181,6 +25202,7 @@ snapshots:
   prisma@4.8.1:
     dependencies:
       '@prisma/engines': 4.8.1
+    optional: true
 
   prismjs@1.29.0: {}
 
