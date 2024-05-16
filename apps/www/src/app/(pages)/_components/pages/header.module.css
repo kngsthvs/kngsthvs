@@ -1,9 +1,9 @@
 .icon {
-  display: flex;
-  justify-content: center;
   align-items: center;
-  width: 2rem;
+  display: flex;
   height: 2rem;
+  justify-content: center;
+  width: 2rem;
 }
 
 .icon img {
@@ -18,33 +18,33 @@
 
 /* Only  visible to screen readers */
 .icon kbd {
-  position: absolute;
-  margin: -1px;
-  padding: 0;
-  width: 1px;
   height: 1px;
+  margin: -1px;
   overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
   clip: rect(0, 0, 0, 0);
   border-width: 0;
   white-space: nowrap;
 }
 
 .root {
+  background-color: var(--colors-background);
+  font-size: var(--fontSizes-sm);
   position: sticky;
   top: 0;
-  z-index: 1;
-  background-color: var(--colors-background);
   width: 100%;
-  font-size: var(--fontSizes-sm);
+  z-index: 1;
 }
 
 .root > div {
-  display: flex;
-  position: relative;
-  margin: 0 auto;
   background-color: var(--colors-background);
-  width: 100%;
+  display: flex;
+  margin: 0 auto;
   max-width: 48rem;
+  position: relative;
+  width: 100%;
 }
 
 @media screen and (min-width: 49rem) {
@@ -54,28 +54,19 @@
 }
 
 .root > div > a {
+  align-items: center;
+  aspect-ratio: 1 / 1;
+  background-color: var(--colors-background);
+  border: 1px solid var(--colors-border);
+  border-top: 1px solid var(--colors-border);
   display: flex;
   flex-shrink: 0;
-  justify-content: center;
-  align-items: center;
-  transition: background-color 0.3s var(--ease);
-  margin-left: -1px;
-  border: 1px solid var(--colors-border);
-  background-color: var(--colors-background);
-  padding: 0.5rem calc(0.5rem - 1px) 0.5rem 0.5rem;
-  aspect-ratio: 1 / 1;
-  width: fit-content;
   height: fit-content;
-}
-
-.root[data-focus="true"] > div > a {
-  border-top: none;
-}
-
-@media screen and (min-width: 60rem) {
-  .root[data-focus="true"] > div > a {
-    border-top: 1px solid var(--colors-border);
-  }
+  justify-content: center;
+  margin-left: -1px;
+  padding: 0.5rem calc(0.5rem - 1px) 0.5rem 0.5rem;
+  transition: background-color 0.3s var(--ease);
+  width: fit-content;
 }
 
 .root > div > a:focus-visible,
@@ -104,12 +95,12 @@
 
 @media screen and (min-width: 60rem) {
   .root > div > a {
-    position: absolute;
-    top: 0;
     bottom: 0;
     left: 0;
-    transform: translateX(calc(-100% + 1px));
     margin-left: 0;
+    position: absolute;
+    top: 0;
+    transform: translateX(calc(-100% + 1px));
   }
 }
 
@@ -118,36 +109,26 @@
 }
 
 .root h1 {
-  margin: 0 auto;
-  height: 2rem;
   color: var(--colors-foreground);
-  font-weight: normal;
-  line-height: 1.5;
   font-family: var(--font-heading);
+  font-weight: normal;
+  height: 2rem;
   letter-spacing: 0.125em;
+  line-height: 1.5;
+  margin: 0 auto;
   text-transform: uppercase;
 }
 
 .root nav {
-  display: flex;
-  justify-content: space-between;
   align-items: center;
-  border-top: 1px solid var(--colors-border);
   border-bottom: 1px solid var(--colors-border);
+  border-top: 1px solid var(--colors-border);
+  color: var(--colors-gray-50);
+  display: flex;
+  height: fit-content;
+  justify-content: space-between;
   padding: 0.5rem 0.5rem 0.5rem 0.75rem;
   width: 100%;
-  height: fit-content;
-  color: var(--colors-gray-50);
-}
-
-.root[data-focus="true"] nav {
-  border-top: none;
-}
-
-@media screen and (min-width: 60rem) {
-  .root[data-focus="true"] nav {
-    border-top: 1px solid var(--colors-border);
-  }
 }
 
 .root nav > *:only-child {
@@ -165,8 +146,8 @@
 }
 
 .root nav > *:not(:first-child):not(:last-child) {
-  order: -1;
   backface-visibility: hidden;
+  order: -1;
 }
 
 .root nav > *:last-child:not(:only-child) {
@@ -182,15 +163,15 @@
 }
 
 .root nav > div {
-  display: flex;
   align-items: center;
+  display: flex;
   gap: 1rem;
 }
 
 .root nav span {
   display: flex;
-  justify-content: flex-end;
   gap: 0.5rem;
+  justify-content: flex-end;
   margin-left: auto;
 }
 

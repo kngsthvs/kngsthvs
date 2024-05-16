@@ -30,9 +30,8 @@
 //       };
 
 //       const { tabId } = uniqueTabId();
-//       const scopedDbName = `idb://basic-${LIB_VERSION}-${tabId}.db`;
 
-//       db ??= new PGlite(scopedDbName, {
+//       db ??= new PGlite(`idb://ship-${LIB_VERSION}-${tabId}.db`, {
 //         relaxedDurability: true,
 //       });
 //       const client = await electrify(db, schema, config);
