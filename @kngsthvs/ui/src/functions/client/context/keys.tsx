@@ -48,7 +48,7 @@ const useSafeLayoutEffect =
  * @see https://github.com/streamich/react-use/blob/master/docs/useKeyPress.md
  */
 export function useKeys(keys: string, cb: (event: KeyboardEvent) => void) {
-  const context = useContext(Keys.Context);
+  const context = useContext(Context);
 
   if (context === undefined) {
     throw new Error("useKeys must be used within an Keys.Provider");
