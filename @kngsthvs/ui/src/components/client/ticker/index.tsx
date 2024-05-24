@@ -7,7 +7,7 @@
  */
 
 import {
-  motion,
+  m,
   useMotionValue,
   useSpring,
   type MotionProps,
@@ -201,7 +201,7 @@ export function Ticker({
         };
 
   return (
-    <motion.section
+    <m.section
       data-dragging={drag ? (dragging.current ? true : false) : undefined}
       data-scrolling={wheel ? (scrolling.current ? true : false) : undefined}
       drag={drag ? axis : undefined}
@@ -227,7 +227,7 @@ export function Ticker({
       }}
       {...{ ref, ...dragProps, ...wheelProps, ...data, ...props }}
     >
-      <motion.ul
+      <m.ul
         style={{
           [axis]: translate,
           display: "flex",
@@ -263,7 +263,7 @@ export function Ticker({
             </li>
           )),
         )}
-      </motion.ul>
-    </motion.section>
+      </m.ul>
+    </m.section>
   );
 }

@@ -13,6 +13,7 @@ import { type Metadata } from "next";
 import { Theme } from "ui/components/theme";
 import "ui/styles";
 import "ui/styles/globals.css";
+import { Motion } from "./_components/motion";
 import "./globals.css";
 // eslint-disable-next-line camelcase -- Allow non-camelCase font name
 import { EB_Garamond } from "next/font/google";
@@ -50,7 +51,7 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
 
             <link href="/favicon.svg" rel="icon" type="image/svg+xml" />
 
-            {props.children}
+            <Motion>{props.children}</Motion>
 
             <Toaster
               expand

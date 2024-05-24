@@ -1,5 +1,11 @@
 # @kngsthvs/ui
 
+## 0.15.6
+
+### Patch Changes
+
+- Move Ticker from motion to m and use Context directly in Keys and Theme
+
 ## 0.15.5
 
 ### Patch Changes
