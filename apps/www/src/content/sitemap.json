@@ -197,7 +197,6 @@
     "position": { "x": 256, "y": 624 }
   },
   {
-    "disabled": true,
     "id": "investors",
     "href": "/investors",
     "keys": "c i",

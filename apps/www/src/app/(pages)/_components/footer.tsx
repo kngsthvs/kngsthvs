@@ -161,13 +161,13 @@ export function Footer({ children }: { children: React.ReactNode }) {
               <p>About</p>
               {/* <Item href="/metrics" keys="c m">
                 Metrics
-              </Item>
+              </Item> */}
               <Item href="/investors" keys="c i">
                 Investors
               </Item>
-              <Item href="security" keys="c s">
+              {/* <Item href="security" keys="c s">
                 Security
-              </Item> */}
+              </Item>  */}
               <Item href="mailto:contact@kngsthvs.com" keys="c u">
                 Contact us
               </Item>
