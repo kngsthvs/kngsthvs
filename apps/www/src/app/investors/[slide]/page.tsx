@@ -3,6 +3,8 @@ import { RichText } from "basehub/react-rich-text";
 import { draftMode } from "next/headers";
 import styles from "./page.module.css";
 
+export const revalidate = 60;
+
 export default function Page({ params }: { params: { slide: string } }) {
   return (
     <Pump

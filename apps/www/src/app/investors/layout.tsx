@@ -5,6 +5,8 @@ import { Logo } from "../_components/logo";
 import { Navigation } from "./_components/navigation";
 import styles from "./layout.module.css";
 
+export const revalidate = 60;
+
 export default async function Layout({
   children,
 }: {
