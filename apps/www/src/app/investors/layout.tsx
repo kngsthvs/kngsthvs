@@ -2,6 +2,7 @@ import { basehub } from "basehub";
 import { Controls } from "ui/components/controls";
 import { Footer } from "ui/components/footer";
 import { Logo } from "../_components/logo";
+import { Navigation } from "./_components/navigation";
 import styles from "./layout.module.css";
 
 export default async function Layout({
@@ -21,6 +22,20 @@ export default async function Layout({
       },
     },
   });
+  const links = [
+    {
+      href: "/investors",
+      name: "Cover",
+    },
+    ...investors.items.map((item) => ({
+      href: `/investors/${item._slug}`,
+      name: item._title,
+    })),
+    {
+      href: "/investors/contact",
+      name: "Contact",
+    },
+  ];
 
   return (
     <main className={styles.root}>
@@ -29,15 +44,7 @@ export default async function Layout({
       <div className={styles.slides}>
         <article>{children}</article>
 
-        <nav>
-          <ul>
-            {investors.items.map((investor) => (
-              <li key={investor._slug}>
-                <a href={`/investors/${investor._slug}`}>{investor._title}</a>
-              </li>
-            ))}
-          </ul>
-        </nav>
+        <Navigation {...{ links }} />
       </div>
 
       <div>
