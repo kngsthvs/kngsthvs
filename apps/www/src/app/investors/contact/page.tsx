@@ -29,7 +29,7 @@ export default function Page() {
 
             setTimeout(() => {
               setIcon("\u2627");
-            }, 4000); // Should match toast duration
+            }, 4000); // should match toast duration
           }}
         >
           <span>{icon}</span>
