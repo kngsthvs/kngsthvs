@@ -1,0 +1,28 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+  width: 100%;
+}
+
+.root section {
+  margin: 0 auto;
+  max-width: 48rem;
+  overflow: hidden;
+}
+
+.root p {
+  border-bottom: 1px solid var(--colors-border);
+  font-family: var(--font-heading);
+  left: 0;
+  line-height: 140%;
+  margin: 0;
+  padding: 1rem;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  text-wrap: balance;
+  top: 0;
+  z-index: 1;
+}

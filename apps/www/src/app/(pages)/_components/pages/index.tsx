@@ -1,5 +1,6 @@
 "use client";
 
+import { Cover } from "@/app/_components/cover";
 import { animated } from "@react-spring/web";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
@@ -234,30 +235,7 @@ function Provider({
               <p>An Appeal to Heaven.</p>
             </Ticker>
 
-            <section>
-              <div>
-                <Image
-                  alt="Chi Rho"
-                  height={512}
-                  loading="eager"
-                  priority
-                  src="/chi-rho.svg"
-                  width={512}
-                />
-
-                <Image
-                  alt="Kings & Thieves logo"
-                  height={80}
-                  loading="eager"
-                  src="/word.svg"
-                  width={512}
-                />
-
-                <VisuallyHidden>Kings & Thieves</VisuallyHidden>
-              </div>
-
-              {whispers ? <Whispers {...{ whispers }} /> : null}
-            </section>
+            <Cover>{whispers ? <Whispers {...{ whispers }} /> : null}</Cover>
           </article>
         </div>
       ) : null}

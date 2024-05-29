@@ -28,10 +28,10 @@ export default function Page({ params }: { params: { slide: string[] } }) {
         },
       ]}
     >
-      {async ([{ investors }]) => {
+      {async () => {
         "use server"; // Needs to be a Server Action
 
-        return <div className={styles.root}>{JSON.stringify(investors)}</div>;
+        return <div className={styles.root} />;
       }}
     </Pump>
   );
