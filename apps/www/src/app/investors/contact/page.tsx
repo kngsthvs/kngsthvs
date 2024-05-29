@@ -13,7 +13,7 @@ export default function Page() {
 
   return (
     <div className={`${slideStyles.root} ${styles.root}`}>
-      <h1>Contact</h1>
+      <h1>Contact us</h1>
 
       <p>
         <Button
@@ -29,7 +29,7 @@ export default function Page() {
 
             setTimeout(() => {
               setIcon("\u2627");
-            }, 1000);
+            }, 4000); // Should match toast duration
           }}
         >
           <span>{icon}</span>
