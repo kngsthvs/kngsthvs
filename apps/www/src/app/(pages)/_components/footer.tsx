@@ -167,7 +167,7 @@ export function Footer({ children }: { children: React.ReactNode }) {
               </Item>
               {/* <Item href="security" keys="c s">
                 Security
-              </Item>  */}
+              </Item> */}
               <Item href="mailto:contact@kngsthvs.com" keys="c u">
                 Contact us
               </Item>
