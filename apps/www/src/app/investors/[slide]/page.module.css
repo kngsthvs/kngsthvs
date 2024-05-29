@@ -1,50 +1,27 @@
 .root {
   color: var(--colors-gray-75);
-  display: flex;
-  flex-direction: column;
   font-family: var(--font-heading);
   gap: 2rem;
-}
-
-.root table {
-  border-collapse: collapse;
-  margin: 1rem 0;
-  max-width: 100vw;
-  overflow-x: scroll;
+  height: fit-content;
+  max-width: 65ch;
+  padding: 1rem;
   width: 100%;
 }
 
-.root table * {
-  font-family: var(--font-geist-sans);
+@media screen and (min-width: 48rem) {
+  .root {
+    padding: 2rem;
+  }
 }
 
-.root table tr td,
-.root table tr th {
-  border-bottom: 1px solid var(--colors-border);
-  font-size: var(--fontSizes-sm);
-  line-height: 1;
-  padding: 0.5rem 1rem 0.5rem 0;
+@media screen and (min-width: 64rem) {
+  .root {
+    padding: 3rem;
+  }
 }
 
-.root table tr th p {
-  font-family: var(--font-geist-mono);
-  font-size: var(--fontSizes-xs);
-  letter-spacing: 0.0625em;
-  padding-bottom: 0.25rem;
-  padding-top: 0;
-  text-align: left;
-  text-transform: uppercase;
-}
-
-.root table tr td:last-child,
-.root table tr th:last-child {
-  padding-right: 0;
-}
-
-.root table tr td p,
-.root table tr th p {
-  line-height: 140%;
-  margin: 0;
+.root > *:first-child {
+  margin-top: 0;
 }
 
 .root a {
@@ -190,48 +167,5 @@
 
 .root b,
 .root strong {
-  color: var(--colors-foreground);
-}
-
-.root ul {
-  display: flex;
-  flex-direction: column;
-  margin: 1em 0;
-  padding-left: 2em;
-}
-
-.root ul li {
-  padding-left: 0.25em;
-}
-
-.root ul li::marker {
-  content: "\2629";
-}
-
-.root ul p {
-  margin-top: 0;
-}
-
-.root article {
-  max-width: 65ch;
-}
-
-.root article > p:first-child {
-  color: var(--colors-gray-50);
-  font-family: var(--font-geist-mono);
-  font-size: var(--fontSizes-xs);
-  letter-spacing: 0.125em;
-  line-height: 1;
-  margin: 0 0 1em;
-  text-transform: uppercase;
-}
-
-@media screen and (min-width: 24rem) {
-  .root article > p:first-child {
-    font-size: var(--fontSizes-sm);
-  }
-}
-
-:global .contrast :local .root article > p:first-child {
   color: var(--colors-foreground);
 }
