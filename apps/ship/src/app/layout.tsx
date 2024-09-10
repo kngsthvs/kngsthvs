@@ -17,7 +17,11 @@ export const metadata: Metadata = {
   title: "Ship",
 };
 
-export default async function RootLayout(props: { children: React.ReactNode }) {
+export default function RootLayout(
+  props: Readonly<{
+    children: React.ReactNode;
+  }>,
+) {
   // const theme = await getTheme<Theme
 
   return (

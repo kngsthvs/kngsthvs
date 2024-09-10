@@ -9,9 +9,9 @@ export const revalidate = 60;
 
 export default async function Layout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
+}>) {
   const { investors } = await basehub({ next: { revalidate: 60 } }).query({
     __typename: true,
     investors: {

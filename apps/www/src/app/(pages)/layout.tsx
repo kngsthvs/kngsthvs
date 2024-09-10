@@ -12,9 +12,9 @@ import styles from "./layout.module.css";
 
 export default async function Layout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
+}>) {
   const headersList = headers();
   const host = headersList.get("host") ?? headersList.get("x-forwarded-host");
   const referer = headersList.get("referer");

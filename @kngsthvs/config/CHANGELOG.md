@@ -1,5 +1,11 @@
 # @kngsthvs/config
 
+## 0.1.7
+
+### Patch Changes
+
+- Add prettier-plugin-astro
+
 ## 0.1.6
 
 ### Patch Changes

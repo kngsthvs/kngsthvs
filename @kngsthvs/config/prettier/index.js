@@ -16,8 +16,17 @@ module.exports = {
   ...overridableDefaults,
   cssDeclarationSorterOrder: "alphabetical",
   order: "alphabetical",
+  overrides: [
+    {
+      files: "*.astro",
+      options: {
+        parser: "astro",
+      },
+    },
+  ],
   pluginSearchDirs: false,
   plugins: [
+    "prettier-plugin-astro",
     "prettier-plugin-css-order",
     "prettier-plugin-organize-imports",
     "prettier-plugin-svelte",

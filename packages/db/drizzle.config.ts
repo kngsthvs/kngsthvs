@@ -6,6 +6,7 @@ export default {
     connectionString: `${env.POSTGRES_URL}?sslmode=require`,
   },
   driver: "pg",
-  schema: "./src/db/schema/*",
+  out: "./src/migrations",
+  schema: "./src/schema/*",
   tablesFilter: ["*", "crowsnest_*"],
 } satisfies Config;

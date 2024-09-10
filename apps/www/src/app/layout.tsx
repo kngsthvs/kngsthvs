@@ -32,7 +32,11 @@ export const metadata: Metadata = {
   title: "Kings & Thieves",
 };
 
-export default async function RootLayout(props: { children: React.ReactNode }) {
+export default async function RootLayout(
+  props: Readonly<{
+    children: React.ReactNode;
+  }>,
+) {
   const theme = await getTheme<Themes>();
   const className = [
     theme.colorScheme === "dark" ? "dark" : "light",

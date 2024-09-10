@@ -11,7 +11,8 @@
       }
     ],
     "strictNullChecks": true,
-    "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json"
+    "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json",
+    "types": ["@cloudflare/workers-types"]
   },
   "include": [
     ".eslintrc.js",

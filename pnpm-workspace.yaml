@@ -2,3 +2,4 @@ packages:
   - "@kngsthvs/*"
   - "apps/*"
   - "packages/*"
+  - "services/*"

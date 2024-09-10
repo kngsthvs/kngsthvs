@@ -3,7 +3,11 @@ import { Footer } from "ui/components/footer";
 import { Logo } from "../_components/logo";
 import styles from "./layout.module.css";
 
-export default function Layout({ children }: { children: React.ReactNode }) {
+export default function Layout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
     <main className={styles.root}>
       <Logo>Directory</Logo>

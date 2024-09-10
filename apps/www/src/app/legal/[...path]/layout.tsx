@@ -4,7 +4,11 @@ import { Footer } from "ui/components/footer";
 import { Link } from "ui/components/link";
 import styles from "./layout.module.css";
 
-export default function Layout({ children }: { children: React.ReactNode }) {
+export default function Layout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
     <section className={styles.root}>
       <Title>Legal</Title>
