@@ -1,0 +1,14 @@
+[data-skip-nav-link] {
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  width: 1px;
+  clip: rect(0 0 0 0);
+}
+
+[data-skip-nav-link]:focus {
+  height: auto;
+  position: fixed;
+  width: auto;
+  clip: auto;
+}
