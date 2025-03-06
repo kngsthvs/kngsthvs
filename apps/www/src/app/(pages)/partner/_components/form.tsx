@@ -1,10 +1,10 @@
 "use client";
 
+import { Form as ReactForm } from "@base-ui-components/react/form";
 import { minDelay } from "@kngsthvs/ui/functions/shared/min-delay";
-import { toast } from "@kngsthvs/ui/packages/sonner";
-import { Form as FormPrimitive } from "@kngsthvs/ui/primitives/client/form";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import { toast } from "sonner";
 import { Button } from "ui/components/button";
 import { Input } from "ui/components/input";
 import { Textarea } from "ui/components/textarea";
@@ -31,7 +31,7 @@ export function Form() {
   }, [pathname]);
 
   return (
-    <FormPrimitive
+    <ReactForm
       action={async (formData) => {
         const res = await minDelay(action(formData), 3000);
 
@@ -50,16 +50,16 @@ export function Form() {
     >
       <Input.Group>
         <Input
+          error={errors.name}
           label="Name"
-          message={errors.name}
           name="name"
           placeholder="Name"
           required
         />
 
         <Input
+          error={errors.email}
           label="Email"
-          message={errors.email}
           name="email"
           placeholder="Email"
           required
@@ -67,16 +67,16 @@ export function Form() {
       </Input.Group>
 
       <Input
+        error={errors.company}
         label="Company"
-        message={errors.company}
         name="company"
         placeholder="Company"
         required
       />
 
       <Textarea
+        error={errors.body}
         label="Body"
-        message={errors.body}
         name="body"
         placeholder="Describe your project"
         required
@@ -90,6 +90,6 @@ export function Form() {
       >
         Apply
       </Button>
-    </FormPrimitive>
+    </ReactForm>
   );
 }

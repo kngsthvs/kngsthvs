@@ -18,7 +18,6 @@ import { Children, cloneElement, useEffect, useRef, useState } from "react";
 import { useRafLoop } from "react-use";
 import { useMeasureDirty } from "../../../functions/client/hooks/use-measure-dirty";
 import { mapDataAttributes } from "../../../functions/shared/attributes";
-import { generateKey } from "../../../functions/shared/generate-key";
 
 export type Direction = "down" | "left" | "right" | "up";
 
@@ -251,7 +250,7 @@ export function Ticker({
           Children.map(children, (child, index) => (
             <li
               aria-hidden={index > 0 ? true : undefined}
-              key={generateKey(index)}
+              key={`slide-${index}`}
               ref={(element) => element && itemRef.current.push(element)}
               style={{
                 minWidth: "auto",

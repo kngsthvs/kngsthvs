@@ -188,19 +188,19 @@
     "position": { "x": 256, "y": 576 }
   },
   {
+    "id": "information",
+    "href": "/information",
+    "keys": "c i",
+    "name": "Information",
+    "parent": "about",
+    "position": { "x": 256, "y": 624 }
+  },
+  {
     "disabled": true,
     "id": "metrics",
     "href": "/metrics",
     "keys": "c m",
     "name": "Metrics",
-    "parent": "about",
-    "position": { "x": 256, "y": 624 }
-  },
-  {
-    "id": "investors",
-    "href": "/investors",
-    "keys": "c i",
-    "name": "Investors",
     "parent": "about",
     "position": { "x": 256, "y": 672 }
   },

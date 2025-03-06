@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@base-ui-components/react": "1.0.0-alpha.6",
     "@effect/schema": "^0.66.0",
     "@kngsthvs/lib": "workspace:*",
     "@kngsthvs/ui": "workspace:*",
@@ -17,7 +18,7 @@
     "@vercel/speed-insights": "^1.0.10",
     "@vercel/toolbar": "^0.1.13",
     "@xyflow/react": "12.0.0-next.14",
-    "basehub": "^3.2.0",
+    "basehub": "^8.1.18",
     "client-only": "^0.0.1",
     "effect": "^3.0.0",
     "framer-motion": "^11.0.12",
@@ -30,9 +31,12 @@
     "react-dom": "^18",
     "react-markdown": "^9.0.1",
     "react-use": "^17.5.0",
+    "react-wrap-balancer": "^1.1.1",
     "server-only": "^0.0.1",
+    "sonner": "^2.0.1",
     "ui": "workspace:*",
     "use-scramble": "^2.2.15",
+    "vaul": "^1.1.2",
     "zod": "^3.22.4",
     "zod-validation-error": "^3.0.3"
   },

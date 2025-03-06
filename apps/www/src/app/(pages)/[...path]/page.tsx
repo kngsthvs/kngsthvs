@@ -1,4 +1,3 @@
-import { generateKey } from "@kngsthvs/ui/functions/shared/generate-key";
 import { basehub } from "basehub";
 import { Partner } from "../home/_components/partner";
 import { Section } from "../home/_components/section";
@@ -85,7 +84,7 @@ export default async function Page({ params }: { params: { path: string[] } }) {
               return (
                 <Item
                   length={section.items.length}
-                  key={item.type + generateKey(index)}
+                  key={`${item.type}-${index}`}
                   {...{ path, ...item }}
                 />
               );

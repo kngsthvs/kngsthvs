@@ -1,10 +1,10 @@
 import { shuffle } from "@kngsthvs/lib/entropy/shuffle";
 import { FeatureFlags } from "@kngsthvs/ui/functions/server/feature-flags";
 import { mapDataAttributes } from "@kngsthvs/ui/functions/shared/attributes";
-import { Balancer } from "@kngsthvs/ui/packages/balancer";
 import { basehub } from "basehub";
 import { headers } from "next/headers";
 import ReactMarkdown from "react-markdown";
+import { Balancer } from "react-wrap-balancer";
 import { Controls } from "ui/components/controls";
 import { Footer } from "./_components/footer";
 import { Provider } from "./_components/pages";

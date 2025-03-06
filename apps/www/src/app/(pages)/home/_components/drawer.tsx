@@ -1,8 +1,8 @@
 "use client";
 
-import { Drawer as Vaul } from "@kngsthvs/ui/packages/vaul";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import { Drawer as Vaul } from "vaul";
 import styles from "./drawer.module.css";
 
 export function Drawer({ children }: { children: React.ReactNode }) {

@@ -12,7 +12,7 @@ export default function Page({ params }: { params: { slide: string } }) {
       next={{ revalidate: 60 }}
       queries={[
         {
-          investors: {
+          information: {
             __args: {
               filter: {
                 _sys_slug: { eq: params.slide },
@@ -31,12 +31,12 @@ export default function Page({ params }: { params: { slide: string } }) {
         },
       ]}
     >
-      {async ([{ investors }]) => {
+      {async ([{ information }]) => {
         "use server"; // Needs to be a Server Action
 
         return (
           <div className={styles.root}>
-            <RichText>{investors.items[0]?.content?.json.content}</RichText>
+            <RichText>{information.items[0]?.content?.json.content}</RichText>
           </div>
         );
       }}

@@ -8,6 +8,9 @@ const withBundleAnalyzer = bundleAnalyzer({
 
 /** @type {import("next").NextConfig} */
 const nextConfig = {
+  images: {
+    remotePatterns: [{ hostname: "assets.basehub.com", protocol: "https" }],
+  },
   reactStrictMode: true,
   transpilePackages: ["@kngsthvs/lib", "@kngsthvs/ui", "lib", "ui"],
 };

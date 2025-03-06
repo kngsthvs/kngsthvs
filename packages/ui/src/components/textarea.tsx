@@ -1,32 +1,36 @@
 "use client";
 
-import { Field } from "@kngsthvs/ui/primitives/client/field";
+import { Field } from "@base-ui-components/react/field";
+import { Input } from "@base-ui-components/react/input";
 import { RootLabel } from "./input";
 import styles from "./input.module.css";
-
 export function Textarea({
   disabled,
+  error,
   label,
   name,
   placeholder,
   required,
   ...props
-}: React.ComponentProps<typeof Field.Input> & {
+}: React.ComponentProps<typeof Input> & {
   label?: string;
 } & any) {
   return (
-    <Field
+    <Field.Root
       className={styles.root}
       data-disabled={disabled}
       {...{ name, placeholder }}
     >
       <RootLabel {...{ label }}>{label}</RootLabel>
 
-      <Field.Textarea
+      <Input
         className={styles.input}
+        render={(props) => <textarea {...props} />}
         rows={12}
         {...{ disabled, name, placeholder, required, ...props }}
       />
-    </Field>
+
+      {error ? <Field.Error>{error}</Field.Error> : null}
+    </Field.Root>
   );
 }

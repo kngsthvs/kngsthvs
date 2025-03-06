@@ -1,10 +1,10 @@
 import pages from "@/content/pages.json";
-import { Balancer } from "@kngsthvs/ui/packages/balancer";
 import { Pump } from "basehub/react-pump";
 import { RichText } from "basehub/react-rich-text";
 import { type Metadata } from "next";
 import { draftMode } from "next/headers";
 import { notFound } from "next/navigation";
+import { Balancer } from "react-wrap-balancer";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {

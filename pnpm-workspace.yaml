@@ -1,5 +1,6 @@
 packages:
   - "@kngsthvs/*"
   - "apps/*"
+  - "clis/*"
+  - "internal/*"
   - "packages/*"
-  - "services/*"

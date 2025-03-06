@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { Button } from "ui/components/button";
 import styles from "./navigation.module.css";
 
@@ -11,27 +11,21 @@ export function Navigation({
   links: { href: string; name: string }[];
 }) {
   const pathname = usePathname();
-  const router = useRouter();
   const current = links.find((link) => link.href === pathname);
+  const next =
+    (current ? links[links.indexOf(current) + 1]?.href : links[0]?.href) ??
+    "/information";
+  const prev =
+    (current ? links[links.indexOf(current) - 1]?.href : links[0]?.href) ??
+    "/information";
 
   return (
     <nav className={styles.root}>
       <div>
         <Button
           disabled={pathname === links[0]?.href}
-          onClick={() => {
-            if (!current) {
-              return;
-            }
-
-            const link = links[links.indexOf(current) - 1]?.href;
-
-            if (!link) {
-              return;
-            }
-
-            router.push(link);
-          }}
+          href={prev}
+          // keys="ArrowLeft"
           variant="tertiary"
         >
           &lt; Prev
@@ -41,19 +35,8 @@ export function Navigation({
 
         <Button
           disabled={pathname === links.at(-1)?.href}
-          onClick={() => {
-            if (!current) {
-              return;
-            }
-
-            const link = links[links.indexOf(current) + 1]?.href;
-
-            if (!link) {
-              return;
-            }
-
-            router.push(link);
-          }}
+          href={next}
+          // keys="ArrowRight"
           variant="tertiary"
         >
           Next &gt;

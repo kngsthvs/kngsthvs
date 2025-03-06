@@ -12,9 +12,9 @@ export default async function Layout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const { investors } = await basehub({ next: { revalidate: 60 } }).query({
+  const { information } = await basehub({ next: { revalidate: 60 } }).query({
     __typename: true,
-    investors: {
+    information: {
       items: {
         _slug: true,
         _title: true,
@@ -26,22 +26,22 @@ export default async function Layout({
   });
   const links = [
     {
-      href: "/investors",
+      href: "/information",
       name: "Cover",
     },
-    ...investors.items.map((item) => ({
-      href: `/investors/${item._slug}`,
+    ...information.items.map((item) => ({
+      href: `/information/${item._slug}`,
       name: item._title,
     })),
     {
-      href: "/investors/contact",
-      name: "Contact",
+      href: "/information/end",
+      name: "End",
     },
   ];
 
   return (
     <main className={styles.root}>
-      <Logo>Investors</Logo>
+      <Logo>Information</Logo>
 
       <div className={styles.slides}>
         <article>{children}</article>

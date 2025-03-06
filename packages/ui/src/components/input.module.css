@@ -18,12 +18,12 @@
 }
 
 .input {
-  border: 1px solid var(--colors-gray-10);
   background-color: transparent;
-  padding: 0.5rem;
-  width: 100%;
+  border: 1px solid var(--colors-gray-10);
   color: var(--colors-foreground);
   font-size: var(--fontSizes-sm);
+  padding: 0.5rem;
+  width: 100%;
 }
 
 .input::placeholder {
@@ -47,8 +47,8 @@
 }
 
 .input:focus-visible {
-  outline: none;
   border-color: var(--colors-gray-100) !important;
+  outline: none;
 }
 
 .root {
@@ -63,28 +63,28 @@
 }
 
 .root label {
-  transform: translateY(0.25em);
+  color: var(--colors-gray-50);
+  font-size: var(--fontSizes-xs);
   opacity: 0;
+  transform: translateY(0.25em);
   transition:
     opacity 0.3s var(--ease),
     transform 0.3s var(--ease);
-  color: var(--colors-gray-50);
-  font-size: var(--fontSizes-xs);
 }
 
 :global .contrast :local .root label {
   color: var(--colors-foreground);
 }
 
-.root[data-value="true"] label {
-  transform: translateY(0);
+.root[data-filled] label {
   opacity: 1;
+  transform: translateY(0);
 }
 
 @media screen and (min-width: 36rem) {
   .input {
-    padding: 0.75rem;
     font-size: var(--fontSizes-base);
+    padding: 0.75rem;
   }
 
   .root {

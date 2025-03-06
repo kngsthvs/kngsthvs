@@ -1,50 +1,43 @@
 "use client";
 
-import { mapDataAttributes } from "@kngsthvs/ui/functions/shared/attributes";
-import { Field, useField } from "@kngsthvs/ui/primitives/client/field";
+/**
+ * @see https://developer.1password.com/docs/web/compatible-website-design/
+ */
+
+import { Field } from "@base-ui-components/react/field";
+import { Input as ReactInput } from "@base-ui-components/react/input";
 import styles from "./input.module.css";
 
 export function RootLabel({
   children,
-  label,
 }: React.ComponentProps<typeof Field.Label> & {
   label?: string;
 }) {
-  const [{ placeholder, value }] = useField();
-  const data = mapDataAttributes({
-    show: Boolean(label && placeholder),
-    value: Boolean(value),
-  });
-
-  return (
-    <Field.Label className={styles.label} {...data}>
-      {children}
-    </Field.Label>
-  );
+  return <Field.Label className={styles.label}>{children}</Field.Label>;
 }
 
 function Root({
   disabled,
+  error,
   label,
-  message,
   name,
   placeholder,
   required,
   ...props
-}: React.ComponentProps<typeof Field.Input> & {
+}: React.ComponentProps<typeof ReactInput> & {
+  error?: string;
   label?: string;
-  message?: string;
   name: string;
 }) {
   return (
-    <Field
+    <Field.Root
       className={styles.root}
       data-disabled={disabled}
       {...{ name, placeholder }}
     >
       <RootLabel {...{ label }}>{label}</RootLabel>
 
-      <Field.Input
+      <ReactInput
         autoComplete={
           name === "email"
             ? "email"
@@ -71,8 +64,8 @@ function Root({
         {...{ disabled, placeholder, required, ...props }}
       />
 
-      {message ? <Field.Message>{message}</Field.Message> : null}
-    </Field>
+      {error ? <Field.Error>{error}</Field.Error> : null}
+    </Field.Root>
   );
 }
 

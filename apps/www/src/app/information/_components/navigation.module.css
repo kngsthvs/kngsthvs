@@ -22,15 +22,15 @@
   width: 1px;
 }
 
-.root > div:first-child button {
+.root > div:first-child a {
   width: 100%;
 }
 
-.root > div:first-child button:not(:disabled) {
+.root > div:first-child a:not(:disabled) {
   background-color: var(--colors-background);
 }
 
-:global .dark :local .root > div:first-child button {
+:global .dark :local .root > div:first-child a {
   background-color: var(--colors-gray-5);
 }
 
