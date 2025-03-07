@@ -6,7 +6,7 @@ import { Effect } from "effect";
 import { getIP } from "lib/network/ip";
 import { resend } from "lib/resend";
 import { z, type ZodError } from "zod";
-import { fromZodError } from "zod-validation-error";
+import { fromError } from "zod-validation-error";
 
 const ratelimit = new Ratelimit({
   // 5 requests from the same IP in 10 seconds
@@ -24,7 +24,7 @@ export const action = async (formData: FormData) =>
   Effect.runPromise(
     Effect.tryPromise({
       catch: (error) => {
-        const validationError = fromZodError(error as ZodError);
+        const validationError = fromError(error as ZodError);
         const message =
           validationError.message ??
           "An error ocurrected while submitting the Partner Application";
@@ -40,6 +40,7 @@ export const action = async (formData: FormData) =>
         const ip = getIP();
         const { success } = await ratelimit.limit(ip);
 
+        console.log("here");
         if (!success) {
           Effect.logError(`${ip} exceeded rate limit`);
 

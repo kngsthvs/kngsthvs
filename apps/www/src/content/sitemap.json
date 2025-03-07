@@ -214,14 +214,6 @@
     "position": { "x": 256, "y": 720 }
   },
   {
-    "id": "contact",
-    "href": "mailto:contact@kngsthvs.com",
-    "keys": "c u",
-    "name": "Contact us",
-    "parent": "about",
-    "position": { "x": 256, "y": 768 }
-  },
-  {
     "id": "legal",
     "name": "Legal",
     "parent": "company",

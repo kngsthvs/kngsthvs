@@ -65,8 +65,8 @@
     "./styles/index.css": "./src/styles/index.css",
     "./styles/lenis.css": "./src/styles/lenis.css",
     "./styles/normalize.css": "./src/styles/normalize.css",
-    "./styles/reach.css": "./src/styles/reach.css",
     "./styles/resets.css": "./src/styles/resets.css",
+    "./styles/skip-nav.css": "./src/styles/skip-nav.css",
     "./styles/variables.css": "./src/styles/variables.css"
   },
   "name": "@kngsthvs/ui",

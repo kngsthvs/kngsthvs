@@ -342,20 +342,20 @@ importers:
         specifier: ^1.0.4
         version: 1.0.6
       '@effect/platform':
-        specifier: ^0.49.0
-        version: 0.49.4(@effect/schema@0.66.14(effect@3.1.2)(fast-check@3.18.0))(effect@3.1.2)(ws@8.18.0(bufferutil@4.0.8)(utf-8-validate@6.0.3))
+        specifier: ^0.77.7
+        version: 0.77.7(effect@3.13.7)
       '@effect/platform-browser':
-        specifier: ^0.32.0
-        version: 0.32.4(@effect/platform@0.49.4(@effect/schema@0.66.14(effect@3.1.2)(fast-check@3.18.0))(effect@3.1.2)(ws@8.18.0(bufferutil@4.0.8)(utf-8-validate@6.0.3)))(effect@3.1.2)
+        specifier: ^0.56.7
+        version: 0.56.7(@effect/platform@0.77.7(effect@3.13.7))(effect@3.13.7)
       '@effect/platform-node':
-        specifier: ^0.46.0
-        version: 0.46.4(@effect/platform@0.49.4(@effect/schema@0.66.14(effect@3.1.2)(fast-check@3.18.0))(effect@3.1.2)(ws@8.18.0(bufferutil@4.0.8)(utf-8-validate@6.0.3)))(bufferutil@4.0.8)(effect@3.1.2)(utf-8-validate@6.0.3)
+        specifier: ^0.73.7
+        version: 0.73.7(@effect/platform@0.77.7(effect@3.13.7))(bufferutil@4.0.8)(effect@3.13.7)(utf-8-validate@6.0.3)
       '@effect/rpc':
-        specifier: ^0.30.0
-        version: 0.30.18(@effect/platform@0.49.4(@effect/schema@0.66.14(effect@3.1.2)(fast-check@3.18.0))(effect@3.1.2)(ws@8.18.0(bufferutil@4.0.8)(utf-8-validate@6.0.3)))(@effect/schema@0.66.14(effect@3.1.2)(fast-check@3.18.0))(effect@3.1.2)
+        specifier: ^0.52.7
+        version: 0.52.7(@effect/platform@0.77.7(effect@3.13.7))(effect@3.13.7)
       '@effect/rpc-http':
-        specifier: ^0.28.0
-        version: 0.28.18(@effect/platform@0.49.4(@effect/schema@0.66.14(effect@3.1.2)(fast-check@3.18.0))(effect@3.1.2)(ws@8.18.0(bufferutil@4.0.8)(utf-8-validate@6.0.3)))(@effect/schema@0.66.14(effect@3.1.2)(fast-check@3.18.0))(effect@3.1.2)
+        specifier: ^0.50.7
+        version: 0.50.7(@effect/platform@0.77.7(effect@3.13.7))(effect@3.13.7)
       '@electric-sql/pglite':
         specifier: ^0.1.5
         version: 0.1.5
@@ -420,8 +420,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/db
       effect:
-        specifier: ^3.0.0
-        version: 3.1.2
+        specifier: ^3.13.7
+        version: 3.13.7
       electric-sql:
         specifier: ^0.12.1
         version: 0.12.1(@electric-sql/pglite@0.1.5)(@tauri-apps/plugin-sql@2.0.0-alpha.5)(bufferutil@4.0.8)(encoding@0.1.13)(prisma@4.8.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(utf-8-validate@6.0.3)(zod@3.23.6)
@@ -514,8 +514,8 @@ importers:
         specifier: 1.0.0-alpha.6
         version: 1.0.0-alpha.6(@types/react@18.3.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@effect/schema':
-        specifier: ^0.66.0
-        version: 0.66.14(effect@3.1.2)(fast-check@3.18.0)
+        specifier: ^0.75.5
+        version: 0.75.5(effect@3.1.2)
       '@kngsthvs/lib':
         specifier: workspace:*
         version: link:../../@kngsthvs/lib
@@ -625,8 +625,8 @@ importers:
         specifier: ^3.22.4
         version: 3.23.6
       zod-validation-error:
-        specifier: ^3.0.3
-        version: 3.2.0(zod@3.23.6)
+        specifier: ^3.4.0
+        version: 3.4.0(zod@3.23.6)
     devDependencies:
       '@kngsthvs/config':
         specifier: workspace:*
@@ -1705,49 +1705,46 @@ packages:
     resolution: {integrity: sha512-dBVuXR082gk3jsFp7Rd/JI4kytwGHecnCoTtXFb7DB6CNHp4rg5k1bhg0nWdLGLnOV71lmDzGQaLMy8iPLY0pw==}
     engines: {node: '>=10.0.0'}
 
-  '@effect/platform-browser@0.32.4':
-    resolution: {integrity: sha512-8aOaTFf+KEjm+Q4LtAymM6zfLWA2IjYeM428VNnpIOrYajjDyYRug/vxlk0zFgCN9b40AcsJMBr1Gz99oFEZQg==}
+  '@effect/platform-browser@0.56.7':
+    resolution: {integrity: sha512-cljRNlosnScC+lOLYJ6/nDSETV28h88sh1wOxGc0Bt8CUrT6wEuS3WuAVYLQPRgZnd6tPBJRaRl9J2454lFVQw==}
     peerDependencies:
-      '@effect/platform': ^0.49.4
-      effect: ^3.0.2
+      '@effect/platform': ^0.77.7
+      effect: ^3.13.7
 
-  '@effect/platform-node-shared@0.4.18':
-    resolution: {integrity: sha512-CIuzRRoCMcHqfg0v24ai9MD0lPf2Y0wB+rsHyUCRhK7LtF5w4QuwUc9c1yUo1qPzfElPOFFxBVOB5vEwLih8tw==}
+  '@effect/platform-node-shared@0.27.7':
+    resolution: {integrity: sha512-9DmWjh0ErGel3xuvCND7aOwtdGrgpjcCJqpaEDPHbWSTcsT9PL/Vg4dFZGSCj9WjhqKHrXKn3MqIRGMR40V0VA==}
     peerDependencies:
-      '@effect/platform': ^0.52.3
-      effect: ^3.1.2
+      '@effect/platform': ^0.77.7
+      effect: ^3.13.7
 
-  '@effect/platform-node@0.46.4':
-    resolution: {integrity: sha512-owMR6wPOw/AMPyRxmZ6HzxOBTrXTzJAxb/3Ae4U0CQFKXZaMt8IMa0HQHX1CHOA2zwramUQTf6emnVlTHYrcvg==}
+  '@effect/platform-node@0.73.7':
+    resolution: {integrity: sha512-Pto/q/LV6A/OyiJ2vveaqSUwGlKd3PL5F9I9r3gd1X4sNH6KK3lXFqpcEXqwEiIKMQe2408LeDCOdkcZ7p2ZJQ==}
     peerDependencies:
-      '@effect/platform': ^0.49.4
-      effect: ^3.0.2
+      '@effect/platform': ^0.77.7
+      effect: ^3.13.7
 
-  '@effect/platform@0.49.4':
-    resolution: {integrity: sha512-fz1UQL+bJ1SXgWIN8Qvl+BmdN/DuJRvhGaQtREFVyqPfTW6OfyybYmnt1b5U543WFoM7vQuQvGpkFPafcpAvEg==}
+  '@effect/platform@0.77.7':
+    resolution: {integrity: sha512-a4NPwOpKnGgpG45bitHciPXV6rIp+BboQf5La/OpeiRfpWwol75hIlQ7XKVrx43ujHg4gNyOWSaXZspBz7ubUQ==}
     peerDependencies:
-      '@effect/schema': ^0.66.2
-      effect: ^3.0.2
+      effect: ^3.13.7
 
-  '@effect/rpc-http@0.28.18':
-    resolution: {integrity: sha512-pfSEu1IpRg3MtQYtQUk5tzrRzYQ91DdB7szjkQzMgf+Xf1V+4BuLd4DmuHgaft9fUPGeywie/C8Xxa0JBThoWA==}
+  '@effect/rpc-http@0.50.7':
+    resolution: {integrity: sha512-vKZJdMlk6LfOemY4nDO4DkN7ryIAweh06C0ZPOamLa+7xpNKZQSW4Fh8JqxRNvTJB4uzlmJc+HGRu1XWGt8FNw==}
     peerDependencies:
-      '@effect/platform': ^0.52.3
-      '@effect/schema': ^0.66.14
-      effect: ^3.1.2
+      '@effect/platform': ^0.77.7
+      effect: ^3.13.7
 
-  '@effect/rpc@0.30.18':
-    resolution: {integrity: sha512-exsm4wpuIlDzgNDnM+EmS1msg+C+rcNsWQeLsaFR2e6CDm9wULvOwImvLnnqOs8vN0lb5Elfa7YIM4jNfO3nbQ==}
+  '@effect/rpc@0.52.7':
+    resolution: {integrity: sha512-CqHe2AQ1h2YJIcC7nycW4uA2CHetJkkLqMcv8BYwDjrpWpH47nZet6gvB+NJdu6rH0u0cNwjFsbuwOxgURlcyQ==}
     peerDependencies:
-      '@effect/platform': ^0.52.3
-      '@effect/schema': ^0.66.14
-      effect: ^3.1.2
+      '@effect/platform': ^0.77.7
+      effect: ^3.13.7
 
-  '@effect/schema@0.66.14':
-    resolution: {integrity: sha512-2Yc6gnXpcMmwQnbU2JUwDl0ckeOJmFZzteXn2jjVWuNi9PGv+jp2yK7jxv0pALcieuYwdR5tKkCRI7STuhEwfg==}
+  '@effect/schema@0.75.5':
+    resolution: {integrity: sha512-TQInulTVCuF+9EIbJpyLP6dvxbQJMphrnRqgexm/Ze39rSjfhJuufF7XvU3SxTgg3HnL7B/kpORTJbHhlE6thw==}
+    deprecated: this package has been merged into the main effect package
     peerDependencies:
-      effect: ^3.1.2
-      fast-check: ^3.13.2
+      effect: ^3.9.2
 
   '@electric-sql/pglite@0.1.5':
     resolution: {integrity: sha512-eymv4ONNvoPZQTvOQIi5dbpR+J5HzEv0qQH9o/y3gvNheJV/P/NFcrbsfJZYTsDKoq7DKrTiFNexsRkJKy8x9Q==}
@@ -4381,6 +4378,9 @@ packages:
   '@sindresorhus/merge-streams@2.3.0':
     resolution: {integrity: sha512-LtoMMhxAlorcGhmFYI+LhPgbPZCkgP6ra1YL604EeF6U98pLlQ3iWIGMdWSC+vWmPBWBNgmDBAhnAobLROJmwg==}
     engines: {node: '>=18'}
+
+  '@standard-schema/spec@1.0.0':
+    resolution: {integrity: sha512-m2bOd0f2RT9k8QJx1JN85cZYyH1RqFBdlwtkSlf4tBDYLCiiZnv1fIIwacK6cqwXavOydf0NPToMQgpKq+dVlA==}
 
   '@storybook/addon-actions@8.0.10':
     resolution: {integrity: sha512-IEuc30UAFl7Ws0GwaY/whjBnGaViVEVjmPc+MXUym2wwwJbnCbI+BKJxPoYi/I7QJb5aUNToAE6pl2pDda2g3Q==}
@@ -7569,6 +7569,9 @@ packages:
   effect@3.1.2:
     resolution: {integrity: sha512-XakSWck6w6ROqKyEys0tKE9K6Gx2p8W/09u2ZTEZZrneO5Z3QEdPhXzWTyC73kD5zUvfJinZLVIas8I1xoHaTg==}
 
+  effect@3.13.7:
+    resolution: {integrity: sha512-yjDuWX5M34kB38Pwilv8QU956nA2m1a6ws0i+04VQkQJEBPI4GfVhUhtNNFRaqKIOlkqdqzJHCDOwARmaf2XzA==}
+
   ejs@3.1.10:
     resolution: {integrity: sha512-UeJmFfOrAQS8OJWPZ4qtgHyWExa088/MtK5UEyoJGFH67cDEXkZSviOiKRCZ4Xij0zxI3JECgYs3oKx+AizQBA==}
     engines: {node: '>=0.10.0'}
@@ -8135,8 +8138,9 @@ packages:
     resolution: {integrity: sha512-/951xaT0kA40w0GXRsZXEwSTE7LugjZtSA/8vPgFkiPQ8wNp8tRvqWuNDHBgLxJYXtsK11e/7Q4ObkKW5BdTFQ==}
     engines: {node: '>=8.0.0'}
 
-  fast-decode-uri-component@1.0.1:
-    resolution: {integrity: sha512-WKgKWg5eUxvRZGwW8FvfbaH7AXSh2cL+3j5fMGzUMCxWBJ3dV3a7Wz8y2f/uQ0e3B6WmodD3oS54jTQ9HVTIIg==}
+  fast-check@3.23.2:
+    resolution: {integrity: sha512-h5+1OzzfCC3Ef7VbtKdcv7zsstUQwUDlYpUTvjeUsJAssPgLn7QzbboPtL5ro04Mq0rPOsMzl7q5hIbRs2wD1A==}
+    engines: {node: '>=8.0.0'}
 
   fast-deep-equal@3.1.3:
     resolution: {integrity: sha512-f3qQ9oQy9j2AhBe/H9VC91wLmKBCCU/gDOnKNAYG5hswO7BLKj09Hc5HYNz9cGI++xlpDCIgDaitVs03ATR84Q==}
@@ -8156,9 +8160,6 @@ packages:
 
   fast-loops@1.1.3:
     resolution: {integrity: sha512-8EZzEP0eKkEEVX+drtd9mtuQ+/QrlfW/5MlwcwK5Nds6EkZ/tRzEexkzUY2mIssnAyVLT+TKHuRXmFNNXYUd6g==}
-
-  fast-querystring@1.1.2:
-    resolution: {integrity: sha512-g6KuKWmFXc0fID8WWH0jit4g0AGBoJhCkJMb1RmbsSEUNvQ+ZC8D6CUZ+GtF8nMzSPXnhiePyyqqipzNNEnHjg==}
 
   fast-shallow-equal@1.0.0:
     resolution: {integrity: sha512-HPtaa38cPgWvaCFmRNhlc6NG7pv6NUHqjPgVAkWGoB9mQMwYB27/K0CvOM5Czy+qpT3e8XJ6Q4aPAnzpNpzNaw==}
@@ -8256,8 +8257,8 @@ packages:
     resolution: {integrity: sha512-9ZonPT4ZAK4a+1pUPVPZJapbi7O5qbbJPdYw/NOQWZZbVLdDTYM3A4R9z/DpAM08IDaFGsvPgiGZ82WEwUDWjg==}
     engines: {node: '>=14.16'}
 
-  find-my-way-ts@0.1.2:
-    resolution: {integrity: sha512-AWsH49RGcyayzzxSAkwQKC1bToY5ForAfNreix88slo7wijg1wwTtCPvUUoVm/qhIY3UVSHBKApw8mOGPxsvSg==}
+  find-my-way-ts@0.1.5:
+    resolution: {integrity: sha512-4GOTMrpGQVzsCH2ruUn2vmwzV/02zF4q+ybhCIrw/Rkt3L8KWcycdC6aJMctJzwN4fXD4SD5F/4B9Sksh5rE0A==}
 
   find-up-simple@1.0.0:
     resolution: {integrity: sha512-q7Us7kcjj2VMePAa02hDAF6d+MzsdsAWEwYyOpwUtlerRBkOEPBCRZrAV4XfcSN8fHAgaD0hP7miwoay6DCprw==}
@@ -9238,11 +9239,6 @@ packages:
     resolution: {integrity: sha512-OEiufTOmoVOsbVYTlNxIdzv8FPrJ1wMeFVajRTZqRgD5zEMsQqNZFxe2DAzA94L+SuIFp5rxzizxoIQYbrk9FA==}
     engines: {node: '>=12'}
     hasBin: true
-
-  isows@1.0.4:
-    resolution: {integrity: sha512-hEzjY+x9u9hPmBom9IIAqdJCwNLax+xrPb51vEPpERoFlIxgmZcHzsT5jKG06nvInKOBGvReAVz80Umed5CczQ==}
-    peerDependencies:
-      ws: '*'
 
   issue-parser@7.0.0:
     resolution: {integrity: sha512-jgAw78HO3gs9UrKqJNQvfDj9Ouy8Mhu40fbEJ8yXff4MW8+/Fcn9iFjyWUQ6SKbX8ipPk3X5A3AyfYHRu6uVLw==}
@@ -10292,8 +10288,8 @@ packages:
   ms@2.1.3:
     resolution: {integrity: sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==}
 
-  multipasta@0.2.1:
-    resolution: {integrity: sha512-0NR15o5iewJFMsZ4jN6cztCd4izTLZPyHUfBrakbg/x70B8zplPE6qumbs+A7LmhGtQMzpN/K8MOOdifMgAKFA==}
+  multipasta@0.2.5:
+    resolution: {integrity: sha512-c8eMDb1WwZcE02WVjHoOmUVk7fnKU/RmUcosHACglrWAuPQsEJv+E8430sXj6jNc1jHw0zrS16aCjQh4BcEb4A==}
 
   mustache@4.2.0:
     resolution: {integrity: sha512-71ippSywq5Yb7/tVYyGbkBggbU8H3u5Rz56fH60jGFgr8uHwxs+aSKeqmluIVzM0m0kB7xQjKS6qPfd0b2ZoqQ==}
@@ -12945,6 +12941,10 @@ packages:
     resolution: {integrity: sha512-VviMt2tlMg1BvQ0FKXxrz1eJuyrcISrL2sPfBf7ZskX/FCEc/7LeThQaoygsMJpNqrATWQIsRVx+1Dpe4jaYuQ==}
     engines: {node: '>=18.17'}
 
+  undici@7.4.0:
+    resolution: {integrity: sha512-PUQM3/es3noM24oUn10u3kNNap0AbxESOmnssmW+dOi9yGwlUSi5nTNYl3bNbTkWOF8YZDkx2tCmj9OtQ3iGGw==}
+    engines: {node: '>=20.18.1'}
+
   unenv-nightly@1.10.0-1717606461.a117952:
     resolution: {integrity: sha512-u3TfBX02WzbHTpaEfWEKwDijDSFAHcgXkayUZ+MVDrjhLFvgAJzFGTSTmwlEhwWi2exyRQey23ah9wELMM6etg==}
 
@@ -13596,8 +13596,8 @@ packages:
   zod-error@1.5.0:
     resolution: {integrity: sha512-zzopKZ/skI9iXpqCEPj+iLCKl9b88E43ehcU+sbRoHuwGd9F1IDVGQ70TyO6kmfiRL1g4IXkjsXK+g1gLYl4WQ==}
 
-  zod-validation-error@3.2.0:
-    resolution: {integrity: sha512-cYlPR6zuyrgmu2wRTdumEAJGuwI7eHVHGT+VyneAQxmRAKtGRL1/7pjz4wfLhz4J05f5qoSZc3rGacswgyTjjw==}
+  zod-validation-error@3.4.0:
+    resolution: {integrity: sha512-ZOPR9SVY6Pb2qqO5XHt+MkkTRxGXb4EVtnjc9JpXUOtUB1T9Ru7mZOT361AN3MsetVe7R0a1KZshJDZdgp9miQ==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
       zod: ^3.18.0
@@ -14837,59 +14837,52 @@ snapshots:
 
   '@discoveryjs/json-ext@0.5.7': {}
 
-  '@effect/platform-browser@0.32.4(@effect/platform@0.49.4(@effect/schema@0.66.14(effect@3.1.2)(fast-check@3.18.0))(effect@3.1.2)(ws@8.18.0(bufferutil@4.0.8)(utf-8-validate@6.0.3)))(effect@3.1.2)':
+  '@effect/platform-browser@0.56.7(@effect/platform@0.77.7(effect@3.13.7))(effect@3.13.7)':
     dependencies:
-      '@effect/platform': 0.49.4(@effect/schema@0.66.14(effect@3.1.2)(fast-check@3.18.0))(effect@3.1.2)(ws@8.18.0(bufferutil@4.0.8)(utf-8-validate@6.0.3))
-      effect: 3.1.2
-      multipasta: 0.2.1
+      '@effect/platform': 0.77.7(effect@3.13.7)
+      effect: 3.13.7
+      multipasta: 0.2.5
 
-  '@effect/platform-node-shared@0.4.18(@effect/platform@0.49.4(@effect/schema@0.66.14(effect@3.1.2)(fast-check@3.18.0))(effect@3.1.2)(ws@8.18.0(bufferutil@4.0.8)(utf-8-validate@6.0.3)))(effect@3.1.2)':
+  '@effect/platform-node-shared@0.27.7(@effect/platform@0.77.7(effect@3.13.7))(effect@3.13.7)':
     dependencies:
-      '@effect/platform': 0.49.4(@effect/schema@0.66.14(effect@3.1.2)(fast-check@3.18.0))(effect@3.1.2)(ws@8.18.0(bufferutil@4.0.8)(utf-8-validate@6.0.3))
+      '@effect/platform': 0.77.7(effect@3.13.7)
       '@parcel/watcher': 2.4.1
-      effect: 3.1.2
-      multipasta: 0.2.1
+      effect: 3.13.7
+      multipasta: 0.2.5
 
-  '@effect/platform-node@0.46.4(@effect/platform@0.49.4(@effect/schema@0.66.14(effect@3.1.2)(fast-check@3.18.0))(effect@3.1.2)(ws@8.18.0(bufferutil@4.0.8)(utf-8-validate@6.0.3)))(bufferutil@4.0.8)(effect@3.1.2)(utf-8-validate@6.0.3)':
+  '@effect/platform-node@0.73.7(@effect/platform@0.77.7(effect@3.13.7))(bufferutil@4.0.8)(effect@3.13.7)(utf-8-validate@6.0.3)':
     dependencies:
-      '@effect/platform': 0.49.4(@effect/schema@0.66.14(effect@3.1.2)(fast-check@3.18.0))(effect@3.1.2)(ws@8.18.0(bufferutil@4.0.8)(utf-8-validate@6.0.3))
-      '@effect/platform-node-shared': 0.4.18(@effect/platform@0.49.4(@effect/schema@0.66.14(effect@3.1.2)(fast-check@3.18.0))(effect@3.1.2)(ws@8.18.0(bufferutil@4.0.8)(utf-8-validate@6.0.3)))(effect@3.1.2)
-      effect: 3.1.2
+      '@effect/platform': 0.77.7(effect@3.13.7)
+      '@effect/platform-node-shared': 0.27.7(@effect/platform@0.77.7(effect@3.13.7))(effect@3.13.7)
+      effect: 3.13.7
       mime: 3.0.0
-      undici: 6.15.0
-      ws: 8.17.0(bufferutil@4.0.8)(utf-8-validate@6.0.3)
+      undici: 7.4.0
+      ws: 8.18.0(bufferutil@4.0.8)(utf-8-validate@6.0.3)
     transitivePeerDependencies:
       - bufferutil
       - utf-8-validate
 
-  '@effect/platform@0.49.4(@effect/schema@0.66.14(effect@3.1.2)(fast-check@3.18.0))(effect@3.1.2)(ws@8.18.0(bufferutil@4.0.8)(utf-8-validate@6.0.3))':
+  '@effect/platform@0.77.7(effect@3.13.7)':
     dependencies:
-      '@effect/schema': 0.66.14(effect@3.1.2)(fast-check@3.18.0)
-      effect: 3.1.2
-      find-my-way-ts: 0.1.2
-      isows: 1.0.4(ws@8.18.0(bufferutil@4.0.8)(utf-8-validate@6.0.3))
-      multipasta: 0.2.1
-      path-browserify: 1.0.1
-    transitivePeerDependencies:
-      - ws
+      effect: 3.13.7
+      find-my-way-ts: 0.1.5
+      multipasta: 0.2.5
 
-  '@effect/rpc-http@0.28.18(@effect/platform@0.49.4(@effect/schema@0.66.14(effect@3.1.2)(fast-check@3.18.0))(effect@3.1.2)(ws@8.18.0(bufferutil@4.0.8)(utf-8-validate@6.0.3)))(@effect/schema@0.66.14(effect@3.1.2)(fast-check@3.18.0))(effect@3.1.2)':
+  '@effect/rpc-http@0.50.7(@effect/platform@0.77.7(effect@3.13.7))(effect@3.13.7)':
     dependencies:
-      '@effect/platform': 0.49.4(@effect/schema@0.66.14(effect@3.1.2)(fast-check@3.18.0))(effect@3.1.2)(ws@8.18.0(bufferutil@4.0.8)(utf-8-validate@6.0.3))
-      '@effect/rpc': 0.30.18(@effect/platform@0.49.4(@effect/schema@0.66.14(effect@3.1.2)(fast-check@3.18.0))(effect@3.1.2)(ws@8.18.0(bufferutil@4.0.8)(utf-8-validate@6.0.3)))(@effect/schema@0.66.14(effect@3.1.2)(fast-check@3.18.0))(effect@3.1.2)
-      '@effect/schema': 0.66.14(effect@3.1.2)(fast-check@3.18.0)
-      effect: 3.1.2
+      '@effect/platform': 0.77.7(effect@3.13.7)
+      '@effect/rpc': 0.52.7(@effect/platform@0.77.7(effect@3.13.7))(effect@3.13.7)
+      effect: 3.13.7
 
-  '@effect/rpc@0.30.18(@effect/platform@0.49.4(@effect/schema@0.66.14(effect@3.1.2)(fast-check@3.18.0))(effect@3.1.2)(ws@8.18.0(bufferutil@4.0.8)(utf-8-validate@6.0.3)))(@effect/schema@0.66.14(effect@3.1.2)(fast-check@3.18.0))(effect@3.1.2)':
+  '@effect/rpc@0.52.7(@effect/platform@0.77.7(effect@3.13.7))(effect@3.13.7)':
     dependencies:
-      '@effect/platform': 0.49.4(@effect/schema@0.66.14(effect@3.1.2)(fast-check@3.18.0))(effect@3.1.2)(ws@8.18.0(bufferutil@4.0.8)(utf-8-validate@6.0.3))
-      '@effect/schema': 0.66.14(effect@3.1.2)(fast-check@3.18.0)
-      effect: 3.1.2
+      '@effect/platform': 0.77.7(effect@3.13.7)
+      effect: 3.13.7
 
-  '@effect/schema@0.66.14(effect@3.1.2)(fast-check@3.18.0)':
+  '@effect/schema@0.75.5(effect@3.1.2)':
     dependencies:
       effect: 3.1.2
-      fast-check: 3.18.0
+      fast-check: 3.23.2
 
   '@electric-sql/pglite@0.1.5': {}
 
@@ -17384,6 +17377,8 @@ snapshots:
 
   '@sindresorhus/merge-streams@2.3.0': {}
 
+  '@standard-schema/spec@1.0.0': {}
+
   '@storybook/addon-actions@8.0.10':
     dependencies:
       '@storybook/core-events': 8.0.10
@@ -17828,7 +17823,7 @@ snapshots:
       util: 0.12.5
       util-deprecate: 1.0.2
       watchpack: 2.4.1
-      ws: 8.17.0(bufferutil@4.0.8)(utf-8-validate@6.0.4)
+      ws: 8.18.0(bufferutil@4.0.8)(utf-8-validate@6.0.4)
     transitivePeerDependencies:
       - bufferutil
       - encoding
@@ -20390,10 +20385,10 @@ snapshots:
       '@typescript-eslint/eslint-plugin': 7.8.0(@typescript-eslint/parser@7.8.0(eslint@8.57.0)(typescript@5.4.5))(eslint@8.57.0)(typescript@5.4.5)
       '@typescript-eslint/parser': 7.8.0(eslint@8.57.0)(typescript@5.4.5)
       eslint-config-prettier: 9.1.0(eslint@8.57.0)
-      eslint-import-resolver-alias: 1.1.2(eslint-plugin-import@2.29.1(@typescript-eslint/parser@7.8.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-typescript@3.6.1)(eslint@8.57.0))
-      eslint-import-resolver-typescript: 3.6.1(@typescript-eslint/parser@7.8.0(eslint@8.57.0)(typescript@5.4.5))(eslint-plugin-import@2.29.1)(eslint@8.57.0)
+      eslint-import-resolver-alias: 1.1.2(eslint-plugin-import@2.29.1(@typescript-eslint/parser@7.8.0(eslint@8.57.0)(typescript@5.4.5))(eslint@8.57.0))
+      eslint-import-resolver-typescript: 3.6.1(@typescript-eslint/parser@7.8.0(eslint@8.57.0)(typescript@5.4.5))(eslint-plugin-import@2.29.1(@typescript-eslint/parser@7.8.0(eslint@8.57.0)(typescript@5.4.5))(eslint@8.57.0))(eslint@8.57.0)
       eslint-plugin-eslint-comments: 3.2.0(eslint@8.57.0)
-      eslint-plugin-import: 2.29.1(@typescript-eslint/parser@7.8.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-typescript@3.6.1)(eslint@8.57.0)
+      eslint-plugin-import: 2.29.1(@typescript-eslint/parser@7.8.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@7.8.0(eslint@8.57.0)(typescript@5.4.5))(eslint-plugin-import@2.29.1(@typescript-eslint/parser@7.8.0(eslint@8.57.0)(typescript@5.4.5))(eslint@8.57.0))(eslint@8.57.0))(eslint@8.57.0)
       eslint-plugin-jest: 27.9.0(@typescript-eslint/eslint-plugin@7.8.0(@typescript-eslint/parser@7.8.0(eslint@8.57.0)(typescript@5.4.5))(eslint@8.57.0)(typescript@5.4.5))(eslint@8.57.0)(typescript@5.4.5)
       eslint-plugin-jsx-a11y: 6.8.0(eslint@8.57.0)
       eslint-plugin-playwright: 1.6.0(eslint-plugin-jest@27.9.0(@typescript-eslint/eslint-plugin@7.8.0(@typescript-eslint/parser@7.8.0(eslint@8.57.0)(typescript@5.4.5))(eslint@8.57.0)(typescript@5.4.5))(eslint@8.57.0)(typescript@5.4.5))(eslint@8.57.0)
@@ -22251,6 +22246,11 @@ snapshots:
 
   effect@3.1.2: {}
 
+  effect@3.13.7:
+    dependencies:
+      '@standard-schema/spec': 1.0.0
+      fast-check: 3.23.2
+
   ejs@3.1.10:
     dependencies:
       jake: 10.9.1
@@ -22697,7 +22697,7 @@ snapshots:
       '@typescript-eslint/parser': 6.21.0(eslint@8.57.0)(typescript@5.4.5)
       eslint: 8.57.0
       eslint-import-resolver-node: 0.3.9
-      eslint-import-resolver-typescript: 3.6.1(@typescript-eslint/parser@6.21.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.29.1)(eslint@8.57.0)
+      eslint-import-resolver-typescript: 3.6.1(@typescript-eslint/parser@6.21.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.29.1(@typescript-eslint/parser@7.8.0(eslint@8.57.0)(typescript@5.4.5))(eslint@8.57.0))(eslint@8.57.0)
       eslint-plugin-import: 2.29.1(@typescript-eslint/parser@6.21.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-typescript@3.6.1)(eslint@8.57.0)
       eslint-plugin-jsx-a11y: 6.8.0(eslint@8.57.0)
       eslint-plugin-react: 7.34.1(eslint@8.57.0)
@@ -22717,9 +22717,9 @@ snapshots:
       eslint: 8.57.0
       eslint-plugin-turbo: 1.13.3(eslint@8.57.0)
 
-  eslint-import-resolver-alias@1.1.2(eslint-plugin-import@2.29.1(@typescript-eslint/parser@7.8.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-typescript@3.6.1)(eslint@8.57.0)):
+  eslint-import-resolver-alias@1.1.2(eslint-plugin-import@2.29.1(@typescript-eslint/parser@7.8.0(eslint@8.57.0)(typescript@5.4.5))(eslint@8.57.0)):
     dependencies:
-      eslint-plugin-import: 2.29.1(@typescript-eslint/parser@7.8.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-typescript@3.6.1)(eslint@8.57.0)
+      eslint-plugin-import: 2.29.1(@typescript-eslint/parser@6.21.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-typescript@3.6.1)(eslint@8.57.0)
 
   eslint-import-resolver-node@0.3.9:
     dependencies:
@@ -22729,12 +22729,12 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@6.21.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.29.1)(eslint@8.57.0):
+  eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@6.21.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.29.1(@typescript-eslint/parser@7.8.0(eslint@8.57.0)(typescript@5.4.5))(eslint@8.57.0))(eslint@8.57.0):
     dependencies:
       debug: 4.3.4
       enhanced-resolve: 5.16.0
       eslint: 8.57.0
-      eslint-module-utils: 2.8.1(@typescript-eslint/parser@6.21.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@6.21.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.29.1)(eslint@8.57.0))(eslint@8.57.0)
+      eslint-module-utils: 2.8.1(@typescript-eslint/parser@6.21.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@6.21.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.29.1(@typescript-eslint/parser@7.8.0(eslint@8.57.0)(typescript@5.4.5))(eslint@8.57.0))(eslint@8.57.0))(eslint@8.57.0)
       eslint-plugin-import: 2.29.1(@typescript-eslint/parser@6.21.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-typescript@3.6.1)(eslint@8.57.0)
       fast-glob: 3.3.2
       get-tsconfig: 4.7.4
@@ -22746,13 +22746,13 @@ snapshots:
       - eslint-import-resolver-webpack
       - supports-color
 
-  eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@7.8.0(eslint@8.57.0)(typescript@5.4.5))(eslint-plugin-import@2.29.1)(eslint@8.57.0):
+  eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@7.8.0(eslint@8.57.0)(typescript@5.4.5))(eslint-plugin-import@2.29.1(@typescript-eslint/parser@7.8.0(eslint@8.57.0)(typescript@5.4.5))(eslint@8.57.0))(eslint@8.57.0):
     dependencies:
       debug: 4.3.4
       enhanced-resolve: 5.16.0
       eslint: 8.57.0
-      eslint-module-utils: 2.8.1(@typescript-eslint/parser@7.8.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@7.8.0(eslint@8.57.0)(typescript@5.4.5))(eslint-plugin-import@2.29.1)(eslint@8.57.0))(eslint@8.57.0)
-      eslint-plugin-import: 2.29.1(@typescript-eslint/parser@7.8.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-typescript@3.6.1)(eslint@8.57.0)
+      eslint-module-utils: 2.8.1(@typescript-eslint/parser@7.8.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@7.8.0(eslint@8.57.0)(typescript@5.4.5))(eslint-plugin-import@2.29.1(@typescript-eslint/parser@7.8.0(eslint@8.57.0)(typescript@5.4.5))(eslint@8.57.0))(eslint@8.57.0))(eslint@8.57.0)
+      eslint-plugin-import: 2.29.1(@typescript-eslint/parser@6.21.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-typescript@3.6.1)(eslint@8.57.0)
       fast-glob: 3.3.2
       get-tsconfig: 4.7.4
       is-core-module: 2.13.1
@@ -22763,25 +22763,25 @@ snapshots:
       - eslint-import-resolver-webpack
       - supports-color
 
-  eslint-module-utils@2.8.1(@typescript-eslint/parser@6.21.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@6.21.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.29.1)(eslint@8.57.0))(eslint@8.57.0):
+  eslint-module-utils@2.8.1(@typescript-eslint/parser@6.21.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@6.21.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.29.1(@typescript-eslint/parser@7.8.0(eslint@8.57.0)(typescript@5.4.5))(eslint@8.57.0))(eslint@8.57.0))(eslint@8.57.0):
     dependencies:
       debug: 3.2.7
     optionalDependencies:
       '@typescript-eslint/parser': 6.21.0(eslint@8.57.0)(typescript@5.4.5)
       eslint: 8.57.0
       eslint-import-resolver-node: 0.3.9
-      eslint-import-resolver-typescript: 3.6.1(@typescript-eslint/parser@6.21.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.29.1)(eslint@8.57.0)
+      eslint-import-resolver-typescript: 3.6.1(@typescript-eslint/parser@6.21.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.29.1(@typescript-eslint/parser@7.8.0(eslint@8.57.0)(typescript@5.4.5))(eslint@8.57.0))(eslint@8.57.0)
     transitivePeerDependencies:
       - supports-color
 
-  eslint-module-utils@2.8.1(@typescript-eslint/parser@7.8.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@7.8.0(eslint@8.57.0)(typescript@5.4.5))(eslint-plugin-import@2.29.1)(eslint@8.57.0))(eslint@8.57.0):
+  eslint-module-utils@2.8.1(@typescript-eslint/parser@7.8.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@7.8.0(eslint@8.57.0)(typescript@5.4.5))(eslint-plugin-import@2.29.1(@typescript-eslint/parser@7.8.0(eslint@8.57.0)(typescript@5.4.5))(eslint@8.57.0))(eslint@8.57.0))(eslint@8.57.0):
     dependencies:
       debug: 3.2.7
     optionalDependencies:
       '@typescript-eslint/parser': 7.8.0(eslint@8.57.0)(typescript@5.4.5)
       eslint: 8.57.0
       eslint-import-resolver-node: 0.3.9
-      eslint-import-resolver-typescript: 3.6.1(@typescript-eslint/parser@7.8.0(eslint@8.57.0)(typescript@5.4.5))(eslint-plugin-import@2.29.1)(eslint@8.57.0)
+      eslint-import-resolver-typescript: 3.6.1(@typescript-eslint/parser@7.8.0(eslint@8.57.0)(typescript@5.4.5))(eslint-plugin-import@2.29.1(@typescript-eslint/parser@7.8.0(eslint@8.57.0)(typescript@5.4.5))(eslint@8.57.0))(eslint@8.57.0)
     transitivePeerDependencies:
       - supports-color
 
@@ -22805,7 +22805,7 @@ snapshots:
       doctrine: 2.1.0
       eslint: 8.57.0
       eslint-import-resolver-node: 0.3.9
-      eslint-module-utils: 2.8.1(@typescript-eslint/parser@6.21.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@6.21.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.29.1)(eslint@8.57.0))(eslint@8.57.0)
+      eslint-module-utils: 2.8.1(@typescript-eslint/parser@6.21.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@6.21.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.29.1(@typescript-eslint/parser@7.8.0(eslint@8.57.0)(typescript@5.4.5))(eslint@8.57.0))(eslint@8.57.0))(eslint@8.57.0)
       hasown: 2.0.2
       is-core-module: 2.13.1
       is-glob: 4.0.3
@@ -22822,7 +22822,7 @@ snapshots:
       - eslint-import-resolver-webpack
       - supports-color
 
-  eslint-plugin-import@2.29.1(@typescript-eslint/parser@7.8.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-typescript@3.6.1)(eslint@8.57.0):
+  eslint-plugin-import@2.29.1(@typescript-eslint/parser@7.8.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@7.8.0(eslint@8.57.0)(typescript@5.4.5))(eslint-plugin-import@2.29.1(@typescript-eslint/parser@7.8.0(eslint@8.57.0)(typescript@5.4.5))(eslint@8.57.0))(eslint@8.57.0))(eslint@8.57.0):
     dependencies:
       array-includes: 3.1.8
       array.prototype.findlastindex: 1.2.5
@@ -22832,7 +22832,7 @@ snapshots:
       doctrine: 2.1.0
       eslint: 8.57.0
       eslint-import-resolver-node: 0.3.9
-      eslint-module-utils: 2.8.1(@typescript-eslint/parser@7.8.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@7.8.0(eslint@8.57.0)(typescript@5.4.5))(eslint-plugin-import@2.29.1)(eslint@8.57.0))(eslint@8.57.0)
+      eslint-module-utils: 2.8.1(@typescript-eslint/parser@7.8.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@7.8.0(eslint@8.57.0)(typescript@5.4.5))(eslint-plugin-import@2.29.1(@typescript-eslint/parser@7.8.0(eslint@8.57.0)(typescript@5.4.5))(eslint@8.57.0))(eslint@8.57.0))(eslint@8.57.0)
       hasown: 2.0.2
       is-core-module: 2.13.1
       is-glob: 4.0.3
@@ -23186,7 +23186,9 @@ snapshots:
     dependencies:
       pure-rand: 6.1.0
 
-  fast-decode-uri-component@1.0.1: {}
+  fast-check@3.23.2:
+    dependencies:
+      pure-rand: 6.1.0
 
   fast-deep-equal@3.1.3: {}
 
@@ -23205,10 +23207,6 @@ snapshots:
   fast-levenshtein@2.0.6: {}
 
   fast-loops@1.1.3: {}
-
-  fast-querystring@1.1.2:
-    dependencies:
-      fast-decode-uri-component: 1.0.1
 
   fast-shallow-equal@1.0.0: {}
 
@@ -23320,9 +23318,7 @@ snapshots:
       common-path-prefix: 3.0.0
       pkg-dir: 7.0.0
 
-  find-my-way-ts@0.1.2:
-    dependencies:
-      fast-querystring: 1.1.2
+  find-my-way-ts@0.1.5: {}
 
   find-up-simple@1.0.0: {}
 
@@ -24340,10 +24336,6 @@ snapshots:
       readable-stream: 3.6.2
       sha.js: 2.4.11
       simple-get: 4.0.1
-
-  isows@1.0.4(ws@8.18.0(bufferutil@4.0.8)(utf-8-validate@6.0.3)):
-    dependencies:
-      ws: 8.18.0(bufferutil@4.0.8)(utf-8-validate@6.0.3)
 
   issue-parser@7.0.0:
     dependencies:
@@ -25779,7 +25771,7 @@ snapshots:
 
   ms@2.1.3: {}
 
-  multipasta@0.2.1: {}
+  multipasta@0.2.5: {}
 
   mustache@4.2.0: {}
 
@@ -28729,6 +28721,8 @@ snapshots:
 
   undici@6.15.0: {}
 
+  undici@7.4.0: {}
+
   unenv-nightly@1.10.0-1717606461.a117952:
     dependencies:
       consola: 3.2.3
@@ -29392,11 +29386,6 @@ snapshots:
       bufferutil: 4.0.8
       utf-8-validate: 6.0.3
 
-  ws@8.17.0(bufferutil@4.0.8)(utf-8-validate@6.0.4):
-    optionalDependencies:
-      bufferutil: 4.0.8
-      utf-8-validate: 6.0.4
-
   ws@8.18.0(bufferutil@4.0.8)(utf-8-validate@6.0.3):
     optionalDependencies:
       bufferutil: 4.0.8
@@ -29505,7 +29494,7 @@ snapshots:
     dependencies:
       zod: 3.23.6
 
-  zod-validation-error@3.2.0(zod@3.23.6):
+  zod-validation-error@3.4.0(zod@3.23.6):
     dependencies:
       zod: 3.23.6
 
