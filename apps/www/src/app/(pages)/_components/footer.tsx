@@ -159,8 +159,8 @@ export function Footer({ children }: { children: React.ReactNode }) {
 
             <NavigationMenu.Content className={styles.content} forceMount>
               <p>About</p>
-              <Item href="/information" keys="c i">
-                Information
+              <Item href="/hymn" keys="c h">
+                Hymn
               </Item>
               {/* <Item href="/metrics" keys="c m">
                 Metrics
@@ -168,6 +168,9 @@ export function Footer({ children }: { children: React.ReactNode }) {
               <Item href="security" keys="c s">
                 Security
               </Item> */}
+              <Item href="/vision" keys="c v">
+                Vision
+              </Item>
 
               <p>Legal</p>
               <Item href="/legal/dpa" keys="c d">

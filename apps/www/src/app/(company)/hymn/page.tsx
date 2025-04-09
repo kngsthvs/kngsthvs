@@ -14,7 +14,7 @@ export default function Page() {
         next={{ revalidate: 60 }}
         queries={[
           {
-            vision: {
+            hymn: {
               __typename: true,
               _title: true,
               body: {
@@ -26,12 +26,12 @@ export default function Page() {
           },
         ]}
       >
-        {async ([{ vision }]) => {
+        {async ([{ hymn }]) => {
           "use server"; // needs to be a Server Action
 
           return (
             <div className={styles.content}>
-              <RichText>{vision.body?.json.content}</RichText>
+              <RichText>{hymn.body?.json.content}</RichText>
             </div>
           );
         }}

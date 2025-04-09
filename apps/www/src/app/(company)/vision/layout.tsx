@@ -1,7 +1,7 @@
 import { basehub } from "basehub";
 import { Controls } from "ui/components/controls";
 import { Footer } from "ui/components/footer";
-import { Logo } from "../_components/logo";
+import { Logo } from "../../_components/logo";
 import { Navigation } from "./_components/navigation";
 import styles from "./layout.module.css";
 
@@ -12,9 +12,9 @@ export default async function Layout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const { information } = await basehub({ next: { revalidate: 60 } }).query({
+  const { vision } = await basehub({ next: { revalidate: 60 } }).query({
     __typename: true,
-    information: {
+    vision: {
       items: {
         _slug: true,
         _title: true,
@@ -26,22 +26,22 @@ export default async function Layout({
   });
   const links = [
     {
-      href: "/information",
+      href: "/vision",
       name: "Cover",
     },
-    ...information.items.map((item) => ({
-      href: `/information/${item._slug}`,
+    ...vision.items.map((item) => ({
+      href: `/vision/${item._slug}`,
       name: item._title,
     })),
     {
-      href: "/information/end",
+      href: "/vision/end",
       name: "End",
     },
   ];
 
   return (
     <main className={styles.root}>
-      <Logo>Information</Logo>
+      <Logo>Vision</Logo>
 
       <div className={styles.slides}>
         <article>{children}</article>

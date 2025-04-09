@@ -1,6 +1,6 @@
 import { Controls } from "ui/components/controls";
 import { Footer } from "ui/components/footer";
-import { Logo } from "../_components/logo";
+import { Logo } from "../../_components/logo";
 import styles from "./layout.module.css";
 
 export default function Layout({

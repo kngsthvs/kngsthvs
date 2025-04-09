@@ -14,10 +14,10 @@ export function Navigation({
   const current = links.find((link) => link.href === pathname);
   const next =
     (current ? links[links.indexOf(current) + 1]?.href : links[0]?.href) ??
-    "/information";
+    "/vision";
   const prev =
     (current ? links[links.indexOf(current) - 1]?.href : links[0]?.href) ??
-    "/information";
+    "/vision";
 
   return (
     <nav className={styles.root}>

@@ -117,19 +117,12 @@
     "position": { "x": 256, "y": 336 }
   },
   {
-    "id": "vision",
-    "href": "/vision",
-    "keys": "v",
-    "name": "Vision",
-    "position": { "x": 416, "y": 96 }
-  },
-  {
     "disabled": true,
     "id": "residency",
     "href": "/residency",
     "keys": "r",
     "name": "Residency",
-    "position": { "x": 416, "y": 144 }
+    "position": { "x": 416, "y": 96 }
   },
   {
     "disabled": true,
@@ -137,7 +130,7 @@
     "href": "/archive",
     "keys": "a",
     "name": "Archive",
-    "position": { "x": 416, "y": 192 }
+    "position": { "x": 416, "y": 144 }
   },
   {
     "id": "jobs",
@@ -188,10 +181,10 @@
     "position": { "x": 256, "y": 576 }
   },
   {
-    "id": "information",
-    "href": "/information",
-    "keys": "c i",
-    "name": "Information",
+    "id": "hymn",
+    "href": "/hymn",
+    "keys": "c h",
+    "name": "Hymn",
     "parent": "about",
     "position": { "x": 256, "y": 624 }
   },
@@ -212,6 +205,14 @@
     "name": "Security",
     "parent": "about",
     "position": { "x": 256, "y": 720 }
+  },
+  {
+    "id": "vision",
+    "href": "/vision",
+    "keys": "c v",
+    "name": "Vision",
+    "parent": "about",
+    "position": { "x": 256, "y": 768 }
   },
   {
     "id": "legal",

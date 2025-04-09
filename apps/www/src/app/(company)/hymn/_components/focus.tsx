@@ -2,9 +2,9 @@
 
 import { useTheme } from "@kngsthvs/ui/functions/client/context/theme";
 import { disableAnimation } from "@kngsthvs/ui/functions/client/disable-animation";
-import { useEffect } from "react";
 import { usePathname } from "next/navigation";
-import { usePages } from "../../_components/pages";
+import { useEffect } from "react";
+import { usePages } from "../../../(pages)/_components/pages";
 
 export function Focus() {
   const { setFocus, setTitle } = usePages();
@@ -15,7 +15,7 @@ export function Focus() {
 
   useEffect(() => {
     setFocus(true);
-    setTitle("Vision");
+    setTitle("Hymn");
   }, [pathname]);
 
   return null;
