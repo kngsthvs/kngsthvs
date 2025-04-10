@@ -9,6 +9,7 @@ import { useMeasure, useWindowScroll } from "react-use";
 import { VisuallyHidden } from "ui/components";
 import { Button } from "ui/components/button";
 import { Footer } from "ui/components/footer";
+import { Link } from "ui/components/link";
 import { Link as LinkPrimitive } from "ui/primitives/link";
 import { App } from "../app";
 import { Whispers } from "../whispers";
@@ -167,17 +168,17 @@ function Provider({
                 </div> */}
 
                 <ul>
-                  {/* <li>
-                    <Link href="/residency" keys="r">
+                  <li>
+                    <Link disabled href="/residency" keys="r">
                       Residency
                     </Link>
-                  </li> */}
+                  </li>
 
-                  {/* <li>
-                    <Link href="/archive" keys="a">
+                  <li>
+                    <Link disabled href="/archive" keys="a">
                       Archive
                     </Link>
-                  </li> */}
+                  </li>
                 </ul>
               </animated.div>
             ) : null}

@@ -6,6 +6,7 @@ import {
   useContext,
   useEffect,
   useLayoutEffect,
+  useRef,
   useState,
 } from "react";
 import { tinykeys } from "../../../packages/tinykeys";
@@ -31,7 +32,7 @@ function useSubscription() {
     );
   }
 
-  return useContext(Subscription);
+  return context;
 }
 
 export const Context = createContext<{ keys: Key[] } | undefined>(undefined);
@@ -55,15 +56,18 @@ export function useKeys(keys: string, cb: (event: KeyboardEvent) => void) {
   }
 
   const subscription = useSubscription();
-  const callback = useCallback(cb, []);
+  const subscriptionRef = useRef(subscription);
+  subscriptionRef.current = subscription;
+
+  const callback = useCallback(cb, [cb]);
 
   useSafeLayoutEffect(() => {
-    subscription?.addKey({ callback, keys });
+    subscriptionRef.current?.addKey({ callback, keys });
 
     return () => {
-      subscription?.removeKey(keys);
+      subscriptionRef.current?.removeKey(keys);
     };
-  }, []);
+  }, [callback, keys]);
 
   return context;
 }
@@ -79,7 +83,9 @@ export function Provider({ children }: { children: React.ReactNode }) {
   }, []);
 
   const removeKey = useCallback((key: string) => {
-    setKeys((value) => value.filter(({ keys }) => keys === key));
+    setKeys((value) =>
+      value.filter(({ keys: currentKey }) => currentKey !== key),
+    );
   }, []);
 
   useSafeLayoutEffect(() => {

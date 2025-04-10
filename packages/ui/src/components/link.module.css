@@ -1,10 +1,16 @@
 .root {
-  display: flex;
   align-items: center;
-  gap: 0.25rem;
   color: var(--colors-gray-50);
+  display: flex;
   font-size: var(--fontSizes-sm);
+  gap: 0.25rem;
   line-height: 1;
+}
+
+.root[data-disabled] {
+  color: var(--colors-gray-25);
+  cursor: not-allowed;
+  user-select: none;
 }
 
 a.root:active span,
@@ -14,12 +20,12 @@ a.root[data-pressed="true"] span {
   text-decoration: underline;
 }
 
-.root:focus-visible,
-.root:hover,
-.root[data-pressed="true"] {
+a.root:focus-visible,
+a.root:hover,
+a.root[data-pressed="true"] {
   color: var(--colors-gray-75);
 }
 
-.root:active {
+a.root:active {
   color: var(--colors-foreground);
 }

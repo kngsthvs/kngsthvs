@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Button } from "ui/components/button";
+import { useKey } from "ui/hooks/use-key";
 import styles from "./navigation.module.css";
 
 export function Navigation({
@@ -12,20 +13,25 @@ export function Navigation({
 }) {
   const pathname = usePathname();
   const current = links.find((link) => link.href === pathname);
-  const next =
-    (current ? links[links.indexOf(current) + 1]?.href : links[0]?.href) ??
-    "/vision";
-  const prev =
-    (current ? links[links.indexOf(current) - 1]?.href : links[0]?.href) ??
-    "/vision";
+  const currentIndex = current ? links.indexOf(current) : 0;
+  const prev = links[currentIndex - 1]?.href ?? "/vision";
+  const next = links[currentIndex + 1]?.href ?? "";
+  const left = useKey({
+    href: prev,
+    keys: "ArrowLeft",
+  });
+  const right = useKey({
+    href: next,
+    keys: "ArrowRight",
+  });
 
   return (
     <nav className={styles.root}>
       <div>
         <Button
+          data-pressed={left.states[0]}
           disabled={pathname === links[0]?.href}
           href={prev}
-          // keys="ArrowLeft"
           variant="tertiary"
         >
           &lt; Prev
@@ -34,9 +40,9 @@ export function Navigation({
         <hr />
 
         <Button
+          data-pressed={right.states[0]}
           disabled={pathname === links.at(-1)?.href}
           href={next}
-          // keys="ArrowRight"
           variant="tertiary"
         >
           Next &gt;

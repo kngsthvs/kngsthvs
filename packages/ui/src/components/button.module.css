@@ -24,6 +24,11 @@ a.root[data-pressed="true"] span {
   text-decoration: underline;
 }
 
+a.root:disabled span,
+a.root[disabled] span {
+  text-decoration: none !important;
+}
+
 .root[data-size="small"] {
   font-size: var(--fontSizes-xs);
   padding: 0.25rem 0.5rem;
@@ -64,7 +69,8 @@ a.root[data-pressed="true"] span {
   color: var(--colors-gray-50);
 }
 
-.root[data-variant="primary"]:disabled {
+.root[data-variant="primary"]:disabled,
+.root[data-variant="primary"][disabled] {
   background-color: var(--colors-gray-50);
 }
 
@@ -129,6 +135,18 @@ a.root[data-pressed="true"] span {
 
 .root[data-variant="secondary"],
 .root[data-variant="tertiary"] {
+  background-color: var(--colors-gray-0);
+  color: var(--colors-gray-50);
+}
+
+.root[data-variant="secondary"]:disabled:focus-visible,
+.root[data-variant="tertiary"]:disabled:focus-visible,
+.root[data-variant="secondary"][disabled]:focus-visible,
+.root[data-variant="tertiary"][disabled]:focus-visible,
+.root[data-variant="secondary"]:disabled[data-pressed="true"],
+.root[data-variant="tertiary"]:disabled[data-pressed="true"],
+.root[data-variant="secondary"][disabled][data-pressed="true"],
+.root[data-variant="tertiary"][disabled][data-pressed="true"] {
   background-color: var(--colors-gray-0);
   color: var(--colors-gray-50);
 }
