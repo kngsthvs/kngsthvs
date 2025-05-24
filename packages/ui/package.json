@@ -1,42 +1,38 @@
 {
-  "dependencies": {
-    "@base-ui-components/react": "1.0.0-alpha.6",
-    "@kngsthvs/ui": "workspace:*",
-    "@radix-ui/react-tooltip": "^1.0.7",
-    "@radix-ui/react-visually-hidden": "^1.0.3",
-    "next": "^14.2.0",
-    "react": "^18",
-    "react-dom": "^18",
-    "react-split-grid": "^1.0.4",
-    "react-use": "^17.5.0",
-    "sonner": "^2.0.1"
-  },
-  "devDependencies": {
-    "@kngsthvs/config": "workspace:*",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "eslint": "^8.56.0",
-    "typescript": "^5.4.4"
-  },
-  "exports": {
-    "./components": "./src/components/index.ts",
-    "./components/button": "./src/components/button.tsx",
-    "./components/controls": "./src/components/controls/index.tsx",
-    "./components/copyright": "./src/components/copyright.tsx",
-    "./components/footer": "./src/components/footer.tsx",
-    "./components/input": "./src/components/input.tsx",
-    "./components/link": "./src/components/link.tsx",
-    "./components/link.module.css": "./src/components/link.module.css",
-    "./components/tag": "./src/components/tag.tsx",
-    "./components/textarea": "./src/components/textarea.tsx",
-    "./components/theme": "./src/components/theme.tsx",
-    "./components/toast": "./src/components/toast.tsx",
-    "./hooks/use-key": "./src/hooks/use-key.ts",
-    "./primitives/link": "./src/primitives/link.tsx",
-    "./styles": "./src/styles/index.ts",
-    "./styles/globals.css": "./src/styles/globals.css"
-  },
-  "name": "ui",
-  "private": true,
-  "version": "0.0.0"
+	"dependencies": {
+		"@base-ui-components/react": "catalog:",
+		"@kngsthvs/ui": "workspace:*",
+		"next": "catalog:",
+		"react": "catalog:",
+		"react-dom": "catalog:",
+		"react-split-grid": "catalog:",
+		"react-use": "catalog:",
+		"sonner": "catalog:"
+	},
+	"devDependencies": {
+		"@kngsthvs/config": "workspace:*",
+		"@types/react": "catalog:",
+		"@types/react-dom": "catalog:",
+		"typescript": "catalog:"
+	},
+	"exports": {
+		"./components/button": "./src/components/button.tsx",
+		"./components/controls": "./src/components/controls/index.tsx",
+		"./components/copyright": "./src/components/copyright.tsx",
+		"./components/footer": "./src/components/footer.tsx",
+		"./components/input": "./src/components/input.tsx",
+		"./components/link": "./src/components/link.tsx",
+		"./components/link.module.css": "./src/components/link.module.css",
+		"./components/tag": "./src/components/tag.tsx",
+		"./components/textarea": "./src/components/textarea.tsx",
+		"./components/theme": "./src/components/theme.tsx",
+		"./components/toast": "./src/components/toast.tsx",
+		"./hooks/use-key": "./src/hooks/use-key.ts",
+		"./primitives/link": "./src/primitives/link.tsx",
+		"./styles": "./src/styles/index.ts",
+		"./styles/globals.css": "./src/styles/globals.css"
+	},
+	"name": "@repo/ui",
+	"private": true,
+	"version": "0.0.0"
 }

@@ -1,64 +1,31 @@
 {
-  "dependencies": {
-    "@next/eslint-plugin-next": "^14.2.3",
-    "@typescript-eslint/eslint-plugin": "^7.8.0",
-    "@typescript-eslint/parser": "^7.8.0",
-    "@vercel/style-guide": "^6.0.0",
-    "eslint-config-next": "14.2.3",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-config-turbo": "^1.13.3",
-    "eslint-plugin-only-warn": "^1.1.0",
-    "eslint-plugin-react": "7.34.1",
-    "eslint-plugin-tsdoc": "^0.2.17",
-    "prettier-plugin-astro": "^0.14.1",
-    "prettier-plugin-css-order": "^2.1.2",
-    "prettier-plugin-jsdoc": "^1.3.0",
-    "prettier-plugin-organize-imports": "^3.2.4",
-    "prettier-plugin-packagejson": "^2.5.0",
-    "prettier-plugin-svelte": "^3.2.3",
-    "prettier-plugin-tailwindcss": "^0.5.14"
-  },
-  "devDependencies": {
-    "@commitlint/config-conventional": "^19.1.0",
-    "@commitlint/types": "^19.0.3",
-    "@microsoft/tsdoc-config": "^0.16.2",
-    "eslint": "^8.56.0",
-    "prettier": "^3.2.5",
-    "typescript": "^5.4.5"
-  },
-  "exports": {
-    "./eslint/*": "./eslint/*.js",
-    "./prettier": "./prettier/index.js",
-    "./tsconfig/*": "./tsconfig/*.json"
-  },
-  "files": [
-    "eslint",
-    "prettier",
-    "tsconfig"
-  ],
-  "name": "@kngsthvs/config",
-  "peerDependencies": {
-    "@next/eslint-plugin-next": ">=14.0.0 <15.0.0-0",
-    "eslint": ">=8.0.0 <9",
-    "prettier": ">=3.0.0 <4",
-    "typescript": ">=5.0.0 <6"
-  },
-  "peerDependenciesMeta": {
-    "eslint": {
-      "optional": true
-    },
-    "prettier": {
-      "optional": true
-    },
-    "typescript": {
-      "optional": true
-    }
-  },
-  "publishConfig": {
-    "access": "public"
-  },
-  "scripts": {
-    "publish-package": "changeset version && pnpm publish"
-  },
-  "version": "0.1.7"
+	"devDependencies": {
+		"@commitlint/config-conventional": "^19.8.1",
+		"@commitlint/types": "^19.8.1",
+		"@microsoft/tsdoc-config": "^0.17.1",
+		"typescript": "catalog:"
+	},
+	"exports": {
+		"./tsconfig/*": "./tsconfig/*.json"
+	},
+	"files": [
+		"biome.json",
+		"tsconfig"
+	],
+	"name": "@kngsthvs/config",
+	"peerDependencies": {
+		"typescript": ">=5.0.0 <6"
+	},
+	"peerDependenciesMeta": {
+		"typescript": {
+			"optional": true
+		}
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"scripts": {
+		"publish-package": "changeset version && pnpm publish"
+	},
+	"version": "0.1.7"
 }

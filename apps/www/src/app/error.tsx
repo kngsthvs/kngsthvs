@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect } from "react";
-import { Error as ErrorRoot } from "./_components/error";
+import { env } from "@/env";
+import { Fallback } from "./_components/fallback";
 
 export default function Error({ error }: { error: Error }) {
   useEffect(() => {
@@ -10,8 +11,11 @@ export default function Error({ error }: { error: Error }) {
 
   return (
     <section>
-      <ErrorRoot title="Error">
-        <span>Something went wrong while you were working.</span>
+      <Fallback title="Error">
+        <span>
+          Something went wrong while you were{" "}
+          {env.NODE_ENV === "development" ? "working" : "browsing"}.
+        </span>
 
         <button
           onClick={() => {
@@ -21,7 +25,7 @@ export default function Error({ error }: { error: Error }) {
         >
           Reload page
         </button>
-      </ErrorRoot>
+      </Fallback>
     </section>
   );
 }

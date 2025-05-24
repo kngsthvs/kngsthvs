@@ -1,13 +1,13 @@
 .root {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  position: relative;
-  width: 100%;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	position: relative;
+	width: 100%;
 }
 
 .root section {
-  margin: 0 auto;
-  max-width: 48rem;
-  overflow: hidden;
+	margin: 0 auto;
+	max-width: 48rem;
+	overflow: hidden;
 }

@@ -1,48 +1,48 @@
 {
-  "$schema": "https://turbo.build/schema.json",
-  "globalDependencies": ["**/.env.*local"],
-  "tasks": {
-    "build": {
-      "dependsOn": ["^types", "^build"],
-      "env": [
-        "ANALYZE",
-        "BASEHUB_TOKEN",
-        "EDGE_CONFIG_FEATURE_FLAGS",
-        "FLAGS_SECRET",
-        "HCAPTCHA_SECRET_KEY",
-        "KV_REST_API_READ_ONLY_TOKEN",
-        "KV_REST_API_TOKEN",
-        "KV_REST_API_URL",
-        "KV_URL",
-        "NEXT_PUBLIC_ELECTRIC_SERVICE",
-        "NEXT_PUBLIC_HCAPTCHA_SITEKEY",
-        "NEXT_PUBLIC_VERCEL_GIT_COMMIT_SHA",
-        "NODE_ENV",
-        "POSTGRES_URL",
-        "RESEND_API_KEY",
-        "SKIP_ENV_VALIDATION",
-        "VERCEL_DEPLOYMENT_ID",
-        "VERCEL_ENV",
-        "VERCEL_GIT_COMMIT_SHA"
-      ],
-      "outputs": ["dist/**", ".output/**", ".next/**", "!.next/cache/**"]
-    },
-    "dev": {
-      "cache": false,
-      "persistent": true
-    },
-    "lint": {
-      "dependsOn": ["^lint"]
-    },
-    "storybook": {
-      "outputs": ["dist/**", "storybook-static/**"]
-    },
-    "storybook-build": {
-      "outputs": ["dist/**", "storybook-static/**"]
-    },
-    "types": {
-      "dependsOn": ["^types"],
-      "outputs": ["dist/**"]
-    }
-  }
+	"$schema": "https://turbo.build/schema.json",
+	"tasks": {
+		"build": {
+			"dependsOn": ["^build"],
+			"env": [
+				"ANALYZE",
+				"BASEHUB_TOKEN",
+				"EDGE_CONFIG",
+				"FLAGS_SECRET",
+				"HCAPTCHA_SECRET_KEY",
+				"NEXT_PUBLIC_ELECTRIC_SERVICE",
+				"NEXT_PUBLIC_HCAPTCHA_SITEKEY",
+				"NEXT_PUBLIC_VERCEL_GIT_COMMIT_SHA",
+				"NODE_ENV",
+				"POSTGRES_URL",
+				"RESEND_API_KEY",
+				"VERCEL_DEPLOYMENT_ID",
+				"VERCEL_ENV",
+				"VERCEL_GIT_COMMIT_SHA"
+			],
+			"inputs": ["$TURBO_DEFAULT$", ".env*", "!**/*.stories.{tsx,mdx}"],
+			"outputs": ["dist/**", ".output/**", ".next/**", "!.next/cache/**"]
+		},
+		"build:storybook": {
+			"dependsOn": ["^build:storybook"],
+			"outputs": ["storybook-static/**"]
+		},
+		"check": {},
+		"check-types": {
+			"dependsOn": ["^check-types"]
+		},
+		"check:fix": {
+			"cache": false
+		},
+		"dev": {
+			"cache": false,
+			"persistent": true
+		},
+		"storybook": {
+			"outputs": ["dist/**", "storybook-static/**"]
+		},
+		"storybook-build": {
+			"outputs": ["dist/**", "storybook-static/**"]
+		}
+	},
+	"ui": "tui"
 }

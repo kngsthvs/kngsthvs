@@ -20,15 +20,15 @@ export type ReducedMotion = "no-preference" | "reduce";
  */
 export type ReducedTransparency = "no-preference" | "reduce";
 export interface GetThemeReturn<T = undefined> {
-  colorScheme?: ColorScheme;
-  contrast?: Contrast;
-  prefers?: {
-    colorScheme?: ColorScheme;
-    contrast?: Contrast;
-    reducedMotion?: ReducedMotion;
-    reducedTransparency?: ReducedTransparency;
-  };
-  reducedMotion?: ReducedMotion;
-  reducedTransparency?: ReducedTransparency;
-  theme: T;
+	colorScheme?: ColorScheme;
+	contrast?: Contrast;
+	prefers?: {
+		colorScheme?: ColorScheme;
+		contrast?: Contrast;
+		reducedMotion?: ReducedMotion;
+		reducedTransparency?: ReducedTransparency;
+	};
+	reducedMotion?: ReducedMotion;
+	reducedTransparency?: ReducedTransparency;
+	theme: T;
 }

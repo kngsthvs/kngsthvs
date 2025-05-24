@@ -1,23 +1,23 @@
 /**
-  * @see https://github.com/darkroomengineering/lenis/tree/main/packages/lenis#recommended-css
-  */
+ * @see https://github.com/darkroomengineering/lenis/tree/main/packages/lenis#recommended-css
+ */
 
 html.lenis {
-  height: auto;
+	height: auto;
 }
 
 .lenis.lenis-smooth {
-  scroll-behavior: auto;
+	scroll-behavior: auto;
 }
 
 .lenis.lenis-smooth [data-lenis-prevent] {
-  overscroll-behavior: contain;
+	overscroll-behavior: contain;
 }
 
 .lenis.lenis-stopped {
-  overflow: hidden;
+	overflow: hidden;
 }
 
 .lenis.lenis-scrolling iframe {
-  pointer-events: none;
+	pointer-events: none;
 }

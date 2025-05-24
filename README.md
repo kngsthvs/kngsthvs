@@ -59,14 +59,14 @@ pnpm run dev --filter=APP_NAME
 
 ## Resources
 
+- [Biome](https://biomejs.dev/)
 - [Changesets](https://github.com/changesets/changesets)
 - [commitlint](https://commitlint.js.org/)
-- [ESLint](https://eslint.org/docs/latest/)
 - [Husky](https://typicode.github.io/husky/)
-- [Next.js](https://nextjs.org/docs)
-- [Prettier](https://prettier.io/docs/en/)
-- [Turbo](https://turbo.build/)
-- [TypeScript](https://www.typescriptlang.org/docs/)
+- [Next.js](https://nextjs.org/)
+- [Prettier](https://prettier.io/)
+- [Turborepo](https://turborepo.com/)
+- [TypeScript](https://www.typescriptlang.org/)
 
 <p align="center">
 A friend loveth at all times,

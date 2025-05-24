@@ -1,16 +1,16 @@
 import { Link } from "@kngsthvs/ui/primitives/shared/link";
-import { Error } from "../_components/error";
+import { Fallback } from "../_components/fallback";
 
 export default function Page() {
-  return (
-    <section>
-      <Error title="Blocked">
-        <span>You have been blocked from accessing Kings & Thieves.</span>
+	return (
+		<section>
+			<Fallback title="Blocked">
+				<span>You have been blocked from accessing Kings & Thieves.</span>
 
-        <Link href="https://www.kingjamesbibleonline.org/verse-of-day.php">
-          Verse of the day
-        </Link>
-      </Error>
-    </section>
-  );
+				<Link href="https://www.kingjamesbibleonline.org/verse-of-day.php">
+					Verse of the day
+				</Link>
+			</Fallback>
+		</section>
+	);
 }

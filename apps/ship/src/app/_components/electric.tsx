@@ -65,5 +65,4 @@
 //   return <ElectricProvider db={electric}>{children}</ElectricProvider>;
 // };
 
-// // eslint-disable-next-line react-refresh/only-export-components
 // export { ElectricProviderComponent as ElectricProvider, useElectric };

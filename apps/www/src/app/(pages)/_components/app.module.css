@@ -1,42 +1,46 @@
 .root {
-  width: 100%;
-  height: 100%;
-  list-style: none;
+	height: 100%;
+	list-style: none;
+	width: 100%;
 }
 
 .root > a,
 .root > div:only-child {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  aspect-ratio: 1 / 1;
+	align-items: center;
+	aspect-ratio: 1 / 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.root a kbd {
+	color: var(--colors-gray-50);
 }
 
 .root a > span {
-  display: flex;
+	display: flex;
 }
 
 .root a svg {
-  transition: 0.15s color var(--ease);
-  color: var(--colors-gray-25);
+	color: var(--colors-gray-25);
+	transition: 0.15s color var(--ease);
 }
 
 :global .dark :local .root a svg {
-  color: var(--colors-gray-50);
+	color: var(--colors-gray-50);
 }
 
 .root > a svg path {
-  width: 100%;
-  max-width: 100%;
-  height: 100%;
-  stroke: currentColor !important;
-  max-height: 100%;
+	height: 100%;
+	max-width: 100%;
+	width: 100%;
+	stroke: currentColor !important;
+	max-height: 100%;
 }
 
 .root[data-active="true"] {
-  pointer-events: none;
-  user-select: none;
+	pointer-events: none;
+	user-select: none;
 }
 
 .root[data-active="true"] > a svg,
@@ -49,52 +53,52 @@
 :global .contrast :local .root:focus-visible > a svg,
 :global .contrast :local .root:hover > a svg,
 :global .contrast :local .root:active > a svg {
-  color: var(--colors-foreground);
+	color: var(--colors-foreground);
 }
 
 .root > div:only-child {
-  padding: 0.5rem;
+	padding: 0.5rem;
 }
 
 .root > div:only-child::before,
 .partner > div:only-child::before {
-  transition: 0.6s opacity var(--ease);
-  border-radius: var(--radii-full);
-  background-color: var(--colors-gray-5);
-  width: 0.25rem;
-  height: 100%;
-  height: 0.25rem;
-  content: "";
+	background-color: var(--colors-gray-5);
+	border-radius: var(--radii-full);
+	content: "";
+	height: 100%;
+	height: 0.25rem;
+	transition: 0.6s opacity var(--ease);
+	width: 0.25rem;
 }
 
 :global .contrast :local .root > div:only-child::before,
 :global .contrast :local .partner > div:only-child::before {
-  background-color: var(--colors-gray-10);
+	background-color: var(--colors-gray-10);
 }
 
 :global .dark :local .root > div:only-child::before,
 :global .dark :local .partner > div:only-child::before {
-  background-color: var(--colors-gray-10);
+	background-color: var(--colors-gray-10);
 }
 
 :global .contrast.dark :local .root > div:only-child::before,
 :global .contrast.dark :local .partner > div:only-child::before {
-  background-color: var(--colors-gray-25);
+	background-color: var(--colors-gray-25);
 }
 
 .root:focus-visible > a svg,
 .root:hover > a svg,
 .root > a[data-first="true"] svg {
-  color: var(--colors-gray-50);
+	color: var(--colors-gray-50);
 }
 
 :global .dark :local .root:focus-visible > a svg,
 :global .dark :local .root:hover > a svg,
 :global
-  .dark
-  :local
-  .root:not([data-active="true"])
-  > a[data-first="true"]
-  svg {
-  color: var(--colors-gray-75);
+	.dark
+	:local
+	.root:not([data-active="true"])
+	> a[data-first="true"]
+	svg {
+	color: var(--colors-gray-75);
 }

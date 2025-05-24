@@ -1,12 +1,12 @@
 {
-  "extends": "@kngsthvs/config/tsconfig/base",
-  "include": ["src"],
-  "exclude": ["node_modules"],
-  "compilerOptions": {
-    "emitDeclarationOnly": true,
-    "incremental": true,
-    "module": "ESNext",
-    "moduleResolution": "Bundler",
-    "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json"
-  }
+	"compilerOptions": {
+		"emitDeclarationOnly": true,
+		"incremental": true,
+		"module": "ESNext",
+		"moduleResolution": "Bundler",
+		"tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json"
+	},
+	"exclude": ["node_modules"],
+	"extends": "@kngsthvs/config/tsconfig/base",
+	"include": ["src"]
 }

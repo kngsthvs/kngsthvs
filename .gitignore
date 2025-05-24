@@ -2,11 +2,20 @@
 
 # Build outputs
 .basehub/
+.million/
 .next/
+.react-email/
+.tsup/
+.turbo/
 analyze/
+build/
+dist/
 out/
-build
-dist
+storybook-static/
+
+# Configurations
+.vercel/
+.wrangler/
 
 # Debug
 npm-debug.log*
@@ -15,46 +24,25 @@ yarn-error.log*
 .pnpm-debug.log*
 
 # Dependencies
-node_modules
+node_modules/
 package-lock.json
 yarn.lock
 .pnp
 .pnp.js
 
-# Local env files
-.env
-.env*.local
+# Env files
+.env*
 
 # Misc
 .DS_Store
 *.pem
-*.vscode
 
 # Cloudflare
-.wrangler
-
-# Resend
-.react-email
-
-# Storybook
-storybook-static/
 
 # Testing
 coverage
-
-# tsup
-.tsup
-
-# Turbo
-.turbo
 
 # Typescript
 *.d.ts*
 *.tsbuildinfo
 next-env.d.ts
-
-# Vercel
-.vercel
-
-# BaseHub
-.basehub
