@@ -60,7 +60,6 @@ export const submitApplication = async (formData: FormData) =>
           token: formData.get("h-captcha-response"),
         });
         const challenge = await hcaptcha({
-          secret: env.HCAPTCHA_SECRET_KEY,
           token: parsed.token,
         });
 
