@@ -1,26 +1,25 @@
 {
-  "extends": "@kngsthvs/config/tsconfig/nextjs",
-  "compilerOptions": {
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["./src/*"]
-    },
-    "plugins": [
-      {
-        "name": "next"
-      }
-    ],
-    "strictNullChecks": true,
-    "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json",
-    "types": ["@cloudflare/workers-types"]
-  },
-  "include": [
-    ".eslintrc.js",
-    "next-env.d.ts",
-    "next.config.mjs",
-    "**/*.ts",
-    "**/*.tsx",
-    ".next/types/**/*.ts"
-  ],
-  "exclude": ["node_modules", "src-tauri"]
+	"compilerOptions": {
+		"baseUrl": ".",
+		"paths": {
+			"@/*": ["./src/*"]
+		},
+		"plugins": [
+			{
+				"name": "next"
+			}
+		],
+		"strictNullChecks": true,
+		"tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json",
+		"types": ["@cloudflare/workers-types"]
+	},
+	"exclude": ["node_modules", "src-tauri"],
+	"extends": "@kngsthvs/config/tsconfig/nextjs",
+	"include": [
+		"next-env.d.ts",
+		"next.config.mjs",
+		"**/*.ts",
+		"**/*.tsx",
+		".next/types/**/*.ts"
+	]
 }

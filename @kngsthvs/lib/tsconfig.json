@@ -1,14 +1,14 @@
 {
-  "extends": "@kngsthvs/config/tsconfig/nextjs",
-  "compilerOptions": {
-    "baseUrl": ".",
-    "declaration": true,
-    "declarationMap": true,
-    "emitDeclarationOnly": true,
-    "incremental": false,
-    "isolatedModules": false,
-    "noEmit": false
-  },
-  "include": ["**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules", "index.d.ts*"]
+	"compilerOptions": {
+		"baseUrl": ".",
+		"declaration": true,
+		"declarationMap": true,
+		"emitDeclarationOnly": true,
+		"incremental": false,
+		"isolatedModules": false,
+		"noEmit": false
+	},
+	"exclude": ["node_modules", "index.d.ts*"],
+	"extends": "@kngsthvs/config/tsconfig/nextjs",
+	"include": ["**/*.ts", "**/*.tsx"]
 }

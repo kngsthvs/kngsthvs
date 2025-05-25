@@ -1,60 +1,60 @@
 .root {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  width: 100%;
-  color: var(--colors-gray-50);
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	width: 100%;
+	color: var(--colors-gray-50);
 }
 
 @media screen and (min-width: 48rem) {
-  .root {
-    width: initial;
-  }
+	.root {
+		width: initial;
+	}
 
-  .root > *:last-child {
-    display: none;
-  }
+	.root > *:last-child {
+		display: none;
+	}
 }
 
 .root > p {
-  font-size: var(--fontSizes-sm);
-  line-height: 100%;
+	font-size: var(--fontSizes-sm);
+	line-height: 100%;
 }
 
 .flag {
-  display: flex;
-  position: relative;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 0.5px;
-  border-top: 1px solid var(--colors-foreground);
-  border-right: 1px solid var(--colors-foreground);
-  border-left: 1px solid var(--colors-foreground);
-  background: repeating-linear-gradient(
-    0deg,
-    var(--colors-foreground),
-    var(--colors-foreground) 1px,
-    var(--colors-background) 1px,
-    var(--colors-background) 2px
-  );
-  aspect-ratio: 5 / 3;
-  height: calc(0.875rem - 1px);
+	display: flex;
+	position: relative;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 0.5px;
+	border-top: 1px solid var(--colors-foreground);
+	border-right: 1px solid var(--colors-foreground);
+	border-left: 1px solid var(--colors-foreground);
+	background: repeating-linear-gradient(
+		0deg,
+		var(--colors-foreground),
+		var(--colors-foreground) 1px,
+		var(--colors-background) 1px,
+		var(--colors-background) 2px
+	);
+	aspect-ratio: 5 / 3;
+	height: calc(0.875rem - 1px);
 }
 
 .flag::before {
-  display: block;
-  display: flex;
-  position: absolute;
-  top: -0.5px;
-  left: -1px;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--colors-foreground);
-  width: 50%;
-  height: 50%;
-  content: "\2627";
-  color: var(--colors-background);
-  font-size: 0.438rem;
-  line-height: 1;
-  font-family: var(--font-heading);
+	display: block;
+	display: flex;
+	position: absolute;
+	top: -0.5px;
+	left: -1px;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--colors-foreground);
+	width: 50%;
+	height: 50%;
+	content: "\2627";
+	color: var(--colors-background);
+	font-size: 0.438rem;
+	line-height: 1;
+	font-family: var(--font-heading);
 }

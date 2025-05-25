@@ -1,16 +1,16 @@
 {
-  "extends": "@kngsthvs/config/tsconfig/nextjs",
-  "compilerOptions": {
-    "baseUrl": ".",
-    "declaration": true,
-    "declarationMap": true,
-    "emitDeclarationOnly": true,
-    "incremental": false,
-    "isolatedModules": false,
-    "jsx": "react-jsx",
-    "moduleResolution": "Bundler",
-    "noEmit": false
-  },
-  "include": ["**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules", "**/*story.ts*"]
+	"compilerOptions": {
+		"baseUrl": ".",
+		"declaration": true,
+		"declarationMap": true,
+		"emitDeclarationOnly": true,
+		"incremental": false,
+		"isolatedModules": false,
+		"jsx": "react-jsx",
+		"moduleResolution": "Bundler",
+		"noEmit": false
+	},
+	"exclude": ["node_modules", "**/*story.ts*"],
+	"extends": "@kngsthvs/config/tsconfig/nextjs",
+	"include": ["**/*.ts", "**/*.tsx"]
 }

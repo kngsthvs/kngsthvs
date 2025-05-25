@@ -32,28 +32,28 @@ type KeyBindingPress = [string[], string];
  * A map of keybinding strings to event handlers.
  */
 export interface KeyBindingMap {
-  [keybinding: string]: (event: KeyboardEvent) => void;
+	[keybinding: string]: (event: KeyboardEvent) => void;
 }
 
 export interface KeyBindingHandlerOptions {
-  /**
-   * Keybinding sequences will wait this long between key presses before
-   * cancelling (default: 1000).
-   *
-   * **Note:** Setting this value too low (i.e. `300`) will be too fast for many
-   * of your users.
-   */
-  timeout?: number;
+	/**
+	 * Keybinding sequences will wait this long between key presses before
+	 * cancelling (default: 1000).
+	 *
+	 * **Note:** Setting this value too low (i.e. `300`) will be too fast for many
+	 * of your users.
+	 */
+	timeout?: number;
 }
 
 /**
  * Options to configure the behavior of keybindings.
  */
 export interface KeyBindingOptions extends KeyBindingHandlerOptions {
-  /**
-   * Key presses will listen to this event (default: "keydown").
-   */
-  event?: "keydown" | "keyup";
+	/**
+	 * Key presses will listen to this event (default: "keydown").
+	 */
+	event?: "keydown" | "keyup";
 }
 
 /**
@@ -95,17 +95,17 @@ let MOD = APPLE_DEVICE ? "Meta" : "Control";
  * @see https://github.com/jamiebuilds/tinykeys/issues/185
  */
 let ALT_GRAPH_ALIASES =
-  PLATFORM === "Win32" ? ["Control", "Alt"] : APPLE_DEVICE ? ["Alt"] : [];
+	PLATFORM === "Win32" ? ["Control", "Alt"] : APPLE_DEVICE ? ["Alt"] : [];
 
 /**
  * There's a bug in Chrome that causes event.getModifierState not to exist on
  * KeyboardEvent's for F1/F2/etc keys.
  */
 function getModifierState(event: KeyboardEvent, mod: string) {
-  return typeof event.getModifierState === "function"
-    ? event.getModifierState(mod) ||
-        (ALT_GRAPH_ALIASES.includes(mod) && event.getModifierState("AltGraph"))
-    : false;
+	return typeof event.getModifierState === "function"
+		? event.getModifierState(mod) ||
+				(ALT_GRAPH_ALIASES.includes(mod) && event.getModifierState("AltGraph"))
+		: false;
 }
 
 /**
@@ -117,15 +117,15 @@ function getModifierState(event: KeyboardEvent, mod: string) {
  * <mods>     = `<mod>+<mod>+...`
  */
 export function parseKeybinding(str: string): KeyBindingPress[] {
-  return str
-    .trim()
-    .split(" ")
-    .map((press) => {
-      let mods = press.split(/\b\+/);
-      let key = mods.pop() as string;
-      mods = mods.map((mod) => (mod === "$mod" ? MOD : mod));
-      return [mods, key];
-    });
+	return str
+		.trim()
+		.split(" ")
+		.map((press) => {
+			let mods = press.split(/\b\+/);
+			let key = mods.pop() as string;
+			mods = mods.map((mod) => (mod === "$mod" ? MOD : mod));
+			return [mods, key];
+		});
 }
 
 /**
@@ -133,28 +133,30 @@ export function parseKeybinding(str: string): KeyBindingPress[] {
  * partially or exactly.
  */
 function match(event: KeyboardEvent, press: KeyBindingPress): boolean {
-  // prettier-ignore
-  return !(
+	// prettier-ignore
+	return !(
 		// Allow either the `event.key` or the `event.code`
 		// MDN event.key: https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/key
 		// MDN event.code: https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/code
 		(
-			press[1].toUpperCase() !== event.key.toUpperCase() &&
-			press[1] !== event.code
-		) ||
-
-		// Ensure all the modifiers in the keybinding are pressed.
-		press[0].find(mod => {
-			return !getModifierState(event, mod)
-		}) ||
-
-		// KEYBINDING_MODIFIER_KEYS (Shift/Control/etc) change the meaning of a
-		// keybinding. So if they are pressed but aren't part of the current
-		// keybinding press, then we don't have a match.
-		KEYBINDING_MODIFIER_KEYS.find(mod => {
-			return !press[0].includes(mod) && press[1] !== mod && getModifierState(event, mod)
-		})
-	)
+			(press[1].toUpperCase() !== event.key.toUpperCase() &&
+				press[1] !== event.code) ||
+			// Ensure all the modifiers in the keybinding are pressed.
+			press[0].find((mod) => {
+				return !getModifierState(event, mod);
+			}) ||
+			// KEYBINDING_MODIFIER_KEYS (Shift/Control/etc) change the meaning of a
+			// keybinding. So if they are pressed but aren't part of the current
+			// keybinding press, then we don't have a match.
+			KEYBINDING_MODIFIER_KEYS.find((mod) => {
+				return (
+					!press[0].includes(mod) &&
+					press[1] !== mod &&
+					getModifierState(event, mod)
+				);
+			})
+		)
+	);
 }
 
 /**
@@ -180,62 +182,62 @@ function match(event: KeyboardEvent, press: KeyBindingPress): boolean {
  * ```
  */
 export function createKeybindingsHandler(
-  keyBindingMap: KeyBindingMap,
-  options: KeyBindingHandlerOptions = {},
+	keyBindingMap: KeyBindingMap,
+	options: KeyBindingHandlerOptions = {},
 ): EventListener {
-  let timeout = options.timeout ?? DEFAULT_TIMEOUT;
+	let timeout = options.timeout ?? DEFAULT_TIMEOUT;
 
-  let keyBindings = Object.keys(keyBindingMap).map((key) => {
-    return [parseKeybinding(key), keyBindingMap[key]] as const;
-  });
+	let keyBindings = Object.keys(keyBindingMap).map((key) => {
+		return [parseKeybinding(key), keyBindingMap[key]] as const;
+	});
 
-  let possibleMatches = new Map<KeyBindingPress[], KeyBindingPress[]>();
-  let timer: number | null = null;
+	let possibleMatches = new Map<KeyBindingPress[], KeyBindingPress[]>();
+	let timer: number | null = null;
 
-  return (event) => {
-    // Ensure and stop any event that isn't a full keyboard event.
-    // Autocomplete option navigation and selection would fire a instanceof Event,
-    // instead of the expected KeyboardEvent
-    if (!(event instanceof KeyboardEvent)) {
-      return;
-    }
+	return (event) => {
+		// Ensure and stop any event that isn't a full keyboard event.
+		// Autocomplete option navigation and selection would fire a instanceof Event,
+		// instead of the expected KeyboardEvent
+		if (!(event instanceof KeyboardEvent)) {
+			return;
+		}
 
-    keyBindings.forEach((keyBinding) => {
-      let sequence = keyBinding[0];
-      let callback = keyBinding[1];
+		keyBindings.forEach((keyBinding) => {
+			let sequence = keyBinding[0];
+			let callback = keyBinding[1];
 
-      let prev = possibleMatches.get(sequence);
-      let remainingExpectedPresses = prev ? prev : sequence;
-      let currentExpectedPress = remainingExpectedPresses[0];
+			let prev = possibleMatches.get(sequence);
+			let remainingExpectedPresses = prev ? prev : sequence;
+			let currentExpectedPress = remainingExpectedPresses[0];
 
-      // @ts-expect-error ts(2345)
-      let matches = match(event, currentExpectedPress);
+			// @ts-expect-error ts(2345)
+			let matches = match(event, currentExpectedPress);
 
-      if (!matches) {
-        // Modifier keydown events shouldn't break sequences
-        // Note: This works because:
-        // - non-modifiers will always return false
-        // - if the current keypress is a modifier then it will return true when we check its state
-        // MDN: https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/getModifierState
-        if (!getModifierState(event, event.key)) {
-          possibleMatches.delete(sequence);
-        }
-      } else if (remainingExpectedPresses.length > 1) {
-        possibleMatches.set(sequence, remainingExpectedPresses.slice(1));
-      } else {
-        possibleMatches.delete(sequence);
-        // @ts-expect-error ts(2722)
-        callback(event);
-      }
-    });
+			if (!matches) {
+				// Modifier keydown events shouldn't break sequences
+				// Note: This works because:
+				// - non-modifiers will always return false
+				// - if the current keypress is a modifier then it will return true when we check its state
+				// MDN: https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/getModifierState
+				if (!getModifierState(event, event.key)) {
+					possibleMatches.delete(sequence);
+				}
+			} else if (remainingExpectedPresses.length > 1) {
+				possibleMatches.set(sequence, remainingExpectedPresses.slice(1));
+			} else {
+				possibleMatches.delete(sequence);
+				// @ts-expect-error ts(2722)
+				callback(event);
+			}
+		});
 
-    if (timer) {
-      clearTimeout(timer);
-    }
+		if (timer) {
+			clearTimeout(timer);
+		}
 
-    // @ts-expect-error ts(2322)
-    timer = setTimeout(possibleMatches.clear.bind(possibleMatches), timeout);
-  };
+		// @ts-expect-error ts(2322)
+		timer = setTimeout(possibleMatches.clear.bind(possibleMatches), timeout);
+	};
 }
 
 /**
@@ -261,16 +263,16 @@ export function createKeybindingsHandler(
  * ```
  */
 export function tinykeys(
-  target: Window | HTMLElement,
-  keyBindingMap: KeyBindingMap,
-  options: KeyBindingOptions = {},
+	target: Window | HTMLElement,
+	keyBindingMap: KeyBindingMap,
+	options: KeyBindingOptions = {},
 ): () => void {
-  let event = options.event ?? DEFAULT_EVENT;
-  let onKeyEvent = createKeybindingsHandler(keyBindingMap, options);
+	let event = options.event ?? DEFAULT_EVENT;
+	let onKeyEvent = createKeybindingsHandler(keyBindingMap, options);
 
-  target.addEventListener(event, onKeyEvent);
+	target.addEventListener(event, onKeyEvent);
 
-  return () => {
-    target.removeEventListener(event, onKeyEvent);
-  };
+	return () => {
+		target.removeEventListener(event, onKeyEvent);
+	};
 }

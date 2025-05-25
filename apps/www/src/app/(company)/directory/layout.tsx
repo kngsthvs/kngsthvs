@@ -1,24 +1,24 @@
-import { Controls } from "ui/components/controls";
-import { Footer } from "ui/components/footer";
+import { Controls } from "@repo/ui/components/controls";
+import { Footer } from "@repo/ui/components/footer";
 import { Logo } from "../../_components/logo";
 import styles from "./layout.module.css";
 
 export default function Layout({
-  children,
+	children,
 }: Readonly<{
-  children: React.ReactNode;
+	children: React.ReactNode;
 }>) {
-  return (
-    <main className={styles.root}>
-      <Logo>Directory</Logo>
+	return (
+		<main className={styles.root}>
+			<Logo>Directory</Logo>
 
-      {children}
+			{children}
 
-      <div>
-        <Footer />
+			<div>
+				<Footer />
 
-        <Controls />
-      </div>
-    </main>
-  );
+				<Controls />
+			</div>
+		</main>
+	);
 }

@@ -1,208 +1,208 @@
 .icon {
-  align-items: center;
-  display: flex;
-  height: 2rem;
-  justify-content: center;
-  width: 2rem;
+	align-items: center;
+	display: flex;
+	height: 2rem;
+	justify-content: center;
+	width: 2rem;
 }
 
 .icon img {
-  object-fit: contain;
-  pointer-events: none;
-  user-select: none;
+	object-fit: contain;
+	pointer-events: none;
+	user-select: none;
 }
 
 :global .dark :local .icon img {
-  filter: invert(1);
+	filter: invert(1);
 }
 
 /* Only  visible to screen readers */
 .icon kbd {
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
-  clip: rect(0, 0, 0, 0);
-  border-width: 0;
-  white-space: nowrap;
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+	clip: rect(0, 0, 0, 0);
+	border-width: 0;
+	white-space: nowrap;
 }
 
 .root {
-  background-color: var(--colors-background);
-  font-size: var(--fontSizes-sm);
-  position: sticky;
-  top: 0;
-  width: 100%;
-  z-index: 1;
+	background-color: var(--colors-background);
+	font-size: var(--fontSizes-sm);
+	position: sticky;
+	top: 0;
+	width: 100%;
+	z-index: 1;
 }
 
 .root > div {
-  background-color: var(--colors-background);
-  display: flex;
-  margin: 0 auto;
-  max-width: 48rem;
-  position: relative;
-  width: 100%;
+	background-color: var(--colors-background);
+	display: flex;
+	margin: 0 auto;
+	max-width: 48rem;
+	position: relative;
+	width: 100%;
 }
 
 @media screen and (min-width: 49rem) {
-  .root > div {
-    border-right: 1px solid var(--colors-border);
-  }
+	.root > div {
+		border-right: 1px solid var(--colors-border);
+	}
 }
 
 .root > div > a {
-  align-items: center;
-  aspect-ratio: 1 / 1;
-  background-color: var(--colors-background);
-  border: 1px solid var(--colors-border);
-  border-top: 1px solid var(--colors-border);
-  display: flex;
-  flex-shrink: 0;
-  height: fit-content;
-  justify-content: center;
-  margin-left: -1px;
-  padding: 0.5rem calc(0.5rem - 1px) 0.5rem 0.5rem;
-  transition: background-color 0.3s var(--ease);
-  width: fit-content;
+	align-items: center;
+	aspect-ratio: 1 / 1;
+	background-color: var(--colors-background);
+	border: 1px solid var(--colors-border);
+	border-top: 1px solid var(--colors-border);
+	display: flex;
+	flex-shrink: 0;
+	height: fit-content;
+	justify-content: center;
+	margin-left: -1px;
+	padding: 0.5rem calc(0.5rem - 1px) 0.5rem 0.5rem;
+	transition: background-color 0.3s var(--ease);
+	width: fit-content;
 }
 
 .root > div > a:focus-visible,
 .root > div > a:hover {
-  background-color: var(--colors-gray-5);
+	background-color: var(--colors-gray-5);
 }
 
 .root > div > a:active {
-  background-color: var(--colors-gray-10);
+	background-color: var(--colors-gray-10);
 }
 
 :global .contrast.dark :local .root > div > a:focus-visible,
 :global .contrast.dark :local .root > div > a:hover,
 :global .contrast.dark :local .root > a:active {
-  border-color: var(--colors-foreground);
+	border-color: var(--colors-foreground);
 }
 
 :global .dark :local .root > div > a:focus-visible,
 :global .dark :local .root > div > a:hover {
-  border-color: var(--colors-gray-10);
+	border-color: var(--colors-gray-10);
 }
 
 :global .dark :local .root > a:active {
-  border-color: var(--colors-gray-25);
+	border-color: var(--colors-gray-25);
 }
 
 @media screen and (min-width: 60rem) {
-  .root > div > a {
-    bottom: 0;
-    left: 0;
-    margin-left: 0;
-    position: absolute;
-    top: 0;
-    transform: translateX(calc(-100% + 1px));
-  }
+	.root > div > a {
+		bottom: 0;
+		left: 0;
+		margin-left: 0;
+		position: absolute;
+		top: 0;
+		transform: translateX(calc(-100% + 1px));
+	}
 }
 
 .root > div > a span {
-  display: flex;
+	display: flex;
 }
 
 .root h1 {
-  color: var(--colors-foreground);
-  font-family: var(--font-heading);
-  font-weight: normal;
-  height: 2rem;
-  letter-spacing: 0.125em;
-  line-height: 1.5;
-  margin: 0 auto;
-  text-transform: uppercase;
+	color: var(--colors-foreground);
+	font-family: var(--font-heading);
+	font-weight: normal;
+	height: 2rem;
+	letter-spacing: 0.125em;
+	line-height: 1.5;
+	margin: 0 auto;
+	text-transform: uppercase;
 }
 
 .root nav {
-  align-items: center;
-  border-bottom: 1px solid var(--colors-border);
-  border-top: 1px solid var(--colors-border);
-  color: var(--colors-gray-50);
-  display: flex;
-  height: fit-content;
-  justify-content: space-between;
-  padding: 0.5rem 0.5rem 0.5rem 0.75rem;
-  width: 100%;
+	align-items: center;
+	border-bottom: 1px solid var(--colors-border);
+	border-top: 1px solid var(--colors-border);
+	color: var(--colors-gray-50);
+	display: flex;
+	height: fit-content;
+	justify-content: space-between;
+	padding: 0.5rem 0.5rem 0.5rem 0.75rem;
+	width: 100%;
 }
 
 .root nav > *:only-child {
-  height: 2rem;
+	height: 2rem;
 }
 
 @media screen and (min-width: 49rem) {
-  .root nav {
-    margin-left: 1px;
-  }
+	.root nav {
+		margin-left: 1px;
+	}
 
-  .root nav > *:first-child {
-    margin-left: -1px;
-  }
+	.root nav > *:first-child {
+		margin-left: -1px;
+	}
 }
 
 .root nav > *:not(:first-child):not(:last-child) {
-  backface-visibility: hidden;
-  order: -1;
+	backface-visibility: hidden;
+	order: -1;
 }
 
 .root nav > *:last-child:not(:only-child) {
-  margin-left: auto;
+	margin-left: auto;
 }
 
 .root nav::before {
-  background-color: rgba(0, 0, 0, 0.5);
+	background-color: rgba(0, 0, 0, 0.5);
 }
 
 .root nav a {
-  display: flex;
+	display: flex;
 }
 
 .root nav > div {
-  align-items: center;
-  display: flex;
-  gap: 1rem;
+	align-items: center;
+	display: flex;
+	gap: 1rem;
 }
 
 .root nav span {
-  display: flex;
-  gap: 0.5rem;
-  justify-content: flex-end;
-  margin-left: auto;
+	display: flex;
+	gap: 0.5rem;
+	justify-content: flex-end;
+	margin-left: auto;
 }
 
 .root nav ul {
-  /* display: none; */
-  list-style: none;
+	/* display: none; */
+	list-style: none;
 }
 
 @media screen and (min-width: 48rem) {
-  .root nav {
-    flex-wrap: wrap;
-  }
+	.root nav {
+		flex-wrap: wrap;
+	}
 
-  .root nav > *:not(:first-child):not(:last-child) {
-    order: 0;
-  }
+	.root nav > *:not(:first-child):not(:last-child) {
+		order: 0;
+	}
 
-  .root nav > *:first-child:not(:only-child),
-  .root nav > *:last-child:not(:only-child) {
-    flex: 1 1 0%;
-  }
+	.root nav > *:first-child:not(:only-child),
+	.root nav > *:last-child:not(:only-child) {
+		flex: 1 1 0%;
+	}
 
-  .root nav > *:only-child {
-    display: flex;
-    justify-content: center;
-    margin: 0 auto;
-  }
+	.root nav > *:only-child {
+		display: flex;
+		justify-content: center;
+		margin: 0 auto;
+	}
 
-  .root nav ul {
-    display: flex;
-    gap: 0.5rem;
-    list-style: none;
-  }
+	.root nav ul {
+		display: flex;
+		gap: 0.5rem;
+		list-style: none;
+	}
 }

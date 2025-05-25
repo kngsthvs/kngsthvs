@@ -1,254 +1,254 @@
 [
-  {
-    "id": "ship",
-    "name": "Ship",
-    "keys": "⇧",
-    "position": { "x": 64, "y": 96 }
-  },
-  {
-    "id": "crowsnest",
-    "href": "/ship/crowsnest",
-    "keys": "Shift+C",
-    "name": "Crow’s Nest",
-    "parent": "ship",
-    "position": { "x": 64, "y": 144 }
-  },
-  {
-    "id": "hold",
-    "href": "/ship/hold",
-    "keys": "Shift+H",
-    "name": "Hold",
-    "parent": "ship",
-    "position": { "x": 64, "y": 192 }
-  },
-  {
-    "disabled": true,
-    "id": "rigging",
-    "href": "/ship/rigging",
-    "keys": "Shift+R",
-    "name": "Rigging",
-    "parent": "ship",
-    "position": { "x": 64, "y": 240 }
-  },
-  {
-    "disabled": true,
-    "id": "i",
-    "href": "/ship/i",
-    "keys": "Shift+I",
-    "name": "I",
-    "parent": "ship",
-    "position": { "x": 64, "y": 288 }
-  },
-  {
-    "disabled": true,
-    "id": "spar",
-    "href": "/ship/spar",
-    "keys": "Shift+S",
-    "name": "Spar",
-    "parent": "ship",
-    "position": { "x": 64, "y": 336 }
-  },
-  {
-    "id": "tackle",
-    "href": "/ship/tackle",
-    "keys": "Shift+T",
-    "name": "Tackle",
-    "parent": "ship",
-    "position": { "x": 64, "y": 384 }
-  },
-  {
-    "disabled": true,
-    "id": "orlop",
-    "href": "/ship/orlop",
-    "keys": "Shift+O",
-    "name": "Orlop",
-    "parent": "ship",
-    "position": { "x": 64, "y": 432 }
-  },
+	{
+		"id": "ship",
+		"keys": "⇧",
+		"name": "Ship",
+		"position": { "x": 64, "y": 96 }
+	},
+	{
+		"href": "/ship/crowsnest",
+		"id": "crowsnest",
+		"keys": "Shift+C",
+		"name": "Crow’s Nest",
+		"parent": "ship",
+		"position": { "x": 64, "y": 144 }
+	},
+	{
+		"href": "/ship/hold",
+		"id": "hold",
+		"keys": "Shift+H",
+		"name": "Hold",
+		"parent": "ship",
+		"position": { "x": 64, "y": 192 }
+	},
+	{
+		"disabled": true,
+		"href": "/ship/rigging",
+		"id": "rigging",
+		"keys": "Shift+R",
+		"name": "Rigging",
+		"parent": "ship",
+		"position": { "x": 64, "y": 240 }
+	},
+	{
+		"disabled": true,
+		"href": "/ship/i",
+		"id": "i",
+		"keys": "Shift+I",
+		"name": "I",
+		"parent": "ship",
+		"position": { "x": 64, "y": 288 }
+	},
+	{
+		"disabled": true,
+		"href": "/ship/spar",
+		"id": "spar",
+		"keys": "Shift+S",
+		"name": "Spar",
+		"parent": "ship",
+		"position": { "x": 64, "y": 336 }
+	},
+	{
+		"href": "/ship/tackle",
+		"id": "tackle",
+		"keys": "Shift+T",
+		"name": "Tackle",
+		"parent": "ship",
+		"position": { "x": 64, "y": 384 }
+	},
+	{
+		"disabled": true,
+		"href": "/ship/orlop",
+		"id": "orlop",
+		"keys": "Shift+O",
+		"name": "Orlop",
+		"parent": "ship",
+		"position": { "x": 64, "y": 432 }
+	},
 
-  {
-    "id": "home",
-    "name": "Home",
-    "keys": "⇧",
-    "position": { "x": 256, "y": 96 }
-  },
-  {
-    "id": "partners",
-    "href": "/partners",
-    "keys": "Shift+P",
-    "name": "Partners",
-    "parent": "home",
-    "position": { "x": 256, "y": 144 }
-  },
-  {
-    "disabled": true,
-    "id": "books",
-    "href": "/books",
-    "keys": "Shift+B",
-    "name": "Books",
-    "parent": "home",
-    "position": { "x": 256, "y": 192 }
-  },
-  {
-    "disabled": true,
-    "id": "films",
-    "href": "/films",
-    "keys": "Shift+F",
-    "name": "Films",
-    "parent": "home",
-    "position": { "x": 256, "y": 240 }
-  },
-  {
-    "disabled": true,
-    "id": "music",
-    "href": "/music",
-    "keys": "Shift+M",
-    "name": "Music",
-    "parent": "home",
-    "position": { "x": 256, "y": 288 }
-  },
-  {
-    "disabled": true,
-    "id": "videogames",
-    "href": "/videogames",
-    "keys": "Shift+V",
-    "name": "Video games",
-    "parent": "home",
-    "position": { "x": 256, "y": 336 }
-  },
-  {
-    "disabled": true,
-    "id": "residency",
-    "href": "/residency",
-    "keys": "r",
-    "name": "Residency",
-    "position": { "x": 416, "y": 96 }
-  },
-  {
-    "disabled": true,
-    "id": "archive",
-    "href": "/archive",
-    "keys": "a",
-    "name": "Archive",
-    "position": { "x": 416, "y": 144 }
-  },
-  {
-    "id": "jobs",
-    "href": "https://x.com/kngsthvs/jobs",
-    "keys": "j",
-    "name": "Jobs",
-    "position": { "x": 576, "y": 96 }
-  },
-  {
-    "id": "partner",
-    "href": "/partner",
-    "keys": "p",
-    "name": "Partner",
-    "position": { "x": 576, "y": 144 }
-  },
-  {
-    "id": "social",
-    "name": "Social",
-    "keys": "s",
-    "position": { "x": 64, "y": 512 }
-  },
-  {
-    "id": "github",
-    "href": "https://github.com/kngsthvs",
-    "keys": "s g",
-    "name": "GitHub",
-    "parent": "social",
-    "position": { "x": 64, "y": 560 }
-  },
-  {
-    "id": "x",
-    "href": "https://x.com/kngsthvs",
-    "keys": "s x",
-    "name": "X",
-    "parent": "social",
-    "position": { "x": 64, "y": 608 }
-  },
-  {
-    "id": "company",
-    "keys": "c",
-    "name": "Company",
-    "position": { "x": 256, "y": 512 }
-  },
-  {
-    "id": "about",
-    "name": "About",
-    "parent": "company",
-    "position": { "x": 256, "y": 576 }
-  },
-  {
-    "id": "hymn",
-    "href": "/hymn",
-    "keys": "c h",
-    "name": "Hymn",
-    "parent": "about",
-    "position": { "x": 256, "y": 624 }
-  },
-  {
-    "disabled": true,
-    "id": "metrics",
-    "href": "/metrics",
-    "keys": "c m",
-    "name": "Metrics",
-    "parent": "about",
-    "position": { "x": 256, "y": 672 }
-  },
-  {
-    "disabled": true,
-    "id": "security",
-    "href": "/security",
-    "keys": "c s",
-    "name": "Security",
-    "parent": "about",
-    "position": { "x": 256, "y": 720 }
-  },
-  {
-    "id": "vision",
-    "href": "/vision",
-    "keys": "c v",
-    "name": "Vision",
-    "parent": "about",
-    "position": { "x": 256, "y": 768 }
-  },
-  {
-    "id": "legal",
-    "name": "Legal",
-    "parent": "company",
-    "position": { "x": 416, "y": 576 }
-  },
-  {
-    "id": "dpa",
-    "href": "/legal/dpa",
-    "keys": "c d",
-    "name": "DPA",
-    "parent": "legal",
-    "position": { "x": 416, "y": 624 }
-  },
-  {
-    "id": "privacy",
-    "href": "/legal/privacy",
-    "keys": "c p",
-    "name": "Privacy Policy",
-    "parent": "legal",
-    "position": { "x": 416, "y": 672 }
-  },
-  {
-    "id": "cookies",
-    "href": "/legal/cookies",
-    "name": "Cookie Policy",
-    "parent": "privacy",
-    "position": { "x": 512, "y": 720 }
-  },
-  {
-    "id": "terms",
-    "href": "/legal/terms",
-    "keys": "c t",
-    "name": "Terms of Service",
-    "parent": "legal",
-    "position": { "x": 416, "y": 768 }
-  }
+	{
+		"id": "home",
+		"keys": "⇧",
+		"name": "Home",
+		"position": { "x": 256, "y": 96 }
+	},
+	{
+		"href": "/partners",
+		"id": "partners",
+		"keys": "Shift+P",
+		"name": "Partners",
+		"parent": "home",
+		"position": { "x": 256, "y": 144 }
+	},
+	{
+		"disabled": true,
+		"href": "/books",
+		"id": "books",
+		"keys": "Shift+B",
+		"name": "Books",
+		"parent": "home",
+		"position": { "x": 256, "y": 192 }
+	},
+	{
+		"disabled": true,
+		"href": "/films",
+		"id": "films",
+		"keys": "Shift+F",
+		"name": "Films",
+		"parent": "home",
+		"position": { "x": 256, "y": 240 }
+	},
+	{
+		"disabled": true,
+		"href": "/music",
+		"id": "music",
+		"keys": "Shift+M",
+		"name": "Music",
+		"parent": "home",
+		"position": { "x": 256, "y": 288 }
+	},
+	{
+		"disabled": true,
+		"href": "/videogames",
+		"id": "videogames",
+		"keys": "Shift+V",
+		"name": "Video games",
+		"parent": "home",
+		"position": { "x": 256, "y": 336 }
+	},
+	{
+		"disabled": true,
+		"href": "/residency",
+		"id": "residency",
+		"keys": "r",
+		"name": "Residency",
+		"position": { "x": 416, "y": 96 }
+	},
+	{
+		"disabled": true,
+		"href": "/archive",
+		"id": "archive",
+		"keys": "a",
+		"name": "Archive",
+		"position": { "x": 416, "y": 144 }
+	},
+	{
+		"href": "https://x.com/kngsthvs/jobs",
+		"id": "jobs",
+		"keys": "j",
+		"name": "Jobs",
+		"position": { "x": 576, "y": 96 }
+	},
+	{
+		"href": "/partner",
+		"id": "partner",
+		"keys": "p",
+		"name": "Partner",
+		"position": { "x": 576, "y": 144 }
+	},
+	{
+		"id": "social",
+		"keys": "s",
+		"name": "Social",
+		"position": { "x": 64, "y": 512 }
+	},
+	{
+		"href": "https://github.com/kngsthvs",
+		"id": "github",
+		"keys": "s g",
+		"name": "GitHub",
+		"parent": "social",
+		"position": { "x": 64, "y": 560 }
+	},
+	{
+		"href": "https://x.com/kngsthvs",
+		"id": "x",
+		"keys": "s x",
+		"name": "X",
+		"parent": "social",
+		"position": { "x": 64, "y": 608 }
+	},
+	{
+		"id": "company",
+		"keys": "c",
+		"name": "Company",
+		"position": { "x": 256, "y": 512 }
+	},
+	{
+		"id": "about",
+		"name": "About",
+		"parent": "company",
+		"position": { "x": 256, "y": 576 }
+	},
+	{
+		"href": "/hymn",
+		"id": "hymn",
+		"keys": "c h",
+		"name": "Hymn",
+		"parent": "about",
+		"position": { "x": 256, "y": 624 }
+	},
+	{
+		"disabled": true,
+		"href": "/metrics",
+		"id": "metrics",
+		"keys": "c m",
+		"name": "Metrics",
+		"parent": "about",
+		"position": { "x": 256, "y": 672 }
+	},
+	{
+		"disabled": true,
+		"href": "/security",
+		"id": "security",
+		"keys": "c s",
+		"name": "Security",
+		"parent": "about",
+		"position": { "x": 256, "y": 720 }
+	},
+	{
+		"href": "/vision",
+		"id": "vision",
+		"keys": "c v",
+		"name": "Vision",
+		"parent": "about",
+		"position": { "x": 256, "y": 768 }
+	},
+	{
+		"id": "legal",
+		"name": "Legal",
+		"parent": "company",
+		"position": { "x": 416, "y": 576 }
+	},
+	{
+		"href": "/legal/dpa",
+		"id": "dpa",
+		"keys": "c d",
+		"name": "DPA",
+		"parent": "legal",
+		"position": { "x": 416, "y": 624 }
+	},
+	{
+		"href": "/legal/privacy",
+		"id": "privacy",
+		"keys": "c p",
+		"name": "Privacy Policy",
+		"parent": "legal",
+		"position": { "x": 416, "y": 672 }
+	},
+	{
+		"href": "/legal/cookies",
+		"id": "cookies",
+		"name": "Cookie Policy",
+		"parent": "privacy",
+		"position": { "x": 512, "y": 720 }
+	},
+	{
+		"href": "/legal/terms",
+		"id": "terms",
+		"keys": "c t",
+		"name": "Terms of Service",
+		"parent": "legal",
+		"position": { "x": 416, "y": 768 }
+	}
 ]

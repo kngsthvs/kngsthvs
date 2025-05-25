@@ -1,8 +1,8 @@
 {
-  "extends": "@kngsthvs/config/tsconfig/react-library",
-  "compilerOptions": {
-    "outDir": "dist"
-  },
-  "include": ["."],
-  "exclude": ["node_modules", "dist"]
+	"compilerOptions": {
+		"outDir": "dist"
+	},
+	"exclude": ["node_modules", "dist"],
+	"extends": "@kngsthvs/config/tsconfig/react-library",
+	"include": ["."]
 }

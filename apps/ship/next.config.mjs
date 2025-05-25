@@ -1,4 +1,4 @@
-import MillionCompiler from "@million/lint";
+import MillionLint from "@million/lint";
 import bundleAnalyzer from "@next/bundle-analyzer";
 import withVercelToolbar from "@vercel/toolbar/plugins/next";
 
@@ -42,10 +42,15 @@ export default async (phase, { defaultConfig }) => {
     },
     output: "export",
     reactStrictMode: true,
-    transpilePackages: ["@kngsthvs/lib", "@kngsthvs/ui", "lib", "ui"],
+    transpilePackages: [
+      "@kngsthvs/lib",
+      "@kngsthvs/ui",
+      "@repo/lib",
+      "@repo/ui",
+    ],
   };
 
   return withBundleAnalyzer(
-    withVercelToolbar()(MillionCompiler.next()(nextConfig)),
+    withVercelToolbar(MillionLint.next({ rsc: true })(nextConfig)),
   );
 };

@@ -1,197 +1,197 @@
 :root {
-  --colors-background: #fff;
-  --colors-foreground: #000;
-  --colors-primary: #06f;
-  --colors-accent: #d30;
-  --colors-border: var(--colors-gray-5);
+	--colors-background: #fff;
+	--colors-foreground: #000;
+	--colors-primary: #06f;
+	--colors-accent: #d30;
+	--colors-border: var(--colors-gray-5);
 
-  --colors-red: #f00;
-  --colors-green: #0f0;
-  --colors-blue: #00f;
+	--colors-red: #f00;
+	--colors-green: #0f0;
+	--colors-blue: #00f;
 
-  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+	--ease: cubic-bezier(0.16, 1, 0.3, 1);
 
-  scroll-behavior: smooth;
+	scroll-behavior: smooth;
 }
 
 .contrast {
-  --colors-border: var(--colors-foreground);
+	--colors-border: var(--colors-foreground);
 }
 
 .contrast * {
-  color: var(--colors-foreground);
+	color: var(--colors-foreground);
 }
 
 .contrast img {
-  opacity: 1 !important;
+	opacity: 1 !important;
 }
 
 *:focus-visible {
-  outline: 2px solid var(--colors-foreground);
-  outline-offset: 2px;
-  border-radius: 0;
+	outline: 2px solid var(--colors-foreground);
+	outline-offset: 2px;
+	border-radius: 0;
 }
 
 body {
-  color: var(--colors-foreground);
+	color: var(--colors-foreground);
 }
 
 kbd {
-  display: none;
-  font-size: var(--fontSizes-xs);
-  line-height: 100%;
-  font-family: var(--font-geist-mono);
+	display: none;
+	font-size: var(--fontSizes-xs);
+	line-height: 100%;
+	font-family: var(--font-geist-mono);
 }
 
 /* FIX: Checks if the user has an accurate pointer, but we need a way to check for keyboards */
 @media (pointer: fine) {
-  kbd {
-    display: inline-flex;
-  }
+	kbd {
+		display: inline-flex;
+	}
 }
 
 textarea {
-  min-height: 8em;
+	min-height: 8em;
 }
 
 /* Color scheme */
 .dark {
-  --colors-background: #000;
-  --colors-foreground: #fff;
-  --colors-primary: #9df;
-  --colors-accent: #f50;
-  --colors-border: var(--colors-gray-10);
+	--colors-background: #000;
+	--colors-foreground: #fff;
+	--colors-primary: #9df;
+	--colors-accent: #f50;
+	--colors-border: var(--colors-gray-10);
 }
 
 /* Theme */
 
 /* Sky  */
 .blue {
-  --colors-blue-3: #048;
-  --colors-blue-4: #05a;
-  --colors-blue-5: #28c;
-  --colors-blue-6: #4bf;
-  --colors-blue-7: #9df;
-  --colors-blue-8: #cef;
-  --colors-blue-9: #eff;
+	--colors-blue-3: #048;
+	--colors-blue-4: #05a;
+	--colors-blue-5: #28c;
+	--colors-blue-6: #4bf;
+	--colors-blue-7: #9df;
+	--colors-blue-8: #cef;
+	--colors-blue-9: #eff;
 
-  --colors-gray-100: var(--colors-blue-3);
-  --colors-gray-75: var(--colors-blue-4);
-  --colors-gray-50: var(--colors-blue-5);
-  --colors-gray-25: var(--colors-blue-6);
-  --colors-gray-10: var(--colors-blue-7);
-  --colors-gray-5: var(--colors-blue-8);
-  --colors-gray-0: var(--colors-blue-9);
-  --colors-background: var(--colors-blue-9);
-  --colors-foreground: var(--colors-blue-3);
+	--colors-gray-100: var(--colors-blue-3);
+	--colors-gray-75: var(--colors-blue-4);
+	--colors-gray-50: var(--colors-blue-5);
+	--colors-gray-25: var(--colors-blue-6);
+	--colors-gray-10: var(--colors-blue-7);
+	--colors-gray-5: var(--colors-blue-8);
+	--colors-gray-0: var(--colors-blue-9);
+	--colors-background: var(--colors-blue-9);
+	--colors-foreground: var(--colors-blue-3);
 }
 
 /* Sea */
 .blue.dark,
 .blue .dark {
-  --colors-blue-0: #001;
-  --colors-blue-1: #012;
-  --colors-blue-2: #036;
-  --colors-blue-3: #05a;
-  --colors-blue-4: #0af;
-  --colors-blue-5: #4bf;
-  --colors-blue-6: #9df;
+	--colors-blue-0: #001;
+	--colors-blue-1: #012;
+	--colors-blue-2: #036;
+	--colors-blue-3: #05a;
+	--colors-blue-4: #0af;
+	--colors-blue-5: #4bf;
+	--colors-blue-6: #9df;
 
-  --colors-gray-100: var(--colors-blue-6);
-  --colors-gray-75: var(--colors-blue-5);
-  --colors-gray-50: var(--colors-blue-4);
-  --colors-gray-25: var(--colors-blue-3);
-  --colors-gray-10: var(--colors-blue-2);
-  --colors-gray-5: var(--colors-blue-1);
-  --colors-gray-0: var(--colors-blue-0);
-  --colors-background: var(--colors-blue-0);
-  --colors-foreground: var(--colors-blue-6);
+	--colors-gray-100: var(--colors-blue-6);
+	--colors-gray-75: var(--colors-blue-5);
+	--colors-gray-50: var(--colors-blue-4);
+	--colors-gray-25: var(--colors-blue-3);
+	--colors-gray-10: var(--colors-blue-2);
+	--colors-gray-5: var(--colors-blue-1);
+	--colors-gray-0: var(--colors-blue-0);
+	--colors-background: var(--colors-blue-0);
+	--colors-foreground: var(--colors-blue-6);
 }
 
 /* Forest */
 .green {
-  --colors-green-3: #050;
-  --colors-green-4: #060;
-  --colors-green-5: #070;
-  --colors-green-6: #4c4;
-  --colors-green-7: #8e8;
-  --colors-green-8: #cfc;
-  --colors-green-9: #efe;
+	--colors-green-3: #050;
+	--colors-green-4: #060;
+	--colors-green-5: #070;
+	--colors-green-6: #4c4;
+	--colors-green-7: #8e8;
+	--colors-green-8: #cfc;
+	--colors-green-9: #efe;
 
-  --colors-gray-100: var(--colors-green-3);
-  --colors-gray-75: var(--colors-green-4);
-  --colors-gray-50: var(--colors-green-5);
-  --colors-gray-25: var(--colors-green-6);
-  --colors-gray-10: var(--colors-green-7);
-  --colors-gray-5: var(--colors-green-8);
-  --colors-gray-0: var(--colors-green-9);
-  --colors-background: var(--colors-green-9);
-  --colors-foreground: var(--colors-green-3);
+	--colors-gray-100: var(--colors-green-3);
+	--colors-gray-75: var(--colors-green-4);
+	--colors-gray-50: var(--colors-green-5);
+	--colors-gray-25: var(--colors-green-6);
+	--colors-gray-10: var(--colors-green-7);
+	--colors-gray-5: var(--colors-green-8);
+	--colors-gray-0: var(--colors-green-9);
+	--colors-background: var(--colors-green-9);
+	--colors-foreground: var(--colors-green-3);
 }
 
 /* Terminal */
 .green.dark,
 .green .dark {
-  --colors-green-0: #010;
-  --colors-green-1: #020;
-  --colors-green-2: #030;
-  --colors-green-3: #070;
-  --colors-green-4: #1b1;
-  --colors-green-5: #4c4;
-  --colors-green-6: #7e7;
+	--colors-green-0: #010;
+	--colors-green-1: #020;
+	--colors-green-2: #030;
+	--colors-green-3: #070;
+	--colors-green-4: #1b1;
+	--colors-green-5: #4c4;
+	--colors-green-6: #7e7;
 
-  --colors-gray-100: var(--colors-green-6);
-  --colors-gray-75: var(--colors-green-5);
-  --colors-gray-50: var(--colors-green-4);
-  --colors-gray-25: var(--colors-green-3);
-  --colors-gray-10: var(--colors-green-2);
-  --colors-gray-5: var(--colors-green-1);
-  --colors-gray-0: var(--colors-green-0);
-  --colors-background: var(--colors-green-0);
-  --colors-foreground: var(--colors-green-6);
+	--colors-gray-100: var(--colors-green-6);
+	--colors-gray-75: var(--colors-green-5);
+	--colors-gray-50: var(--colors-green-4);
+	--colors-gray-25: var(--colors-green-3);
+	--colors-gray-10: var(--colors-green-2);
+	--colors-gray-5: var(--colors-green-1);
+	--colors-gray-0: var(--colors-green-0);
+	--colors-background: var(--colors-green-0);
+	--colors-foreground: var(--colors-green-6);
 }
 
 /* Mountain */
 .red {
-  --colors-red-3: #700;
-  --colors-red-4: #900;
-  --colors-red-5: #b00;
-  --colors-red-6: #f44;
-  --colors-red-7: #f88;
-  --colors-red-8: #fcc;
-  --colors-red-9: #fee;
+	--colors-red-3: #700;
+	--colors-red-4: #900;
+	--colors-red-5: #b00;
+	--colors-red-6: #f44;
+	--colors-red-7: #f88;
+	--colors-red-8: #fcc;
+	--colors-red-9: #fee;
 
-  --colors-gray-100: var(--colors-red-3);
-  --colors-gray-75: var(--colors-red-4);
-  --colors-gray-50: var(--colors-red-5);
-  --colors-gray-25: var(--colors-red-6);
-  --colors-gray-10: var(--colors-red-7);
-  --colors-gray-5: var(--colors-red-8);
-  --colors-gray-0: var(--colors-red-9);
-  --colors-background: var(--colors-red-9);
-  --colors-foreground: var(--colors-red-3);
+	--colors-gray-100: var(--colors-red-3);
+	--colors-gray-75: var(--colors-red-4);
+	--colors-gray-50: var(--colors-red-5);
+	--colors-gray-25: var(--colors-red-6);
+	--colors-gray-10: var(--colors-red-7);
+	--colors-gray-5: var(--colors-red-8);
+	--colors-gray-0: var(--colors-red-9);
+	--colors-background: var(--colors-red-9);
+	--colors-foreground: var(--colors-red-3);
 }
 
 /* Lava */
 .red.dark,
 .red .dark {
-  --colors-red-0: #100;
-  --colors-red-1: #200;
-  --colors-red-2: #400;
-  --colors-red-3: #900;
-  --colors-red-4: #f00;
-  --colors-red-5: #f44;
-  --colors-red-6: #f77;
+	--colors-red-0: #100;
+	--colors-red-1: #200;
+	--colors-red-2: #400;
+	--colors-red-3: #900;
+	--colors-red-4: #f00;
+	--colors-red-5: #f44;
+	--colors-red-6: #f77;
 
-  --colors-gray-100: var(--colors-red-6);
-  --colors-gray-75: var(--colors-red-5);
-  --colors-gray-50: var(--colors-red-4);
-  --colors-gray-25: var(--colors-red-3);
-  --colors-gray-10: var(--colors-red-2);
-  --colors-gray-5: var(--colors-red-1);
-  --colors-gray-0: var(--colors-red-0);
-  --colors-background: var(--colors-red-0);
-  --colors-foreground: var(--colors-red-6);
+	--colors-gray-100: var(--colors-red-6);
+	--colors-gray-75: var(--colors-red-5);
+	--colors-gray-50: var(--colors-red-4);
+	--colors-gray-25: var(--colors-red-3);
+	--colors-gray-10: var(--colors-red-2);
+	--colors-gray-5: var(--colors-red-1);
+	--colors-gray-0: var(--colors-red-0);
+	--colors-background: var(--colors-red-0);
+	--colors-foreground: var(--colors-red-6);
 }
 
 .blue,
@@ -203,14 +203,14 @@ textarea {
 .red,
 .red.dark,
 .red .dark {
-  --colors-primary: var(--colors-foreground);
-  --colors-accent: var(--colors-gray-50);
+	--colors-primary: var(--colors-foreground);
+	--colors-accent: var(--colors-gray-50);
 }
 
 .blue,
 .green,
 .red {
-  --colors-border: var(--colors-gray-5);
+	--colors-border: var(--colors-gray-5);
 }
 
 .blue.dark,
@@ -219,7 +219,7 @@ textarea {
 .green .dark,
 .red.dark,
 .red .dark {
-  --colors-border: var(--colors-gray-10);
+	--colors-border: var(--colors-gray-10);
 }
 
 .contrast.dark,
@@ -233,5 +233,5 @@ textarea {
 .red.contrast,
 .red.contrast.dark,
 .red.contrast .dark {
-  --colors-border: var(--colors-foreground);
+	--colors-border: var(--colors-foreground);
 }

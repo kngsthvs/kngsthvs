@@ -1,61 +1,61 @@
 .root {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	overflow: hidden;
 }
 
 .root + .root {
-  border-top: 1px solid var(--colors-border);
+	border-top: 1px solid var(--colors-border);
 }
 
 .root > * {
-  padding: 0 2rem;
-  width: 100%;
-  text-align: center;
+	padding: 0 2rem;
+	width: 100%;
+	text-align: center;
 }
 
 .root > div:first-child {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-top: 1px solid transparent;
-  border-bottom: 1px solid var(--colors-border);
-  padding: 0.875rem 0.75rem;
-  font-size: var(--fontSizes-sm);
-  line-height: 1;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-top: 1px solid transparent;
+	border-bottom: 1px solid var(--colors-border);
+	padding: 0.875rem 0.75rem;
+	font-size: var(--fontSizes-sm);
+	line-height: 1;
 }
 
 .root > div:first-child h2 {
-  font-weight: normal;
-  font-size: var(--fontSizes-sm);
-  font-family: var(--font-geist-mono);
+	font-weight: normal;
+	font-size: var(--fontSizes-sm);
+	font-family: var(--font-geist-mono);
 }
 
 .root > div:first-child a,
 .root > div:first-child a > span,
 .root > div:first-child a span,
 .root > div:first-child a kbd {
-  color: var(--colors-primary);
+	color: var(--colors-primary);
 }
 
 .root > div:first-child a,
 .root > div:first-child a > span {
-  display: flex;
-  align-items: center;
-  gap: 0.25rem;
+	display: flex;
+	align-items: center;
+	gap: 0.25rem;
 }
 
 .root > div:first-child a:active,
 .root > div:first-child a:focus-visible,
 .root > div:first-child a:hover {
-  text-decoration: none;
+	text-decoration: none;
 }
 
 .root > div:first-child a:active span:not(:only-child),
 .root > div:first-child a:focus-visible span:not(:only-child),
 .root > div:first-child a:hover span:not(:only-child),
 .root > div:first-child a[data-pressed="true"] span:not(:only-child) {
-  text-decoration: underline;
+	text-decoration: underline;
 }

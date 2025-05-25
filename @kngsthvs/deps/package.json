@@ -1,0 +1,8 @@
+{
+	"exports": {
+		"./tinykeys": "./src/tinykeys.ts"
+	},
+	"name": "@kngsthvs/deps",
+	"private": true,
+	"version": "0.1.0"
+}

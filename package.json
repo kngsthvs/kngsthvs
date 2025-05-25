@@ -1,29 +1,41 @@
 {
   "devDependencies": {
-    "@changesets/cli": "^2.27.1",
-    "@commitlint/cli": "^19.2.1",
+    "@biomejs/biome": "2.0.0-beta.3",
+    "@changesets/cli": "catalog:",
+    "@commitlint/cli": "^19.8.1",
     "@kngsthvs/config": "workspace:*",
-    "@manypkg/cli": "latest",
-    "eslint": "^8.56.0",
-    "husky": "^9.0.11",
-    "prettier": "^3.2.5",
-    "turbo": "latest"
+    "husky": "^9.1.7",
+    "prettier": "^3.5.3",
+    "prettier-plugin-tailwindcss": "^0.6.11",
+    "turbo": "^2.5.3",
+    "typescript": "catalog:"
   },
   "engines": {
     "node": ">=20"
   },
   "name": "kngsthvs",
-  "packageManager": "pnpm@9.1.0",
-  "prettier": "@kngsthvs/config/prettier",
+  "packageManager": "pnpm@9.10.0",
+  "prettier": {
+    "plugins": [
+      "prettier-plugin-tailwindcss"
+    ],
+    "tailwindAttributes": [
+      "tw"
+    ],
+    "tailwindFunctions": [
+      "cva"
+    ]
+  },
   "private": true,
   "scripts": {
     "build": "turbo run build",
+    "check": "biome check .",
+    "check-types": "turbo run check-types",
+    "check:fix": "biome check . --write",
     "dev": "turbo run dev",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "lint": "turbo run lint",
     "publish-packages": "turbo run build lint && changeset version && changeset publish",
     "storybook": "turbo run storybook",
-    "storybook-build": "turbo run storybook-build",
-    "types": "turbo run types"
+    "storybook-build": "turbo run storybook-build"
   }
 }

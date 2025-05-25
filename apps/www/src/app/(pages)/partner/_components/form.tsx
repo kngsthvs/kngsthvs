@@ -1,17 +1,32 @@
 "use client";
 
 import { Form as ReactForm } from "@base-ui-components/react/form";
+import { visuallyHidden } from "@base-ui-components/react/utils";
+import HCaptcha from "@hcaptcha/react-hcaptcha";
+import { useTheme } from "@kngsthvs/ui/functions/client/context/theme";
 import { minDelay } from "@kngsthvs/ui/functions/shared/min-delay";
+import { Button } from "@repo/ui/components/button";
+import { Input } from "@repo/ui/components/input";
+import { Textarea } from "@repo/ui/components/textarea";
+import { Toast } from "@repo/ui/components/toast";
 import { usePathname, useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useActionState, useEffect, useRef, useState } from "react";
 import { toast } from "sonner";
-import { Button } from "ui/components/button";
-import { Input } from "ui/components/input";
-import { Textarea } from "ui/components/textarea";
-import { Toast } from "ui/components/toast";
+import { env } from "@/env";
 import { usePages } from "../../_components/pages";
-import { action } from "../_lib/action";
+import { submitApplication } from "../_lib/action";
 import styles from "./form.module.css";
+
+type ActionResponse = {
+  inputs?: {
+    body?: string;
+    company?: string;
+    email?: string;
+    name?: string;
+  };
+  message?: string;
+  status?: "error" | "ok" | string | number;
+};
 
 export function Form() {
   const { setFocus, setTitle } = usePages();
@@ -23,7 +38,52 @@ export function Form() {
     email: "",
     name: "",
   });
-  const [pending, setPending] = useState(false);
+  const captchaRef = useRef<any>(null);
+  const [token, setToken] = useState("");
+  const [
+    {
+      localStorage: { colorScheme },
+    },
+  ] = useTheme();
+
+  const [state, action, pending] = useActionState(
+    async (
+      _previousState: ActionResponse | null,
+      formData: FormData,
+    ): Promise<ActionResponse> => {
+      const inputs = {
+        email: formData.get("email") as string,
+        token: formData.get("h-captcha-response") as string,
+      };
+
+      try {
+        if (token) {
+          captchaRef.current.resetCaptcha();
+
+          const res = await minDelay(submitApplication(formData), 3000);
+
+          toast.custom(() => <Toast>{res?.message}</Toast>);
+
+          if (res?.ok) {
+            router.push("/");
+          }
+
+          return { inputs, ...res };
+        } else {
+          captchaRef.current.execute();
+
+          return {
+            inputs,
+          };
+        }
+      } catch (error: any) {
+        console.error(error);
+
+        return error;
+      }
+    },
+    null,
+  );
 
   useEffect(() => {
     setFocus(true);
@@ -31,23 +91,7 @@ export function Form() {
   }, [pathname]);
 
   return (
-    <ReactForm
-      action={async (formData) => {
-        const res = await minDelay(action(formData), 3000);
-
-        toast.custom(() => <Toast>{res?.message}</Toast>);
-
-        if (res && res.ok) {
-          router.push("/");
-        }
-
-        setPending(false);
-      }}
-      className={styles.root}
-      onSubmit={() => {
-        setPending(true);
-      }}
-    >
+    <ReactForm className={styles.root} {...{ action }}>
       <Input.Group>
         <Input
           error={errors.name}
@@ -55,6 +99,7 @@ export function Form() {
           name="name"
           placeholder="Name"
           required
+          value={state?.inputs?.name}
         />
 
         <Input
@@ -81,6 +126,39 @@ export function Form() {
         placeholder="Describe your project"
         required
       />
+
+      <div style={visuallyHidden}>
+        {env.NEXT_PUBLIC_HCAPTCHA_SITEKEY ? (
+          <HCaptcha
+            onError={(error) => {
+              toast.custom(() => (
+                <Toast>
+                  <Toast.Icon variant="error" />
+
+                  <Toast.Content>hCaptcha Error: {error}</Toast.Content>
+                </Toast>
+              ));
+            }}
+            onExpire={() => {
+              toast.custom(() => (
+                <Toast>
+                  <Toast.Icon variant="error" />
+
+                  <Toast.Content>hCaptcha token expired.</Toast.Content>
+                </Toast>
+              ));
+            }}
+            onLoad={() => {
+              captchaRef.current.execute();
+            }}
+            onVerify={setToken}
+            ref={captchaRef}
+            sitekey={env.NEXT_PUBLIC_HCAPTCHA_SITEKEY}
+            size="invisible"
+            theme={colorScheme === "dark" ? "dark" : "light"}
+          />
+        ) : null}
+      </div>
 
       <Button
         disabled={pending}

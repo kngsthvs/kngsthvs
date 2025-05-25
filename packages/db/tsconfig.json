@@ -1,11 +1,11 @@
 {
-  "extends": "@kngsthvs/config/tsconfig/base",
-  "compilerOptions": {
-    "incremental": true,
-    "module": "ESNext",
-    "moduleResolution": "Bundler",
-    "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json"
-  },
-  "include": ["."],
-  "exclude": ["node_modules"]
+	"compilerOptions": {
+		"incremental": true,
+		"module": "ESNext",
+		"moduleResolution": "Bundler",
+		"tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json"
+	},
+	"exclude": ["node_modules"],
+	"extends": "@kngsthvs/config/tsconfig/base",
+	"include": ["."]
 }

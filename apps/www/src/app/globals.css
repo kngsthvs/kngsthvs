@@ -1,22 +1,22 @@
 body {
-  background-color: var(--colors-background);
-  color: var(--colors-foreground);
+	background-color: var(--colors-background);
+	color: var(--colors-foreground);
 }
 
 .desktop {
-  display: none;
+	display: none;
 }
 
 .mobile {
-  display: flex;
+	display: flex;
 }
 
 @media screen and (min-width: 48rem) {
-  .mobile {
-    display: none;
-  }
+	.mobile {
+		display: none;
+	}
 
-  .desktop {
-    display: flex;
-  }
+	.desktop {
+		display: flex;
+	}
 }

@@ -5,26 +5,26 @@ import { useMeasure } from "react-use";
 import styles from "./styles.module.css";
 
 export function Ticker({
-  children,
+	children,
 }: React.PropsWithChildren<{ ticker?: boolean }>) {
-  const [ref, { height, width }] = useMeasure<HTMLElement>();
+	const [ref, { height, width }] = useMeasure<HTMLElement>();
 
-  return (
-    <aside className={styles.root} {...{ ref }}>
-      <div
-        style={
-          {
-            "--height": `${height}px`,
-            "--width": `${width}px`,
-            height: width,
-            width: height,
-          } as React.CSSProperties
-        }
-      >
-        <TickerRoot direction="right" gap={16} source={0.5}>
-          {children}
-        </TickerRoot>
-      </div>
-    </aside>
-  );
+	return (
+		<aside className={styles.root} {...{ ref }}>
+			<div
+				style={
+					{
+						"--height": `${height}px`,
+						"--width": `${width}px`,
+						height: width,
+						width: height,
+					} as React.CSSProperties
+				}
+			>
+				<TickerRoot direction="right" gap={16} source={0.5}>
+					{children}
+				</TickerRoot>
+			</div>
+		</aside>
+	);
 }

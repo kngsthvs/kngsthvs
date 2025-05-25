@@ -7,16 +7,16 @@ import { useEffect } from "react";
 import { usePages } from "../../../(pages)/_components/pages";
 
 export function Focus() {
-  const { setFocus, setTitle } = usePages();
-  const pathname = usePathname();
-  const [_state, update] = useTheme();
+	const { setFocus, setTitle } = usePages();
+	const pathname = usePathname();
+	const [_state, update] = useTheme();
 
-  disableAnimation(update.localStorage.colorScheme("dark"));
+	disableAnimation(update.localStorage.colorScheme("dark"));
 
-  useEffect(() => {
-    setFocus(true);
-    setTitle("Hymn");
-  }, [pathname]);
+	useEffect(() => {
+		setFocus(true);
+		setTitle("Hymn");
+	}, [pathname]);
 
-  return null;
+	return null;
 }

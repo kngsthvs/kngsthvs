@@ -3,13 +3,13 @@ import { ReactFlowProvider } from "@xyflow/react";
 import { Flow } from "./_components/flow";
 
 export default async function Page() {
-  const { colorScheme } = await getTheme();
+	const { colorScheme } = await getTheme();
 
-  return (
-    <section>
-      <ReactFlowProvider>
-        <Flow {...{ colorScheme }} />
-      </ReactFlowProvider>
-    </section>
-  );
+	return (
+		<section>
+			<ReactFlowProvider>
+				<Flow {...{ colorScheme }} />
+			</ReactFlowProvider>
+		</section>
+	);
 }

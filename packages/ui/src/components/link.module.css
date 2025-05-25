@@ -1,31 +1,33 @@
 .root {
-  align-items: center;
-  color: var(--colors-gray-50);
-  display: flex;
-  font-size: var(--fontSizes-sm);
-  gap: 0.25rem;
-  line-height: 1;
+	align-items: center;
+	color: var(--colors-gray-50);
+	display: flex;
+	font-size: var(--fontSizes-sm);
+	gap: 0.25rem;
+	line-height: 1;
 }
 
 .root[data-disabled] {
-  color: var(--colors-gray-25);
-  cursor: not-allowed;
-  user-select: none;
+	color: var(--colors-gray-25);
+	cursor: not-allowed;
+	user-select: none;
 }
 
 a.root:active span,
 a.root:focus-visible span,
 a.root:hover span,
 a.root[data-pressed="true"] span {
-  text-decoration: underline;
+	text-decoration: underline;
 }
 
 a.root:focus-visible,
 a.root:hover,
-a.root[data-pressed="true"] {
-  color: var(--colors-gray-75);
+a.root[data-pressed="true"],
+button.root[data-pressed="true"] {
+	color: var(--colors-gray-75);
 }
 
-a.root:active {
-  color: var(--colors-foreground);
+a.root:active,
+button.root:active {
+	color: var(--colors-foreground);
 }
