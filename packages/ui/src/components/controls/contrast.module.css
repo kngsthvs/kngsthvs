@@ -1,35 +1,35 @@
 .root {
-  aspect-ratio: 1 / 1;
-  border: 2px solid currentColor;
-  border-radius: var(--radii-full);
-  height: 1.125rem;
-  position: relative;
-  transition: color 0.3s var(--ease);
-  width: 1.125rem;
+	aspect-ratio: 1 / 1;
+	border: 2px solid currentColor;
+	border-radius: var(--radii-full);
+	height: 1.125rem;
+	position: relative;
+	transition: color 0.3s var(--ease);
+	width: 1.125rem;
 }
 
 .root,
 :global .dark.blue :local .root,
 :global .dark.green :local .root,
 :global .dark.red :local .root {
-  color: var(--colors-gray-25);
+	color: var(--colors-gray-25);
 }
 
 :global .blue :local .root,
 :global .green :local .root,
 :global .red :local .root {
-  color: var(--colors-gray-10);
+	color: var(--colors-gray-10);
 }
 
 .root::after {
-  background-color: currentColor;
-  border-radius: 0 var(--radii-full) var(--radii-full) 0;
-  content: "";
-  height: 100%;
-  inset: 0;
-  left: 50%;
-  position: absolute;
-  width: calc(50% + 1px);
+	background-color: currentColor;
+	border-radius: 0 var(--radii-full) var(--radii-full) 0;
+	content: "";
+	height: 100%;
+	inset: 0;
+	left: 50%;
+	position: absolute;
+	width: calc(50% + 1px);
 }
 
 .root:focus-visible,
@@ -40,7 +40,7 @@
 :global .dark.green :local .root:hover,
 :global .dark.red :local .root:focus-visible,
 :global .dark.red :local .root:hover {
-  color: var(--colors-gray-50);
+	color: var(--colors-gray-50);
 }
 
 :global .blue :local .root:focus-visible,
@@ -49,22 +49,22 @@
 :global .green :local .root:hover,
 :global .red :local .root:focus-visible,
 :global .red :local .root:hover {
-  color: var(--colors-gray-25);
+	color: var(--colors-gray-25);
 }
 
 .root:active,
 :global .dark.blue :local .root:active,
 :global .dark.green :local .root:active,
 :global .dark.red :local .root:active {
-  color: var(--colors-gray-75) !important;
+	color: var(--colors-gray-75) !important;
 }
 
 :global .blue :local .root:active,
 :global .green :local .root:active,
 :global .red :local .root:active {
-  color: var(--colors-gray-50) !important;
+	color: var(--colors-gray-50) !important;
 }
 
 .root[data-active="true"] {
-  color: var(--colors-foreground) !important;
+	color: var(--colors-foreground) !important;
 }

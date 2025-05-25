@@ -1,4 +1,16 @@
-"use server";
+import "server-only";
+
+// import { generateEnv } from "@kngsthvs/lib/env";
+// import { z } from "zod";
+
+// const env = generateEnv({
+//   schema: {
+//     HCAPTCHA_SECRET_KEY: z.string().min(1),
+//   },
+//   server: {
+//     variables: process.env,
+//   },
+// });
 
 /**
  * @param secret
@@ -8,24 +20,31 @@
  * @see https://github.com/glenstack/glenstack/blob/master/packages/cf-workers-hcaptcha/src/index.ts
  */
 
-export async function hcaptcha({
-  secret,
-  token,
-}: {
-  secret: string;
+export async function hcaptcha(props: {
+  secret?: string; // FIX: Doesn't work currently
   token: string;
 }): Promise<any> {
   let message = "An unknown hCaptcha error occured.";
 
   try {
     const body = new FormData();
-    body.append("response", token);
+
+    if (!process.env.HCAPTCHA_SECRET_KEY) {
+      return {
+        code: "missing-input-secret",
+        message: "Your secret key is missing.",
+        status: "error",
+      };
+    }
+
+    const secret = process.env.HCAPTCHA_SECRET_KEY ?? props.secret;
+    body.append("response", props.token);
     body.append("secret", secret);
 
     const res = await fetch("https://api.hcaptcha.com/siteverify", {
       body: new URLSearchParams({
+        response: props.token,
         secret,
-        response: token,
       }),
       headers: {
         "Content-Type": "application/x-www-form-urlencoded",

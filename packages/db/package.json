@@ -1,32 +1,30 @@
 {
-  "dependencies": {
-    "@electric-sql/pglite": "^0.1.5",
-    "@t3-oss/env-nextjs": "^0.10.0",
-    "@vercel/postgres": "^0.9.0",
-    "drizzle-orm": "^0.31.2",
-    "zod": "^3.22.4"
-  },
-  "devDependencies": {
-    "@kngsthvs/config": "^0.1.7",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "drizzle-kit": "^0.20.17",
-    "eslint": "^8.56.0",
-    "typescript": "^5"
-  },
-  "exports": {
-    ".": "./src/index.ts",
-    "./schema/account": "./src/schema/account.ts"
-  },
-  "name": "db",
-  "private": true,
-  "scripts": {
-    "generate": "drizzle-kit generate",
-    "migrate": "drizzle-kit migrate",
-    "push": "drizzle-kit push:pg",
-    "studio": "drizzle-kit studio",
-    "type-check": "tsc --noEmit"
-  },
-  "type": "module",
-  "version": "0.0.0"
+	"dependencies": {
+		"@electric-sql/pglite": "catalog:",
+		"@kngsthvs/lib": "workspace:*",
+		"drizzle-orm": "catalog:",
+		"zod": "catalog:"
+	},
+	"devDependencies": {
+		"@kngsthvs/config": "workspace:*",
+		"@types/react": "catalog:",
+		"@types/react-dom": "catalog:",
+		"drizzle-kit": "catalog:",
+		"typescript": "catalog:"
+	},
+	"exports": {
+		".": "./src/index.ts",
+		"./schema/account": "./src/schema/account.ts"
+	},
+	"name": "@repo/db",
+	"private": true,
+	"scripts": {
+		"generate": "drizzle-kit generate",
+		"migrate": "drizzle-kit migrate",
+		"push": "drizzle-kit push:pg",
+		"studio": "drizzle-kit studio",
+		"type-check": "tsc --noEmit"
+	},
+	"type": "module",
+	"version": "0.0.0"
 }

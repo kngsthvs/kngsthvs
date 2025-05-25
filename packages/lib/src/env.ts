@@ -1,12 +1,11 @@
-/** @see https://env.t3.gg/docs/nextjs */
+import { generateEnv } from "@kngsthvs/lib/env";
+import { environmentSchema } from "@kngsthvs/lib/schemas";
 
-import { environment } from "@kngsthvs/lib/schemas";
-import { createEnv } from "@t3-oss/env-nextjs";
-
-export const env = createEnv({
-  emptyStringAsUndefined: true,
-  server: {
-    NODE_ENV: environment,
-  },
-  skipValidation: Boolean(process.env.SKIP_ENV_VALIDATION),
+export const env = generateEnv({
+	schema: {
+		NODE_ENV: environmentSchema,
+	},
+	server: {
+		variables: process.env,
+	},
 });

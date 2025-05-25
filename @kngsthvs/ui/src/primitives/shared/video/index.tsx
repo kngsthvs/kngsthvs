@@ -3,52 +3,51 @@
  */
 
 import { getImageProps } from "next/image";
-import { forwardRef } from "react";
 // import { preload } from "react-dom";
 
-export const Video = forwardRef<
-  HTMLVideoElement,
-  {
-    loading: "lazy" | "eager";
-    playbackId: string;
-    src?: string;
-  } & React.HTMLAttributes<HTMLVideoElement>
->(({ loading, playbackId, src, ...props }, ref) => {
-  const {
-    props: { src: poster },
-  } = getImageProps({
-    src: `https://image.mux.com/${playbackId}/thumbnail.webp?fit_mode=smartcrop&time=0`,
-    alt: "",
-    fill: true,
-  });
+export function Video({
+	loading,
+	playbackId,
+	src,
+	...props
+}: {
+	loading: "lazy" | "eager";
+	playbackId: string;
+	src?: string;
+} & React.HTMLAttributes<HTMLVideoElement>) {
+	const {
+		props: { src: poster },
+	} = getImageProps({
+		alt: "",
+		fill: true,
+		src: `https://image.mux.com/${playbackId}/thumbnail.webp?fit_mode=smartcrop&time=0`,
+	});
 
-  // Preload the poster when applicable
-  // if (loading === "eager") {
-  //   preload(poster, {
-  //     as: "image",
-  //     fetchPriority: "high",
-  //   });
-  // }
+	// Preload the poster when applicable
+	// if (loading === "eager") {
+	//   preload(poster, {
+	//     as: "image",
+	//     fetchPriority: "high",
+	//   });
+	// }
 
-  return (
-    <video
-      autoPlay
-      loop
-      muted
-      playsInline
-      preload="none"
-      {...{ poster, ref, ...props }}
-    >
-      <source
-        src={src ?? `https://stream.mux.com/${playbackId}/high.mp4`}
-        type="video/mp4"
-      />
-      <source
-        src={src ?? `https://stream.mux.com/${playbackId}/high.webm`}
-        type="video/webm"
-      />
-    </video>
-  );
-});
-
-Video.displayName = "Video";
+	return (
+		<video
+			autoPlay
+			loop
+			muted
+			playsInline
+			preload="none"
+			{...{ poster, ...props }}
+		>
+			<source
+				src={src ?? `https://stream.mux.com/${playbackId}/high.mp4`}
+				type="video/mp4"
+			/>
+			<source
+				src={src ?? `https://stream.mux.com/${playbackId}/high.webm`}
+				type="video/webm"
+			/>
+		</video>
+	);
+}

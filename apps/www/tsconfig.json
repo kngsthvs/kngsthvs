@@ -1,28 +1,25 @@
 {
-  "extends": "@kngsthvs/config/tsconfig/nextjs",
-  "compilerOptions": {
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["./src/*"]
-    },
-    "plugins": [
-      {
-        "name": "next"
-      }
-    ],
-    "strictNullChecks": true,
-    "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json"
-  },
-  "include": [
-    ".eslintrc.js",
-    "postinstall.js",
-    "next-env.d.ts",
-    "next.config.mjs",
-    "**/*.js",
-    "**/*.ts",
-    "**/*.tsx",
-    ".next/types/**/*.ts",
-    "postinstall.js"
-  ],
-  "exclude": ["node_modules"]
+	"compilerOptions": {
+		"baseUrl": ".",
+		"paths": {
+			"@/*": ["./src/*"]
+		},
+		"plugins": [
+			{
+				"name": "next"
+			}
+		],
+		"strictNullChecks": true,
+		"tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json"
+	},
+	"exclude": ["node_modules"],
+	"extends": "@kngsthvs/config/tsconfig/nextjs",
+	"include": [
+		"next-env.d.ts",
+		"next.config.mjs",
+		"**/*.js",
+		"**/*.ts",
+		"**/*.tsx",
+		".next/types/**/*.ts"
+	]
 }

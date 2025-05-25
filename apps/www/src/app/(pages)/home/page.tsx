@@ -1,7 +1,7 @@
-import pages from "@/content/pages.json";
 import { Pump } from "basehub/react-pump";
-import { type Metadata } from "next";
+import type { Metadata } from "next";
 import { draftMode } from "next/headers";
+import pages from "@/content/pages.json";
 import { Partner } from "./_components/partner";
 import { Section } from "./_components/section";
 import styles from "./page.module.css";
@@ -11,10 +11,10 @@ export const metadata: Metadata = {
   title: pages.title,
 };
 
-export default function Page() {
+export default async function Page() {
   return (
     <Pump
-      draft={draftMode().isEnabled}
+      draft={(await draftMode()).isEnabled}
       next={{ revalidate: 60 }}
       queries={[
         {

@@ -32,8 +32,10 @@ function Item({
   }
 }
 
-export default async function Page({ params }: { params: { path: string[] } }) {
-  const path = `${params.path[0]}`;
+export default async function Page(props: {
+  params: Promise<{ path: string[] }>;
+}) {
+  const path = `${(await props.params).path[0]}`;
   const { home } = await basehub({ next: { revalidate: 60 } }).query({
     home: {
       __typename: true,
@@ -76,15 +78,15 @@ export default async function Page({ params }: { params: { path: string[] } }) {
     <article className={styles.root}>
       {sections.map((section: { items: any[]; type: string }) => (
         <Section
-          title={section.type.charAt(0).toUpperCase() + section.type.slice(1)}
           key={section.type}
+          title={section.type.charAt(0).toUpperCase() + section.type.slice(1)}
         >
           <ul className={homeStyles[path]}>
             {section.items.map((item, index) => {
               return (
                 <Item
-                  length={section.items.length}
                   key={`${item.type}-${index}`}
+                  length={section.items.length}
                   {...{ path, ...item }}
                 />
               );

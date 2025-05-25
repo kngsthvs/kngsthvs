@@ -1,26 +1,29 @@
 "use server";
 
-import { Ratelimit } from "@upstash/ratelimit";
-import { kv } from "@vercel/kv";
+import { hcaptcha } from "@kngsthvs/lib/actions/hcaptcha";
+import { getIP } from "@repo/lib/network/ip";
+import { resend } from "@repo/lib/resend";
+import { Ratelimit } from "@unkey/ratelimit";
 import { Effect } from "effect";
-import { getIP } from "lib/network/ip";
-import { resend } from "lib/resend";
-import { z, type ZodError } from "zod";
+import { type ZodError, z } from "zod";
 import { fromError } from "zod-validation-error";
+import { env } from "@/env";
 
 const ratelimit = new Ratelimit({
-  // 5 requests from the same IP in 10 seconds
-  limiter: Ratelimit.slidingWindow(3, "9 s"),
-  redis: kv,
+  duration: "9s",
+  limit: 3,
+  namespace: "www",
+  rootKey: env.UNKEY_ROOT_KEY,
 });
 const schema = z.object({
   body: z.string(),
   company: z.string(),
   email: z.string().email(),
   name: z.string(),
+  token: z.string().min(1),
 });
 
-export const action = async (formData: FormData) =>
+export const submitApplication = async (formData: FormData) =>
   Effect.runPromise(
     Effect.tryPromise({
       catch: (error) => {
@@ -37,10 +40,9 @@ export const action = async (formData: FormData) =>
         };
       },
       try: async () => {
-        const ip = getIP();
+        const ip = await getIP();
         const { success } = await ratelimit.limit(ip);
 
-        console.log("here");
         if (!success) {
           Effect.logError(`${ip} exceeded rate limit`);
 
@@ -55,19 +57,27 @@ export const action = async (formData: FormData) =>
           company: formData.get("company"),
           email: formData.get("email"),
           name: formData.get("name"),
+          token: formData.get("h-captcha-response"),
         });
+        const challenge = await hcaptcha({
+          token: parsed.token,
+        });
+
+        if (challenge.status === "error") {
+          return {
+            message: challenge.message,
+            status: "error",
+          };
+        }
 
         await resend.emails.send({
           from: "Kings & Thieves <system@kngsthvs.com>",
           subject: "Partner Application",
           text: `Name: ${parsed.name}
-
-Email: ${parsed.email}
-
-Company: ${parsed.company}
-
-${parsed.body}
-      `,
+                Email: ${parsed.email}
+                Company: ${parsed.company}
+                ${parsed.body}
+                `,
           to: "partners@kngsthvs.com",
         });
 
