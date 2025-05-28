@@ -36,6 +36,6 @@
     "dev": "turbo run dev",
     "dev:storybook": "turbo run dev:storybook",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "publish-packages": "turbo run build lint && changeset version && changeset publish"
+    "publish-packages": "turbo run build check && changeset version && changeset publish"
   }
 }

@@ -1,31 +1,31 @@
 {
-	"devDependencies": {
-		"@commitlint/config-conventional": "^19.8.1",
-		"@commitlint/types": "^19.8.1",
-		"@microsoft/tsdoc-config": "^0.17.1",
-		"typescript": "catalog:"
-	},
-	"exports": {
-		"./tsconfig/*": "./tsconfig/*.json"
-	},
-	"files": [
-		"biome.json",
-		"tsconfig"
-	],
-	"name": "@kngsthvs/config",
-	"peerDependencies": {
-		"typescript": ">=5.0.0 <6"
-	},
-	"peerDependenciesMeta": {
-		"typescript": {
-			"optional": true
-		}
-	},
-	"publishConfig": {
-		"access": "public"
-	},
-	"scripts": {
-		"publish-package": "changeset version && pnpm publish"
-	},
-	"version": "0.1.7"
+  "devDependencies": {
+    "@commitlint/config-conventional": "^19.8.1",
+    "@commitlint/types": "^19.8.1",
+    "@microsoft/tsdoc-config": "^0.17.1",
+    "typescript": "catalog:"
+  },
+  "exports": {
+    "./tsconfig/*": "./tsconfig/*.json"
+  },
+  "files": [
+    "biome.json",
+    "tsconfig"
+  ],
+  "name": "@kngsthvs/config",
+  "peerDependencies": {
+    "typescript": ">=5.0.0 <6"
+  },
+  "peerDependenciesMeta": {
+    "typescript": {
+      "optional": true
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "publish-package": "changeset version && pnpm publish"
+  },
+  "version": "0.2.0"
 }
