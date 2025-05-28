@@ -6,6 +6,7 @@
     "typescript": "catalog:"
   },
   "exports": {
+    "./biome.json": "./biome.json",
     "./tsconfig/*": "./tsconfig/*.json"
   },
   "files": [
@@ -24,5 +25,5 @@
   "scripts": {
     "publish-package": "changeset version && pnpm publish"
   },
-  "version": "0.2.0"
+  "version": "0.2.1"
 }
