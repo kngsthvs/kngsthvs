@@ -31,30 +31,20 @@ export function generateEnv({
   };
   const schemas = {
     client: z.object(
-      keys.client.reduce<Record<string, z.ZodTypeAny>>(
-        (accumulator, currentValue) => {
-          const schemaValue = schema[currentValue];
-
-          if (schemaValue) {
-            accumulator[currentValue] = schemaValue;
-          }
-
-          return accumulator;
-        },
+      keys.client.reduce(
+        (accumalator, currentValue) => ({
+          ...accumalator,
+          [currentValue]: schema[currentValue],
+        }),
         {},
       ),
     ),
     server: z.object(
-      keys.client.reduce<Record<string, z.ZodTypeAny>>(
-        (accumulator, currentValue) => {
-          const schemaValue = schema[currentValue];
-
-          if (schemaValue) {
-            accumulator[currentValue] = schemaValue;
-          }
-
-          return accumulator;
-        },
+      keys.server.reduce(
+        (accumalator, currentValue) => ({
+          ...accumalator,
+          [currentValue]: schema[currentValue],
+        }),
         {},
       ),
     ),

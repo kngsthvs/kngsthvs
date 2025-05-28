@@ -24,24 +24,20 @@
       "outputs": ["dist/**", ".output/**", ".next/**", "!.next/cache/**"]
     },
     "build:storybook": {
-      "dependsOn": ["^build:storybook"],
-      "outputs": ["storybook-static/**"]
+      "outputs": ["dist/**", "storybook-static/**"]
     },
     "check": {},
-    "check-types": {
-      "dependsOn": ["^check-types"]
-    },
     "check:fix": {
       "cache": false
+    },
+    "check:types": {
+      "dependsOn": ["^check:types"]
     },
     "dev": {
       "cache": false,
       "persistent": true
     },
-    "storybook": {
-      "outputs": ["dist/**", "storybook-static/**"]
-    },
-    "storybook-build": {
+    "dev:storybook": {
       "outputs": ["dist/**", "storybook-static/**"]
     }
   },

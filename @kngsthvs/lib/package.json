@@ -1,57 +1,57 @@
 {
-	"dependencies": {
-		"@0x57/base32": "^0.0.5",
-		"@0x57/ulid": "^0.0.1",
-		"@braintree/sanitize-url": "^7.1.1",
-		"@microsoft/api-extractor": "^7.52.7",
-		"drizzle-orm": "catalog:",
-		"libphonenumber-js": "^1.12.8",
-		"next": "catalog:",
-		"react": "catalog:",
-		"react-dom": "^19.1.0",
-		"zod": "catalog:"
-	},
-	"devDependencies": {
-		"@changesets/cli": "catalog:",
-		"@kngsthvs/config": "^0.1.7",
-		"@storybook/addon-essentials": "^8.6.12",
-		"@storybook/addon-interactions": "^8.6.12",
-		"@storybook/addon-links": "^8.6.12",
-		"@storybook/blocks": "^8.6.12",
-		"@storybook/nextjs": "^8.6.12",
-		"@storybook/react": "^8.6.12",
-		"@types/node": "catalog:",
-		"@types/react": "catalog:",
-		"@types/react-dom": "catalog:",
-		"semantic-release": "catalog:",
-		"storybook": "catalog:",
-		"tsup": "catalog:",
-		"typescript": "catalog:"
-	},
-	"exports": {
-		"./actions/hcaptcha": "./src/actions/hcaptcha.ts",
-		"./entropy/shuffle": "./src/entropy/shuffle.ts",
-		"./env": "./src/env/index.ts",
-		"./env/generate": "./src/env/generate.ts",
-		"./reference/alias-link": "./src/reference/alias-link.ts",
-		"./reference/get-base-url": "./src/reference/get-base-url.ts",
-		"./reference/refine-link": "./src/reference/refine-link.ts",
-		"./schemas": "./src/schemas/index.ts",
-		"./types/union-autocomplete": "./src/types/union-autocomplete.ts"
-	},
-	"name": "@kngsthvs/lib",
-	"peerDependencies": {
-		"next": "^14.2.0",
-		"react": "^18.2.0",
-		"react-dom": "^18.2.0"
-	},
-	"scripts": {
-		"build-storybook": "storybook build",
-		"dev": "next dev",
-		"publish-package": "pnpm types && changeset version && pnpm publish",
-		"storybook": "storybook dev -p 6006",
-		"types": "tsup --dts-only --dts-resolve"
-	},
-	"types": "dist/*",
-	"version": "0.5.4"
+  "dependencies": {
+    "@0x57/base32": "^0.0.5",
+    "@0x57/ulid": "^0.0.1",
+    "@braintree/sanitize-url": "^7.1.1",
+    "@microsoft/api-extractor": "^7.52.7",
+    "drizzle-orm": "catalog:",
+    "libphonenumber-js": "^1.12.8",
+    "next": "catalog:",
+    "react": "catalog:",
+    "react-dom": "^19.1.0",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@changesets/cli": "catalog:",
+    "@kngsthvs/config": "^0.1.7",
+    "@storybook/addon-essentials": "^8.6.12",
+    "@storybook/addon-interactions": "^8.6.12",
+    "@storybook/addon-links": "^8.6.12",
+    "@storybook/blocks": "^8.6.12",
+    "@storybook/nextjs": "^8.6.12",
+    "@storybook/react": "^8.6.12",
+    "@types/node": "catalog:",
+    "@types/react": "catalog:",
+    "@types/react-dom": "catalog:",
+    "semantic-release": "catalog:",
+    "storybook": "catalog:",
+    "tsup": "catalog:",
+    "typescript": "catalog:"
+  },
+  "exports": {
+    "./actions/hcaptcha": "./src/actions/hcaptcha.ts",
+    "./entropy/shuffle": "./src/entropy/shuffle.ts",
+    "./env": "./src/env/index.ts",
+    "./env/generate": "./src/env/generate.ts",
+    "./reference/alias-link": "./src/reference/alias-link.ts",
+    "./reference/get-base-url": "./src/reference/get-base-url.ts",
+    "./reference/refine-link": "./src/reference/refine-link.ts",
+    "./schemas": "./src/schemas/index.ts",
+    "./types/union-autocomplete": "./src/types/union-autocomplete.ts"
+  },
+  "name": "@kngsthvs/lib",
+  "peerDependencies": {
+    "next": "^14.2.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "scripts": {
+    "build": "tsup --dts-only --dts-resolve",
+    "build:storybook": "storybook build",
+    "dev": "tsup --dts-only --dts-resolve --watch",
+    "dev:storybook": "storybook dev -p 6006",
+    "publish-package": "pnpm types && changeset version && pnpm publish"
+  },
+  "types": "dist/*",
+  "version": "0.5.4"
 }

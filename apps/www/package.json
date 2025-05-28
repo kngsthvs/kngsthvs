@@ -52,7 +52,7 @@
   "private": true,
   "scripts": {
     "build": "basehub && next build",
-    "check-types": "tsc --noEmit",
+    "check:types": "tsc --noEmit",
     "dev": "concurrently \"basehub dev\" \"next dev\"",
     "lint": "next --max-warnings 0",
     "start": "next start"

@@ -90,6 +90,8 @@ export function Form() {
     setTitle("Partner");
   }, [pathname]);
 
+  // TODO: Add Lord's day state
+
   return (
     <ReactForm className={styles.root} {...{ action }}>
       <Input.Group>
