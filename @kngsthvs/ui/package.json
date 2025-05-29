@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "@base-ui-components/react": "catalog:",
+    "@kngsthvs/deps": "workspace:*",
     "@kngsthvs/lib": "workspace:*",
     "client-only": "catalog:",
     "flags": "catalog:",
@@ -19,7 +20,7 @@
   },
   "devDependencies": {
     "@changesets/cli": "catalog:",
-    "@kngsthvs/config": "^0.2.0",
+    "@kngsthvs/config": "workspace:*",
     "@microsoft/api-extractor": "^7.52.7",
     "@storybook/addon-essentials": "^8.6.12",
     "@storybook/addon-interactions": "^8.6.12",
@@ -73,7 +74,7 @@
     "build:storybook": "storybook build",
     "dev": "tsup --dts-only --dts-resolve --watch",
     "dev:storybook": "storybook dev -p 6006",
-    "publish-package": "pnpm types && changeset version && pnpm publish",
+    "publish-package": "pnpm build && changeset version && pnpm publish",
     "start": "next start"
   },
   "types": "dist/*",

@@ -13,7 +13,7 @@
   },
   "devDependencies": {
     "@changesets/cli": "catalog:",
-    "@kngsthvs/config": "^0.2.0",
+    "@kngsthvs/config": "workspace:*",
     "@storybook/addon-essentials": "^8.6.12",
     "@storybook/addon-interactions": "^8.6.12",
     "@storybook/addon-links": "^8.6.12",
@@ -50,7 +50,7 @@
     "build:storybook": "storybook build",
     "dev": "tsup --dts-only --dts-resolve --watch",
     "dev:storybook": "storybook dev -p 6006",
-    "publish-package": "pnpm types && changeset version && pnpm publish"
+    "publish-package": "pnpm build && changeset version && pnpm publish"
   },
   "types": "dist/*",
   "version": "0.6.0"

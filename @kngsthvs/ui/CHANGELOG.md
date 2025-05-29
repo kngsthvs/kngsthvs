@@ -4,7 +4,7 @@
 
 ### Minor Changes
 
-- Add theme and keys
+- Add theme and keys and move tinykeys to @kngsthvs/deps
 
 ## 0.15.6
 

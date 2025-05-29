@@ -1,13 +1,19 @@
 {
   "devDependencies": {
-    "@changesets/cli": "catalog:"
+    "@changesets/cli": "catalog:",
+    "@kngsthvs/config": "workspace:*",
+    "semantic-release": "catalog:",
+    "tsup": "catalog:",
+    "typescript": "catalog:"
   },
   "exports": {
     "./tinykeys": "./src/tinykeys.ts"
   },
   "name": "@kngsthvs/deps",
   "scripts": {
-    "publish-package": "pnpm types && changeset version && pnpm publish"
+    "build": "tsup --dts-only --dts-resolve",
+    "publish-package": "pnpm build && changeset version && pnpm publish"
   },
+  "types": "dist/*",
   "version": "0.1.0"
 }
