@@ -1,8 +1,13 @@
 {
-	"exports": {
-		"./tinykeys": "./src/tinykeys.ts"
-	},
-	"name": "@kngsthvs/deps",
-	"private": true,
-	"version": "0.1.0"
+  "devDependencies": {
+    "@changesets/cli": "catalog:"
+  },
+  "exports": {
+    "./tinykeys": "./src/tinykeys.ts"
+  },
+  "name": "@kngsthvs/deps",
+  "scripts": {
+    "publish-package": "pnpm types && changeset version && pnpm publish"
+  },
+  "version": "0.1.0"
 }

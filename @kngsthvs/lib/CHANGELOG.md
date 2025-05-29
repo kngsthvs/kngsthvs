@@ -1,5 +1,11 @@
 # @kngsthvs/lib
 
+## 0.6.0
+
+### Minor Changes
+
+- Add generateEnv and hcaptcha
+
 ## 0.5.4
 
 ### Patch Changes

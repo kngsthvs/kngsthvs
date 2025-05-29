@@ -1,5 +1,11 @@
 # @kngsthvs/ui
 
+## 0.16.0
+
+### Minor Changes
+
+- Add theme and keys
+
 ## 0.15.6
 
 ### Patch Changes
