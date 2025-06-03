@@ -227,7 +227,6 @@ export function createKeybindingsHandler(
       const remainingExpectedPresses = prev ? prev : sequence;
       const currentExpectedPress = remainingExpectedPresses[0];
 
-      // @ts-expect-error ts(2345)
       const matches = matchKeyBindingPress(event, currentExpectedPress);
 
       if (!matches) {
@@ -243,7 +242,6 @@ export function createKeybindingsHandler(
         possibleMatches.set(sequence, remainingExpectedPresses.slice(1));
       } else {
         possibleMatches.delete(sequence);
-        // @ts-expect-error ts(2722)
         callback(event);
       }
     });
@@ -252,7 +250,6 @@ export function createKeybindingsHandler(
       clearTimeout(timer);
     }
 
-    // @ts-expect-error ts(2322)
     timer = setTimeout(possibleMatches.clear.bind(possibleMatches), timeout);
   };
 }
