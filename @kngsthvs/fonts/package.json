@@ -1,0 +1,19 @@
+{
+  "dependencies": {
+    "next": "14.1.0",
+    "react": "^18",
+    "react-dom": "^18"
+  },
+  "main": "./src/index.ts",
+  "name": "@kngsthvs/fonts",
+  "private": true,
+  "scripts": {
+    "build": "next build",
+    "build-package": "tsup --dts-only --dts-resolve",
+    "dev": "next dev",
+    "lint": "next lint",
+    "publish-package": "pnpm build-package && changeset version && pnpm publish"
+  },
+  "types": "dist/*",
+  "version": "0.8.0"
+}

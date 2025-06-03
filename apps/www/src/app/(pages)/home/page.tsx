@@ -26,6 +26,7 @@ export default async function Page() {
                 _title: true,
                 href: true,
                 logo: { rawUrl: true },
+                type: true,
               },
             },
           },
@@ -35,6 +36,10 @@ export default async function Page() {
       {async ([{ home }]) => {
         "use server"; // Needs to be a Server Action
 
+        const partners = home.partners.items.filter(
+          (partner) => partner.type === "Business",
+        );
+
         return (
           <>
             {/* <Section href="/companies" keys="c" title="Companies">
@@ -43,11 +48,9 @@ export default async function Page() {
 
             <Section href="/partners" keys="p" title="Partners">
               <ul className={styles.partners}>
-                {home.partners.items.map((partner) => (
+                {partners.map((partner) => (
                   <Partner
-                    data-fill={Boolean(
-                      Number(home.partners.items.length) % 2 === 1,
-                    )}
+                    data-fill={Boolean(Number(partners.length) % 2 === 1)}
                     href={partner.href}
                     key={partner.href}
                     logo={partner.logo}

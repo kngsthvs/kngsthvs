@@ -70,30 +70,30 @@ export interface KeyBindingOptions extends KeyBindingHandlerOptions {
  *
  * Note: Ignoring "AltGraph" because it is covered by the others.
  */
-let KEYBINDING_MODIFIER_KEYS = ["Shift", "Meta", "Alt", "Control"];
+const KEYBINDING_MODIFIER_KEYS = ["Shift", "Meta", "Alt", "Control"];
 
 /**
  * Keybinding sequences should timeout if individual key presses are more than
  * 1s apart by default.
  */
-let DEFAULT_TIMEOUT = 1000;
+const DEFAULT_TIMEOUT = 1000;
 
 /**
  * Keybinding sequences should bind to this event by default.
  */
-let DEFAULT_EVENT = "keydown" as const;
+const DEFAULT_EVENT = "keydown" as const;
 
 /**
  * Platform detection code.
  * @see https://github.com/jamiebuilds/tinykeys/issues/184
  */
-let PLATFORM = typeof navigator === "object" ? navigator.platform : "";
-let APPLE_DEVICE = /Mac|iPod|iPhone|iPad/.test(PLATFORM);
+const PLATFORM = typeof navigator === "object" ? navigator.platform : "";
+const APPLE_DEVICE = /Mac|iPod|iPhone|iPad/.test(PLATFORM);
 
 /**
  * An alias for creating platform-specific keybinding aliases.
  */
-let MOD = APPLE_DEVICE ? "Meta" : "Control";
+const MOD = APPLE_DEVICE ? "Meta" : "Control";
 
 /**
  * Meaning of `AltGraph`, from MDN:
@@ -103,7 +103,7 @@ let MOD = APPLE_DEVICE ? "Meta" : "Control";
  * - Android: Not supported
  * @see https://github.com/jamiebuilds/tinykeys/issues/185
  */
-let ALT_GRAPH_ALIASES =
+const ALT_GRAPH_ALIASES =
   PLATFORM === "Win32" ? ["Control", "Alt"] : APPLE_DEVICE ? ["Alt"] : [];
 
 /**
@@ -134,7 +134,7 @@ export function parseKeybinding(str: string): KeyBindingPress[] {
     .map((press) => {
       let mods = press.split(/\b\+/);
       let key: string | RegExp = mods.pop() as string;
-      let match = key.match(/^\((.+)\)$/);
+      const match = key.match(/^\((.+)\)$/);
       if (match) {
         key = new RegExp(`^${match[1]}$`);
       }
@@ -202,13 +202,13 @@ export function createKeybindingsHandler(
   keyBindingMap: KeyBindingMap,
   options: KeyBindingHandlerOptions = {},
 ): EventListener {
-  let timeout = options.timeout ?? DEFAULT_TIMEOUT;
+  const timeout = options.timeout ?? DEFAULT_TIMEOUT;
 
-  let keyBindings = Object.keys(keyBindingMap).map((key) => {
+  const keyBindings = Object.keys(keyBindingMap).map((key) => {
     return [parseKeybinding(key), keyBindingMap[key]] as const;
   });
 
-  let possibleMatches = new Map<KeyBindingPress[], KeyBindingPress[]>();
+  const possibleMatches = new Map<KeyBindingPress[], KeyBindingPress[]>();
   let timer: number | null = null;
 
   return (event) => {
@@ -220,14 +220,15 @@ export function createKeybindingsHandler(
     }
 
     keyBindings.forEach((keyBinding) => {
-      let sequence = keyBinding[0];
-      let callback = keyBinding[1];
+      const sequence = keyBinding[0];
+      const callback = keyBinding[1];
 
-      let prev = possibleMatches.get(sequence);
-      let remainingExpectedPresses = prev ? prev : sequence;
-      let currentExpectedPress = remainingExpectedPresses[0];
+      const prev = possibleMatches.get(sequence);
+      const remainingExpectedPresses = prev ? prev : sequence;
+      const currentExpectedPress = remainingExpectedPresses[0];
 
-      let matches = matchKeyBindingPress(event, currentExpectedPress);
+      // @ts-expect-error ts(2345)
+      const matches = matchKeyBindingPress(event, currentExpectedPress);
 
       if (!matches) {
         // Modifier keydown events shouldn't break sequences
@@ -242,6 +243,7 @@ export function createKeybindingsHandler(
         possibleMatches.set(sequence, remainingExpectedPresses.slice(1));
       } else {
         possibleMatches.delete(sequence);
+        // @ts-expect-error ts(2722)
         callback(event);
       }
     });
@@ -250,6 +252,7 @@ export function createKeybindingsHandler(
       clearTimeout(timer);
     }
 
+    // @ts-expect-error ts(2322)
     timer = setTimeout(possibleMatches.clear.bind(possibleMatches), timeout);
   };
 }
@@ -281,7 +284,7 @@ export function tinykeys(
   keyBindingMap: KeyBindingMap,
   { event = DEFAULT_EVENT, capture, timeout }: KeyBindingOptions = {},
 ): () => void {
-  let onKeyEvent = createKeybindingsHandler(keyBindingMap, { timeout });
+  const onKeyEvent = createKeybindingsHandler(keyBindingMap, { timeout });
   target.addEventListener(event, onKeyEvent, capture);
   return () => {
     target.removeEventListener(event, onKeyEvent, capture);
