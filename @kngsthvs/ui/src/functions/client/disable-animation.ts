@@ -6,29 +6,31 @@ import "client-only";
  */
 
 export function disableAnimation(callback?: void | (() => void | undefined)) {
-	const css = document.createElement("style");
-	css.type = "text/css";
-	css.appendChild(
-		document.createTextNode(
-			`* {
+  if (!document) return;
+
+  const css = document.createElement("style");
+  css.type = "text/css";
+  css.appendChild(
+    document.createTextNode(
+      `* {
         -webkit-transition: none !important;
         -moz-transition: none !important;
         -o-transition: none !important;
         -ms-transition: none !important;
         transition: none !important;
       }`,
-		),
-	);
-	document.head.appendChild(css);
+    ),
+  );
+  document.head.appendChild(css);
 
-	// Run callback
-	callback?.();
+  // Run callback
+  callback?.();
 
-	// Calling getComputedStyle forces the browser to redraw
-	(() => window.getComputedStyle(css).opacity)();
+  // Calling getComputedStyle forces the browser to redraw
+  (() => window.getComputedStyle(css).opacity)();
 
-	// Wait for next tick before removing
-	setTimeout(() => {
-		document.head.removeChild(css);
-	}, 1);
+  // Wait for next tick before removing
+  setTimeout(() => {
+    document.head.removeChild(css);
+  }, 1);
 }

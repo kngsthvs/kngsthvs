@@ -1,5 +1,5 @@
 import { Provider as KeysProvider } from "@kngsthvs/ui/functions/client/context/keys";
-import { env } from "@/app/env";
+import { env } from "@/env";
 import "@repo/ui/styles";
 import "@repo/ui/styles/globals.css";
 import { Analytics } from "@vercel/analytics/react";
@@ -8,7 +8,6 @@ import { VercelToolbar } from "@vercel/toolbar/next";
 import { GeistMono } from "geist/font/mono";
 import { GeistSans } from "geist/font/sans";
 import type { Metadata } from "next";
-import { Toaster } from "sonner";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -31,20 +30,6 @@ export default function RootLayout(
 					<link href="/favicon.svg" rel="icon" type="image/svg+xml" />
 
 					{props.children}
-
-					<Toaster
-						expand
-						gap={8}
-						offset={16}
-						position="top-right"
-						toastOptions={{
-							style: {
-								width: "100%",
-								zIndex: 100,
-							},
-						}}
-						visibleToasts={10}
-					/>
 
 					{/* Vercel */}
 					<Analytics />

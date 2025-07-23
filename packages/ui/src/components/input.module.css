@@ -1,107 +1,107 @@
 .group {
-	display: flex;
-	flex-direction: column;
-	gap: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 @media screen and (min-width: 36rem) {
-	.group {
-		flex-direction: row;
-		gap: 1.5rem;
-	}
+  .group {
+    flex-direction: row;
+    gap: 1.5rem;
+  }
 }
 
 @media screen and (min-width: 48rem) {
-	.group {
-		gap: 2rem;
-	}
+  .group {
+    gap: 2rem;
+  }
 }
 
 .input {
-	background-color: transparent;
-	border: 1px solid var(--colors-gray-10);
-	color: var(--colors-foreground);
-	font-size: var(--fontSizes-sm);
-	padding: 0.5rem;
-	width: 100%;
+  background-color: transparent;
+  border: 1px solid var(--colors-gray-10);
+  color: var(--colors-foreground);
+  font-size: var(--fontSizes-sm);
+  padding: 0.5rem;
+  width: 100%;
 }
 
 .input::placeholder {
-	color: var(--colors-gray-50);
+  color: var(--colors-gray-50);
 }
 
-:global .contrast :local .root .input::placeholder {
-	color: var(--colors-foreground);
+:global(.contrast) .root .input::placeholder {
+  color: var(--colors-foreground);
 }
 
-:global .contrast :local .root .input,
-:global .contrast :local .root .input:focus-visible,
-:global .contrast :local .root .input:hover,
-:global .contrast :local .root .input:active {
-	border-color: var(--colors-foreground);
-	color: var(--colors-foreground);
+:global(.contrast) .root .input,
+:global(.contrast) .root .input:focus-visible,
+:global(.contrast) .root .input:hover,
+:global(.contrast) .root .input:active {
+  border-color: var(--colors-foreground);
+  color: var(--colors-foreground);
 }
 
 .input:active {
-	border-color: var(--colors-gray-50);
+  border-color: var(--colors-gray-50);
 }
 
 .input:focus-visible {
-	border-color: var(--colors-gray-100) !important;
-	outline: none;
+  border-color: var(--colors-gray-100) !important;
+  outline: none;
 }
 
 .root {
-	display: flex;
-	flex-direction: column;
-	gap: 0.125rem;
-	width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+  width: 100%;
 }
 
 .root:hover .input {
-	border-color: var(--colors-gray-25);
+  border-color: var(--colors-gray-25);
 }
 
 .root label {
-	color: var(--colors-gray-50);
-	font-size: var(--fontSizes-xs);
-	opacity: 0;
-	transform: translateY(0.25em);
-	transition:
-		opacity 0.3s var(--ease),
-		transform 0.3s var(--ease);
+  color: var(--colors-gray-50);
+  font-size: var(--fontSizes-xs);
+  opacity: 0;
+  transform: translateY(0.25em);
+  transition:
+    opacity 0.3s var(--ease),
+    transform 0.3s var(--ease);
 }
 
-:global .contrast :local .root label {
-	color: var(--colors-foreground);
+:global(.contrast) .root label {
+  color: var(--colors-foreground);
 }
 
 .root[data-filled] label {
-	opacity: 1;
-	transform: translateY(0);
+  opacity: 1;
+  transform: translateY(0);
 }
 
 @media screen and (min-width: 36rem) {
-	.input {
-		font-size: var(--fontSizes-base);
-		padding: 0.75rem;
-	}
+  .input {
+    font-size: var(--fontSizes-base);
+    padding: 0.75rem;
+  }
 
-	.root {
-		gap: 0.25rem;
-	}
+  .root {
+    gap: 0.25rem;
+  }
 
-	.root label {
-		font-size: var(--fontSizes-sm);
-	}
+  .root label {
+    font-size: var(--fontSizes-sm);
+  }
 }
 
 @media screen and (min-width: 48rem) {
-	.input {
-		padding: 1rem;
-	}
+  .input {
+    padding: 1rem;
+  }
 
-	.root {
-		gap: 0.5rem;
-	}
+  .root {
+    gap: 0.5rem;
+  }
 }

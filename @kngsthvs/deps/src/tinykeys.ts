@@ -227,6 +227,10 @@ export function createKeybindingsHandler(
       const remainingExpectedPresses = prev ? prev : sequence;
       const currentExpectedPress = remainingExpectedPresses[0];
 
+      if (!currentExpectedPress) {
+        return;
+      }
+
       const matches = matchKeyBindingPress(event, currentExpectedPress);
 
       if (!matches) {
@@ -242,6 +246,11 @@ export function createKeybindingsHandler(
         possibleMatches.set(sequence, remainingExpectedPresses.slice(1));
       } else {
         possibleMatches.delete(sequence);
+
+        if (!callback) {
+          return;
+        }
+
         callback(event);
       }
     });

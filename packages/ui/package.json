@@ -6,8 +6,7 @@
 		"react": "catalog:",
 		"react-dom": "catalog:",
 		"react-split-grid": "catalog:",
-		"react-use": "catalog:",
-		"sonner": "catalog:"
+		"react-use": "catalog:"
 	},
 	"devDependencies": {
 		"@kngsthvs/config": "workspace:*",
@@ -26,7 +25,6 @@
 		"./components/tag": "./src/components/tag.tsx",
 		"./components/textarea": "./src/components/textarea.tsx",
 		"./components/theme": "./src/components/theme.tsx",
-		"./components/toast": "./src/components/toast.tsx",
 		"./hooks/use-key": "./src/hooks/use-key.ts",
 		"./primitives/link": "./src/primitives/link.tsx",
 		"./styles": "./src/styles/index.ts",

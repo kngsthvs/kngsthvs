@@ -2,7 +2,6 @@
 
 # Build outputs
 .basehub/
-.million/
 .next/
 .react-email/
 .tsup/
@@ -15,6 +14,7 @@ storybook-static/
 
 # Configurations
 .vercel/
+.vscode/
 .wrangler/
 
 # Debug
@@ -37,9 +37,7 @@ yarn.lock
 .DS_Store
 *.pem
 
-# Cloudflare
-
-# Testing
+ Testing
 coverage
 
 # Typescript

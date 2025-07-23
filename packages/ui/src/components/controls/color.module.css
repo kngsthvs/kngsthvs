@@ -1,49 +1,49 @@
 .root {
-	display: flex;
-	align-items: center;
-	gap: 2px;
-	border: 1px solid transparent;
-	background-color: var(--colors-border);
-	font-family: var(--font-geist-mono);
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  border: 1px solid transparent;
+  background-color: var(--colors-border);
+  font-family: var(--font-geist-mono);
 }
 
 .root > button {
-	display: flex;
-	transition:
-		background-color 0.3s var(--ease),
-		color 0.3s var(--ease);
-	border: 2px solid transparent;
-	width: fit-content;
-	height: 1rem;
-	color: var(--colors-gray-50);
-	font-size: var(--fontSizes-xs);
-	line-height: 1;
+  display: flex;
+  transition:
+    background-color 0.3s var(--ease),
+    color 0.3s var(--ease);
+  border: 2px solid transparent;
+  width: fit-content;
+  height: 1rem;
+  color: var(--colors-gray-50);
+  font-size: var(--fontSizes-xs);
+  line-height: 1;
 }
 
-:global .contrast :local .root > button,
-:global .contrast :local .root > button:focus-visible,
-:global .contrast :local .root > button:hover,
-:global .contrast :local .root > button:active {
-	color: var(--colors-background);
+:global(.contrast) .root > button,
+:global(.contrast) .root > button:focus-visible,
+:global(.contrast) .root > button:hover,
+:global(.contrast) .root > button:active {
+  color: var(--colors-background);
 }
 
 .root > button:focus-visible {
-	z-index: 1;
+  z-index: 1;
 }
 
 .root > button:focus-visible,
 .root > button:hover {
-	color: var(--colors-gray-75);
+  color: var(--colors-gray-75);
 }
 
 .root > button:active {
-	color: var(--colors-foreground);
+  color: var(--colors-foreground);
 }
 
 .root > button[data-active="true"],
 .root > button[data-active="true"]:focus-visible,
 .root > button[data-active="true"]:hover,
 .root > button[data-active="true"]:active {
-	background-color: var(--colors-background);
-	color: var(--colors-accent);
+  background-color: var(--colors-background);
+  color: var(--colors-accent);
 }

@@ -1,64 +1,64 @@
 .root {
-	display: flex;
+  display: flex;
 }
 
 .root > button {
-	display: flex;
-	position: relative;
-	justify-content: center;
-	align-items: center;
-	border: 2px solid transparent;
-	aspect-ratio: 1 / 1;
-	width: 1.125rem;
-	height: 1.125rem;
-	overflow: hidden;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid transparent;
+  aspect-ratio: 1 / 1;
+  width: 1.125rem;
+  height: 1.125rem;
+  overflow: hidden;
 }
 
 .root > button[data-theme="default"] {
-	border-color: var(--colors-black);
-	background-color: var(--colors-black);
+  border-color: var(--colors-black);
+  background-color: var(--colors-black);
 }
 
-:global .dark :local .root > button[data-theme="default"] {
-	border-color: var(--colors-white);
-	background-color: var(--colors-white);
+:global(.dark) .root > button[data-theme="default"] {
+  border-color: var(--colors-white);
+  background-color: var(--colors-white);
 }
 
 .root > button[data-theme="red"] {
-	outline-color: var(--colors-red);
-	border-color: var(--colors-red);
-	background-color: var(--colors-red);
+  outline-color: var(--colors-red);
+  border-color: var(--colors-red);
+  background-color: var(--colors-red);
 }
 
 .root > button[data-theme="green"] {
-	outline-color: var(--colors-green);
-	border-color: var(--colors-green);
-	background-color: var(--colors-green);
+  outline-color: var(--colors-green);
+  border-color: var(--colors-green);
+  background-color: var(--colors-green);
 }
 
 .root > button[data-theme="blue"] {
-	outline-color: var(--colors-blue);
-	border-color: var(--colors-blue);
-	background-color: var(--colors-blue);
+  outline-color: var(--colors-blue);
+  border-color: var(--colors-blue);
+  background-color: var(--colors-blue);
 }
 
 .root > button:focus-visible {
-	z-index: 1;
+  z-index: 1;
 }
 
 .root > button[data-selected="true"]::before,
 .root > button[data-selected="true"]::after {
-	position: absolute;
-	background-color: var(--colors-background);
-	width: 2rem;
-	height: 2px;
-	content: "";
+  position: absolute;
+  background-color: var(--colors-background);
+  width: 2rem;
+  height: 2px;
+  content: "";
 }
 
 .root > button[data-selected="true"]::before {
-	transform: rotate(45deg);
+  transform: rotate(45deg);
 }
 
 .root > button[data-selected="true"]::after {
-	transform: rotate(-45deg);
+  transform: rotate(-45deg);
 }

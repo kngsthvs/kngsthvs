@@ -133,6 +133,7 @@
 		"position": { "x": 416, "y": 144 }
 	},
 	{
+		"disabled": "true",
 		"href": "https://x.com/kngsthvs/jobs",
 		"id": "jobs",
 		"keys": "j",
@@ -153,20 +154,13 @@
 		"position": { "x": 64, "y": 512 }
 	},
 	{
-		"href": "https://github.com/kngsthvs",
-		"id": "github",
-		"keys": "s g",
-		"name": "GitHub",
+		"disabled": true,
+		"href": "https://sourcehut.com/kngsthvs",
+		"id": "sourcehut",
+		"keys": "s h",
+		"name": "sourcehut",
 		"parent": "social",
 		"position": { "x": 64, "y": 560 }
-	},
-	{
-		"href": "https://x.com/kngsthvs",
-		"id": "x",
-		"keys": "s x",
-		"name": "X",
-		"parent": "social",
-		"position": { "x": 64, "y": 608 }
 	},
 	{
 		"id": "company",

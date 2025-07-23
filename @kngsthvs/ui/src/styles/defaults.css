@@ -1,71 +1,68 @@
 :root {
-	overflow-y: overlay;
-	-webkit-font-smoothing: antialiased;
-	-webkit-text-size-adjust: 100%;
-	text-rendering: optimizeLegibility;
+  overflow-y: overlay;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
 }
 
 * {
-	min-width: 0;
-	font-display: swap;
+  min-width: 0;
+  font-display: swap;
 }
 
 *:focus-visible {
-	outline-color: currentColor;
+  outline-color: currentColor;
 }
 
 html,
 body {
-	max-width: 100vw;
+  max-width: 100vw;
 }
 
 body {
-	font-size: 1rem;
-}
-
-button {
-	min-width: auto;
+  font-size: 1rem;
 }
 
 a {
-	color: inherit;
-	text-decoration: none;
+  color: inherit;
+  text-decoration: none;
 }
 
 a:hover {
-	cursor: pointer;
+  cursor: pointer;
 }
 
 button {
-	appearance: none;
-	cursor: pointer;
-	border: none;
-	background: none;
+  appearance: none;
+  cursor: pointer;
+  min-width: auto;
+  border: none;
+  background: none;
 }
 
 button,
 input,
 select,
 textarea {
-	font: inherit;
-	leading-trim: both;
-	text-edge: cap alphabetic;
+  font: inherit;
+  leading-trim: both;
+  text-edge: cap alphabetic;
 }
 
 ol[class],
 ul[class] {
-	list-style: none;
+  list-style: none;
 }
 
 p a:hover {
-	text-decoration: underline;
+  text-decoration: underline;
 }
 
 textarea {
-	min-width: 100%;
-	max-width: 100%;
+  min-width: 100%;
+  max-width: 100%;
 }
 
 .dark {
-	color-scheme: dark;
+  color-scheme: dark;
 }

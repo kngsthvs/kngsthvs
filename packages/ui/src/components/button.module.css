@@ -1,142 +1,142 @@
 .root {
-	align-items: center;
-	background-color: var(--colors-primary);
-	border: 1px solid transparent;
-	color: var(--colors-gray-50);
-	display: flex;
-	gap: 0.25rem;
-	justify-content: center;
-	line-height: 1;
+  align-items: center;
+  background-color: var(--colors-primary);
+  border: 1px solid transparent;
+  color: var(--colors-gray-50);
+  display: flex;
+  gap: 0.25rem;
+  justify-content: center;
+  line-height: 1;
 }
 
 .root:disabled,
 .root[disabled] {
-	cursor: not-allowed;
-	opacity: 0.5;
-	pointer-events: none;
-	user-select: none;
+  cursor: not-allowed;
+  opacity: 0.5;
+  pointer-events: none;
+  user-select: none;
 }
 
 a.root:active span,
 a.root:focus-visible span,
 a.root:hover span,
 a.root[data-pressed="true"] span {
-	text-decoration: underline;
+  text-decoration: underline;
 }
 
 a.root:disabled span,
 a.root[disabled] span {
-	text-decoration: none !important;
+  text-decoration: none !important;
 }
 
 .root[data-size="small"] {
-	font-size: var(--fontSizes-xs);
-	padding: 0.25rem 0.5rem;
+  font-size: var(--fontSizes-xs);
+  padding: 0.25rem 0.5rem;
 }
 
 .root[data-size="small"][data-icon="true"] {
-	padding: 0.25rem;
+  padding: 0.25rem;
 }
 
 .root[data-size="medium"] {
-	font-size: var(--fontSizes-sm);
-	padding: 0.5rem 0.75rem;
+  font-size: var(--fontSizes-sm);
+  padding: 0.5rem 0.75rem;
 }
 
 .root[data-size="medium"][data-icon="true"] {
-	padding: 0.5rem;
+  padding: 0.5rem;
 }
 
 .root[data-size="large"] {
-	font-size: var(--fontSizes-base);
-	padding: 0.75rem 1.25rem;
+  font-size: var(--fontSizes-base);
+  padding: 0.75rem 1.25rem;
 }
 
 .root[data-size="large"][data-icon="true"] {
-	padding: 0.75rem;
+  padding: 0.75rem;
 }
 
 .root[data-variant="primary"] {
-	background-color: var(--colors-gray-100);
-	color: var(--colors-background);
+  background-color: var(--colors-gray-100);
+  color: var(--colors-background);
 }
 
-:global .blue :local .root[data-variant="primary"],
-:global .green :local .root[data-variant="primary"],
-:global .red :local .root[data-variant="primary"] {
-	background-color: var(--colors-gray-5);
-	border-color: var(--colors-gray-5);
-	color: var(--colors-gray-50);
+:global(.blue) .root[data-variant="primary"],
+:global(.green) .root[data-variant="primary"],
+:global(.red) .root[data-variant="primary"] {
+  background-color: var(--colors-gray-5);
+  border-color: var(--colors-gray-5);
+  color: var(--colors-gray-50);
 }
 
 .root[data-variant="primary"]:disabled,
 .root[data-variant="primary"][disabled] {
-	background-color: var(--colors-gray-50);
+  background-color: var(--colors-gray-50);
 }
 
-:global .blue :local .root[data-variant="primary"]:disabled,
-:global .green :local .root[data-variant="primary"]:disabled,
-:global .red :local .root[data-variant="primary"]:disabled {
-	background-color: var(--colors-gray-50);
-	border-color: var(--colors-gray-50);
+:global(.blue) .root[data-variant="primary"]:disabled,
+:global(.green) .root[data-variant="primary"]:disabled,
+:global(.red) .root[data-variant="primary"]:disabled {
+  background-color: var(--colors-gray-50);
+  border-color: var(--colors-gray-50);
 }
 
-:global .contrast :local .root[data-variant="primary"],
-:global .contrast :local .root[data-variant="primary"] span,
-:global .contrast :local .root[data-variant="primary"] kbd {
-	color: var(--colors-background);
+:global(.contrast) .root[data-variant="primary"],
+:global(.contrast) .root[data-variant="primary"] span,
+:global(.contrast) .root[data-variant="primary"] kbd {
+  color: var(--colors-background);
 }
 
-:global .blue.contrast :local .root[data-variant="primary"],
-:global .blue.contrast :local .root[data-variant="primary"] span,
-:global .blue.contrast :local .root[data-variant="primary"] kbd,
-:global .green.contrast :local .root[data-variant="primary"],
-:global .green.contrast :local .root[data-variant="primary"] span,
-:global .green.contrast :local .root[data-variant="primary"] kbd,
-:global .red.contrast :local .root[data-variant="primary"],
-:global .red.contrast :local .root[data-variant="primary"] span,
-:global .red.contrast :local .root[data-variant="primary"] kbd {
-	color: var(--colors-foreground);
+:global(.blue.contrast) .root[data-variant="primary"],
+:global(.blue.contrast) .root[data-variant="primary"] span,
+:global(.blue.contrast) .root[data-variant="primary"] kbd,
+:global(.green.contrast) .root[data-variant="primary"],
+:global(.green.contrast) .root[data-variant="primary"] span,
+:global(.green.contrast) .root[data-variant="primary"] kbd,
+:global(.red.contrast) .root[data-variant="primary"],
+:global(.red.contrast) .root[data-variant="primary"] span,
+:global(.red.contrast) .root[data-variant="primary"] kbd {
+  color: var(--colors-foreground);
 }
 
 .root[data-variant="primary"]:focus-visible,
 .root[data-variant="primary"]:hover,
 .root[data-variant="primary"][data-pressed="true"] {
-	background-color: var(--colors-gray-75);
+  background-color: var(--colors-gray-75);
 }
 
-:global .blue :local .root[data-variant="primary"]:focus-visible,
-:global .blue :local .root[data-variant="primary"]:hover,
-:global .blue :local .root[data-variant="primary"][data-pressed="true"],
-:global .green :local .root[data-variant="primary"]:focus-visible,
-:global .green :local .root[data-variant="primary"]:hover,
-:global .green :local .root[data-variant="primary"][data-pressed="true"],
-:global .red :local .root[data-variant="primary"]:focus-visible,
-:global .red :local .root[data-variant="primary"]:hover,
-:global .red :local .root[data-variant="primary"][data-pressed="true"] {
-	background-color: var(--colors-gray-10);
-	color: var(--colors-gray-75);
+:global(.blue) .root[data-variant="primary"]:focus-visible,
+:global(.blue) .root[data-variant="primary"]:hover,
+:global(.blue) .root[data-variant="primary"][data-pressed="true"],
+:global(.green) .root[data-variant="primary"]:focus-visible,
+:global(.green) .root[data-variant="primary"]:hover,
+:global(.green) .root[data-variant="primary"][data-pressed="true"],
+:global(.red) .root[data-variant="primary"]:focus-visible,
+:global(.red) .root[data-variant="primary"]:hover,
+:global(.red) .root[data-variant="primary"][data-pressed="true"] {
+  background-color: var(--colors-gray-10);
+  color: var(--colors-gray-75);
 }
 
 .root[data-variant="primary"]:focus-visible {
-	outline-color: var(--colors-foreground);
+  outline-color: var(--colors-foreground);
 }
 
 .root[data-variant="primary"]:active {
-	background-color: var(--colors-gray-50);
+  background-color: var(--colors-gray-50);
 }
 
-:global .blue :local .root[data-variant="primary"]:active,
-:global .green :local .root[data-variant="primary"]:active,
-:global .red :local .root[data-variant="primary"]:active {
-	background-color: var(--colors-gray-25);
-	color: var(--colors-foreground);
+:global(.blue) .root[data-variant="primary"]:active,
+:global(.green) .root[data-variant="primary"]:active,
+:global(.red) .root[data-variant="primary"]:active {
+  background-color: var(--colors-gray-25);
+  color: var(--colors-foreground);
 }
 
 .root[data-variant="secondary"],
 .root[data-variant="tertiary"] {
-	background-color: var(--colors-gray-0);
-	color: var(--colors-gray-50);
+  background-color: var(--colors-gray-0);
+  color: var(--colors-gray-50);
 }
 
 .root[data-variant="secondary"]:disabled:focus-visible,
@@ -147,28 +147,28 @@ a.root[disabled] span {
 .root[data-variant="tertiary"]:disabled[data-pressed="true"],
 .root[data-variant="secondary"][disabled][data-pressed="true"],
 .root[data-variant="tertiary"][disabled][data-pressed="true"] {
-	background-color: var(--colors-gray-0);
-	color: var(--colors-gray-50);
+  background-color: var(--colors-gray-0);
+  color: var(--colors-gray-50);
 }
 
 .root[data-variant="secondary"] {
-	border-color: var(--colors-border);
+  border-color: var(--colors-border);
 }
 
-:global .contrast :local .root[data-variant="primary"],
-:global .contrast.dark :local .root[data-variant="primary"],
-:global .contrast :local .root[data-variant="secondary"]:focus-visible,
-:global .contrast.dark :local .root[data-variant="secondary"]:focus-visible,
-:global .contrast :local .root[data-variant="secondary"]:hover,
-:global .contrast.dark :local .root[data-variant="secondary"]:hover,
-:global .contrast :local .root[data-variant="secondary"]:active,
-:global .contrast.dark :local .root[data-variant="secondary"]:active,
-:global .contrast :local .root[data-variant="secondary"][data-pressed="true"],
+:global(.contrast) .root[data-variant="primary"],
+:global(.contrast.dark) .root[data-variant="primary"],
+:global(.contrast) .root[data-variant="secondary"]:focus-visible,
+:global(.contrast.dark) .root[data-variant="secondary"]:focus-visible,
+:global(.contrast) .root[data-variant="secondary"]:hover,
+:global(.contrast.dark) .root[data-variant="secondary"]:hover,
+:global(.contrast) .root[data-variant="secondary"]:active,
+:global(.contrast.dark) .root[data-variant="secondary"]:active,
+:global(.contrast) .root[data-variant="secondary"][data-pressed="true"],
 :global
-	.contrast.dark
-	:local
-	.root[data-variant="secondary"][data-pressed="true"] {
-	border-color: var(--colors-border);
+  .contrast.dark
+  :local
+  .root[data-variant="secondary"][data-pressed="true"] {
+  border-color: var(--colors-border);
 }
 
 .root[data-variant="secondary"]:focus-visible,
@@ -177,32 +177,32 @@ a.root[disabled] span {
 .root[data-variant="tertiary"]:hover,
 .root[data-variant="secondary"][data-pressed="true"],
 .root[data-variant="tertiary"][data-pressed="true"] {
-	background-color: var(--colors-gray-5);
-	color: var(--colors-gray-75);
+  background-color: var(--colors-gray-5);
+  color: var(--colors-gray-75);
 }
 
 .root[data-variant="secondary"]:focus-visible,
 .root[data-variant="secondary"]:hover,
 .root[data-variant="secondary"][data-pressed="true"] {
-	border-color: var(--colors-gray-10);
+  border-color: var(--colors-gray-10);
 }
 
 .root[data-variant="secondary"]:active,
 .root[data-variant="tertiary"]:active {
-	background-color: var(--colors-gray-10);
-	color: var(--colors-foreground);
+  background-color: var(--colors-gray-10);
+  color: var(--colors-foreground);
 }
 
 .root[data-variant="secondary"]:active {
-	border-color: var(--colors-gray-25);
+  border-color: var(--colors-gray-25);
 }
 
-:global .dark :local .root[data-variant="secondary"]:focus-visible,
-:global .dark :local .root[data-variant="secondary"]:hover,
-:global .dark :local .root[data-variant="secondary"][data-pressed="true"] {
-	border-color: var(--colors-gray-25);
+:global(.dark) .root[data-variant="secondary"]:focus-visible,
+:global(.dark) .root[data-variant="secondary"]:hover,
+:global(.dark) .root[data-variant="secondary"][data-pressed="true"] {
+  border-color: var(--colors-gray-25);
 }
 
-:global .dark :local .root[data-variant="secondary"]:active {
-	border-color: var(--colors-gray-50);
+:global(.dark) .root[data-variant="secondary"]:active {
+  border-color: var(--colors-gray-50);
 }

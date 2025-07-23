@@ -1,9 +1,73 @@
 {
-	"code_actions_on_format": {
-		"source.action.useSortedAttributes.biome": "explicit",
-		"source.action.useSortedKeys.biome": "explicit",
-		"source.action.useSortedProperties.biome": "explicit",
-		"source.fixAll.biome": "explicit",
-		"source.organizeImports.biome": "explicit"
+	"auto_install_extensions": {
+		"biome": true,
+		"html": true,
+		"svelte": true
+	},
+	"context_servers": {
+		"Context7": {
+			"args": ["-y", "@upstash/context7-mcp"],
+			"command": "npx",
+			"source": "custom"
+		}
+	},
+	"languages": {
+		"CSS": {
+			"code_actions_on_format": {
+				"source.action.useSortedProperties.biome": true,
+				"source.fixAll.biome": true
+			},
+			"formatter": { "language_server": { "name": "biome" } }
+		},
+		"JavaScript": {
+			"code_actions_on_format": {
+				"source.action.useSortedAttributes.biome": true,
+				"source.action.useSortedKeys.biome": true,
+				"source.fixAll.biome": true,
+				"source.organizeImports.biome": true
+			},
+			"formatter": { "language_server": { "name": "biome" } }
+		},
+		"JSON": {
+			"code_actions_on_format": {
+				"source.action.useSortedKeys.biome": true,
+				"source.fixAll.biome": true
+			},
+			"formatter": { "language_server": { "name": "biome" } }
+		},
+		"JSONC": {
+			"code_actions_on_format": {
+				"source.action.useSortedKeys.biome": true,
+				"source.fixAll.biome": true
+			},
+			"formatter": { "language_server": { "name": "biome" } }
+		},
+		"TSX": {
+			"code_actions_on_format": {
+				"source.action.useSortedAttributes.biome": true,
+				"source.action.useSortedKeys.biome": true,
+				"source.fixAll.biome": true,
+				"source.organizeImports.biome": true
+			},
+			"formatter": { "language_server": { "name": "biome" } }
+		},
+		"TypeScript": {
+			"code_actions_on_format": {
+				"source.action.useSortedKeys.biome": true,
+				"source.fixAll.biome": true,
+				"source.organizeImports.biome": true
+			}
+		}
+	},
+	"lsp": {
+		"biome": {
+			"settings": {
+				"require_config_file": true
+			}
+		}
+	},
+	"telemetry": {
+		"diagnostics": false,
+		"metrics": false
 	}
 }

@@ -1,8 +1,8 @@
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://www.kngsthvs.com/logo/dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="https://www.kngsthvs.com/logo/light.svg">
-    <img  src="https://www.kngsthvs.com/logo/light.svg">
+    <source media="(prefers-color-scheme: dark)" srcset="https://begg.ar/logo/dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://begg.ar/logo/light.svg">
+    <img  src="https://begg.ar/logo/light.svg">
   </picture>
 </p>
 
@@ -13,49 +13,27 @@ As the Father hath loved me, so have I loved you: continue ye in my love. If ye 
   <strong>John 15:9-17</strong>
 </p>
 
-# Kings & Thieves
+## Apps and Packages
 
-- [Contents](#contents)
-- [Setup](#setup)
-- [Resources](#resources)
-
-## Contents
-
-The official Kings & Thieves turborepo. This turborepo uses [pnpm](https://pnpm.io) as a package manager. It includes the following packages/apps:
-
-### Apps and Packages
-
-- `ship`
-- [`www`](https://www.kngsthvs.com): the main Kings & Thieves website
-- `ui`: a stub React component library
-
-## Setup
-
-```bash
-# Clone and navigate to the project
-git clone https://github.com/kngsthvs/kngsthvs.git
-cd kngsthvs
-
-# Install the packages
-pnpm i
-```
-
-### Build
-
-```bash
-# Build all apps and packages
-pnpm run build
-```
-
-### Develop
-
-```bash
-# Develop all apps and packages
-pnpm run dev
-
-# Develop a specific app
-pnpm run dev --filter=APP_NAME
-```
+- [`apps/api/log`](https://log.begg.ar/api)
+- [`apps/api/net`](https://net.begg.ar/api)
+- [`apps/api/pay`](https://pay.begg.ar/api)
+- [`apps/api/ship`](https://ship.begg.ar/api)
+- [`apps/cli/log`](https://log.begg.ar/install/cli)
+- [`apps/cli/net`](https://net.begg.ar/install/cli)
+- [`apps/cli/ship`](https://ship.begg.ar/install/cli)
+- [`apps/tui/log`](https://log.begg.ar/install/tui)
+- [`apps/tui/net`](https://net.begg.ar/install/tui)
+- [`apps/tui/ship`](https://ship.begg.ar/install/tui)
+- [`apps/web/log`](https://log.begg.ar)
+- [`apps/web/net`](https://net.begg.ar)
+- [`apps/web/partners`](https://partners.begg.ar)
+- [`apps/web/pay`](https://pay.begg.ar): payment processing
+- [`apps/web/ship`](https://ship.begg.ar)
+- [`apps/web/www`](https://begg.ar): the Beggar website
+- `packages/db`
+- `packages/lib`
+- [`packages/ui`](https://begg.ar/ui): shared React and Svelte components, fonts, hooks, primitives, and stylesheets
 
 ## Resources
 
@@ -64,7 +42,8 @@ pnpm run dev --filter=APP_NAME
 - [commitlint](https://commitlint.js.org/)
 - [Husky](https://typicode.github.io/husky/)
 - [Next.js](https://nextjs.org/)
-- [Prettier](https://prettier.io/)
+- [Payload](https://payloadcms.com/)
+- [Svelte](https://svelte.dev/)
 - [Turborepo](https://turborepo.com/)
 - [TypeScript](https://www.typescriptlang.org/)
 

@@ -22,6 +22,19 @@ export function Color() {
 
 	return (
 		<div className={styles.root}>
+			{/* <button
+        data-active={
+          colorScheme === "normal" || prefersColorScheme === "normal"
+        }
+        data-local={local ? "true" : "false"}
+        onClick={() => {
+          disableAnimation(updateColorScheme("light"));
+        }}
+        type="button"
+      >
+        system
+      </button> */}
+
 			<button
 				data-active={
 					colorScheme === "light" ||

@@ -1,74 +1,74 @@
 .root {
-	border: 1px solid transparent;
-	font-family: var(--font-geist-mono);
-	font-size: var(--fontSizes-xs);
-	font-weight: bold;
-	line-height: 1;
-	padding: 0.125rem 0.25rem;
-	transition:
-		background-color 0.3s var(--ease),
-		border-color 0.3s var(--ease),
-		color 0.3s var(--ease);
+  border: 1px solid transparent;
+  font-family: var(--font-geist-mono);
+  font-size: var(--fontSizes-xs);
+  font-weight: bold;
+  line-height: 1;
+  padding: 0.125rem 0.25rem;
+  transition:
+    background-color 0.3s var(--ease),
+    border-color 0.3s var(--ease),
+    color 0.3s var(--ease);
 }
 
 .root[data-variant="primary"] {
-	background-color: var(--colors-foreground);
-	color: var(--colors-background);
+  background-color: var(--colors-foreground);
+  color: var(--colors-background);
 }
 
 a.root[data-variant="primary"]:focus-visible,
 a.root[data-variant="primary"]:hover {
-	background-color: var(--colors-gray-75);
+  background-color: var(--colors-gray-75);
 }
 
 a.root[data-variant="primary"]:active {
-	background-color: var(--colors-gray-50);
+  background-color: var(--colors-gray-50);
 }
 
 .root[data-variant="secondary"] {
-	background-color: var(--colors-border);
-	color: var(--colors-foreground);
+  background-color: var(--colors-border);
+  color: var(--colors-foreground);
 }
 
 a.root[data-variant="secondary"]:focus-visible,
 a.root[data-variant="secondary"]:hover {
-	background-color: var(--colors-gray-10);
+  background-color: var(--colors-gray-10);
 }
 
 a.root[data-variant="secondary"]:active {
-	background-color: var(--colors-gray-25);
+  background-color: var(--colors-gray-25);
 }
 
 .root[data-variant="tertiary"] {
-	background-color: var(--colors-background);
-	border-color: var(--colors-border);
+  background-color: var(--colors-background);
+  border-color: var(--colors-border);
 }
 
 a.root[data-variant="tertiary"]:focus-visible,
 a.root[data-variant="tertiary"]:hover {
-	border-color: var(--colors-gray-10);
-	color: var(--colors-gray-75);
+  border-color: var(--colors-gray-10);
+  color: var(--colors-gray-75);
 }
 
 a.root[data-variant="tertiary"]:active {
-	border-color: var(--colors-gray-25);
-	color: var(--colors-foreground);
+  border-color: var(--colors-gray-25);
+  color: var(--colors-foreground);
 }
 
-:global .dark :local a.root[data-variant="secondary"]:focus-visible,
-:global .dark :local a.root[data-variant="secondary"]:hover {
-	background-color: var(--colors-gray-25);
+:global(.dark) a.root[data-variant="secondary"]:focus-visible,
+:global(.dark) a.root[data-variant="secondary"]:hover {
+  background-color: var(--colors-gray-25);
 }
 
-:global .dark :local a.root[data-variant="secondary"]:active {
-	background-color: var(--colors-gray-50);
+:global(.dark) a.root[data-variant="secondary"]:active {
+  background-color: var(--colors-gray-50);
 }
 
-:global .dark :local a.root[data-variant="tertiary"]:focus-visible,
-:global .dark :local a.root[data-variant="tertiary"]:hover {
-	border-color: var(--colors-gray-25);
+:global(.dark) a.root[data-variant="tertiary"]:focus-visible,
+:global(.dark) a.root[data-variant="tertiary"]:hover {
+  border-color: var(--colors-gray-25);
 }
 
-:global .dark :local a.root[data-variant="tertiary"]:active {
-	border-color: var(--colors-gray-50);
+:global(.dark) a.root[data-variant="tertiary"]:active {
+  border-color: var(--colors-gray-50);
 }

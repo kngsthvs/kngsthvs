@@ -1,6 +1,6 @@
 {
   "devDependencies": {
-    "@biomejs/biome": "2.0.0-beta.5",
+    "@biomejs/biome": "^2.1.1",
     "@changesets/cli": "catalog:",
     "@commitlint/cli": "^19.8.1",
     "@kngsthvs/config": "workspace:*",
@@ -11,10 +11,10 @@
     "typescript": "catalog:"
   },
   "engines": {
-    "node": ">=20"
+    "node": ">=22"
   },
   "name": "kngsthvs",
-  "packageManager": "pnpm@9.10.0",
+  "packageManager": "pnpm@10.12.1",
   "prettier": {
     "plugins": [
       "prettier-plugin-tailwindcss"
