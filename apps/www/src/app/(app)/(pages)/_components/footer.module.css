@@ -1,0 +1,182 @@
+.root,
+.root > * {
+	width: 100%;
+	font-size: var(--fontSizes-sm);
+	color: var(--colors-gray-50);
+}
+
+.root > *:not(:last-child) {
+	border-bottom: 1px solid var(--colors-border);
+}
+
+.root > *:only-child {
+	border-top: 1px solid var(--colors-border);
+}
+
+.root blockquote {
+	max-width: 48rem;
+	padding: 2rem 1rem;
+	margin: 0 auto;
+	color: var(--colors-foreground);
+	text-align: center;
+	background-color: var(--colors-background);
+	border-top: 1px solid var(--colors-border);
+}
+
+@media screen and (min-width: 48rem) {
+	.root blockquote {
+		padding: 2rem;
+	}
+
+	.root blockquote[data-justify="true"] {
+		padding: 2rem 4rem;
+	}
+}
+
+.root blockquote > *:first-child {
+	margin: 0 auto;
+}
+
+.root blockquote > div > *:first-child {
+	font-family: var(--fonts-serif);
+	font-size: var(--fontSizes-2xl);
+	font-weight: 400 !important;
+	line-height: 140%;
+}
+
+.root blockquote[data-justify="true"] > div > *:first-child {
+	text-align: justify;
+}
+
+.root blockquote[data-justify="true"] footer {
+	text-align: right;
+}
+
+.root blockquote footer {
+	margin-top: 1rem;
+	font-size: var(--fontSizes-base);
+	color: var(--colors-gray-50);
+}
+
+:global(.contrast) .root blockquote footer {
+	color: var(--colors-foreground);
+}
+
+.root > p:last-child {
+	padding: 1rem;
+	color: var(--colors-gray-50);
+	border-bottom: 1px solid var(--colors-border);
+}
+
+.root nav {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0.75rem;
+}
+
+.root nav a {
+	background-color: var(--colors-background);
+}
+
+.root nav a img {
+	width: 1.25rem;
+	height: 1.25rem;
+	color: var(--colors-black);
+	pointer-events: none;
+	user-select: none;
+	opacity: 0.25;
+	transition: 0.15s opacity var(--ease);
+}
+
+:global(.dark) .root nav a img {
+	filter: invert(1);
+}
+
+.root nav a[data-first="true"] img {
+	opacity: 0.5;
+}
+
+.root nav a:hover img,
+.root nav a[data-pressed="true"] img {
+	opacity: 1;
+}
+
+.root nav > div,
+.root nav > ul {
+	display: flex;
+	gap: 0.5rem;
+	justify-content: center;
+	list-style: none;
+}
+
+.root nav ul li {
+	position: relative;
+
+	.content {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: flex-start;
+		width: max-content;
+	}
+}
+
+:global(.contrast) .root nav ul li .content,
+:global(.contrast.dark) .root nav ul li .content {
+	border-color: var(--colors-foreground);
+}
+
+:global(.dark) .root nav ul li .content {
+	border-color: var(--colors-gray-25);
+}
+
+.root ul li a,
+.root ul li p {
+	padding: 0.5rem;
+}
+
+.root ul li a,
+.root ul li a *:not(kbd),
+.root ul li button {
+	display: flex;
+	gap: 0.25rem;
+	align-items: center;
+	line-height: 1;
+}
+
+.content a {
+	display: flex;
+	width: 100%;
+	padding: 0.5rem;
+	text-align: left;
+}
+
+.content a:focus-visible {
+	z-index: 1;
+}
+
+:global(.dark) .content a:focus-visible,
+:global(.dark) .content a:hover {
+	border-color: var(--colors-gray-10);
+}
+
+:global(.dark) .content a:active {
+	border-color: var(--colors-gray-25);
+}
+
+.content p {
+	padding: 0.75rem 0.75rem 0.125rem;
+	font-family: var(--font-geist-mono);
+	font-size: var(--fontSizes-xs);
+	color: var(--colors-foreground);
+	text-transform: uppercase;
+	letter-spacing: 0.0625em;
+}
+
+.trigger + div {
+	display: none !important;
+}
+
+.trigger[data-pressed="true"] + div {
+	display: flex !important;
+}

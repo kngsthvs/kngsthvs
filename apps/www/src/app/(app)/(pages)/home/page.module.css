@@ -1,0 +1,17 @@
+.partners {
+	display: grid;
+	grid-template-columns: 1fr;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 1px;
+	box-sizing: border-box;
+	margin: 0 -2rem 0;
+	background-color: var(--colors-border);
+	width: calc(100% + 4rem) !important;
+}
+
+@media screen and (min-width: 36rem) {
+	.partners {
+		grid-template-columns: 1fr 1fr;
+	}
+}

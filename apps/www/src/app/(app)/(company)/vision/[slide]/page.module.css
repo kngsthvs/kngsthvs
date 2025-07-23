@@ -1,0 +1,171 @@
+.root {
+	color: var(--colors-gray-75);
+	font-family: var(--font-heading);
+	gap: 2rem;
+	height: fit-content;
+	max-width: 65ch;
+	padding: 1rem;
+	width: 100%;
+}
+
+@media screen and (min-width: 48rem) {
+	.root {
+		padding: 2rem;
+	}
+}
+
+@media screen and (min-width: 64rem) {
+	.root {
+		padding: 3rem;
+	}
+}
+
+.root > *:first-child {
+	margin-top: 0;
+}
+
+.root a {
+	color: var(--colors-primary);
+}
+
+.root h1,
+.root h2,
+.root h3,
+.root h4,
+.root h5,
+.root h6 {
+	color: var(--colors-foreground);
+}
+
+.root h1 {
+	color: var(--colors-foreground);
+	font-size: var(--fontSizes-3xl);
+	font-weight: normal;
+	line-height: 100%;
+	padding-bottom: 0.25em;
+	text-wrap: balance;
+}
+
+.root h1 + * {
+	margin-top: 0;
+}
+
+.root * + h1:not(:first-of-type) {
+	margin-top: 2em;
+}
+
+.root h2 {
+	font-family: var(--font-heading);
+	font-size: var(--fontSizes-xl);
+	font-weight: normal;
+	line-height: 120%;
+	margin-top: 1em;
+}
+
+.root h3 {
+	font-size: var(--fontSizes-lg);
+	font-weight: normal;
+}
+
+.root h4,
+.root h5,
+.root h6 {
+	font-family: var(--font-geist-mono);
+	text-transform: uppercase;
+}
+
+.root h3,
+.root h4 {
+	line-height: 140%;
+	margin-top: 1em;
+}
+
+.root h4 {
+	font-size: var(--fontSizes-sm);
+	letter-spacing: 0.0625em;
+	margin-top: 2em;
+}
+
+.root h5,
+.root h6 {
+	letter-spacing: 0.125em;
+	line-height: 180%;
+	margin-top: 2em;
+	text-transform: uppercase;
+}
+
+.root h5 {
+	font-size: var(--fontSizes-xs);
+}
+
+.root h6 {
+	font-size: var(--fontSizes-xs);
+}
+
+.root h2 + h3,
+.root h2 + h4,
+.root h3 + h3,
+.root h3 + h4,
+.root h4 + h3,
+.root h4 + h5 {
+	margin-top: 0.5em;
+}
+
+@media screen and (min-width: 24rem) {
+	.root {
+		font-size: var(--fontSizes-lg);
+	}
+
+	.root h1 {
+		font-size: var(--fontSizes-4xl);
+	}
+
+	.root h1 + * {
+		margin-top: 0;
+	}
+
+	.root h2 {
+		font-size: var(--fontSizes-2xl);
+	}
+
+	.root h3 {
+		font-size: var(--fontSizes-xl);
+	}
+
+	.root h4 {
+		font-size: var(--fontSizes-base);
+	}
+
+	.root h5 {
+		font-size: var(--fontSizes-sm);
+	}
+}
+
+@media screen and (min-width: 48rem) {
+	.root {
+		font-size: var(--fontSizes-xl);
+	}
+
+	.root h1 {
+		font-size: var(--fontSizes-5xl);
+	}
+
+	.root h2 {
+		font-size: var(--fontSizes-3xl);
+	}
+
+	.root h3 {
+		font-size: var(--fontSizes-2xl);
+	}
+}
+
+.root p {
+	color: var(--colors-gray-75);
+	line-height: 180%;
+	margin-top: 0.5em;
+}
+
+.root b,
+.root strong {
+	color: var(--colors-foreground);
+}

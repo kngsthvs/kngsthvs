@@ -1,0 +1,40 @@
+.root {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.root h1 {
+  font-family: var(--font-heading);
+  font-size: var(--fontSizes-3xl);
+  font-weight: normal;
+}
+
+.root a img {
+  height: 3rem;
+  width: 3rem;
+}
+
+:global(.dark) .root a img {
+  filter: invert(1);
+}
+
+.root a + span {
+  color: var(--colors-gray-10);
+  font-family: var(--font-heading);
+  font-size: var(--fontSizes-3xl);
+  pointer-events: none;
+  user-select: none;
+}
+
+:global(.contrast) .root a + span,
+:global(.dark) .root a + span {
+  color: var(--colors-gray-25);
+}
+
+:global(.contrast.dark) .root a + span {
+  color: var(--colors-gray-50);
+}

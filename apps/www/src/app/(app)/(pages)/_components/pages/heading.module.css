@@ -1,0 +1,44 @@
+.root {
+	background-color: var(--colors-background);
+	border-bottom: 1px solid var(--colors-border);
+	color: var(--colors-foreground);
+	margin: 0;
+	position: relative;
+	width: 100%;
+}
+
+.root article {
+	display: flex;
+	margin: 0 auto;
+	max-width: 48rem;
+	overflow: visible;
+	position: relative;
+}
+
+@media screen and (min-width: 49rem) {
+	.root article {
+		border-right: 1px solid var(--colors-border);
+	}
+
+	.root article > aside {
+		border-left: 1px solid var(--colors-border);
+		margin-left: -1px;
+		overflow: hidden;
+		width: 3rem;
+	}
+}
+
+.root article {
+	bottom: 0;
+	left: 0;
+	position: absolute;
+	right: 0;
+}
+
+.root article > aside {
+	border-top: 1px solid var(--colors-border);
+}
+
+.root article > section {
+	border-left: 1px solid var(--colors-border);
+}

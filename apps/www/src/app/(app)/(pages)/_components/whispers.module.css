@@ -1,0 +1,12 @@
+.root {
+	display: flex;
+	position: relative;
+	align-items: center;
+	margin-top: auto;
+	border-top: 1px solid var(--colors-border);
+	padding: 0.75rem;
+	min-height: 2.5rem;
+	font-size: var(--fontSizes-sm);
+	line-height: 140%;
+	font-family: var(--font-geist-mono);
+}

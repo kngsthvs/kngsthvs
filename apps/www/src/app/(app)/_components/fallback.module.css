@@ -1,0 +1,56 @@
+.root {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 2rem;
+  height: 100dvh;
+}
+
+.root a,
+.root button {
+  color: var(--colors-primary);
+}
+
+.root button:hover {
+  text-decoration: underline;
+}
+
+.root div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.root * {
+  font-size: var(--fontSizes-base);
+  line-height: 140%;
+}
+
+.root h1 {
+  font-weight: normal;
+  font-size: var(--fontSizes-5xl);
+  line-height: 100%;
+  font-family: var(--font-heading);
+  letter-spacing: -0.03em;
+}
+
+.root img {
+  width: 5rem;
+  height: 5rem;
+}
+
+:global(.dark) .root img {
+  filter: invert(1);
+}
+
+.root p {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  color: var(--colors-gray-50);
+}

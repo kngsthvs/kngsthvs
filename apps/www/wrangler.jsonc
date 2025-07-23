@@ -1,0 +1,14 @@
+{
+	"compatibility_date": "2025-02-14",
+	"dev": {
+		"port": 8080
+	},
+	"main": "src/server/index.ts",
+	"name": "www",
+	"observability": {
+		"enabled": true
+	},
+	"placement": {
+		"mode": "smart"
+	}
+}

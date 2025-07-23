@@ -1,0 +1,52 @@
+.root {
+  aspect-ratio: 16 / 9;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  height: 100%;
+  width: 100%;
+}
+
+.root > div:first-child {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  padding: 2rem;
+  position: relative;
+  width: 100%;
+}
+
+.root img {
+  left: 50%;
+  max-width: calc(100% - 2rem);
+  pointer-events: none;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  user-select: none;
+}
+
+:global(.dark) .root img {
+  filter: invert(1);
+}
+
+.root img:first-child {
+  height: 20rem;
+  margin: 0 auto;
+  max-height: calc(100% - 2rem);
+  opacity: 0.05;
+  width: 20rem;
+}
+
+:global(.contrast) .root img:first-child,
+:global(.dark) .root img:first-child {
+  opacity: 0.1 !important;
+}
+
+:global(.contrast.dark) .root img:first-child {
+  opacity: 0.25 !important;
+}
+
+.root a:last-child img {
+  height: 5rem;
+}
