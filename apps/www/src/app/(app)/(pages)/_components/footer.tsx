@@ -1,6 +1,6 @@
 "use client";
 
-import { NavigationMenu } from "@base-ui-components/react/navigation-menu";
+// import { NavigationMenu } from "@base-ui-components/react/navigation-menu";
 // import { visuallyHidden } from "@base-ui-components/react/utils";
 import { Link as LinkSharedPrimitive } from "@kngsthvs/ui/primitives/shared/link";
 import { Link } from "@repo/ui/components/link";
@@ -56,30 +56,30 @@ function Item({
 // 	);
 // }
 
-function Trigger({
-	children,
-	keys,
-	...props
-}: {
-	children: React.ReactNode;
-	keys: string;
-}) {
-	const { states } = useKey({
-		keys,
-	});
+// function Trigger({
+// 	children,
+// 	keys,
+// 	...props
+// }: {
+// 	children: React.ReactNode;
+// 	keys: string;
+// }) {
+// 	const { states } = useKey({
+// 		keys,
+// 	});
 
-	return (
-		<NavigationMenu.Trigger
-			className={`${linkStyles.root} ${styles.trigger}`}
-			data-pressed={states[0]}
-			{...props}
-		>
-			<span>{children}</span>
+// 	return (
+// 		<NavigationMenu.Trigger
+// 			className={`${linkStyles.root} ${styles.trigger}`}
+// 			data-pressed={states[0]}
+// 			{...props}
+// 		>
+// 			<span>{children}</span>
 
-			<kbd>[{keys}]</kbd>
-		</NavigationMenu.Trigger>
-	);
-}
+// 			<kbd>[{keys}]</kbd>
+// 		</NavigationMenu.Trigger>
+// 	);
+// }
 
 export function Footer({ children }: { children: React.ReactNode }) {
 	return (

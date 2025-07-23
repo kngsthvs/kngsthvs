@@ -2,9 +2,9 @@ import { Pump } from "basehub/react-pump";
 import { draftMode } from "next/headers";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import crowsnest from "../../../../../../public/logos/ship/crowsnest.svg";
-import hold from "../../../../../../public/logos/ship/hold.svg";
-import tackle from "../../../../../../public/logos/ship/tackle.svg";
+import crowsnest from "../../../../../../../public/logos/ship/crowsnest.svg";
+import hold from "../../../../../../../public/logos/ship/hold.svg";
+import tackle from "../../../../../../../public/logos/ship/tackle.svg";
 import styles from "./page.module.css";
 
 function getIcon(path?: string) {

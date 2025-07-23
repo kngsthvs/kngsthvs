@@ -27,6 +27,7 @@ catalog:
   "@vercel/toolbar": ^0.1.36
   "@xyflow/react": ^12.6.1
   basehub: ^8.2.7
+  botid: ^1.4.4
   client-only: ^0.0.1
   drizzle-kit: ^0.31.1
   drizzle-orm: ^0.43.1

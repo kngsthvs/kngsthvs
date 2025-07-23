@@ -259,6 +259,7 @@ export function createKeybindingsHandler(
       clearTimeout(timer);
     }
 
+    // @ts-ignore (ts 2322)
     timer = setTimeout(possibleMatches.clear.bind(possibleMatches), timeout);
   };
 }

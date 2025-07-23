@@ -1,22 +1,18 @@
-import bundleAnalyzer from "@next/bundle-analyzer";
-import { withPayload } from "@payloadcms/next/withPayload";
-import withVercelToolbar from "@vercel/toolbar/plugins/next";
+// import bundleAnalyzer from "@next/bundle-analyzer";
 import type { NextConfig } from "next";
 
-const withBundleAnalyzer = bundleAnalyzer({
-	enabled: process.env.ANALYZE === true,
-});
+// const withBundleAnalyzer = bundleAnalyzer({
+//   enabled:
+//     process.env.NODE_ENV === "development" && process.env.ANALYZE === "true",
+//   openAnalyzer: false,
+// });
 
 const nextConfig: NextConfig = {
-	images: {
-		remotePatterns: [{ hostname: "assets.basehub.com", protocol: "https" }],
-	},
-	reactStrictMode: true,
-	transpilePackages: ["@kngsthvs/lib", "@kngsthvs/ui", "@repo/lib", "@repo/ui"],
+  images: {
+    remotePatterns: [{ hostname: "assets.basehub.com", protocol: "https" }],
+  },
+  reactStrictMode: true,
+  transpilePackages: ["@kngsthvs/lib", "@kngsthvs/ui", "@repo/lib", "@repo/ui"],
 };
 
-export default withBundleAnalyzer(
-	withPayload(withVercelToolbar(nextConfig), {
-		devBundleServerPackages: false,
-	}),
-);
+export default nextConfig;
