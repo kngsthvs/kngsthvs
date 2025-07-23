@@ -18,5 +18,5 @@
 // const words = ["Bible", "Christian"];
 
 export function getPath(path: string) {
-	return path;
+  return path;
 }

@@ -1,41 +1,23 @@
-import { Pump } from "basehub/react-pump";
-import { RichText } from "basehub/react-rich-text";
-import { draftMode } from "next/headers";
+import config from "@payload-config";
+import { RichText } from "@payloadcms/richtext-lexical/react";
+import { getPayload } from "payload";
 import { Focus } from "./_components/focus";
 import styles from "./page.module.css";
 
 export default async function Page() {
-	return (
-		<div className={styles.root}>
-			<Focus />
+  const payload = await getPayload({ config });
+  const data = await payload.findGlobal({
+    slug: "hymn",
+  });
 
-			<Pump
-				draft={(await draftMode()).isEnabled}
-				next={{ revalidate: 60 }}
-				queries={[
-					{
-						hymn: {
-							__typename: true,
-							_title: true,
-							body: {
-								json: {
-									content: true,
-								},
-							},
-						},
-					},
-				]}
-			>
-				{async ([{ hymn }]) => {
-					"use server"; // needs to be a Server Action
+  return (
+    <div className={styles.root}>
+      <Focus />
 
-					return (
-						<div className={styles.content}>
-							<RichText>{hymn.body?.json.content}</RichText>
-						</div>
-					);
-				}}
-			</Pump>
-		</div>
-	);
+      <RichText
+        className={styles.content}
+        data={data.body as React.ComponentProps<typeof RichText>["data"]}
+      />
+    </div>
+  );
 }

@@ -1,17 +1,17 @@
 import { refineLink } from "./refine-link";
 
 export function aliasLink({
-	destination,
-	link,
-	origin,
+  destination,
+  link,
+  origin,
 }: {
-	destination: string;
-	link: string;
-	origin: string;
+  destination: string;
+  link: string;
+  origin: string;
 }) {
-	if (!link) return "/";
+  if (!link) return "/";
 
-	if (origin && link.includes(origin)) return link.replace(origin, destination);
+  if (origin && link.includes(origin)) return link.replace(origin, destination);
 
-	return refineLink(link);
+  return refineLink(link);
 }

@@ -2,7 +2,8 @@
 	"compilerOptions": {
 		"baseUrl": ".",
 		"paths": {
-			"@/*": ["./src/*"]
+			"@/*": ["./src/*"],
+			"@payload-config": ["src/payload.config.ts"]
 		},
 		"plugins": [
 			{
@@ -15,12 +16,13 @@
 	"exclude": ["node_modules"],
 	"extends": "@kngsthvs/config/tsconfig/nextjs",
 	"include": [
-		"next-env.d.ts",
-		"next.config.mjs",
-		"**/*.js",
 		"**/*.ts",
 		"**/*.tsx",
-		".next/types/**/*.ts"
+		"next-env.d.ts",
+		"next.config.mjs",
+		".next/types/**/*.ts",
+		"src/payload-types.ts",
+		"src/payload.config.ts"
 	],
 	"types": ["@cloudflare/workers-types"]
 }

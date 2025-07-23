@@ -11,32 +11,32 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-	description:
-		"“There is nothing on this earth more to be prized than true friendship.” — St. Thomas Aquinas",
-	title: "Ship",
+  description:
+    "“There is nothing on this earth more to be prized than true friendship.” — St. Thomas Aquinas",
+  title: "Ship",
 };
 
 export default function RootLayout(
-	props: Readonly<{
-		children: React.ReactNode;
-	}>,
+  props: Readonly<{
+    children: React.ReactNode;
+  }>,
 ) {
-	// const theme = await getTheme<Theme
+  // const theme = await getTheme<Theme
 
-	return (
-		<html lang="en">
-			<KeysProvider>
-				<body className={`${GeistSans.className} ${GeistMono.variable}`}>
-					<link href="/favicon.svg" rel="icon" type="image/svg+xml" />
+  return (
+    <html lang="en">
+      <KeysProvider>
+        <body className={`${GeistSans.className} ${GeistMono.variable}`}>
+          <link href="/favicon.svg" rel="icon" type="image/svg+xml" />
 
-					{props.children}
+          {props.children}
 
-					{/* Vercel */}
-					<Analytics />
-					<SpeedInsights />
-					{env.NODE_ENV === "development" && <VercelToolbar />}
-				</body>
-			</KeysProvider>
-		</html>
-	);
+          {/* Vercel */}
+          <Analytics />
+          <SpeedInsights />
+          {env.NODE_ENV === "development" && <VercelToolbar />}
+        </body>
+      </KeysProvider>
+    </html>
+  );
 }

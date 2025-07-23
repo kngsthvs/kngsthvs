@@ -1,70 +1,49 @@
-import { Pump } from "basehub/react-pump";
-import { draftMode } from "next/headers";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import crowsnest from "../../../../../../../public/logos/ship/crowsnest.svg";
 import hold from "../../../../../../../public/logos/ship/hold.svg";
 import tackle from "../../../../../../../public/logos/ship/tackle.svg";
 import styles from "./page.module.css";
+import config from "@payload-config";
+import { getPayload } from "payload";
 
 function getIcon(path?: string) {
-	switch (path) {
-		case "crowsnest":
-			return crowsnest;
-		case "hold":
-			return hold;
-		case "tackle":
-			return tackle;
-		default:
-			return null;
-	}
+  switch (path) {
+    case "crowsnest":
+      return crowsnest;
+    case "hold":
+      return hold;
+    case "tackle":
+      return tackle;
+    default:
+      return null;
+  }
 }
 
 export default async function Page(props: {
-	params: Promise<{ app: string[] }>;
+  params: Promise<{ app: string[] }>;
 }) {
-	return (
-		<Pump
-			draft={(await draftMode()).isEnabled}
-			next={{ revalidate: 60 }}
-			queries={[
-				{
-					apps: {
-						__args: {
-							filter: {
-								_sys_slug: { eq: (await props.params).app.at(-1) },
-							},
-						},
-						_title: true,
-						items: {
-							_slug: true,
-							_title: true,
-							description: true,
-							status: true,
-						},
-					},
-				},
-			]}
-		>
-			{async ([{ apps }]) => {
-				"use server"; // Needs to be a Server Action
+  const payload = await getPayload({ config });
+  const { docs } = await payload.find({
+    collection: "apps",
+    limit: 1,
+    where: {
+      id: {
+        equals: (await props.params).app[0],
+      },
+    },
+  });
+  const icon = getIcon(docs[0]?.id);
 
-				const icon = getIcon(apps.items[0]?._slug);
+  if (docs.length === 0 || !docs[0] || !icon) {
+    notFound();
+  }
 
-				if (apps.items.length === 0 || !icon) {
-					notFound();
-				}
+  return (
+    <div className={styles.root}>
+      <Image alt="" quality={100} src={icon} />
 
-				return (
-					<div className={styles.root}>
-						<p>{apps.items[0]?.status}</p>
-
-						<Image alt="" quality={100} src={icon} />
-
-						<p>{apps.items[0]?.description}</p>
-					</div>
-				);
-			}}
-		</Pump>
-	);
+      <p>{docs[0].description}</p>
+    </div>
+  );
 }

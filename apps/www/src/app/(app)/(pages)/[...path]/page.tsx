@@ -1,21 +1,11 @@
-import { basehub } from "basehub";
 import { Partner } from "../home/_components/partner";
 import { Section } from "../home/_components/section";
+import config from "@payload-config";
+import { getPayload } from "payload";
 import homeStyles from "../home/page.module.css";
 import styles from "./page.module.css";
+import { notFound } from "next/navigation";
 
-function getQuery(path: string) {
-  switch (path) {
-    case "partners":
-      return {
-        href: true,
-        logo: { rawUrl: true },
-        type: true,
-      };
-    default:
-      return undefined;
-  }
-}
 function Item({
   length,
   path,
@@ -35,21 +25,16 @@ function Item({
 export default async function Page(props: {
   params: Promise<{ path: string[] }>;
 }) {
-  const path = `${(await props.params).path[0]}`;
-  const { home } = await basehub({ next: { revalidate: 60 } }).query({
-    home: {
-      __typename: true,
-      [path]: {
-        _title: true,
-        items: {
-          _title: true,
-          ...getQuery(path),
-        },
-      },
-    },
+  const payload = await getPayload({ config });
+  const data = await payload.findGlobal({
+    slug: "home",
   });
-  console.log(home)
-  const sections = (home[path] as { items?: any[] }).items?.reduce(
+  const path = `${(await props.params).path[0]}` as keyof Pick<
+    typeof data,
+    "partners"
+  >;
+  const sections = data[path]?.reduce(
+    // @ts-ignore (ts 2769)
     (accumulator, current) => {
       const section =
         accumulator?.length > 0
@@ -64,7 +49,9 @@ export default async function Page(props: {
               (section: { type: string }) => section.type !== current.type,
             ),
             {
+              // @ts-ignore (ts 2339)
               items: [...section.items, current],
+              // @ts-ignore (ts 2339)
               type: section.type,
             },
           ]
@@ -74,6 +61,10 @@ export default async function Page(props: {
     },
     [],
   );
+
+  if (!sections || !Array.isArray(sections)) {
+    return notFound();
+  }
 
   return (
     <article className={styles.root}>

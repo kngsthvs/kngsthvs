@@ -1,4 +1,5 @@
 // import bundleAnalyzer from "@next/bundle-analyzer";
+import { withPayload } from "@payloadcms/next/withPayload";
 import type { NextConfig } from "next";
 
 // const withBundleAnalyzer = bundleAnalyzer({
@@ -8,11 +9,10 @@ import type { NextConfig } from "next";
 // });
 
 const nextConfig: NextConfig = {
-  images: {
-    remotePatterns: [{ hostname: "assets.basehub.com", protocol: "https" }],
-  },
   reactStrictMode: true,
   transpilePackages: ["@kngsthvs/lib", "@kngsthvs/ui", "@repo/lib", "@repo/ui"],
 };
 
-export default nextConfig;
+export default withPayload(nextConfig, {
+  devBundleServerPackages: false,
+});

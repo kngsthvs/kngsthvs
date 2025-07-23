@@ -1,59 +1,57 @@
+import config from "@payload-config";
 import { Controls } from "@repo/ui/components/controls";
 import { Footer } from "@repo/ui/components/footer";
-import { basehub } from "basehub";
+import { notFound } from "next/navigation";
+import { getPayload } from "payload";
 import { Logo } from "../../_components/logo";
 import { Navigation } from "./_components/navigation";
 import styles from "./layout.module.css";
 
-export const revalidate = 60;
-
 export default async function Layout({
-	children,
+  children,
 }: Readonly<{
-	children: React.ReactNode;
+  children: React.ReactNode;
 }>) {
-	const { vision } = await basehub({ next: { revalidate: 60 } }).query({
-		__typename: true,
-		vision: {
-			items: {
-				_slug: true,
-				_title: true,
-				content: {
-					json: { content: true },
-				},
-			},
-		},
-	});
-	const links = [
-		{
-			href: "/vision",
-			name: "Cover",
-		},
-		...vision.items.map((item) => ({
-			href: `/vision/${item._slug}`,
-			name: item._title,
-		})),
-		{
-			href: "/vision/end",
-			name: "End",
-		},
-	];
+  const payload = await getPayload({ config });
+  const data = await payload.findGlobal({
+    slug: "vision",
+  });
+  const slides = data.slides?.map((slide) => ({
+    href: `/vision/${slide.id}`,
+    name: slide.title,
+  }));
 
-	return (
-		<main className={styles.root}>
-			<Logo>Vision</Logo>
+  if (!slides) {
+    return notFound();
+  }
 
-			<div className={styles.slides}>
-				<article>{children}</article>
+  const links = [
+    {
+      href: "/vision",
+      name: "Cover",
+    },
+    ...slides,
+    {
+      href: "/vision/end",
+      name: "End",
+    },
+  ].filter(Boolean);
 
-				<Navigation {...{ links }} />
-			</div>
+  return (
+    <main className={styles.root}>
+      <Logo>Vision</Logo>
 
-			<div>
-				<Footer />
+      <div className={styles.slides}>
+        <article>{children}</article>
 
-				<Controls />
-			</div>
-		</main>
-	);
+        <Navigation {...{ links }} />
+      </div>
+
+      <div>
+        <Footer />
+
+        <Controls />
+      </div>
+    </main>
+  );
 }

@@ -2,25 +2,25 @@ import { Link as LinkPrimitive } from "../primitives/link";
 import styles from "./link.module.css";
 
 export function Link({
-	children,
-	disabled,
-	...props
+  children,
+  disabled,
+  ...props
 }: React.ComponentProps<typeof LinkPrimitive> & {
-	disabled?: boolean;
+  disabled?: boolean;
 }) {
-	if (disabled) {
-		return (
-			<div className={styles.root} data-disabled>
-				<span>{children}</span>
+  if (disabled) {
+    return (
+      <div className={styles.root} data-disabled>
+        <span>{children}</span>
 
-				{props.keys ? <kbd>[{props.keys}]</kbd> : null}
-			</div>
-		);
-	}
+        {props.keys ? <kbd>[{props.keys}]</kbd> : null}
+      </div>
+    );
+  }
 
-	return (
-		<LinkPrimitive className={styles.root} {...props}>
-			{children}
-		</LinkPrimitive>
-	);
+  return (
+    <LinkPrimitive className={styles.root} {...props}>
+      {children}
+    </LinkPrimitive>
+  );
 }

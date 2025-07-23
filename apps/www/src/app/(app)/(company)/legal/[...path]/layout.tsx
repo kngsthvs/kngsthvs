@@ -5,45 +5,45 @@ import { Title } from "@/app/(app)/_components/title";
 import styles from "./layout.module.css";
 
 export default function Layout({
-	children,
+  children,
 }: Readonly<{
-	children: React.ReactNode;
+  children: React.ReactNode;
 }>) {
-	return (
-		<section className={styles.root}>
-			<Title>Legal</Title>
+  return (
+    <section className={styles.root}>
+      <Title>Legal</Title>
 
-			<main>
-				<nav>
-					<ul>
-						<li>
-							<Link href="/legal/dpa" keys="d">
-								DPA
-							</Link>
-						</li>
+      <main>
+        <nav>
+          <ul>
+            <li>
+              <Link href="/legal/dpa" keys="d">
+                DPA
+              </Link>
+            </li>
 
-						<li>
-							<Link href="/legal/privacy" keys="p">
-								Privacy Policy
-							</Link>
-						</li>
+            <li>
+              <Link href="/legal/privacy" keys="p">
+                Privacy Policy
+              </Link>
+            </li>
 
-						<li>
-							<Link href="/legal/terms" keys="t">
-								Terms of Service
-							</Link>
-						</li>
-					</ul>
-				</nav>
+            <li>
+              <Link href="/legal/terms" keys="t">
+                Terms of Service
+              </Link>
+            </li>
+          </ul>
+        </nav>
 
-				{children}
-			</main>
+        {children}
+      </main>
 
-			<div>
-				<Footer />
+      <div>
+        <Footer />
 
-				<Controls />
-			</div>
-		</section>
-	);
+        <Controls />
+      </div>
+    </section>
+  );
 }

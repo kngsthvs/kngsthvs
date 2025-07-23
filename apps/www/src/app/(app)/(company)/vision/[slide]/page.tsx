@@ -1,47 +1,30 @@
-import { Pump } from "basehub/react-pump";
-import { RichText } from "basehub/react-rich-text";
-import { draftMode } from "next/headers";
 import styles from "./page.module.css";
-
-export const revalidate = 60;
+import config from "@payload-config";
+import { RichText } from "@payloadcms/richtext-lexical/react";
+import { getPayload } from "payload";
+import { notFound } from "next/navigation";
 
 export default async function Page(props: {
-	params: Promise<{ slide: string }>;
+  params: Promise<{ slide: string }>;
 }) {
-	return (
-		<Pump
-			draft={(await draftMode()).isEnabled}
-			next={{ revalidate: 60 }}
-			queries={[
-				{
-					vision: {
-						__args: {
-							filter: {
-								_sys_slug: { eq: (await props.params).slide },
-							},
-						},
-						items: {
-							_slug: true,
-							_title: true,
-							content: {
-								json: {
-									content: true,
-								},
-							},
-						},
-					},
-				},
-			]}
-		>
-			{async ([{ vision }]) => {
-				"use server"; // Needs to be a Server Action
+  const payload = await getPayload({ config });
+  const data = await payload.findGlobal({
+    slug: "vision",
+  });
+  const id = (await props.params).slide;
 
-				return (
-					<div className={styles.root}>
-						<RichText>{vision.items[0]?.content?.json.content}</RichText>
-					</div>
-				);
-			}}
-		</Pump>
-	);
+  if (!data.slides) {
+    return notFound();
+  }
+
+  return (
+    <div className={styles.root}>
+      <RichText
+        data={
+          data.slides.find((slide) => slide.id === id)
+            ?.body as React.ComponentProps<typeof RichText>["data"]
+        }
+      />
+    </div>
+  );
 }

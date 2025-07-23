@@ -1,77 +1,69 @@
 import { shuffle } from "@kngsthvs/lib/entropy/shuffle";
 import { mapDataAttributes } from "@kngsthvs/ui/functions/shared/attributes";
+import config from "@payload-config";
+import { RichText } from "@payloadcms/richtext-lexical/react";
 import { Controls } from "@repo/ui/components/controls";
-import { basehub } from "basehub";
 import { headers } from "next/headers";
-import ReactMarkdown from "react-markdown";
+import { getPayload } from "payload";
 import { Balancer } from "react-wrap-balancer";
 import { Footer } from "./_components/footer";
 import { Provider } from "./_components/pages";
 import styles from "./layout.module.css";
 
 export default async function Layout({
-	children,
+  children,
 }: Readonly<{
-	children: React.ReactNode;
+  children: React.ReactNode;
 }>) {
-	const headersList = await headers();
-	const host = headersList.get("host") ?? headersList.get("x-forwarded-host");
-	const referer = headersList.get("referer");
-	const pathname = host
-		? referer?.slice(referer.indexOf(host) + host.length, referer.length)
-		: undefined;
-	const { settings } = await basehub({ next: { revalidate: 30 } }).query({
-		settings: {
-			__typename: true,
-			quotes: {
-				_title: true,
-				items: {
-					_title: true,
-					content: { markdown: true },
-					justify: true,
-					source: true,
-				},
-			},
-			whispers: {
-				_title: true,
-				items: {
-					_title: true,
-					whisper: true,
-				},
-			},
-		},
-	});
+  const headersList = await headers();
+  const host = headersList.get("host") ?? headersList.get("x-forwarded-host");
+  const referer = headersList.get("referer");
+  const pathname = host
+    ? referer?.slice(referer.indexOf(host) + host.length, referer.length)
+    : undefined;
+  const payload = await getPayload({ config });
+  const data = await payload.findGlobal({
+    slug: "settings",
+  });
+  const quote = data.quotes
+    ? data.quotes[Math.floor(Math.random() * data.quotes.length)]
+    : {
+        body: "Beauty will save the world.",
+        name: "Fyodor Dostoevsky",
+        source: "The Idiot",
+        justified: false
+      };
+  const whispers = shuffle<string>(
+    data.whispers?.map(({ whisper }) => whisper),
+  );
 
-	const quote =
-		settings.quotes.items[
-			Math.floor(Math.random() * settings.quotes.items.length)
-		];
-	const data = mapDataAttributes({ justify: quote?.justify });
-	const whispers = shuffle<string>(
-		settings.whispers.items.map(({ whisper }) => whisper),
-	);
+  return (
+    <Provider
+      controls={<Controls />}
+      home={["/", "/home"].includes(
+        headersList.get("next-url") ?? pathname ?? "/",
+      )}
+      {...{ whispers }}
+    >
+      <div className={styles.root}>
+        {children}
 
-	return (
-		<Provider
-			controls={<Controls />}
-			home={["/", "/home"].includes(
-				headersList.get("next-url") ?? pathname ?? "/",
-			)}
-			{...{ whispers }}
-		>
-			<div className={styles.root}>
-				{children}
+        <Footer>
+          {quote && typeof quote !== "number" ? (
+            <blockquote {...mapDataAttributes({ justify: quote.justified })}>
+              <Balancer as="div">
+                <RichText
+                  data={
+                    quote.body as React.ComponentProps<typeof RichText>["data"]
+                  }
+                />
 
-				<Footer>
-					<blockquote {...data}>
-						<Balancer as="div">
-							<ReactMarkdown>{quote?.content?.markdown}</ReactMarkdown>
-
-							<footer>{quote?._title}</footer>
-						</Balancer>
-					</blockquote>
-				</Footer>
-			</div>
-		</Provider>
-	);
+                <footer>{quote.name}</footer>
+              </Balancer>
+            </blockquote>
+          ) : null}
+        </Footer>
+      </div>
+    </Provider>
+  );
 }

@@ -4,10 +4,10 @@ import type { Meta /* type StoryObj */ } from "@storybook/react";
 
 // const meta: Meta<typeof getFileType> = {
 const meta: Meta = {
-	parameters: {
-		layout: "centered",
-	},
-	title: "Functions/Shared/getFileType",
+  parameters: {
+    layout: "centered",
+  },
+  title: "Functions/Shared/getFileType",
 };
 
 export default meta;

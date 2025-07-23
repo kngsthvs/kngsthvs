@@ -73,7 +73,7 @@
   margin-top: 0;
 }
 
-.root * + h1:not(:first-of-type) {
+.root div h1 {
   margin-top: 2em;
 }
 
@@ -202,6 +202,7 @@
 
 .root ul li {
   padding-left: 0.25em;
+  line-height: 180%;
 }
 
 .root ul li::marker {

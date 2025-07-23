@@ -13,6 +13,15 @@ catalog:
   "@hcaptcha/react-hcaptcha": ^1.12.0
   "@mux/mux-player-react": ^3.4.0
   "@next/bundle-analyzer": ^15.3.2
+  "@payloadcms/db-vercel-postgres": ^3.48.0
+  "@payloadcms/email-resend": ^3.48.0
+  "@payloadcms/live-preview-react": ^3.48.0
+  "@payloadcms/next": ^3.48.0
+  "@payloadcms/plugin-redirects": ^3.48.0
+  "@payloadcms/payload-cloud": ^3.48.0
+  "@payloadcms/richtext-lexical": ^3.48.0
+  "@payloadcms/storage-vercel-blob": ^3.48.0
+  "@payloadcms/ui": ^3.48.0
   "@react-spring/shared": ^10.0.0
   "@react-spring/web": ^10.0.0
   "@types/node": ^22.15.17
@@ -26,7 +35,6 @@ catalog:
   "@vercel/speed-insights": ^1.2.0
   "@vercel/toolbar": ^0.1.36
   "@xyflow/react": ^12.6.1
-  basehub: ^8.2.7
   botid: ^1.4.4
   client-only: ^0.0.1
   drizzle-kit: ^0.31.1
@@ -36,10 +44,15 @@ catalog:
   flags: ^4.0.0
   geist: ^1.4.2
   hono: ^4.8.5
+  itty-chroma: ^1.0.1
+  itty-fetcher: ^1.0.3
+  itty-time: ^2.0.1
   motion: ^12.11.0
-  next: ^15.3.2
+  next: ^15.4.3
   normalize-wheel: ^1.0.1
   nuqs: ^2.4.3
+  payload: ^3.48.0
+  payload-admin-bar: ^1.0.7
   react: ^19.1.0
   react-dom: ^19.1.0
   react-markdown: ^10.1.0
@@ -48,6 +61,7 @@ catalog:
   resend: ^4.5.1
   semantic-release: ^24.2.3
   server-only: ^0.0.1
+  sharp: ^0.34.2
   storybook: ^8.6.12
   tsup: ^8.4.0
   typescript: ^5.8.3

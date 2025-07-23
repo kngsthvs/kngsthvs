@@ -35,18 +35,6 @@
   text-align: center;
 }
 
-.root p:first-child {
-  bottom: 1rem;
-  color: var(--colors-gray-50);
-  font-family: var(--font-geist-mono);
-  font-size: var(--fontSizes-sm);
-  font-weight: 400;
-  letter-spacing: 0.125em;
-  line-height: 1;
-  position: absolute;
-  text-transform: uppercase;
-}
-
 :global(.contrast) .root p {
   color: var(--colors-foreground);
 }

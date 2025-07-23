@@ -5,23 +5,23 @@ import Link from "next/link";
 import styles from "./fallback.module.css";
 
 export function Fallback({
-	children,
-	title,
+  children,
+  title,
 }: {
-	children: React.ReactNode;
-	title: React.ReactNode | string;
+  children: React.ReactNode;
+  title: React.ReactNode | string;
 }) {
-	return (
-		<section className={styles.root}>
-			<Link href="/">
-				<Image alt="Chi Rho" height={80} priority src="/icon.svg" width={80} />
-			</Link>
+  return (
+    <section className={styles.root}>
+      <Link href="/">
+        <Image alt="Chi Rho" height={80} priority src="/icon.svg" width={80} />
+      </Link>
 
-			<div>
-				<h1>{title}</h1>
+      <div>
+        <h1>{title}</h1>
 
-				<p>{children}</p>
-			</div>
-		</section>
-	);
+        <p>{children}</p>
+      </div>
+    </section>
+  );
 }

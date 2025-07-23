@@ -12,30 +12,30 @@ import { useKeyPress } from "react-use";
 import styles from "./footer.module.css";
 
 function Item({
-	children,
-	keys,
-	...props
+  children,
+  keys,
+  ...props
 }: {
-	children: React.ReactNode;
-	keys?: string;
+  children: React.ReactNode;
+  keys?: string;
 } & React.ComponentProps<typeof LinkSharedPrimitive>) {
-	useKey({
-		href: "href" in props ? String(props.href) : undefined,
-		keys: keys ?? "",
-	});
-	const [pressed] = useKeyPress(keys?.at(-1));
+  useKey({
+    href: "href" in props ? String(props.href) : undefined,
+    keys: keys ?? "",
+  });
+  const [pressed] = useKeyPress(keys?.at(-1));
 
-	return (
-		<LinkSharedPrimitive
-			className={linkStyles.root}
-			data-pressed={pressed}
-			{...props}
-		>
-			<kbd>[{keys?.at(-1)}]</kbd>
+  return (
+    <LinkSharedPrimitive
+      className={linkStyles.root}
+      data-pressed={pressed}
+      {...props}
+    >
+      <kbd>[{keys?.at(-1)}]</kbd>
 
-			<span>{children}</span>
-		</LinkSharedPrimitive>
-	);
+      <span>{children}</span>
+    </LinkSharedPrimitive>
+  );
 }
 
 // function Social({
@@ -82,12 +82,12 @@ function Item({
 // }
 
 export function Footer({ children }: { children: React.ReactNode }) {
-	return (
-		<footer className={styles.root}>
-			{children}
+  return (
+    <footer className={styles.root}>
+      {children}
 
-			<nav>
-				{/* <NavigationMenu.List>
+      <nav>
+        {/* <NavigationMenu.List>
 					<Social href="https://github.com/kngsthvs" keys="g">
             <Image
               alt="GitHub logo"
@@ -110,8 +110,8 @@ export function Footer({ children }: { children: React.ReactNode }) {
 					</li>
 				</NavigationMenu.List> */}
 
-				<ul>
-					{/* <NavigationMenu.Item>
+        <ul>
+          {/* <NavigationMenu.Item>
             <NavigationMenu.Link asChild>
               <Link href="/strats" keys="s">
                 Strategies
@@ -143,50 +143,50 @@ export function Footer({ children }: { children: React.ReactNode }) {
             </NavigationMenu.Link>
           </NavigationMenu.Item> */}
 
-					<li>
-						<p>
-							Company <kbd>[c]</kbd>
-						</p>
+          <li>
+            <p>
+              Company <kbd>[c]</kbd>
+            </p>
 
-						<div className={styles.content}>
-							<div>
-								<p>About</p>
-								<Item href="/hymn" keys="c h">
-									Hymn
-								</Item>
-								{/* <Item href="/metrics" keys="c m">
+            <div className={styles.content}>
+              <div>
+                <p>About</p>
+                <Item href="/hymn" keys="c h">
+                  Hymn
+                </Item>
+                {/* <Item href="/metrics" keys="c m">
                 Metrics
               </Item>
               <Item href="security" keys="c s">
                 Security
               </Item> */}
-								<Item href="/vision" keys="c v">
-									Vision
-								</Item>
-							</div>
+                <Item href="/vision" keys="c v">
+                  Vision
+                </Item>
+              </div>
 
-							<div>
-								<p>Legal</p>
-								<Item href="/legal/dpa" keys="c d">
-									DPA
-								</Item>
-								<Item href="/legal/privacy" keys="c p">
-									Privacy Policy
-								</Item>
-								<Item href="/legal/terms" keys="c t">
-									Terms of Service
-								</Item>
-							</div>
-						</div>
-					</li>
+              <div>
+                <p>Legal</p>
+                <Item href="/legal/dpa" keys="c d">
+                  DPA
+                </Item>
+                <Item href="/legal/privacy" keys="c p">
+                  Privacy Policy
+                </Item>
+                <Item href="/legal/terms" keys="c t">
+                  Terms of Service
+                </Item>
+              </div>
+            </div>
+          </li>
 
-					<li>
-						<Link href="/directory" keys="d">
-							Directory
-						</Link>
-					</li>
-				</ul>
-			</nav>
-		</footer>
-	);
+          <li>
+            <Link href="/directory" keys="d">
+              Directory
+            </Link>
+          </li>
+        </ul>
+      </nav>
+    </footer>
+  );
 }
